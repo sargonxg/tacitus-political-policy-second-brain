@@ -23,6 +23,7 @@ pub struct ConnectionSpec {
 }
 
 pub fn llm_from_connection(spec: &ConnectionSpec) -> Result<Arc<dyn LLMProvider>, ApiError> {
+    crate::tacitus_provider_policy::reject_connection().map_err(ApiError::BadRequest)?;
     let shape = spec.shape.to_ascii_lowercase();
     let key = spec.api_key.clone().unwrap_or_default();
     let inner: Arc<dyn LLMProvider> = match shape.as_str() {
@@ -46,6 +47,7 @@ pub fn llm_from_connection(spec: &ConnectionSpec) -> Result<Arc<dyn LLMProvider>
 pub fn embedding_from_connection(
     spec: &ConnectionSpec,
 ) -> Result<Arc<dyn EmbeddingProvider>, ApiError> {
+    crate::tacitus_provider_policy::reject_connection().map_err(ApiError::BadRequest)?;
     let shape = spec.shape.to_ascii_lowercase();
     let key = spec.api_key.clone().unwrap_or_default();
     let model = spec

@@ -1,152 +1,89 @@
-# TACITUS
+# Tacitus — political and policy workbench
 
-Published source checkpoint on `main`: [PR #1](https://github.com/sargonxg/tacitus-political-policy-second-brain/pull/1).
-The full persistent model-driven application
-is unfinished. The following 2026-10-12 checkpoint supersedes older test counts below.
+Built on [EdgeQuake](https://github.com/raphaelmansuy/edgequake): its Rust API,
+PostgreSQL graph/vector stack, ingestion pipeline, authentication and Next.js workbench.
+Tacitus adds question-specific policy context, attributed claims, human review and
+portable cognitive methods. The marketing website has been removed; the functional
+browser application remains.
 
-**Verified:** 88 Node tests, 28 Rust tests, actual Chrome HTTP lab interactions,
-native capsule preview/pack/validate/import/fresh-workspace compilation and clean local
-checkout rehearsal. Scoped Clippy, formatting and schema checks pass.
+**Current status: persistent MVP implementation candidate, awaiting cloud verification.**
+The new API/UI integration has not been compiled, tested or started. Previous passing
+lab/library counts do not validate this implementation. Do not treat it as an accepted
+release or upload private evidence. The inherited audit gate remains open.
 
-Run the lab with Node 22+; no package/model installation is needed:
+## What the implementation adds
+
+- Upload authorized documents through EdgeQuake and build its existing entity graph and vector index.
+- Ask a question; choose a direct answer, decision brief, competing hypotheses or position/commitment analysis. A simple task suggestion can be overridden.
+- Compile bounded context from authorized source versions using question overlap, retrieved chunks and qualification cues. Inspect exact UTF-8 source spans and reported omissions.
+- Generate with Ollama running on your own machine or cloud VM. Local-only provider guards reject paid providers, alternate models, saved connections and inherited credentials. Runtime enforcement is still awaiting acceptance tests.
+- Store source versions, assertions, analysis jobs, authenticated review receipts, scoped methods and dependency events in the existing PostgreSQL database.
+- Review assertions and methods. Rejected or imported reviews cannot grant acceptance; methods need explicit scope confirmation and satisfied prerequisites.
+- Preview every exported field, transfer a native v2 capsule into a fresh workspace, re-ingest its evidence, review its methods and reuse them. References-only exports cannot provide missing original text.
+- Flag recorded dependencies after source/provenance changes. Authorized stale graph assertions remain visible for review; assessments are not automatically rewritten.
+
+For example, a policy brief must separate a council's authorization from an actual
+appropriation or expenditure, preserve conditional willingness, include a status-quo
+option and expose its cited passages. The validator checks citation identity and exact
+quotes. An analyst still assesses whether the passages substantively support the judgment.
+
+## Run on a suitable host
+
+The storage-constrained development laptop is not an installation target. Prepare a
+separate host with Git, Node 22+, Docker Engine/Compose and approximately 8 vCPU,
+32 GiB RAM and 100 GiB free disk. CPU inference is supported in the configuration;
+a GPU VM such as GCP `g2-standard-8` with an L4 is an optional later choice. These
+are sizing recommendations, not measured minimums. No cloud resource is provisioned.
+
+After selecting and reviewing an implementation revision:
 
 ```sh
-node --test tools/tacitus-policy-lab/test.mjs scripts/tacitus-stack.test.mjs
-node tools/tacitus-policy-lab/cli.mjs serve
-```
-
-Open http://127.0.0.1:4317. This is a deterministic development tool, not the persistent
-application. Save sessions explicitly. With Rust 1.95 and cached dependencies:
-
-```sh
-node scripts/tacitus-lab-roundtrip.mjs
-```
-
-For a separate local machine or cloud VM, follow [self-hosting instructions](docs/tacitus/self-hosting.md):
-
-```sh
+git clone https://github.com/sargonxg/tacitus-political-policy-second-brain.git
+cd tacitus-political-policy-second-brain
+git switch codex/policy-mvp-cloud-02
 node scripts/tacitus-stack.mjs doctor
-node scripts/tacitus-stack.mjs init local
-# Use init cloud instead on a VM.
+node scripts/tacitus-stack.mjs init cloud
 node scripts/tacitus-stack.mjs check
 node scripts/tacitus-stack.mjs build
 node scripts/tacitus-stack.mjs download
 node scripts/tacitus-stack.mjs up
 ```
 
-These installation commands have contract/schema tests; Docker builds, migrations,
-Ollama inference, persistent application restart and integrated workflow E2E have not
-run. No paid resources or deployment are created by publishing this checkpoint.
-Legacy PowerShell launch placeholders below are separate from the new Node launcher.
+These are **candidate commands, not tested startup proof**. Builds/downloads happen
+only when explicitly invoked. Private generated credentials live in ignored
+`.tacitus/stack/config.json`. Database and models use persistent volumes; `down`
+preserves them. API/database/Ollama use an internal network after model downloads.
 
-Read [current implementation status](IMPLEMENTATION_STATUS.md),
-[lab verification](tools/tacitus-policy-lab/VERIFICATION.md) and
-[the inherited audit ledger](docs/tacitus/inherited-audit-triage.json).
-Seven insecure-example findings and RSA RUSTSEC-2023-0071 remain unresolved; release
-is blocked. No audit finding is waived. Do not import private data yet.
+On a VM, keep application ports closed and forward them:
 
-## Political & Policy Second Brain
-
-A local-first political and policy research workbench built on
-[EdgeQuake](https://github.com/raphaelmansuy/edgequake). The intended workflow is:
-
-**Frame a decision → import evidence → inspect claims → analyze → review → write a cited brief → save a capsule → reconsider when evidence changes.**
-
-**Current status: early development checkpoint, not a functioning Tacitus application release.**
-The upstream backend and frontend are retained. The new Tacitus libraries work independently,
-but the branded UI, persistent API/storage integration and real local-model workflow remain unfinished.
-
-The canonical project branch is **main**. `tacitus/development` tracks this checkpoint.
-`edgequake-main` is the inherited upstream branch, not the Tacitus project entry point.
-
-## What is implemented and tested
-
-| Component | Current capability | Boundary |
-|---|---|---|
-| `tacitus-core` | Source versions, immutable hashes/spans, assertions, temporal/decision contracts, review fingerprints and local-model identity policy | Not yet enforced by upstream HTTP routes/provider constructors |
-| `tacitus-capsules` | Deterministic bounded ZIP packages; preview, validation, export/import, fresh-workspace reuse and inspectable context compilation | Developer file tools; no capsule UI or verified Praxis compatibility |
-| `tacitus-analysis` | Cited brief proposals through a model interface, hypotheses matrix validation, commitment records and change-impact dependency closure | No production model adapter or persisted end-to-end workflows |
-| `tacitus-evals` | Comparison records, equal-access checks and explicit pending human ratings | No real benchmark runner/results yet |
-
-The earlier checkpoint passed 25 deterministic Rust tests; the current continuation
-passes 28, as recorded above.
-A substantive three-source capsule export → fresh-workspace import → lexical compilation passed.
-A fresh local checkout also passed the library suite. Three clearly fictional dossiers contain
-15 newly authored public CC0 documents; they are not evidence of general model superiority.
-
-Testing occurred on Windows 11 x64, Rust 1.95.0, PowerShell and Windows Git Bash.
-Linux/WSL, container profiles, real inference, embeddings, graph ingestion, browser journeys
-and offline application restart have not been accepted. Docker/Compose and Ollama were absent
-on the test host. **There is no verified application startup command or localhost URL yet.**
-
-## Run the current developer checks
-
-Source-development checks require Rust 1.95; they are not an application installation procedure.
-From this repository in PowerShell:
-
-```powershell
-.\scripts\tacitus.ps1 doctor
-.\scripts\tacitus.ps1 test
+```sh
+ssh -N -L 3000:127.0.0.1:3000 -L 8080:127.0.0.1:8080 your-user@your-host
 ```
 
-`doctor` returns exit 2 when Docker is missing. `test` runs the new libraries in a locked,
-isolated workspace with cached crates only. For initial development dependency downloads:
+Intended browser URL: http://localhost:3000. Intended API health URL:
+http://localhost:8080/health. Log in with the generated admin credentials, choose
+a workspace, upload text/Markdown or text PDFs and wait for ingestion. Scanned/vision
+PDFs are not accepted with the default text-only model.
 
-```powershell
-cargo test --locked --manifest-path edgequake/Cargo.toml -p tacitus-core -p tacitus-capsules -p tacitus-analysis -p tacitus-evals
-```
+Read [self-hosting](docs/tacitus/self-hosting.md) and
+[the MVP workflow, CLI and cloud verification](docs/tacitus/policy-mvp.md).
+The same authenticated API powers the browser and CLI; no separate knowledge store exists.
 
-Optional developer schema/file checks require Python; the file example also requires `jsonschema`:
+## Boundaries and evidence
 
-```powershell
-python scripts/generate-tacitus-schema.py --check
-python scripts/tacitus-file-example.py
-```
+The context selector is a transparent heuristic, not a proven gain in answer quality.
+It preserves whole paragraphs and reports omissions; no efficiency or model-superiority
+claim is made. Domain-wide ontology packs, complete temporal tracking, a distributed job
+queue and controlled multi-baseline evaluation remain future work. Human ratings and
+paid-provider comparisons are **NOT RUN**.
 
-The file example performs a real local capsule round-trip using intentional fictional data.
-It uses **lexical retrieval only** and calls no model, API or external service. Generated
-files stay under ignored `.tacitus/`. Normal `setup`, `up`, `demo`, `smoke`, `benchmark`
-and `down` launch operations are explicitly NOT IMPLEMENTED.
+Read [implementation status](IMPLEMENTATION_STATUS.md),
+[upstream pin and attribution](UPSTREAM.md),
+[historical lab verification](tools/tacitus-policy-lab/VERIFICATION.md), and
+[inherited audit triage](docs/tacitus/inherited-audit-triage.json).
+Seven insecure-example findings and RSA `RUSTSEC-2023-0071` remain unresolved.
+GitHub Actions remain disabled; cloud verification must be explicitly run on the chosen host.
 
-## Documentation and next milestones
-
-- [Implementation status](IMPLEMENTATION_STATUS.md): implemented, tested, blocked and unfinished work.
-- [Verification evidence](docs/tacitus/verification.md): exact commands, results, failures and security findings.
-- [Getting started](docs/tacitus/getting-started.md) and [troubleshooting](docs/tacitus/troubleshooting.md).
-- [Upstream pin/update procedure](UPSTREAM.md), [architecture](docs/tacitus/architecture.md), [policy domain](docs/tacitus/policy-domain.md).
-- [Capsule format](docs/tacitus/capsule-format.md), [JSON Schema](schemas/tacitus/capsule-v1.schema.json), [module authoring](docs/tacitus/module-authoring.md).
-- [Security boundaries](docs/tacitus/security.md), [hardware/local models](docs/tacitus/hardware-local-models.md), [evaluation](docs/tacitus/evaluation.md).
-
-Next: prove the unmodified upstream baseline with actual local chat/embedding models,
-PostgreSQL extensions and document ingestion/retrieval. Then integrate authenticated
-Tacitus API/storage and the existing frontend before accepting the four analyst workflows.
-The complete application build brief remains unfinished.
-
-## Publication, privacy and security
-
-Public code does **not** authorize sharing private research or capsules. Only intentional
-fictional fixtures are public research examples. Private Praxis code, user documents,
-model weights, credentials, uploads, exports and local scan/test artifacts are not included
-in the Tacitus additions. Imported capsules remain untrusted data; reviews do not
-automatically become locally trusted human actions.
-
-New Tacitus commits pass the secret scan. The retained public upstream history has
-unresolved scanner findings associated with examples/development configurations/tests;
-the inherited dependency audit reports RSA advisory RUSTSEC-2023-0071 and maintenance
-warnings. These are disclosed in the verification report, not suppressed with a blanket
-allowlist. No security-readiness or enterprise/classified-data claim is made.
-
-All 24 inherited workflows are quarantined under `.github/workflows-disabled`.
-The new library CI definition has read-only permissions and no model downloads.
-Repository Actions remain disabled; **CI has not run**. No deployment or tunnel is configured.
-
-## Attribution and license
-
-Built on EdgeQuake, pinned to **v0.34.0** at
-`c994bc89c95fd44e191e4f015a2af0e84a27244f`, with upstream public history and
-[Apache-2.0 licensing](LICENSE) retained. No upstream endorsement is implied.
-See the [change notice](NOTICE-TACITUS.md) and [retained upstream README](docs/tacitus/upstream-readme.md).
-Upstream startup instructions are not Tacitus acceptance evidence.
-
-Tacitus code additions are Apache-2.0; the newly authored fictional research fixtures
-are CC0-1.0. The provisional capsule format has no verified canonical Praxis interoperability.
+The retained EdgeQuake code is Apache-2.0; see [LICENSE](LICENSE).
+Native capsule v1 remains supported through an explicit v2 migration. Compatibility
+with private canonical Praxis schemas is not claimed.

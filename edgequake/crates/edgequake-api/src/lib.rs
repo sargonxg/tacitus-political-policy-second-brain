@@ -141,6 +141,9 @@ pub mod state;
 pub mod storage_inspector;
 pub mod store_contention;
 pub mod streaming;
+#[cfg(feature = "postgres")]
+pub mod tacitus;
+pub mod tacitus_provider_policy;
 pub mod task_queue_pressure;
 pub mod validation;
 pub mod vision_env;

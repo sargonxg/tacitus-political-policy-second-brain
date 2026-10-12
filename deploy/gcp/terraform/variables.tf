@@ -1,7 +1,6 @@
 variable "project_id" {
   type        = string
   description = "GCP project. Shared tenancy: this module only creates edgequake-* plus VM elitizon-db."
-  default     = "saas-app-001"
 }
 
 variable "region" {
@@ -23,17 +22,17 @@ variable "name_prefix" {
 variable "instance_name" {
   type        = string
   description = "GCE VM name. Shared AGE+pgvector host (EdgeQuake today; other apps later)."
-  default     = "elitizon-db"
+  default     = "tacitus-policy"
 }
 
 variable "machine_type" {
   type    = string
-  default = "e2-medium"
+  default = "e2-standard-8"
 }
 
 variable "boot_disk_gb" {
   type    = number
-  default = 20
+  default = 100
 }
 
 variable "data_disk_gb" {
@@ -44,7 +43,6 @@ variable "data_disk_gb" {
 variable "edgequake_version" {
   type        = string
   description = "GHCR tag pin (LAW-148-4). Never latest."
-  default     = "0.27.0"
 }
 
 variable "hostname" {
@@ -62,17 +60,17 @@ variable "caddy_acme_email" {
 variable "github_repository" {
   type        = string
   description = "GitHub repo allowed to impersonate the deploy SA via WIF (org/name)."
-  default     = "raphaelmansuy/edgequake"
+  default     = "sargonxg/tacitus-political-policy-second-brain"
 }
 
 variable "operator_members" {
   type        = list(string)
   description = "IAM members granted IAP SSH + OS Login admin on this stack."
-  default     = ["user:raphael.mansuy@elitizon.com"]
+  default     = []
 }
 
 variable "enable_public_http_https" {
   type        = bool
   description = "Open :80 (redirect-only) and :443. Always true for Option A public host."
-  default     = true
+  default     = false
 }

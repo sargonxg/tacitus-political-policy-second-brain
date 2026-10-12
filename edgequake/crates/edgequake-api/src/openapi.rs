@@ -661,6 +661,8 @@ impl utoipa::Modify for SecurityAddon {
             );
         }
 
+        #[cfg(feature = "postgres")]
+        openapi.merge(crate::tacitus::openapi::PolicyApi::openapi());
         crate::openapi_enrichment::apply_openapi_enrichment(openapi);
         crate::openapi_security::apply_path_security(openapi);
 

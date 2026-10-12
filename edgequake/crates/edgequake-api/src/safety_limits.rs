@@ -513,6 +513,8 @@ fn create_inner_llm_provider(
     model: &str,
     ctx: Option<ApplicationContext>,
 ) -> Result<Arc<dyn LLMProvider>> {
+    crate::tacitus_provider_policy::validate_identity(provider_name, model, false)
+        .map_err(LlmError::ConfigError)?;
     let provider = provider_name.to_ascii_lowercase();
     if provider == "vertexai" || provider == "vertex" {
         return create_vertex_llm_via_adc(model, ctx);
@@ -609,6 +611,8 @@ fn build_safe_llm_provider(
     model: &str,
     extraction_profile: bool,
 ) -> Result<Arc<dyn LLMProvider>> {
+    crate::tacitus_provider_policy::validate_identity(provider_name, model, false)
+        .map_err(LlmError::ConfigError)?;
     if let Some((llm, _)) = test_provider_override() {
         return Ok(llm);
     }
@@ -660,6 +664,8 @@ pub fn create_safe_llm_provider_with_context(
     model: &str,
     ctx: ApplicationContext,
 ) -> Result<Arc<dyn LLMProvider>> {
+    crate::tacitus_provider_policy::validate_identity(provider_name, model, false)
+        .map_err(LlmError::ConfigError)?;
     if let Some((llm, _)) = test_provider_override() {
         return Ok(llm);
     }
@@ -754,6 +760,8 @@ pub fn create_safe_embedding_provider(
     model: &str,
     dimension: usize,
 ) -> Result<Arc<dyn EmbeddingProvider>> {
+    crate::tacitus_provider_policy::validate_identity(provider_name, model, true)
+        .map_err(LlmError::ConfigError)?;
     if let Some((_, embedding)) = test_provider_override() {
         return Ok(embedding);
     }
@@ -1058,6 +1066,8 @@ pub fn create_safe_vision_provider(
     provider_name: &str,
     model: &str,
 ) -> Result<Arc<dyn LLMProvider>> {
+    crate::tacitus_provider_policy::validate_identity(provider_name, model, false)
+        .map_err(LlmError::ConfigError)?;
     if let Some((llm, _)) = test_provider_override() {
         return Ok(llm);
     }
@@ -1119,6 +1129,8 @@ pub fn create_safe_vision_provider_for_pass_b(
     provider_name: &str,
     model: &str,
 ) -> Result<Arc<dyn LLMProvider>> {
+    crate::tacitus_provider_policy::validate_identity(provider_name, model, false)
+        .map_err(LlmError::ConfigError)?;
     if let Some((llm, _)) = test_provider_override() {
         return Ok(llm);
     }

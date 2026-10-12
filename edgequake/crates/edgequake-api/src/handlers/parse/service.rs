@@ -74,6 +74,14 @@ pub async fn run_parse(
     resolved: &ResolvedParseOptions,
     request_id: Option<String>,
 ) -> ApiResult<ParseResponse> {
+    if crate::tacitus_provider_policy::enabled()
+        && (resolved.backend == PdfParserBackend::Vision || resolved.emit_assets)
+    {
+        return Err(ApiError::BadRequest(
+            "Tacitus MVP supports text PDF parsing; vision and asset model paths are disabled"
+                .into(),
+        ));
+    }
     let request_id = request_id.unwrap_or_else(|| format!("pr_{}", Uuid::new_v4().simple()));
     let span = tracing::info_span!(
         "parse_request",

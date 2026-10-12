@@ -1,5 +1,6 @@
 //! Portable data packages and a constrained evidence compiler. No imported code executes.
 pub mod compiler;
+pub mod policy;
 use serde::{Deserialize, Serialize};
 use std::collections::{BTreeMap, BTreeSet};
 use std::io::{Cursor, Read, Write};

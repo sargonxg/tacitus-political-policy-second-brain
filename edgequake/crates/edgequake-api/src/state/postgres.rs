@@ -131,6 +131,7 @@ impl AppState {
         super::provider_setup::normalize_local_provider_hosts_for_docker();
 
         // Create providers via factory (auto-detects from environment)
+        crate::tacitus_provider_policy::startup()?;
         let (llm_provider, embedding_provider) = ProviderFactory::from_env().map_err(|e| {
             format!(
                 "Failed to create LLM provider from environment: {e}. \

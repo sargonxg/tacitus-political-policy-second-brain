@@ -12,12 +12,8 @@ terraform {
     }
   }
 
-  # Existing shared bucket. Prefix stays on the SPEC-148 state path so apply
-  # does not orphan live resources. GCP *resource* names are edgequake-* / elitizon-db.
-  backend "gcs" {
-    bucket = "saas-app-001-tf-state"
-    prefix = "eq148"
-  }
+  # Supply your own reviewed backend configuration; never reuse upstream state.
+  backend "gcs" {}
 }
 
 provider "google" {

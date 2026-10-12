@@ -2,36 +2,57 @@
  * @module Sidebar
  * @description Application sidebar navigation component.
  * Supports collapsible mode, mobile drawer, and workspace selection.
- * 
+ *
  * @implements FEAT0602 - Responsive navigation sidebar
  * @implements FEAT0609 - Collapsible sidebar with state persistence
  * @implements FEAT0610 - Mobile-optimized drawer navigation
- * 
+ *
  * @enforces BR0606 - Sidebar state persists across sessions
  * @enforces BR0607 - Active route highlighted in navigation
- * 
+ *
  * @see {@link docs/features.md} FEAT0602, FEAT0609
  */
-'use client';
+"use client";
 
-import { ClientOnly } from '@/components/client-only';
-import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
+import { ClientOnly } from "@/components/client-only";
+import { Button } from "@/components/ui/button";
 import {
-    Tooltip,
-    TooltipContent,
-    TooltipProvider,
-    TooltipTrigger,
-} from '@/components/ui/tooltip';
-import { APP_VERSION, APP_VERSION_NUMBER } from '@/lib/app-version';
-import { cn } from '@/lib/utils';
-import { useSettingsStore } from '@/stores/use-settings-store';
-import { Activity, BarChart2, BookOpen, ChevronLeft, ChevronRight, FileText, FolderKanban, Home, Menu, MessageSquare, Network, Settings, Terminal } from 'lucide-react';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { HeaderTenantSelector } from './header-tenant-selector';
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import { APP_VERSION, APP_VERSION_NUMBER } from "@/lib/app-version";
+import { cn } from "@/lib/utils";
+import { useSettingsStore } from "@/stores/use-settings-store";
+import {
+  Activity,
+  BarChart2,
+  BookOpen,
+  ChevronLeft,
+  ChevronRight,
+  FileText,
+  FolderKanban,
+  Home,
+  Menu,
+  MessageSquare,
+  Network,
+  Settings,
+  Terminal,
+} from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import { HeaderTenantSelector } from "./header-tenant-selector";
 
 /**
  * Grouped navigation structure.
@@ -41,7 +62,11 @@ import { HeaderTenantSelector } from './header-tenant-selector';
 interface NavGroup {
   labelKey: string | null;
   label: string | null;
-  items: ReadonlyArray<{ href: string; icon: React.FC<{ className?: string; 'aria-hidden'?: 'true' }>; labelKey: string }>;
+  items: ReadonlyArray<{
+    href: string;
+    icon: React.FC<{ className?: string; "aria-hidden"?: "true" }>;
+    labelKey: string;
+  }>;
 }
 
 const navGroups: NavGroup[] = [
@@ -49,38 +74,32 @@ const navGroups: NavGroup[] = [
     labelKey: null,
     label: null,
     items: [
-      { href: '/', icon: Home, labelKey: 'nav.dashboard' },
-      { href: '/documents', icon: FileText, labelKey: 'nav.documents' },
-      { href: '/query', icon: MessageSquare, labelKey: 'nav.query' },
-      { href: '/graph', icon: Network, labelKey: 'nav.graph' },
+      { href: "/", icon: Home, labelKey: "Ask" },
+      { href: "/documents", icon: FileText, labelKey: "nav.documents" },
+      { href: "/graph", icon: Network, labelKey: "nav.graph" },
     ],
   },
   {
-    labelKey: 'nav.groupKnowledge',
-    label: 'Knowledge',
+    labelKey: null,
+    label: "Advanced",
     items: [
-      { href: '/knowledge', icon: BookOpen, labelKey: 'nav.knowledge' },
-      { href: '/workspace', icon: FolderKanban, labelKey: 'nav.workspace' },
-    ],
-  },
-  {
-    labelKey: 'nav.groupSystem',
-    label: 'System',
-    items: [
-      { href: '/pipeline', icon: Activity, labelKey: 'nav.pipeline' },
-      { href: '/costs', icon: BarChart2, labelKey: 'nav.costs' },
-      { href: '/api-explorer', icon: Terminal, labelKey: 'nav.apiExplorer' },
-      { href: '/settings', icon: Settings, labelKey: 'nav.settings' },
+      { href: "/query", icon: MessageSquare, labelKey: "nav.query" },
+      { href: "/knowledge", icon: BookOpen, labelKey: "nav.knowledge" },
+      { href: "/workspace", icon: FolderKanban, labelKey: "nav.workspace" },
+      { href: "/pipeline", icon: Activity, labelKey: "nav.pipeline" },
+      { href: "/costs", icon: BarChart2, labelKey: "nav.costs" },
+      { href: "/api-explorer", icon: Terminal, labelKey: "nav.apiExplorer" },
+      { href: "/settings", icon: Settings, labelKey: "nav.settings" },
     ],
   },
 ];
 
-function SidebarContent({ 
-  onItemClick, 
+function SidebarContent({
+  onItemClick,
   collapsed = false,
   showToggle = false,
   onToggle,
-}: { 
+}: {
   onItemClick?: () => void;
   collapsed?: boolean;
   showToggle?: boolean;
@@ -93,88 +112,135 @@ function SidebarContent({
     <TooltipProvider delayDuration={0}>
       <div className="flex h-full flex-col">
         {/* Logo */}
-        <div className={cn(
-          "flex h-12 items-center border-b shrink-0",
-          collapsed ? "justify-center px-2" : "px-4"
-        )}>
-          <Link 
-            href="/" 
+        <div
+          className={cn(
+            "flex h-12 items-center border-b shrink-0",
+            collapsed ? "justify-center px-2" : "px-4",
+          )}
+        >
+          <Link
+            href="/"
             className="flex items-center gap-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-lg"
           >
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary" aria-hidden="true">
+            <div
+              className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary"
+              aria-hidden="true"
+            >
               <Network className="h-4 w-4 text-primary-foreground" />
             </div>
-            {!collapsed && <span className="text-lg font-bold tracking-tight">EdgeQuake</span>}
+            {!collapsed && (
+              <span className="text-lg font-bold tracking-tight">Tacitus</span>
+            )}
           </Link>
         </div>
 
         {/* Navigation — grouped to reduce cognitive load */}
-        <nav className="flex-1 overflow-y-auto px-2 py-3" aria-label={t('common.navigation', 'Main navigation')}>
-          {navGroups.map((group, groupIndex) => (
-            <div
-              key={groupIndex}
-              className={cn("space-y-0.5", groupIndex > 0 && "mt-4")}
-            >
-              {/* Group label — only shown expanded and when label exists */}
-              {group.label && !collapsed && (
-                <p className="px-3 pb-1 text-xs font-semibold uppercase tracking-wider text-muted-foreground select-none">
-                  {group.labelKey ? t(group.labelKey, group.label) : group.label}
-                </p>
-              )}
-              {/* Divider in collapsed mode */}
-              {group.label && collapsed && groupIndex > 0 && (
-                <div className="my-2 mx-2 border-t" />
-              )}
-              {group.items.map(({ href, icon: Icon, labelKey }) => {
-                const isActive = href === '/'
-                  ? pathname === '/'
-                  : pathname === href || pathname.startsWith(href + '/');
+        <nav
+          className="flex-1 overflow-y-auto px-2 py-3"
+          aria-label={t("common.navigation", "Main navigation")}
+        >
+          {navGroups.map((group, groupIndex) =>
+            groupIndex === 0 ? (
+              <div
+                key={groupIndex}
+                className={cn("space-y-0.5", groupIndex > 0 && "mt-4")}
+              >
+                {/* Group label — only shown expanded and when label exists */}
+                {group.label && !collapsed && (
+                  <p className="px-3 pb-1 text-xs font-semibold uppercase tracking-wider text-muted-foreground select-none">
+                    {group.labelKey
+                      ? t(group.labelKey, group.label)
+                      : group.label}
+                  </p>
+                )}
+                {/* Divider in collapsed mode */}
+                {group.label && collapsed && groupIndex > 0 && (
+                  <div className="my-2 mx-2 border-t" />
+                )}
+                {group.items.map(({ href, icon: Icon, labelKey }) => {
+                  const isActive =
+                    href === "/"
+                      ? pathname === "/"
+                      : pathname === href || pathname.startsWith(href + "/");
 
-                const linkContent = (
-                  <Link
-                    key={href}
-                    href={href}
-                    onClick={onItemClick}
-                    aria-current={isActive ? 'page' : undefined}
-                    className={cn(
-                      'flex items-center rounded-lg px-3 py-2.5 text-sm font-medium transition-all duration-150',
-                      'min-h-[44px]', // WCAG 2.5.5: minimum 44×44px touch target
-                      'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2',
-                      collapsed ? 'justify-center' : 'gap-2.5',
-                      isActive
-                        ? 'bg-primary text-primary-foreground shadow-sm'
-                        : 'text-muted-foreground hover:bg-muted hover:text-foreground'
-                    )}
-                  >
-                    <Icon className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
-                    {!collapsed && <span>{t(labelKey)}</span>}
-                  </Link>
-                );
-
-                if (collapsed) {
-                  return (
-                    <Tooltip key={href}>
-                      <TooltipTrigger asChild>
-                        {linkContent}
-                      </TooltipTrigger>
-                      <TooltipContent side="right" sideOffset={12}>
-                        {t(labelKey)}
-                      </TooltipContent>
-                    </Tooltip>
+                  const linkContent = (
+                    <Link
+                      key={href}
+                      href={href}
+                      onClick={onItemClick}
+                      aria-current={isActive ? "page" : undefined}
+                      className={cn(
+                        "flex items-center rounded-lg px-3 py-2.5 text-sm font-medium transition-all duration-150",
+                        "min-h-[44px]", // WCAG 2.5.5: minimum 44×44px touch target
+                        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2",
+                        collapsed ? "justify-center" : "gap-2.5",
+                        isActive
+                          ? "bg-primary text-primary-foreground shadow-sm"
+                          : "text-muted-foreground hover:bg-muted hover:text-foreground",
+                      )}
+                    >
+                      <Icon
+                        className="h-4 w-4 flex-shrink-0"
+                        aria-hidden="true"
+                      />
+                      {!collapsed && <span>{t(labelKey)}</span>}
+                    </Link>
                   );
-                }
 
-                return linkContent;
-              })}
-            </div>
-          ))}
+                  if (collapsed) {
+                    return (
+                      <Tooltip key={href}>
+                        <TooltipTrigger asChild>{linkContent}</TooltipTrigger>
+                        <TooltipContent side="right" sideOffset={12}>
+                          {t(labelKey)}
+                        </TooltipContent>
+                      </Tooltip>
+                    );
+                  }
+
+                  return linkContent;
+                })}
+              </div>
+            ) : (
+              <details
+                key={groupIndex}
+                open={collapsed || undefined}
+                className="mt-4"
+              >
+                <summary className="cursor-pointer px-3 py-2 text-sm">
+                  Advanced
+                </summary>
+                <div className="space-y-1">
+                  {group.items.map(({ href, icon: Icon, labelKey }) => (
+                    <Link
+                      key={href}
+                      href={href}
+                      onClick={onItemClick}
+                      aria-current={pathname === href ? "page" : undefined}
+                      className={cn(
+                        "flex min-h-[44px] items-center gap-2 rounded-lg px-3 py-2 text-sm focus-visible:ring-2",
+                        pathname === href
+                          ? "bg-primary text-primary-foreground"
+                          : "text-muted-foreground hover:bg-muted",
+                      )}
+                    >
+                      <Icon className="h-4 w-4" aria-hidden="true" />
+                      {!collapsed && t(labelKey)}
+                    </Link>
+                  ))}
+                </div>
+              </details>
+            ),
+          )}
         </nav>
 
         {/* Footer */}
-        <div className={cn(
-          "border-t p-3 space-y-2 transition-all duration-200",
-          collapsed && "p-2"
-        )}>
+        <div
+          className={cn(
+            "border-t p-3 space-y-2 transition-all duration-200",
+            collapsed && "p-2",
+          )}
+        >
           {showToggle && (
             <TooltipProvider delayDuration={0}>
               <Tooltip>
@@ -185,9 +251,11 @@ function SidebarContent({
                     onClick={onToggle}
                     className={cn(
                       "w-full min-h-[36px] transition-all duration-200 hover:bg-muted",
-                      collapsed ? "px-0 justify-center" : "justify-start"
+                      collapsed ? "px-0 justify-center" : "justify-start",
                     )}
-                    aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
+                    aria-label={
+                      collapsed ? "Expand sidebar" : "Collapse sidebar"
+                    }
                   >
                     {collapsed ? (
                       <ChevronRight className="h-4 w-4" />
@@ -207,22 +275,28 @@ function SidebarContent({
               </Tooltip>
             </TooltipProvider>
           )}
-          
+
           {/* App Info */}
           <TooltipProvider delayDuration={0}>
             <Tooltip>
               <TooltipTrigger asChild>
-                <div className={cn(
-                  "flex items-center gap-2.5 px-1 py-1 rounded-lg transition-colors hover:bg-muted/50 cursor-default",
-                  collapsed && "justify-center px-0"
-                )}>
+                <div
+                  className={cn(
+                    "flex items-center gap-2.5 px-1 py-1 rounded-lg transition-colors hover:bg-muted/50 cursor-default",
+                    collapsed && "justify-center px-0",
+                  )}
+                >
                   <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br from-primary/80 to-primary shrink-0">
                     <Network className="h-3.5 w-3.5 text-primary-foreground" />
                   </div>
                   {!collapsed && (
                     <div className="flex flex-col min-w-0">
-                      <span className="text-xs font-semibold truncate">EdgeQuake</span>
-                      <span className="text-xs text-muted-foreground">{t('common.uiVersion', { version: APP_VERSION_NUMBER })}</span>
+                      <span className="text-xs font-semibold truncate">
+                        EdgeQuake
+                      </span>
+                      <span className="text-xs text-muted-foreground">
+                        {t("common.uiVersion", { version: APP_VERSION_NUMBER })}
+                      </span>
                     </div>
                   )}
                 </div>
@@ -230,7 +304,9 @@ function SidebarContent({
               {collapsed && (
                 <TooltipContent side="right" sideOffset={12}>
                   <p className="font-semibold">EdgeQuake {APP_VERSION}</p>
-                  <p className="text-xs text-muted-foreground">{t('common.platform')}</p>
+                  <p className="text-xs text-muted-foreground">
+                    {t("common.platform")}
+                  </p>
                 </TooltipContent>
               )}
             </Tooltip>
@@ -243,16 +319,16 @@ function SidebarContent({
 
 export function Sidebar() {
   const { sidebarCollapsed, toggleSidebar } = useSettingsStore();
-  
+
   return (
-    <aside 
+    <aside
       className={cn(
         "hidden border-r bg-card md:block transition-[width] duration-300",
-        sidebarCollapsed ? "w-16" : "w-64"
-      )} 
+        sidebarCollapsed ? "w-16" : "w-64",
+      )}
       aria-label="Sidebar navigation"
     >
-      <SidebarContent 
+      <SidebarContent
         collapsed={sidebarCollapsed}
         showToggle={true}
         onToggle={toggleSidebar}
@@ -265,7 +341,13 @@ export function MobileSidebar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <ClientOnly fallback={<Button variant="ghost" size="icon" className="md:hidden"><Menu className="h-5 w-5" /></Button>}>
+    <ClientOnly
+      fallback={
+        <Button variant="ghost" size="icon" className="md:hidden">
+          <Menu className="h-5 w-5" />
+        </Button>
+      }
+    >
       <Sheet open={open} onOpenChange={setOpen}>
         <SheetTrigger asChild>
           <Button variant="ghost" size="icon" className="md:hidden">
@@ -276,7 +358,9 @@ export function MobileSidebar() {
         <SheetContent side="left" size="sm" className="w-64 p-0 flex flex-col">
           <SheetHeader className="sr-only">
             <SheetTitle>Navigation Menu</SheetTitle>
-            <SheetDescription>Main navigation for EdgeQuake application</SheetDescription>
+            <SheetDescription>
+              Main navigation for EdgeQuake application
+            </SheetDescription>
           </SheetHeader>
           {/* Tenant Selector for Mobile */}
           <div className="border-b p-3">

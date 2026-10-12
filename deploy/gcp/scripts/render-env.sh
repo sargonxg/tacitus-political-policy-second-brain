@@ -2,6 +2,7 @@
 # Render /opt/edgequake/.env from instance metadata + Secret Manager.
 # LAW-148-6: secrets never logged.
 set -euo pipefail
+[[ "${TACITUS_ALLOW_LEGACY_GCP:-}" == "1" ]] || { echo 'Legacy upstream deployment disabled. Use the Tacitus source-build launcher.' >&2; exit 2; }
 
 PREFIX="${STACK_PREFIX:-edgequake}"
 PROJECT="${STACK_PROJECT:-}"

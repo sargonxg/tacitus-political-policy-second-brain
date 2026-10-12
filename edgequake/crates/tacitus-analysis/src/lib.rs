@@ -4,6 +4,8 @@ use std::collections::{BTreeMap, BTreeSet};
 use tacitus_capsules::compiler::EvidencePacket;
 use tacitus_core::{digest, DecisionContract, Result};
 
+pub mod harness;
+
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(deny_unknown_fields)]
 pub struct Judgment {

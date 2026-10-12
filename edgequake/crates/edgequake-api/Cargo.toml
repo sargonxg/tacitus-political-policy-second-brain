@@ -30,6 +30,9 @@ pipeline = ["edgequake-core/pipeline"]
 vision = []
 
 [dependencies]
+tacitus-core = { path = "../tacitus-core" }
+tacitus-analysis = { path = "../tacitus-analysis" }
+tacitus-capsules = { path = "../tacitus-capsules" }
 edgequake-core = { path = "../edgequake-core" }
 edgequake-migrate-manifest = { workspace = true }
 edgequake-pdf = { workspace = true }

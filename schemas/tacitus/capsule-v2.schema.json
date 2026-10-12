@@ -1,0 +1,671 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:tacitus:capsule:v2",
+  "title": "Native Tacitus capsule v2",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "manifest": {
+      "$ref": "#/$defs/manifest"
+    },
+    "data": {
+      "$ref": "#/$defs/data"
+    }
+  },
+  "required": [
+    "manifest",
+    "data"
+  ],
+  "$defs": {
+    "interval": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "start": {
+          "type": "integer"
+        },
+        "end": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "start",
+        "end"
+      ]
+    },
+    "span": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "source": {
+          "type": "string"
+        },
+        "text_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "start": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "end": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "locator": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "original_language": {
+          "type": "string"
+        },
+        "translation": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "source",
+        "text_hash",
+        "start",
+        "end",
+        "locator",
+        "original_language",
+        "translation"
+      ]
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "version": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "workspace": {
+          "type": "string"
+        },
+        "document_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "title": {
+          "type": "string"
+        },
+        "author": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "original_hash": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "text_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "text": {
+          "const": ""
+        },
+        "language": {
+          "type": "string"
+        },
+        "extractor": {
+          "type": "string"
+        },
+        "published_at": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "retrieved_at": {
+          "type": "integer"
+        },
+        "available_at": {
+          "type": "integer"
+        },
+        "valid_from": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "valid_until": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "source_family": {
+          "type": "string"
+        },
+        "withdrawn": {
+          "const": false
+        },
+        "restricted": {
+          "const": false
+        },
+        "redistributable": {
+          "type": "boolean"
+        },
+        "license": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "version",
+        "workspace",
+        "document_id",
+        "title",
+        "author",
+        "original_hash",
+        "text_hash",
+        "text",
+        "language",
+        "extractor",
+        "published_at",
+        "retrieved_at",
+        "available_at",
+        "valid_from",
+        "valid_until",
+        "source_family",
+        "withdrawn",
+        "restricted",
+        "redistributable",
+        "license"
+      ]
+    },
+    "assertion": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "version": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "workspace": {
+          "type": "string"
+        },
+        "speaker": {
+          "type": "string"
+        },
+        "subject": {
+          "type": "string"
+        },
+        "predicate": {
+          "enum": [
+            "states",
+            "expresses_position",
+            "conditionally_undertakes",
+            "authorizes",
+            "constrains",
+            "funds",
+            "implements",
+            "withdraws",
+            "contradicts",
+            "depends_on",
+            "affiliated_with"
+          ]
+        },
+        "object": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "proposition": {
+          "type": "string"
+        },
+        "epistemic_type": {
+          "enum": [
+            "reported_statement",
+            "observation",
+            "allegation",
+            "inference",
+            "hypothesis",
+            "forecast",
+            "value_judgment",
+            "recommendation"
+          ]
+        },
+        "modality": {
+          "type": "string"
+        },
+        "conditions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "exceptions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/span"
+          }
+        },
+        "created_at": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id",
+        "version",
+        "workspace",
+        "speaker",
+        "subject",
+        "predicate",
+        "object",
+        "proposition",
+        "epistemic_type",
+        "modality",
+        "conditions",
+        "exceptions",
+        "evidence",
+        "created_at"
+      ]
+    },
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "target_id": {
+          "type": "string"
+        },
+        "target_kind": {
+          "enum": [
+            "assertion",
+            "method"
+          ]
+        },
+        "target_fingerprint": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "evidence_hashes": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          }
+        },
+        "reviewer": {
+          "type": "string"
+        },
+        "decision": {
+          "enum": [
+            "accept",
+            "reject",
+            "caveat"
+          ]
+        },
+        "rationale": {
+          "type": "string"
+        },
+        "reviewed_at": {
+          "type": "integer"
+        },
+        "origin": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "target_id",
+        "target_kind",
+        "target_fingerprint",
+        "evidence_hashes",
+        "reviewer",
+        "decision",
+        "rationale",
+        "reviewed_at",
+        "origin"
+      ]
+    },
+    "method": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "version": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "workspace": {
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "distinction",
+            "cue",
+            "heuristic",
+            "pattern",
+            "exception",
+            "red_flag",
+            "language_rule",
+            "procedure",
+            "case",
+            "unknown",
+            "revision_trigger"
+          ]
+        },
+        "description": {
+          "type": "string"
+        },
+        "scope": {
+          "type": "string"
+        },
+        "prerequisites": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "failure_conditions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/span"
+          }
+        },
+        "created_at": {
+          "type": "integer"
+        },
+        "available_at": {
+          "type": "integer"
+        },
+        "ontology_version": {
+          "const": "tacitus-policy/1"
+        }
+      },
+      "required": [
+        "id",
+        "version",
+        "workspace",
+        "kind",
+        "description",
+        "scope",
+        "prerequisites",
+        "failure_conditions",
+        "evidence",
+        "created_at",
+        "available_at",
+        "ontology_version"
+      ]
+    },
+    "dependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "version": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "digest": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "required": [
+        "id",
+        "version",
+        "digest"
+      ]
+    },
+    "manifest": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": 2
+        },
+        "package_version": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "id": {
+          "type": "string"
+        },
+        "author": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "domain": {
+          "type": "string"
+        },
+        "scope": {
+          "type": "string"
+        },
+        "purpose": {
+          "type": "string"
+        },
+        "profile": {
+          "enum": [
+            "context",
+            "cognitive_method",
+            "output_artifact"
+          ]
+        },
+        "created_at": {
+          "type": "integer"
+        },
+        "valid_until": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "supersedes": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "dependencies": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/dependency"
+          },
+          "maxItems": 16
+        },
+        "license": {
+          "type": "string"
+        },
+        "confidentiality": {
+          "enum": [
+            "public",
+            "private",
+            "restricted"
+          ]
+        },
+        "sharing_policy": {
+          "type": "string"
+        },
+        "evidence_mode": {
+          "enum": [
+            "references_only",
+            "evidence_included"
+          ]
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "files": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          }
+        }
+      },
+      "required": [
+        "schema_version",
+        "package_version",
+        "id",
+        "author",
+        "title",
+        "domain",
+        "scope",
+        "purpose",
+        "profile",
+        "created_at",
+        "valid_until",
+        "supersedes",
+        "dependencies",
+        "license",
+        "confidentiality",
+        "sharing_policy",
+        "evidence_mode",
+        "limitations",
+        "files"
+      ]
+    },
+    "data": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "assertions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/assertion"
+          },
+          "maxItems": 256
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/source"
+          },
+          "maxItems": 32
+        },
+        "methods": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/method"
+          },
+          "maxItems": 32
+        },
+        "reviews": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/review"
+          },
+          "maxItems": 256
+        },
+        "artifacts": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "assertions",
+        "sources",
+        "methods",
+        "reviews",
+        "artifacts"
+      ]
+    }
+  }
+}
