@@ -46,7 +46,9 @@ No cloud services, tunnels, existing Tacitus/Praxis repositories or data were mo
 
 ## Publication and next step
 
-The public upstream fork exists; Tacitus commits currently remain LOCAL. New pushes are
+The Tacitus checkpoint and intentional synthetic fixtures are published on `main` in
+https://github.com/sargonxg/tacitus-political-policy-second-brain. Publication was explicitly
+requested; it does not certify the unfinished application or clear inherited audit findings. New pushes are
 withheld pending fingerprint-level triage of 35 inherited selected-pin history findings.
 The full upstream dependency audit also reports RSA RUSTSEC-2023-0071; no readiness claim.
 The first unfinished milestone remains the real upstream local baseline (milestone 1),

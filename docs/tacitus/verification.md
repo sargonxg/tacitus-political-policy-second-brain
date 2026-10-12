@@ -28,7 +28,8 @@ CPU/host-model/container application profiles: **NOT TESTED**.
   This is developer-library rehearsal, not a remote clone or clean-volume application test.
 - Five new local commits through that revision scanned clean with Gitleaks; only the
   inherited selected-pin history remains awaiting triage. Local main/development match;
-  remote default branch remains `edgequake-main` at the selected upstream SHA.
+  that rehearsal preceded publication. The Tacitus project entry point is now `main`;
+  `edgequake-main` remains an inherited upstream reference.
 
 The first normal workspace test attempted with `--offline --locked` failed because
 `async-stream` index metadata was absent. A subsequent normal Cargo test permitted initial
@@ -51,7 +52,9 @@ workspace scoped compilation took 28.99s. These are build timings, not inference
 - Selected-pin history scan: 646 commits, 35 findings, 174 MB inspected, about 63s.
   Rules: 25 generic API key, 8 curl authorization, 2 private key. Most are associated
   with public examples, development configs and tests; final fingerprint-level triage
-  remains pending. No blanket allowlist was used. New public pushes are withheld.
+  remains pending. No blanket allowlist was used. These inherited findings remain disclosed; the user explicitly requested publication
+  of the public-code checkpoint. Only main/development are pushed; unrelated upstream
+  refs containing OpenAI-shaped findings are not pushed.
 
 ## Not run / not implemented
 
