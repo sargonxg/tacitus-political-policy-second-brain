@@ -23,6 +23,12 @@ CPU/host-model/container application profiles: **NOT TESTED**.
 - Gitleaks 8.30.1 directory scans: no findings in new crates, scripts, fixtures,
   schemas or Tacitus docs. Raw scan reports remain in ignored `.tacitus`, not public data.
 - Isolated Tacitus dependency audit: no vulnerability finding. See inherited audit below.
+- A fresh **local** clone at `a4a7abf6c444928ea439c1d01e590169fdf11625` ran the PowerShell
+  cached library suite (25 passed) and schema check with a clean Git working tree.
+  This is developer-library rehearsal, not a remote clone or clean-volume application test.
+- Five new local commits through that revision scanned clean with Gitleaks; only the
+  inherited selected-pin history remains awaiting triage. Local main/development match;
+  remote default branch remains `edgequake-main` at the selected upstream SHA.
 
 The first normal workspace test attempted with `--offline --locked` failed because
 `async-stream` index metadata was absent. A subsequent normal Cargo test permitted initial

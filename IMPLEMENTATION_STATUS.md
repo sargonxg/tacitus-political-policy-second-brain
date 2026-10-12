@@ -27,6 +27,7 @@ commitment records and dependency impact closure; comparable evaluation records.
 Tested: 25 deterministic Rust tests; scoped Clippy; schema consistency; substantive
 three-source synthetic file CLI export/import/fresh-workspace lexical compilation.
 Three fictional dossiers contain 15 intentional CC0 documents. No live inference was used.
+Fresh local-checkout library/schema rehearsal passed; application-volume rehearsal did not run.
 See `docs/tacitus/verification.md` for exact commands, failures and limits.
 
 These are not API security enforcement or persisted UI workflows until integrated.
