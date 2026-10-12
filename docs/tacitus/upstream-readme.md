@@ -2,7 +2,7 @@
 
 <a href="https://trendshift.io/repositories/20893" target="_blank"><img src="https://trendshift.io/api/badge/repositories/20893" alt="raphaelmansuy%2Fedgequake | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
 
-> **Graph-RAG in Rust: one binary, one Postgres, any LLM — cloud or fully local.**  
+> **Graph-RAG in Rust: one binary, one Postgres, any LLM — cloud or fully local.**
 > Turn documents into a knowledge graph and get answers with sources, not just similar chunks.
 
 [![Version](https://img.shields.io/badge/version-0.34.0-blue.svg?style=flat)](CHANGELOG.md)
