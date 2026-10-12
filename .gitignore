@@ -1,4 +1,9 @@
 # Rust build artifacts
+/runtime/
+/uploads/
+/exports/
+/backups/
+/.tacitus/
 target/
 # WHY: Cargo.lock is committed for the application binary (edgequake/) to ensure
 # reproducible CI builds. SDK libraries ignore their Cargo.lock (standard practice).

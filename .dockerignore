@@ -1,4 +1,14 @@
 # Ignore everything except what we need
+**/.env
+**/.env.*
+**/*.env
+runtime/
+uploads/
+exports/
+backups/
+.tacitus/
+**/*.dump
+**/*.pem
 # WHY: Build context is now repo root so edgequake-pdf2md path dep is accessible.
 # We explicitly include edgequake/ and edgequake-pdf2md/ and exclude everything else.
 **/.git
