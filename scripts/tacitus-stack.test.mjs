@@ -47,6 +47,15 @@ test('initial model download is a separate networked one-shot using the runtime 
   assert.equal(spec.networks.download.internal,undefined);
 });
 
+test('Compose does not expand the downloader shell variables on the host',()=>{
+  const command=composeSpec(createConfig('cloud')).services['model-download'].command[0];
+  assert.ok(!command.replaceAll('$$','').includes('$'),'shell variables must use Compose dollar escaping');
+  const shell=command.replaceAll('$$','$');
+  assert.ok(shell.includes('pid=$!'));
+  assert.ok(shell.includes('kill $pid'));
+  assert.ok(shell.includes('ollama pull "$1"; ollama pull "$2"'));
+});
+
 test('configuration rejects arbitrary image endpoints, shell model names and weak secrets',()=>{
   for(const change of [
     {ollamaImage:'evil.example/image:latest'}, {ollamaImage:'ollama/ollama:latest'},
