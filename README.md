@@ -1,5 +1,50 @@
 # TACITUS
 
+Current published implementation: [PR #1](https://github.com/sargonxg/tacitus-political-policy-second-brain/pull/1)
+and branch `codex/policy-lab-foundation-01`. The full persistent model-driven application
+is unfinished. The following 2026-10-12 checkpoint supersedes older test counts below.
+
+**Verified:** 87 Node tests, 28 Rust tests, actual Chrome HTTP lab interactions,
+native capsule preview/pack/validate/import/fresh-workspace compilation and clean local
+checkout rehearsal. Scoped Clippy, formatting and schema checks pass.
+
+Run the lab with Node 22+; no package/model installation is needed:
+
+```sh
+node --test tools/tacitus-policy-lab/test.mjs scripts/tacitus-stack.test.mjs
+node tools/tacitus-policy-lab/cli.mjs serve
+```
+
+Open http://127.0.0.1:4317. This is a deterministic development tool, not the persistent
+application. Save sessions explicitly. With Rust 1.95 and cached dependencies:
+
+```sh
+node scripts/tacitus-lab-roundtrip.mjs
+```
+
+For a separate local machine or cloud VM, follow [self-hosting instructions](docs/tacitus/self-hosting.md):
+
+```sh
+node scripts/tacitus-stack.mjs doctor
+node scripts/tacitus-stack.mjs init local
+# Use init cloud instead on a VM.
+node scripts/tacitus-stack.mjs check
+node scripts/tacitus-stack.mjs build
+node scripts/tacitus-stack.mjs download
+node scripts/tacitus-stack.mjs up
+```
+
+These installation commands have contract/schema tests; Docker builds, migrations,
+Ollama inference, persistent application restart and integrated workflow E2E have not
+run. No paid resources or deployment are created by publishing this checkpoint.
+Legacy PowerShell launch placeholders below are separate from the new Node launcher.
+
+Read [current implementation status](IMPLEMENTATION_STATUS.md),
+[lab verification](tools/tacitus-policy-lab/VERIFICATION.md) and
+[the inherited audit ledger](docs/tacitus/inherited-audit-triage.json).
+Seven insecure-example findings and RSA RUSTSEC-2023-0071 remain unresolved; release
+is blocked. No audit finding is waived. Do not import private data yet.
+
 ## Political & Policy Second Brain
 
 A local-first political and policy research workbench built on
@@ -23,7 +68,8 @@ The canonical project branch is **main**. `tacitus/development` tracks this chec
 | `tacitus-analysis` | Cited brief proposals through a model interface, hypotheses matrix validation, commitment records and change-impact dependency closure | No production model adapter or persisted end-to-end workflows |
 | `tacitus-evals` | Comparison records, equal-access checks and explicit pending human ratings | No real benchmark runner/results yet |
 
-**25 deterministic Rust tests passed**, together with scoped Clippy, formatting and schema checks.
+The earlier checkpoint passed 25 deterministic Rust tests; the current continuation
+passes 28, as recorded above.
 A substantive three-source capsule export → fresh-workspace import → lexical compilation passed.
 A fresh local checkout also passed the library suite. Three clearly fictional dossiers contain
 15 newly authored public CC0 documents; they are not evidence of general model superiority.
