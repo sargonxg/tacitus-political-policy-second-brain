@@ -1,7 +1,9 @@
 //! Persistent policy extension, using the existing authentication, retrieval and database.
 pub(crate) mod analysis;
 pub(crate) mod capsules;
+pub(crate) mod graph;
 pub(crate) mod memory;
+pub(crate) mod ontology;
 pub mod openapi;
 pub mod provider_policy;
 pub(crate) mod sources;
@@ -27,7 +29,9 @@ pub fn routes() -> Router<AppState> {
         )
         .route("/tacitus/analyses/{id}", get(analysis::get))
         .route("/tacitus/analyses/{id}/cancel", post(analysis::cancel))
-        .route("/tacitus/graph", get(memory::graph))
+        .route("/tacitus/graph", get(graph::graph))
+        .route("/tacitus/ontologies", get(ontology::list))
+        .route("/tacitus/ontologies/apply", post(ontology::apply))
         .route("/tacitus/impact", get(memory::impact))
         .route("/tacitus/methods", get(memory::list).post(memory::propose))
         .route("/tacitus/methods/suggest", post(memory::suggest))

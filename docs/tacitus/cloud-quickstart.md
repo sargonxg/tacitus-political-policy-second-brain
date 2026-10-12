@@ -85,6 +85,9 @@ The first run creates synthetic workspaces and new random-marker evidence. It ch
 real ingestion/retrieval/generation, three policy harnesses, exact passages, human-bound
 method review, native capsule export/import, fresh-workspace reuse, source-text changes
 and affected dependencies. Restart checks reuse the saved receipt and persisted data.
+The runner also applies a native domain vocabulary, checks all seven graph-tool
+subsets and exercises actor, review, knowledge and source-validity interval selection.
+See [domain graph tools](domain-graphs.md) for domain meanings and their limits.
 A full successful receipt is saved privately in `.tacitus/cloud-acceptance.json`; the
 runner refuses to overwrite it. A fresh rehearsal needs a separately chosen clean
 workspace/checkout, not deletion of existing data.

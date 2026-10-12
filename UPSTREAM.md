@@ -20,9 +20,11 @@ API query types/handlers/routes, API test inventory, frontend package/lockfile/l
 `POST /api/v1/query` also accepts `context_only: true`, with deprecation headers pointing
 to the newer route. HTTP execution remains unverified. `only_need_context` is not the contract.
 
-Upstream role resolution permits saved connections and silent fallthrough. The Tacitus
-policy library rejects saved connections, unapproved endpoints/models, cloud and mock
-providers; it is **not yet connected to upstream HTTP/provider construction**.
+Upstream role resolution permits saved connections and silent fallthrough. The MVP
+continuation connects Tacitus local-only guards to API/provider paths and adds real
+Ollama generation. Source checks indicate intended rejection of saved connections,
+unapproved endpoints/models, cloud and mock providers; runtime enforcement remains
+**unverified**. See [cloud acceptance](docs/tacitus/cloud-quickstart.md).
 
 Upstream default PG18 extension pin uses Apache AGE `PG18/v1.8.0-rc0` and pgvector
 `v0.8.5`. Do not represent these as verified stable images. Registry manifests,

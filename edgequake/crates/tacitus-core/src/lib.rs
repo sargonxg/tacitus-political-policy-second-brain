@@ -3,6 +3,7 @@ use serde::{Deserialize, Serialize};
 use sha2::{Digest, Sha256};
 use std::collections::{BTreeMap, BTreeSet};
 
+pub mod ontology;
 pub mod policy;
 
 pub type Result<T> = std::result::Result<T, String>;

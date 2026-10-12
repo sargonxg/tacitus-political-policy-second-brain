@@ -15,6 +15,7 @@ cargo test --locked --manifest-path edgequake/Cargo.toml -p tacitus-core -p taci
 cargo check --locked --manifest-path edgequake/Cargo.toml -p edgequake-api --features postgres
 cargo test --locked --manifest-path edgequake/Cargo.toml -p edgequake-api --features postgres --test tacitus_provider_policy
 cargo test --locked --manifest-path edgequake/Cargo.toml -p edgequake-api --features postgres creator_membership_tests
+cargo test --locked --manifest-path edgequake/Cargo.toml -p edgequake-api --features postgres domain_graph_filter_tests
 cargo clippy --locked --manifest-path edgequake/Cargo.toml -p tacitus-core -p tacitus-capsules -p tacitus-analysis -- -D warnings
 node scripts/tacitus-lab-roundtrip.mjs
 cd edgequake_webui

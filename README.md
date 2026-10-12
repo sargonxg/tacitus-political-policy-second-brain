@@ -14,6 +14,7 @@ release or upload private evidence. The inherited audit gate remains open.
 ## What the implementation adds
 
 - Upload authorized documents through EdgeQuake and build its existing entity graph and vector index.
+- Choose versioned public-policy, diplomacy/conflict, human-rights or HR/workforce extraction vocabularies. Inspect authority, funding, positions, conflict, hypotheses, rights claims and workforce assertions with real actor/review/time filters. See [domain graph tools](docs/tacitus/domain-graphs.md).
 - Ask a question; choose a direct answer, decision brief, competing hypotheses or position/commitment analysis. A simple task suggestion can be overridden.
 - Compile bounded context from authorized source versions using question overlap, retrieved chunks and qualification cues. Inspect exact UTF-8 source spans and reported omissions.
 - Generate with Ollama running on your own machine or cloud VM. Local-only provider guards reject paid providers, alternate models, saved connections and inherited credentials. Runtime enforcement is still awaiting acceptance tests.
@@ -74,7 +75,7 @@ The same authenticated API powers the browser and CLI; no separate knowledge sto
 
 The context selector is a transparent heuristic, not a proven gain in answer quality.
 It preserves whole paragraphs and reports omissions; no efficiency or model-superiority
-claim is made. Domain-wide ontology packs, complete temporal tracking, a distributed job
+claim is made. Full domain rule enforcement, complete assertion-level temporal tracking, a distributed job
 queue and controlled multi-baseline evaluation remain future work. Human ratings and
 paid-provider comparisons are **NOT RUN**.
 

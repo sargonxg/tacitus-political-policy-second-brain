@@ -289,69 +289,6 @@ pub async fn list(
     }
     Ok(Json(json!({"methods":methods})))
 }
-#[utoipa::path(get,path="/api/v1/tacitus/graph",tag="Tacitus policy",responses((status=200,body=Value)),security(("bearer_auth"=[])))]
-pub async fn graph(
-    State(state): State<AppState>,
-    ctx: TenantContext,
-    Extension(auth): Extension<RequestAuthContext>,
-) -> ApiResult<Json<Value>> {
-    let store = Store::scoped(&state, &ctx, &auth).await?;
-    let sources =
-        sources::live_sources(&state, &store, chrono::Utc::now().timestamp(), None).await?;
-    let reviews = store.records::<HumanReview>("review").await?;
-    let mut nodes = Vec::new();
-    let mut edges = Vec::new();
-    let mut ids = BTreeSet::new();
-    for a in store.records::<PolicyAssertion>("assertion").await? {
-        if !ids.insert(a.id.clone()) {
-            continue;
-        }
-        let stale = a.validate(&sources).is_err();
-        let mut authorized = true;
-        for span in &a.evidence {
-            let (id, version) = span
-                .source
-                .rsplit_once('@')
-                .ok_or_else(|| bad("Invalid source reference"))?;
-            let source: SourceRecord = store
-                .record(
-                    "source",
-                    Uuid::parse_str(id).map_err(bad)?,
-                    Some(version.parse().map_err(bad)?),
-                )
-                .await?;
-            if super::sources::authorize_record(&store, &source)
-                .await
-                .is_err()
-            {
-                authorized = false;
-                break;
-            }
-        }
-        if !authorized {
-            continue;
-        }
-        let receipt = reviews
-            .iter()
-            .find(|r| r.target_id == a.id && r.target_kind == "assertion");
-        let reviewed = !stale
-            && receipt.is_some_and(|r| {
-                r.accepted(
-                    &a.fingerprint(),
-                    chrono::Utc::now().timestamp(),
-                    &a.evidence,
-                )
-            });
-        let from = format!("{}:subject", a.id);
-        let to = format!("{}:object", a.id);
-        nodes.push(json!({"id":from,"label":a.subject,"identity":"source-bound; matching names are not merged"}));
-        nodes.push(json!({"id":to,"label":a.object.as_deref().unwrap_or(&a.proposition),"identity":"source-bound"}));
-        edges.push(json!({"id":a.id,"source":from,"target":to,"label":a.predicate,"assertion":a,"fingerprint":a.fingerprint(),"review_state":if stale {"review_required"}else if reviewed {"human_reviewed"}else{"proposed"},"review":receipt,"truth":"attributed assertion, not independent fact"}));
-    }
-    Ok(Json(
-        json!({"nodes":nodes,"edges":edges,"ontology_version":ONTOLOGY_VERSION,"projection_rebuildable":true}),
-    ))
-}
 #[utoipa::path(get,path="/api/v1/tacitus/impact",tag="Tacitus policy",responses((status=200,body=Value)),security(("bearer_auth"=[])))]
 pub async fn impact(
     State(state): State<AppState>,
