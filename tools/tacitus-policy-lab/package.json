@@ -1,0 +1,14 @@
+{
+  "name": "@tacitus/policy-lab",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "Apache-2.0",
+  "engines": { "node": ">=22.0.0" },
+  "scripts": {
+    "start": "node cli.mjs serve",
+    "test": "node --test test.mjs",
+    "demo": "node cli.mjs demo",
+    "doctor": "node cli.mjs doctor"
+  }
+}

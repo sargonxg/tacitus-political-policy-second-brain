@@ -1,0 +1,4 @@
+artifacts/
+*.capsule
+*.pack-inputs.json
+*lab-session.json

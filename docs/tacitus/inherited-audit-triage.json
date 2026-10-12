@@ -1,0 +1,192 @@
+{
+  "format": "tacitus-inherited-audit-triage/1",
+  "date": "2026-10-12",
+  "selected_upstream_commit": "c994bc89c95fd44e191e4f015a2af0e84a27244f",
+  "report_count": 35,
+  "method": "Read redacted Gitleaks report and inspect each exact historical Git source location locally. Record dispositions without exporting secret values or testing credentials. No allowlist or scanner suppression added.",
+  "counts": {
+    "DOCUMENTATION_PLACEHOLDER": 16,
+    "NON_SECRET_TEXT": 6,
+    "OPEN_INSECURE_EXAMPLE": 7,
+    "PUBLIC_PROTOCOL_EXAMPLE": 1,
+    "TEST_FIXTURE": 5
+  },
+  "release_gate": "BLOCKED: seven insecure-example findings remain open; inherited RSA RUSTSEC-2023-0071 remains unresolved; full runtime gates not accepted.",
+  "findings": [
+    {
+      "fingerprint": "2d4eabc08aff406b8212840723bc50f9a093b044:specs/149-data-access-improvements/evidence/provider-composition-validation.json:generic-api-key:83",
+      "disposition": "NON_SECRET_TEXT",
+      "reason": "Historical source line is a test-result filename, normalization phrase or default-model identifier, not provider credential material."
+    },
+    {
+      "fingerprint": "2d4eabc08aff406b8212840723bc50f9a093b044:specs/149-data-access-improvements/evidence/provider-composition-validation.json:generic-api-key:95",
+      "disposition": "NON_SECRET_TEXT",
+      "reason": "Historical source line is a test-result filename, normalization phrase or default-model identifier, not provider credential material."
+    },
+    {
+      "fingerprint": "2d4eabc08aff406b8212840723bc50f9a093b044:specs/149-data-access-improvements/evidence/local-ci.json:generic-api-key:2191",
+      "disposition": "NON_SECRET_TEXT",
+      "reason": "Historical source line is a test-result filename, normalization phrase or default-model identifier, not provider credential material."
+    },
+    {
+      "fingerprint": "7e76a05eb70294c06b3cd05882b58221a34f51ce:docker-compose.spec158-proof.yml:generic-api-key:36",
+      "disposition": "OPEN_INSECURE_EXAMPLE",
+      "reason": "Static local demo/service credentials in inherited examples. Not passed to the new stack. Still open for release remediation; no waiver."
+    },
+    {
+      "fingerprint": "7e76a05eb70294c06b3cd05882b58221a34f51ce:docker-compose.keycloak.yml:generic-api-key:44",
+      "disposition": "OPEN_INSECURE_EXAMPLE",
+      "reason": "Static local demo/service credentials in inherited examples. Not passed to the new stack. Still open for release remediation; no waiver."
+    },
+    {
+      "fingerprint": "7e76a05eb70294c06b3cd05882b58221a34f51ce:edgequake/crates/edgequake-api/tests/common/rsa_fixtures.rs:private-key:6",
+      "disposition": "TEST_FIXTURE",
+      "reason": "Explicit RSA fixtures under API tests/common; imported claims grant no trust. Never use these keys for runtime signing."
+    },
+    {
+      "fingerprint": "7e76a05eb70294c06b3cd05882b58221a34f51ce:edgequake/crates/edgequake-api/tests/common/rsa_fixtures.rs:private-key:10",
+      "disposition": "TEST_FIXTURE",
+      "reason": "Explicit RSA fixtures under API tests/common; imported claims grant no trust. Never use these keys for runtime signing."
+    },
+    {
+      "fingerprint": "7e76a05eb70294c06b3cd05882b58221a34f51ce:specs/158-entreprise-grade-authentication/05-keycloak-integration.md:generic-api-key:146",
+      "disposition": "OPEN_INSECURE_EXAMPLE",
+      "reason": "Static local demo/service credentials in inherited examples. Not passed to the new stack. Still open for release remediation; no waiver."
+    },
+    {
+      "fingerprint": "7e8d78b9bbe7d2871a5c0725feca77b879e13a6a:specs/149-data-access-improvements/validation/edge-cases-and-contract-tests.md:generic-api-key:55",
+      "disposition": "NON_SECRET_TEXT",
+      "reason": "Historical source line is a test-result filename, normalization phrase or default-model identifier, not provider credential material."
+    },
+    {
+      "fingerprint": "86aa8a67e05603ff2b002e041917c339f30ff004:edgequake/crates/edgequake-observability/src/io_policy.rs:generic-api-key:273",
+      "disposition": "TEST_FIXTURE",
+      "reason": "Literal in an inherited unit-test section; test token/redaction example. No external token validity was tested."
+    },
+    {
+      "fingerprint": "a2c77e2caa1dd5649d2a9f9ccb3caf8b99cc6b9d:edgequake/docker/docker-compose.langfuse-3.22.yml:generic-api-key:78",
+      "disposition": "OPEN_INSECURE_EXAMPLE",
+      "reason": "Static local demo/service credentials in inherited examples. Not passed to the new stack. Still open for release remediation; no waiver."
+    },
+    {
+      "fingerprint": "a2c77e2caa1dd5649d2a9f9ccb3caf8b99cc6b9d:edgequake/docker/docker-compose.langfuse-3.225.yml:generic-api-key:79",
+      "disposition": "OPEN_INSECURE_EXAMPLE",
+      "reason": "Static local demo/service credentials in inherited examples. Not passed to the new stack. Still open for release remediation; no waiver."
+    },
+    {
+      "fingerprint": "178dc70a4e50e0807f192fa51ef25a76c3132f9e:docs/operations/langfuse-3.1.md:generic-api-key:56",
+      "disposition": "OPEN_INSECURE_EXAMPLE",
+      "reason": "Static local demo/service credentials in inherited examples. Not passed to the new stack. Still open for release remediation; no waiver."
+    },
+    {
+      "fingerprint": "78730d9b15d675309df12b56c95811381c0557f3:edgequake/docker/docker-compose.langfuse-3.1.yml:generic-api-key:72",
+      "disposition": "OPEN_INSECURE_EXAMPLE",
+      "reason": "Static local demo/service credentials in inherited examples. Not passed to the new stack. Still open for release remediation; no waiver."
+    },
+    {
+      "fingerprint": "b140ab1e8b1a6e80041fb132145108db091f027e:docs/security/best-practices.md:curl-auth-header:156",
+      "disposition": "DOCUMENTATION_PLACEHOLDER",
+      "reason": "Historical documentation/example context uses placeholder credential wording; no live provider access was attempted."
+    },
+    {
+      "fingerprint": "b140ab1e8b1a6e80041fb132145108db091f027e:docs/security/best-practices.md:curl-auth-header:161",
+      "disposition": "DOCUMENTATION_PLACEHOLDER",
+      "reason": "Historical documentation/example context uses placeholder credential wording; no live provider access was attempted."
+    },
+    {
+      "fingerprint": "7d65325c0230a9e13cd6b2e40f3639c9218a1ced:edgequake_webui/src/lib/__tests__/api-explorer-config.test.ts:generic-api-key:62",
+      "disposition": "TEST_FIXTURE",
+      "reason": "Literal in an inherited unit-test section; test token/redaction example. No external token validity was tested."
+    },
+    {
+      "fingerprint": "7d65325c0230a9e13cd6b2e40f3639c9218a1ced:edgequake_webui/src/lib/__tests__/api-explorer-config.test.ts:generic-api-key:68",
+      "disposition": "TEST_FIXTURE",
+      "reason": "Literal in an inherited unit-test section; test token/redaction example. No external token validity was tested."
+    },
+    {
+      "fingerprint": "7d65325c0230a9e13cd6b2e40f3639c9218a1ced:specs/019-0-12-7-control/e2e/run_option1_install_proof.sh:generic-api-key:46",
+      "disposition": "NON_SECRET_TEXT",
+      "reason": "Historical command explicitly sets OPENAI_API_KEY to empty; scanner spans adjoining shell text."
+    },
+    {
+      "fingerprint": "8dad3000496b3c9fb35a1e34f5ab3ac606973143:edgequake/crates/edgequake-core/src/types/multitenancy/workspace.rs:generic-api-key:585",
+      "disposition": "NON_SECRET_TEXT",
+      "reason": "Historical source line is a test-result filename, normalization phrase or default-model identifier, not provider credential material."
+    },
+    {
+      "fingerprint": "3169b403dd4e2e29d5dcd679bb557ae36607dc4f:edgequake-website/src/components/sections/quickstart.tsx:curl-auth-header:41",
+      "disposition": "DOCUMENTATION_PLACEHOLDER",
+      "reason": "Historical documentation/example context uses placeholder credential wording; no live provider access was attempted."
+    },
+    {
+      "fingerprint": "47f83e9695382457926424645b08635986a138a3:mcp/README.md:generic-api-key:152",
+      "disposition": "DOCUMENTATION_PLACEHOLDER",
+      "reason": "Historical documentation/example context uses placeholder credential wording; no live provider access was attempted."
+    },
+    {
+      "fingerprint": "47f83e9695382457926424645b08635986a138a3:mcp/.env.example:generic-api-key:17",
+      "disposition": "DOCUMENTATION_PLACEHOLDER",
+      "reason": "Historical documentation/example context uses placeholder credential wording; no live provider access was attempted."
+    },
+    {
+      "fingerprint": "ff16fd3e8769a08f78be92787857c49de9ce1d6c:sdks/python/docs/AUTHENTICATION.md:generic-api-key:125",
+      "disposition": "DOCUMENTATION_PLACEHOLDER",
+      "reason": "Historical documentation/example context uses placeholder credential wording; no live provider access was attempted."
+    },
+    {
+      "fingerprint": "ff16fd3e8769a08f78be92787857c49de9ce1d6c:sdks/python/docs/AUTHENTICATION.md:generic-api-key:126",
+      "disposition": "DOCUMENTATION_PLACEHOLDER",
+      "reason": "Historical documentation/example context uses placeholder credential wording; no live provider access was attempted."
+    },
+    {
+      "fingerprint": "ff16fd3e8769a08f78be92787857c49de9ce1d6c:sdks/python/docs/AUTHENTICATION.md:generic-api-key:276",
+      "disposition": "DOCUMENTATION_PLACEHOLDER",
+      "reason": "Historical documentation/example context uses placeholder credential wording; no live provider access was attempted."
+    },
+    {
+      "fingerprint": "30dda42694cffb65c10a9ab80674731da04a8848:docs/api-reference/rest-api.md:curl-auth-header:36",
+      "disposition": "DOCUMENTATION_PLACEHOLDER",
+      "reason": "Historical documentation/example context uses placeholder credential wording; no live provider access was attempted."
+    },
+    {
+      "fingerprint": "30dda42694cffb65c10a9ab80674731da04a8848:docs/api-reference/rest-api.md:curl-auth-header:45",
+      "disposition": "DOCUMENTATION_PLACEHOLDER",
+      "reason": "Historical documentation/example context uses placeholder credential wording; no live provider access was attempted."
+    },
+    {
+      "fingerprint": "30dda42694cffb65c10a9ab80674731da04a8848:docs/integrations/custom-clients.md:curl-auth-header:1031",
+      "disposition": "DOCUMENTATION_PLACEHOLDER",
+      "reason": "Historical documentation/example context uses placeholder credential wording; no live provider access was attempted."
+    },
+    {
+      "fingerprint": "30dda42694cffb65c10a9ab80674731da04a8848:docs/security/best-practices.md:curl-auth-header:126",
+      "disposition": "DOCUMENTATION_PLACEHOLDER",
+      "reason": "Historical documentation/example context uses placeholder credential wording; no live provider access was attempted."
+    },
+    {
+      "fingerprint": "30dda42694cffb65c10a9ab80674731da04a8848:docs/security/best-practices.md:curl-auth-header:129",
+      "disposition": "DOCUMENTATION_PLACEHOLDER",
+      "reason": "Historical documentation/example context uses placeholder credential wording; no live provider access was attempted."
+    },
+    {
+      "fingerprint": "30dda42694cffb65c10a9ab80674731da04a8848:docs/troubleshooting/common-issues.md:generic-api-key:714",
+      "disposition": "DOCUMENTATION_PLACEHOLDER",
+      "reason": "Historical documentation/example context uses placeholder credential wording; no live provider access was attempted."
+    },
+    {
+      "fingerprint": "30dda42694cffb65c10a9ab80674731da04a8848:edgequake/crates/edgequake-api/tests/e2e_websocket.rs:generic-api-key:32",
+      "disposition": "PUBLIC_PROTOCOL_EXAMPLE",
+      "reason": "RFC WebSocket sample nonce in an E2E handshake; not a signing/provider credential."
+    },
+    {
+      "fingerprint": "30dda42694cffb65c10a9ab80674731da04a8848:logs/2026-01-11-15-50-makefile-openai-key-fix.md:generic-api-key:32",
+      "disposition": "DOCUMENTATION_PLACEHOLDER",
+      "reason": "Historical documentation/example context uses placeholder credential wording; no live provider access was attempted."
+    },
+    {
+      "fingerprint": "30dda42694cffb65c10a9ab80674731da04a8848:logs/2026-01-11-15-50-makefile-openai-key-fix.md:generic-api-key:89",
+      "disposition": "DOCUMENTATION_PLACEHOLDER",
+      "reason": "Historical documentation/example context uses placeholder credential wording; no live provider access was attempted."
+    }
+  ]
+}

@@ -385,3 +385,59 @@ fn byte_offsets_and_stale_human_review() {
     };
     assert!(span.passage(&unicode).is_err());
 }
+
+fn method() -> tacitus_capsules::Method {
+    tacitus_capsules::Method {
+        id: "conditional-language".into(),
+        version: 1,
+        kind: "distinction".into(),
+        description: "Preserve Council approval as a prerequisite.".into(),
+        scope: "fictional pilot".into(),
+        failure_conditions: vec!["Changed authority".into()],
+        provenance: vec![source().key()],
+        review_state: "accepted".into(),
+    }
+}
+
+#[test]
+fn imported_method_cannot_retain_acceptance() {
+    let mut p = package();
+    p.data.methods.push(method());
+    let imported = Package::import(&p.export().unwrap()).unwrap();
+    assert_eq!(imported.data.methods[0].review_state, "unreviewed_proposal");
+    assert_eq!(imported.data.methods[0].description, method().description);
+    assert_eq!(imported.data.methods[0].provenance, method().provenance);
+}
+
+#[test]
+fn method_provenance_and_identity_are_checked() {
+    for mutation in 0..4 {
+        let mut p = package();
+        let mut m = method();
+        match mutation {
+            0 => m.provenance = vec!["missing@1".into()],
+            1 => m.description.clear(),
+            2 => m.failure_conditions = vec![" ".into()],
+            _ => p.data.methods.push(m.clone()),
+        }
+        p.data.methods.push(m);
+        assert!(
+            p.export().is_err(),
+            "accepted invalid method case {mutation}"
+        );
+    }
+}
+
+#[test]
+fn capsule_rejects_cross_workspace_assertion_even_without_bodies() {
+    for references_only in [false, true] {
+        let mut p = package();
+        p.data.assertions[0].workspace = "unauthorized".into();
+        if references_only {
+            p.manifest.evidence_mode = "references_only".into();
+            p.manifest.limitations.push("Bodies unavailable".into());
+            p.evidence.clear();
+        }
+        assert!(p.export().is_err());
+    }
+}
