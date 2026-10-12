@@ -1,0 +1,24 @@
+#!/bin/sh
+set -eu
+root=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+command=${1:-doctor}
+shift "$(( $# > 0 ? 1 : 0 ))"
+case "$command" in
+  doctor)
+    command -v docker >/dev/null 2>&1 || { echo 'BLOCKED: Docker missing; no live inference test ran.'; exit 2; }
+    docker version
+    docker compose version
+    ;;
+  test)
+    task_root="$root/.tacitus/library-tests"
+    mkdir -p "$task_root"
+    for crate in tacitus-core tacitus-capsules tacitus-analysis tacitus-evals; do
+      mkdir -p "$task_root/$crate"
+      cp -R "$root/edgequake/crates/$crate/." "$task_root/$crate/"
+    done
+    printf '%s\n' '[workspace]' 'resolver = "2"' 'members = ["tacitus-core", "tacitus-capsules", "tacitus-analysis", "tacitus-evals"]' > "$task_root/Cargo.toml"
+    cp "$root/scripts/tacitus-library.Cargo.lock" "$task_root/Cargo.lock"
+    cargo test --offline --locked --manifest-path "$task_root/Cargo.toml" "$@"
+    ;;
+  *) echo "$command is NOT IMPLEMENTED; see IMPLEMENTATION_STATUS.md. No volumes changed."; exit 2 ;;
+esac

@@ -1,0 +1,7 @@
+# New portable scripts/artifacts use LF even with Windows core.autocrlf=true.
+scripts/tacitus text eol=lf
+scripts/tacitus-file-example.py text eol=lf
+scripts/generate-tacitus-schema.py text eol=lf
+scripts/tacitus-library.Cargo.lock text eol=lf
+schemas/tacitus/*.json text eol=lf
+edgequake/crates/tacitus-*/** text eol=lf

@@ -1,6 +1,10 @@
 [workspace]
 resolver = "2"
 members = [
+    "crates/tacitus-core",
+    "crates/tacitus-capsules",
+    "crates/tacitus-analysis",
+    "crates/tacitus-evals",
     "crates/edgequake-api",
     "crates/edgequake-audit",
     "crates/edgequake-auth",
