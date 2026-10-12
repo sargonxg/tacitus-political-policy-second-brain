@@ -57,6 +57,13 @@ pub async fn create_workspace(
 
     // SPEC-160: coded 400 before any state is touched.
     request.extraction.validate()?;
+    let creator = if crate::tacitus_provider_policy::enabled() {
+        Some(Uuid::parse_str(&auth.context().user_id).map_err(|_| {
+            ApiError::forbidden_reason("Workspace creation requires an authenticated user identity")
+        })?)
+    } else {
+        None
+    };
 
     // SPEC-032: Fetch parent tenant to inherit default model configuration if not provided
     let tenant = state
@@ -175,6 +182,28 @@ pub async fn create_workspace(
         .await
         .map_err(|e| ApiError::BadRequest(e.to_string()))?;
 
+    if let Some(creator) = creator {
+        let existing = state
+            .workspace_service
+            .get_user_memberships(creator)
+            .await
+            .map_err(ApiError::from)?;
+        if !existing
+            .iter()
+            .any(|m| m.applies_to(tenant_id, Some(workspace.workspace_id)))
+        {
+            state
+                .workspace_service
+                .add_membership(creator_membership(
+                    creator,
+                    tenant_id,
+                    workspace.workspace_id,
+                ))
+                .await
+                .map_err(ApiError::from)?;
+        }
+    }
+
     let tenant = state
         .workspace_service
         .get_tenant(tenant_id)
@@ -204,6 +233,28 @@ pub async fn create_workspace(
     );
 
     Ok((StatusCode::CREATED, Json(response)))
+}
+
+fn creator_membership(user: Uuid, tenant: Uuid, workspace: Uuid) -> edgequake_core::Membership {
+    edgequake_core::Membership::new(user, tenant, edgequake_core::MembershipRole::Owner)
+        .for_workspace(workspace)
+}
+
+#[cfg(test)]
+mod creator_membership_tests {
+    use super::*;
+    #[test]
+    fn creation_grant_is_bound_to_one_user_tenant_and_workspace() {
+        let user = Uuid::new_v4();
+        let tenant = Uuid::new_v4();
+        let workspace = Uuid::new_v4();
+        let grant = creator_membership(user, tenant, workspace);
+        assert_eq!(grant.user_id, user);
+        assert!(grant.applies_to(tenant, Some(workspace)));
+        assert!(!grant.applies_to(tenant, Some(Uuid::new_v4())));
+        assert!(!grant.applies_to(Uuid::new_v4(), Some(workspace)));
+        assert!(!grant.applies_to(tenant, None));
+    }
 }
 
 /// List workspaces for a tenant.

@@ -45,6 +45,13 @@ pub async fn create_tenant(
     use edgequake_core::{Tenant, TenantPlan};
 
     require_platform_admin(auth.context())?;
+    let creator = if crate::tacitus_provider_policy::enabled() {
+        Some(Uuid::parse_str(&auth.context().user_id).map_err(|_| {
+            ApiError::forbidden_reason("Tenant creation requires an authenticated user identity")
+        })?)
+    } else {
+        None
+    };
 
     let slug = request.slug.unwrap_or_else(|| generate_slug(&request.name));
 
@@ -138,6 +145,19 @@ pub async fn create_tenant(
         .await
         .map_err(ApiError::from)?;
     let created_new = created_tenant.tenant_id == requested_id;
+    if created_new {
+        if let Some(creator) = creator {
+            state
+                .workspace_service
+                .add_membership(edgequake_core::Membership::new(
+                    creator,
+                    created_tenant.tenant_id,
+                    edgequake_core::MembershipRole::Owner,
+                ))
+                .await
+                .map_err(ApiError::from)?;
+        }
+    }
 
     // Auto-create a default workspace only for newly inserted tenants (R004).
     // SPEC-032: Workspace inherits tenant's default model configuration

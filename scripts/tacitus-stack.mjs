@@ -114,6 +114,17 @@ export function composeSpec(c) {
   return {
     name: c.project,
     services: {
+      checks: {
+        image: `${c.project}-checks:checkout`,
+        build: {
+          context: root,
+          dockerfile: "edgequake/docker/Dockerfile.tacitus-checks",
+        },
+        profiles: ["checks"],
+        networks: ["download"],
+        restart: "no",
+        environment: { TACITUS_CLOUD_EXECUTE: "1", SQLX_OFFLINE: "true" },
+      },
       postgres: {
         ...runtime,
         image: `${c.project}-postgres:checkout`,
@@ -213,7 +224,11 @@ export function composeSpec(c) {
         build: {
           context: root,
           dockerfile: "edgequake_webui/Dockerfile",
-          args: { NEXT_PUBLIC_API_URL: `http://localhost:${c.apiPort}` },
+          args: {
+            NEXT_PUBLIC_API_URL: `http://localhost:${c.apiPort}`,
+            NEXT_PUBLIC_AUTH_ENABLED: "true",
+            NEXT_PUBLIC_DISABLE_DEMO_LOGIN: "true",
+          },
         },
         ports: [`127.0.0.1:${c.frontendPort}:3000`],
         environment: {
@@ -266,6 +281,18 @@ export function commandArgs(command) {
     down: ["down"],
     status: ["ps"],
     restart: ["restart", "postgres", "ollama", "api", "frontend"],
+    logs: [
+      "logs",
+      "--no-color",
+      "--tail",
+      "150",
+      "migrate",
+      "api",
+      "postgres",
+      "ollama",
+      "frontend",
+    ],
+    models: ["exec", "-T", "ollama", "ollama", "list"],
   };
   if (!commands[command]) throw new Error("Unsupported command");
   return commands[command];
@@ -343,6 +370,24 @@ async function main(args) {
     docker([...base, "config", "--quiet"]);
     console.log(
       "Compose configuration valid. Build/inference/persistence remain unverified.",
+    );
+    return;
+  }
+  if (command === "check-source") {
+    docker([...base, "--profile", "checks", "build", "checks"]);
+    docker([
+      ...base,
+      "--profile",
+      "checks",
+      "run",
+      "--rm",
+      "--no-deps",
+      "--pull",
+      "never",
+      "checks",
+    ]);
+    console.log(
+      "Source checks completed. Real model/database/browser acceptance remains separate.",
     );
     return;
   }

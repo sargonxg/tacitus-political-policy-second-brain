@@ -4,7 +4,7 @@
 # ============================================
 # Stage 1: Dependencies
 # ============================================
-FROM node:20-alpine AS deps
+FROM node:22-alpine AS deps
 
 WORKDIR /app
 
@@ -20,11 +20,13 @@ RUN npm install -g pnpm@10.13.1 && pnpm install --frozen-lockfile
 # ============================================
 # Stage 2: Build
 # ============================================
-FROM node:20-alpine AS builder
+FROM node:22-alpine AS builder
 
 # Build args for Next.js public environment variables
 ARG NEXT_PUBLIC_API_URL=http://localhost:8080
-ARG NEXT_PUBLIC_APP_VERSION=0.26.2
+ARG NEXT_PUBLIC_APP_VERSION=0.34.0
+ARG NEXT_PUBLIC_AUTH_ENABLED=true
+ARG NEXT_PUBLIC_DISABLE_DEMO_LOGIN=true
 
 WORKDIR /app
 
@@ -60,6 +62,8 @@ RUN test -f openapi/schema.d.ts \
 # Set Next.js public environment variables for build time
 ENV NEXT_PUBLIC_API_URL=${NEXT_PUBLIC_API_URL}
 ENV NEXT_PUBLIC_APP_VERSION=${NEXT_PUBLIC_APP_VERSION}
+ENV NEXT_PUBLIC_AUTH_ENABLED=${NEXT_PUBLIC_AUTH_ENABLED}
+ENV NEXT_PUBLIC_DISABLE_DEMO_LOGIN=${NEXT_PUBLIC_DISABLE_DEMO_LOGIN}
 
 # pdf.worker.min.mjs is gitignored — materialize into public/ for same-origin pdf.js
 RUN node scripts/copy-pdf-worker.mjs \
@@ -72,7 +76,7 @@ RUN npx next build --webpack
 # ============================================
 # Stage 3: Runtime
 # ============================================
-FROM node:20-alpine AS runtime
+FROM node:22-alpine AS runtime
 
 WORKDIR /app
 

@@ -15,6 +15,10 @@ a service for other users. Do not provision paid resources without approval.
 
 ## One installation path for both environments
 
+For the simplest VM procedure, use [cloud quickstart](cloud-quickstart.md). The
+`check-source` command contains Rust/pnpm checks in a source-check container, while
+`tacitus-cloud-test.mjs` privately logs in and renews its test session.
+
 Prerequisites on the chosen host: Git, Node 22+, Docker Engine/Desktop with Linux
 containers and Compose v2. Follow the vendors' installation instructions. This launcher
 does not install software, enable WSL, provision VMs, open firewall ports or alter Actions.
