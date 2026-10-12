@@ -15,7 +15,7 @@ novel selected text, proposed memory and dependency impact. No embedded assets o
 cryptography were substituted. This is exercised lab HTTP behavior, not an automated
 full-application E2E suite. The preceding blocked-browser result remains historical.
 
-Self-hosting launcher: 6 tests pass; generated JSON validates against the official
+Self-hosting launcher: 7 tests pass; generated JSON validates against the official
 Compose schema. User declined Docker/Ollama/model installation due to laptop capacity,
 choosing a host later. API/frontend builds, migrations, persistent database, local
 inference/embedding model identities, offline/restart application proof and full

@@ -1,10 +1,10 @@
 # TACITUS
 
-Current published implementation: [PR #1](https://github.com/sargonxg/tacitus-political-policy-second-brain/pull/1)
-and branch `codex/policy-lab-foundation-01`. The full persistent model-driven application
+Published source checkpoint on `main`: [PR #1](https://github.com/sargonxg/tacitus-political-policy-second-brain/pull/1).
+The full persistent model-driven application
 is unfinished. The following 2026-10-12 checkpoint supersedes older test counts below.
 
-**Verified:** 87 Node tests, 28 Rust tests, actual Chrome HTTP lab interactions,
+**Verified:** 88 Node tests, 28 Rust tests, actual Chrome HTTP lab interactions,
 native capsule preview/pack/validate/import/fresh-workspace compilation and clean local
 checkout rehearsal. Scoped Clippy, formatting and schema checks pass.
 

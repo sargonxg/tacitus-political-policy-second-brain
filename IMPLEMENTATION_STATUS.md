@@ -5,7 +5,9 @@ Tacitus library work does not imply an integrated or accepted runtime.
 
 ## Continuation verified on 2026-10-12
 
-- Windows/Node 24.12.0: 81 existing lab tests plus 6 self-hosting launcher tests pass.
+- Windows/Node 24.12.0: 81 existing lab tests plus 7 self-hosting launcher tests pass.
+  Publication review caught Compose interpolation of downloader shell variables;
+  the new regression failed before dollar escaping was fixed and all 88 tests pass.
 - Rust 1.95.0: 28 native tests pass; scoped Clippy and formatting pass. Three new
   regressions first failed, then passed after fixes for imported method acceptance,
   method provenance/identity and assertion/source workspace binding.
@@ -16,7 +18,7 @@ Tacitus library work does not imply an integrated or accepted runtime.
   preview/pack/validate/import/fresh-workspace compile against lab-generated input;
   four exact versions/citations, qualifications and common-source provenance survive.
 - `scripts/tacitus-stack.mjs` provides source-build local/cloud-VM installation commands.
-  Six contract tests and official Compose schema validation pass; Docker execution is
+  Seven contract tests and official Compose schema validation pass; Docker execution is
   NOT RUN. See [self-hosting](docs/tacitus/self-hosting.md).
 - Clean detached local checkout at `f4d9b5eafc096f850417b24f4e7761627f951bf7`
   reproduced 87 Node tests, 28 Rust tests, native lab round-trip and schema consistency

@@ -40,7 +40,8 @@ POSIX files use mode 0600; on Windows also protect the directory with your user 
 Existing credentials survive restart. A replacement config cannot change credentials
 already stored in an existing database; backup/rotation require separate approved steps.
 
-`check` validates without printing the rendered configuration (which contains secrets).
+Seven launcher tests pass, including preservation of shell variables through Compose
+interpolation. `check` validates without printing the rendered configuration (which contains secrets).
 `build` builds PostgreSQL extensions, API and Next.js from this checkout. Software
 downloads happen during image builds. `download` explicitly downloads the selected
 models in a separate one-shot networked container using the shared model volume.

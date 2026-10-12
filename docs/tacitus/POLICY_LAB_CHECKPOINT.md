@@ -4,7 +4,7 @@ The new `tools/tacitus-policy-lab` is a dependency-free deterministic developmen
 It is NOT the model-driven EdgeQuake/Tacitus application or a replacement Rust kernel.
 The repository's original implementation-status warnings remain in force for the full app.
 
-2026-10-12 continuation: the 81 Node tests were reproduced on Windows; 6 launcher
+2026-10-12 continuation: the 81 Node tests were reproduced on Windows; 7 launcher
 contract tests and 28 native Rust tests now pass. Actual Chrome localhost navigation
 and selected lab interactions work. Lab-generated native inputs completed the real Rust
 preview/pack/validate/import/fresh-workspace compile. Use
