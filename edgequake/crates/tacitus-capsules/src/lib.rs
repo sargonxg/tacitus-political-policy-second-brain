@@ -224,6 +224,7 @@ impl Package {
                     .find(|s| s.key() == span.source)
                     .ok_or("citation source absent")?;
                 if span.text_hash != source.text_hash
+                    || assertion.workspace != source.workspace
                     || span.start >= span.end
                     || span.original_language != source.language
                 {
@@ -250,13 +251,18 @@ impl Package {
             "unknown",
             "revision_trigger",
         ];
+        let mut method_ids = BTreeSet::new();
         for method in &self.data.methods {
             if !kinds.contains(&method.kind.as_str())
                 || method.version == 0
                 || method.id.is_empty()
                 || method.scope.is_empty()
+                || method.description.trim().is_empty()
+                || !method_ids.insert(method.id.clone())
                 || method.failure_conditions.is_empty()
+                || method.failure_conditions.iter().any(|s| s.trim().is_empty())
                 || method.provenance.is_empty()
+                || method.provenance.iter().any(|key| !keys.contains(key))
             {
                 return Err("invalid declarative cognitive method".into());
             }
@@ -346,6 +352,10 @@ impl Package {
                 .map_err(|e| e.to_string())?;
         for review in &mut data.reviews {
             review.origin = ReviewOrigin::ImportedAttestation;
+        }
+        // A foreign label grants no local review authority, even on an intact bundle.
+        for method in &mut data.methods {
+            method.review_state = "unreviewed_proposal".into();
         }
         let package = Self {
             manifest,
