@@ -3,6 +3,34 @@
 This repository is **not a functioning Tacitus application yet**. The upstream app is retained;
 Tacitus library work does not imply an integrated or accepted runtime.
 
+## Continuation verified on 2026-10-12
+
+- Windows/Node 24.12.0: 81 existing lab tests plus 6 self-hosting launcher tests pass.
+- Rust 1.95.0: 28 native tests pass; scoped Clippy and formatting pass. Three new
+  regressions first failed, then passed after fixes for imported method acceptance,
+  method provenance/identity and assertion/source workspace binding.
+- Actual Chrome HTTP navigation to http://127.0.0.1:4317 works. Fictional dossier,
+  exact-source inspection, earlier/later time selection, novel selected text, proposed
+  memory and dependency impact were exercised. This is lab acceptance, not Next.js E2E.
+- `node scripts/tacitus-lab-roundtrip.mjs` runs the real authoritative Rust
+  preview/pack/validate/import/fresh-workspace compile against lab-generated input;
+  four exact versions/citations, qualifications and common-source provenance survive.
+- `scripts/tacitus-stack.mjs` provides source-build local/cloud-VM installation commands.
+  Six contract tests and official Compose schema validation pass; Docker execution is
+  NOT RUN. See [self-hosting](docs/tacitus/self-hosting.md).
+- All 35 inherited selected-pin scan fingerprints were inspected and recorded in
+  [the redacted triage ledger](docs/tacitus/inherited-audit-triage.json). Seven insecure
+  example findings remain open. No findings were waived or allowlisted. The inherited
+  RSA advisory and full runtime acceptance still block release.
+
+The user declined installation/model downloads on this laptop (15.7 GiB RAM,
+approximately 2 GiB free RAM and 9 GiB free disk) and chose self-hosting preparation
+for a host selected later. No Docker/Ollama/models, paid resources or cloud deployment
+were installed/created. PostgreSQL persistence, actual inference, API/provider enforcement,
+integrated policy UI and the full persistent dossier-to-memory workflow remain unfinished.
+The first unfinished milestone is still the real source-built application/model baseline
+on a suitable host. No model identity, inference result or serving application is claimed.
+
 ## Milestone 1 — repository and live upstream baseline
 
 Implemented: isolated public fork under verified `sargonxg`; upstream history/license;
@@ -48,8 +76,10 @@ No cloud services, tunnels, existing Tacitus/Praxis repositories or data were mo
 
 The Tacitus checkpoint and intentional synthetic fixtures are published on `main` in
 https://github.com/sargonxg/tacitus-political-policy-second-brain. Publication was explicitly
-requested; it does not certify the unfinished application or clear inherited audit findings. New pushes are
-withheld pending fingerprint-level triage of 35 inherited selected-pin history findings.
+requested; it does not certify the unfinished application or clear inherited audit findings.
+Fingerprint-level triage of 35 inherited selected-pin history findings is now recorded;
+seven insecure-example findings remain open and publication of a draft implementation
+branch does not waive the release gate.
 The full upstream dependency audit also reports RSA RUSTSEC-2023-0071; no readiness claim.
 The first unfinished milestone remains the real upstream local baseline (milestone 1),
 then source-built Tacitus API/frontend integration (milestone 2). No milestone is falsely

@@ -4,6 +4,19 @@ The new `tools/tacitus-policy-lab` is a dependency-free deterministic developmen
 It is NOT the model-driven EdgeQuake/Tacitus application or a replacement Rust kernel.
 The repository's original implementation-status warnings remain in force for the full app.
 
+2026-10-12 continuation: the 81 Node tests were reproduced on Windows; 6 launcher
+contract tests and 28 native Rust tests now pass. Actual Chrome localhost navigation
+and selected lab interactions work. Lab-generated native inputs completed the real Rust
+preview/pack/validate/import/fresh-workspace compile. Use
+`node scripts/tacitus-lab-roundtrip.mjs` to reproduce. Imported methods now lose foreign
+acceptance labels; provenance and assertion/source workspace binding are checked.
+
+The user declined application/model installations on the low-space laptop and selected
+self-hosting preparation for a host chosen later. See [self-hosting](self-hosting.md).
+Docker/source-build startup, database persistence, real inference, provider enforcement
+and the integrated Next.js policy workflow still have not run. Statements below describe
+the preceding build environment; they are preserved as historical evidence.
+
 Current verified counts supersede earlier draft counts in planning text: **81 Node tests
 and 12 isolated browser-component checks passed**. Native manifest/data structurally match
 the inspected JSON Schema. Browser localhost navigation was blocked; components were

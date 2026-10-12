@@ -1,5 +1,28 @@
 # Verification — Policy Lab 0.1
 
+## Windows continuation, 2026-10-12
+
+Reproduced all 81 lab tests on Node 24.12.0. All 28 native Rust tests pass with Rust
+1.95.0 after three new capsule trust/provenance regressions were fixed. Scoped Clippy
+and Rust formatting pass. `node scripts/tacitus-lab-roundtrip.mjs` completed real native
+preview/pack/validate/import/compile in a fresh workspace using this lab's generated
+inputs: four exact source texts/hashes/citations, qualifications and common origins
+preserved. Schema generator consistency passes; v1 wire fields were not extended.
+
+Actual Chrome navigation to http://127.0.0.1:4317 worked. The HTTP-served UI exercised
+fictional dossier loading, exact passage inspection, earlier/later cutoff selection,
+novel selected text, proposed memory and dependency impact. No embedded assets or test
+cryptography were substituted. This is exercised lab HTTP behavior, not an automated
+full-application E2E suite. The preceding blocked-browser result remains historical.
+
+Self-hosting launcher: 6 tests pass; generated JSON validates against the official
+Compose schema. User declined Docker/Ollama/model installation due to laptop capacity,
+choosing a host later. API/frontend builds, migrations, persistent database, local
+inference/embedding model identities, offline/restart application proof and full
+policy-workflow E2E remain NOT RUN. No private Praxis compatibility is claimed.
+
+## Previous build environment
+
 Inspected repository base: `edd78305254a367686bd9e3fa4bd118dc207e05d`.
 Environment actually used: Linux, Node v22.16.0; no npm dependencies installed.
 
