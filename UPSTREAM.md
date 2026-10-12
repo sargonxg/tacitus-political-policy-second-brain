@@ -39,6 +39,8 @@ Record exact SHAs and image/model digests. Never move the runtime pin automatica
 
 Inherited workflows include releases, GHCR/SDK/registry publication, GCP and website
 deployment, secret-dependent and heavy integration jobs. Actions were disabled at the
-new fork repository level before Tacitus pushes. They remain disabled. A future
-audited CI must start with `permissions: contents: read`; enabling inherited workflows
-is not part of normal local setup.
+new fork repository level before Tacitus pushes. All 24 inherited workflow files are
+also quarantined under `.github/workflows-disabled` on the local Tacitus branch.
+The new scoped library CI uses `permissions: contents: read`, a pinned checkout action
+and no model downloads. Repository Actions remain disabled; CI has NOT RUN.
+Enabling inherited workflows is not part of normal local setup.

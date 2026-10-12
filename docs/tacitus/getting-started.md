@@ -20,8 +20,9 @@ command uses the retained upstream workspace and lockfile. Rust 1.95 is required
 these source-development tests. The file example additionally needs Python and jsonschema;
 it is not the application runtime and clearly reports lexical-only compilation.
 
-The checked-in shell launcher provides corresponding `doctor` and `test` commands,
-but has not been executed on Linux/WSL. No Linux/macOS support claim is made. For future
+The checked-in shell launcher's `doctor` and `test` commands were executed using
+Windows Git Bash: doctor reported missing Docker (exit 2), and all 25 tests passed.
+It has not been executed on Linux/WSL. No Linux/macOS support claim is made. For future
 WSL2 development, install a Linux distribution and Docker Desktop WSL integration,
 clone in that distribution's filesystem and use its Linux toolchains, not PowerShell
 syntax inside bash. Model/container/hardware acceptance is still required.

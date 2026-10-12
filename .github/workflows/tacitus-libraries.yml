@@ -1,0 +1,22 @@
+name: Tacitus library contracts
+on:
+  push:
+    branches: [main, tacitus/development]
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  libraries:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6, source-verified
+      - name: Install pinned Rust development toolchain
+        run: rustup toolchain install 1.95.0 --profile minimal --component clippy,rustfmt
+      - name: Test new libraries only; no model downloads
+        run: cargo +1.95.0 test --locked --manifest-path edgequake/Cargo.toml -p tacitus-core -p tacitus-capsules -p tacitus-analysis -p tacitus-evals
+      - name: Check new library code
+        run: cargo +1.95.0 clippy --locked --manifest-path edgequake/Cargo.toml -p tacitus-core -p tacitus-capsules -p tacitus-analysis -p tacitus-evals --all-targets -- -D warnings
+      - name: Check schema artifact
+        run: python scripts/generate-tacitus-schema.py --check
