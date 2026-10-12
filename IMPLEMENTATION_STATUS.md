@@ -1,5 +1,24 @@
 # Implementation status
 
+## Domain graph follow-up — verification pending
+
+Native registry `tacitus-domain-graphs/1` adds public-policy, diplomacy/conflict,
+human-rights and HR/workforce vocabularies and seven graph views. Authenticated
+registry/apply routes update future-ingestion settings through the existing workspace
+service, require actual owner/admin membership and record profile receipts. The graph
+API now selects persisted assertions by native tool, actor label, review state and
+knowledge/source-validity cutoff while retaining exact evidence, current authorization
+and changed-provenance review. The Graph page exposes these controls and definitions.
+Canonical predicates and capsule schemas are unchanged. Suggested relation typing is
+guidance, not automated legal/causal enforcement.
+
+Registry/filter regressions and expanded real cloud/browser checks are authored,
+**NOT RUN**. Only formatting and `git diff --check` are permitted on this laptop;
+no installations, builds, tests, models or runtime operations are authorized here.
+See [domain graph tools](docs/tacitus/domain-graphs.md). The first unfinished milestone
+remains compilation/source checks on the chosen cloud host, followed by real runtime
+acceptance. The inherited audit findings remain open.
+
 ## Cloud startup follow-up
 
 PR #2 is merged into `main`. The follow-up fixes frontend authentication build flags

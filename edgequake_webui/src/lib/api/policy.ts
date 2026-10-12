@@ -126,7 +126,64 @@ export interface SourceDetail {
   redistributable: boolean;
   license: string | null;
 }
+export interface DomainPack {
+  id: string;
+  version: number;
+  name: string;
+  description: string;
+  entities: { id: string; extraction_type: string; definition: string }[];
+  predicates: string[];
+  tools: string[];
+  safeguards: string[];
+}
+export interface GraphTool {
+  id: string;
+  version: number;
+  name: string;
+  description: string;
+  predicates: string[];
+  epistemic_types: string[];
+  safeguard: string;
+}
+export interface OntologyRegistry {
+  registry: {
+    version: string;
+    packs: DomainPack[];
+    tools: GraphTool[];
+    relations: {
+      id: string;
+      predicate: string;
+      definition: string;
+      subject_types: string[];
+      object_types: string[];
+      safeguard: string;
+    }[];
+  };
+  registry_digest: string;
+  recorded_profile: {
+    profile: string;
+    profile_version: number;
+    reviewer: string;
+    at: number;
+  } | null;
+  workspace_configuration: Record<string, unknown>;
+  configuration_matches_recorded_profile: boolean;
+}
+export interface GraphFilter {
+  tool?: string;
+  actor?: string;
+  review_state?: string;
+  known_as_of?: number;
+  valid_at?: number;
+}
 export const policy = {
+  ontologies: () => api.get<OntologyRegistry>("/tacitus/ontologies"),
+  applyOntology: (body: {
+    id: string;
+    version: number;
+    registry_digest: string;
+    replace_extraction_configuration: boolean;
+  }) => api.post("/tacitus/ontologies/apply", body),
   suggest: (body: unknown) =>
     api.post("/tacitus/methods/suggest", body, { timeoutMs: 650000 }),
   status: () =>
@@ -160,8 +217,18 @@ export const policy = {
     api.patch(`/tacitus/sources/${encodeURIComponent(id)}`, body),
   replace: (id: string, body: unknown) =>
     api.post(`/tacitus/sources/${encodeURIComponent(id)}/replacement`, body),
-  graph: () =>
-    api.get<{
+  graph: (filter: GraphFilter = {}) => {
+    const params = new URLSearchParams();
+    for (const [key, value] of Object.entries(filter)) {
+      if (value !== undefined && value !== "") params.set(key, String(value));
+    }
+    return api.get<{
+      tool: GraphTool | null;
+      selection: {
+        known_as_of: number;
+        valid_at: number | null;
+        time_semantics: string;
+      };
       nodes: { id: string; label: string }[];
       edges: {
         id: string;
@@ -172,7 +239,8 @@ export const policy = {
         fingerprint: string;
         review_state: string;
       }[];
-    }>("/tacitus/graph"),
+    }>(`/tacitus/graph?${params.toString()}`);
+  },
   impact: () =>
     api.get<{ affected: { kind: string; id: string; reason: string }[] }>(
       "/tacitus/impact",

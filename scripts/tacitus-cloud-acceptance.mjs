@@ -96,6 +96,42 @@ export async function runAcceptance(phase = process.argv[2]) {
   }
   const first = await workspace("origin");
   process.env.TACITUS_WORKSPACE = first.id;
+  const registry = await request("/tacitus/ontologies");
+  assert.equal(registry.registry.version, "tacitus-domain-graphs/1");
+  assert.equal(registry.registry.packs.length, 4);
+  const pack = registry.registry.packs.find((p) => p.id === "public-policy");
+  assert.ok(pack);
+  const applyProfile = {
+    id: pack.id,
+    version: pack.version,
+    registry_digest: registry.registry_digest,
+    replace_extraction_configuration: true,
+  };
+  await assert.rejects(
+    request("/tacitus/ontologies/apply", {
+      ...applyProfile,
+      registry_digest: "stale",
+    }),
+    /409/,
+  );
+  await assert.rejects(
+    request("/tacitus/ontologies/apply", {
+      ...applyProfile,
+      replace_extraction_configuration: false,
+    }),
+    /409/,
+  );
+  const applied = await request("/tacitus/ontologies/apply", applyProfile);
+  assert.equal(applied.existing_assertions_changed, false);
+  const recorded = await request("/tacitus/ontologies");
+  assert.equal(recorded.configuration_matches_recorded_profile, true);
+  assert.equal(recorded.workspace_configuration.entity_types_strict, false);
+  assert.deepEqual(
+    recorded.workspace_configuration.entity_types,
+    pack.entities.map((e) => e.extraction_type),
+  );
+  await assert.rejects(request("/tacitus/graph?tool=imported-plugin"), /400/);
+  await assert.rejects(request("/tacitus/graph?review_state=verified"), /400/);
   const text = `Fictional public acceptance fixture, CC0.\n\nThe Council authorized the ${marker} programme. Expenditure remains conditional on a separate appropriation. Minister Ada stated that the ministry would participate only after the appropriation is approved; discussion is not acceptance.\n\nThe Assembly has not approved the appropriation. Funding and implementation remain unknown. The status quo is to wait for authority and resources.`;
   const upload = await request("/documents", {
     title: `Public synthetic ${marker}`,
@@ -119,13 +155,15 @@ export async function runAcceptance(phase = process.argv[2]) {
     `/tacitus/sources/${sourceId}?version=${version}&start=${passage.span.start}&end=${passage.span.end}`,
   );
   assert.equal(exact.passage, passage.text);
-  await request(
+  const revisedSource = await request(
     `/tacitus/sources/${sourceId}`,
     {
       expected_version: Number(version),
       author: "Synthetic Council",
       language: "en",
       published_at: null,
+      valid_from: 100,
+      valid_until: 200,
       source_family: marker,
       redistributable: true,
       license: "CC0",
@@ -147,6 +185,84 @@ export async function runAcceptance(phase = process.argv[2]) {
     [upload.document_id],
   );
   assert.ok(hypotheses.result.answer.matrix.length >= 2);
+  const allGraph = await request("/tacitus/graph");
+  assert.ok(allGraph.edges.length);
+  const revisedKey = `${sourceId}@${revisedSource.source.version}`;
+  assert.ok(
+    allGraph.edges.some((e) =>
+      e.assertion.evidence.some((s) => s.source === revisedKey),
+    ),
+  );
+  for (const [at, inside] of [
+    [99, false],
+    [100, true],
+    [199, true],
+    [200, false],
+  ]) {
+    const temporal = await request(`/tacitus/graph?valid_at=${at}`);
+    const expected = allGraph.edges.filter(
+      (e) =>
+        inside || !e.assertion.evidence.some((s) => s.source === revisedKey),
+    );
+    assert.deepEqual(
+      temporal.edges.map((e) => e.id).sort(),
+      expected.map((e) => e.id).sort(),
+      "World-validity intervals are half-open; unknown validity remains eligible",
+    );
+  }
+  const beforeKnowledge = await request("/tacitus/graph?known_as_of=0");
+  assert.equal(beforeKnowledge.edges.length, 0);
+  for (const tool of registry.registry.tools) {
+    const filtered = await request(
+      `/tacitus/graph?tool=${encodeURIComponent(tool.id)}`,
+    );
+    assert.equal(filtered.tool.id, tool.id);
+    const expected = allGraph.edges.filter(
+      (e) =>
+        tool.predicates.includes(e.assertion.predicate) &&
+        (!tool.epistemic_types.length ||
+          tool.epistemic_types.includes(e.assertion.epistemic_type)),
+    );
+    assert.deepEqual(
+      filtered.edges.map((e) => e.id).sort(),
+      expected.map((e) => e.id).sort(),
+    );
+  }
+  const actor = allGraph.edges[0].assertion.speaker;
+  const actorGraph = await request(
+    `/tacitus/graph?actor=${encodeURIComponent(actor)}`,
+  );
+  assert.ok(actorGraph.edges.length);
+  assert.ok(
+    actorGraph.edges.every((e) =>
+      [e.assertion.subject, e.assertion.speaker].some((label) =>
+        label.toLowerCase().includes(actor.toLowerCase()),
+      ),
+    ),
+  );
+  const reviewableEdge = allGraph.edges.find(
+    (e) => e.review_state === "proposed",
+  );
+  assert.ok(
+    reviewableEdge,
+    "Current exact evidence is required for assertion review",
+  );
+  const edgeReview = {
+    target_kind: "assertion",
+    target_id: reviewableEdge.id,
+    expected_fingerprint: reviewableEdge.fingerprint,
+    rationale:
+      "Authenticated synthetic review-path test; human quality ratings remain pending.",
+  };
+  await request("/tacitus/reviews", { ...edgeReview, decision: "reject" });
+  const rejectedGraph = await request("/tacitus/graph?review_state=rejected");
+  assert.ok(rejectedGraph.edges.some((e) => e.id === reviewableEdge.id));
+  assert.ok(rejectedGraph.edges.every((e) => e.review_state === "rejected"));
+  await request("/tacitus/reviews", { ...edgeReview, decision: "accept" });
+  const reviewedGraph = await request(
+    "/tacitus/graph?review_state=human_reviewed",
+  );
+  assert.ok(reviewedGraph.edges.some((e) => e.id === reviewableEdge.id));
   const commitments = await ask(
     `What conditional participation did Minister Ada state for ${marker}?`,
     "commitments",
@@ -263,6 +379,18 @@ export async function runAcceptance(phase = process.argv[2]) {
   );
   const graph = await request("/tacitus/graph");
   assert.ok(graph.edges.some((e) => e.review_state === "review_required"));
+  const staleGraph = await request(
+    "/tacitus/graph?review_state=review_required",
+  );
+  assert.ok(staleGraph.edges.length);
+  assert.ok(
+    staleGraph.edges.every((e) => e.review_state === "review_required"),
+  );
+  assert.ok(staleGraph.edges.some((e) => e.id === reviewableEdge.id));
+  const noStaleBadge = await request(
+    "/tacitus/graph?review_state=human_reviewed",
+  );
+  assert.ok(noStaleBadge.edges.every((e) => e.id !== reviewableEdge.id));
   const receipt = {
     tenant,
     workspace: first.id,
@@ -275,6 +403,9 @@ export async function runAcceptance(phase = process.argv[2]) {
     end: passage.span.end,
     marker,
     model: answer.result.model,
+    domain_registry: registry.registry.version,
+    extraction_profile: pack.id,
+    graph_tools: registry.registry.tools.map((t) => t.id),
     brief: brief.id,
     hypotheses: hypotheses.id,
     commitments: commitments.id,
