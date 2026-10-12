@@ -260,7 +260,10 @@ impl Package {
                 || method.description.trim().is_empty()
                 || !method_ids.insert(method.id.clone())
                 || method.failure_conditions.is_empty()
-                || method.failure_conditions.iter().any(|s| s.trim().is_empty())
+                || method
+                    .failure_conditions
+                    .iter()
+                    .any(|s| s.trim().is_empty())
                 || method.provenance.is_empty()
                 || method.provenance.iter().any(|key| !keys.contains(key))
             {

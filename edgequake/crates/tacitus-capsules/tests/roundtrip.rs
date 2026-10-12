@@ -388,10 +388,14 @@ fn byte_offsets_and_stale_human_review() {
 
 fn method() -> tacitus_capsules::Method {
     tacitus_capsules::Method {
-        id: "conditional-language".into(), version: 1, kind: "distinction".into(),
+        id: "conditional-language".into(),
+        version: 1,
+        kind: "distinction".into(),
         description: "Preserve Council approval as a prerequisite.".into(),
-        scope: "fictional pilot".into(), failure_conditions: vec!["Changed authority".into()],
-        provenance: vec![source().key()], review_state: "accepted".into(),
+        scope: "fictional pilot".into(),
+        failure_conditions: vec!["Changed authority".into()],
+        provenance: vec![source().key()],
+        review_state: "accepted".into(),
     }
 }
 
@@ -417,7 +421,10 @@ fn method_provenance_and_identity_are_checked() {
             _ => p.data.methods.push(m.clone()),
         }
         p.data.methods.push(m);
-        assert!(p.export().is_err(), "accepted invalid method case {mutation}");
+        assert!(
+            p.export().is_err(),
+            "accepted invalid method case {mutation}"
+        );
     }
 }
 
