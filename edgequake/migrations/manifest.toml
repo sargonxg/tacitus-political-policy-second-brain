@@ -1230,3 +1230,10 @@ file = "169_spec163_provider_connections.sql"
 phase = "expand"
 no_transaction = false
 lock_class = "ddl_access_exclusive"
+
+[[migration]]
+version = 170
+file = "170_tacitus_policy.sql"
+phase = "expand"
+no_transaction = false
+lock_class = "ddl_access_exclusive"

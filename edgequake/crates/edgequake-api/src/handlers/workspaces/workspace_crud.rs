@@ -125,7 +125,10 @@ pub async fn create_workspace(
         pdf_parser_backend: request
             .pdf_parser_backend
             .as_deref()
-            .and_then(PdfParserBackend::from_env_str),
+            .and_then(PdfParserBackend::from_env_str)
+            .or_else(|| {
+                crate::tacitus_provider_policy::enabled().then_some(PdfParserBackend::EdgeParse)
+            }),
         // SPEC-085: Pass entity_types from HTTP request body if provided
         entity_types: request.entity_types.clone(),
         entity_types_strict: request.entity_types_strict,

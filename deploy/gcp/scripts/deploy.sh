@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # SPEC-148 deploy: pull images, LD-15 migrate, compose up, HTTPS + \dx gates.
 set -euo pipefail
+[[ "${TACITUS_ALLOW_LEGACY_GCP:-}" == "1" ]] || { echo 'Legacy upstream deployment disabled. Use the Tacitus source-build launcher.' >&2; exit 2; }
 
 ROOT="${STACK_ROOT:-/opt/edgequake}"
 COMPOSE_DIR="${ROOT}/compose"

@@ -44,6 +44,9 @@ use edgequake_llm::{OllamaProvider, OpenAIProvider, ProviderFactory};
 pub fn resolve_embedding_provider(
     fallback: Arc<dyn EmbeddingProvider>,
 ) -> Arc<dyn EmbeddingProvider> {
+    if crate::tacitus_provider_policy::enabled() {
+        return fallback;
+    }
     // --- Priority 1: EDGEQUAKE_EMBEDDING_PROVIDER (explicit provider type) ---
     // WHY: docker-compose may pass an empty string when the host env var is unset
     // (e.g. `EDGEQUAKE_EMBEDDING_PROVIDER: ${EDGEQUAKE_EMBEDDING_PROVIDER:-}`).

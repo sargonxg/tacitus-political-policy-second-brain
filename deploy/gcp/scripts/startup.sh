@@ -2,6 +2,7 @@
 # GCE startup: Docker CE, data disk, artifacts from GCS, first deploy.
 # Docker CE: https://docs.docker.com/engine/install/debian/
 set -euo pipefail
+[[ "${TACITUS_ALLOW_LEGACY_GCP:-}" == "1" ]] || { echo 'Legacy upstream deployment disabled. Use scripts/tacitus-stack.mjs on a chosen host.' >&2; exit 2; }
 
 LOG=/var/log/edgequake-startup.log
 exec > >(tee -a "${LOG}") 2>&1

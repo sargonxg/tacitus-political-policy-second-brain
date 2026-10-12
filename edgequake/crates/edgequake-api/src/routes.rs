@@ -93,6 +93,8 @@ use crate::state::AppState;
 
 /// Create the API router and spawn SPEC-048 pipeline→WS progress bridge.
 pub fn create_router(state: AppState) -> Router {
+    #[cfg(feature = "postgres")]
+    crate::tacitus::recover(&state);
     crate::services::pipeline_ws_bridge::spawn_pipeline_ws_bridge(
         state.tasks.pipeline_state.clone(),
         state.tasks.progress_broadcaster.clone(),
@@ -264,6 +266,7 @@ fn api_v1_routes(state: AppState) -> Router<AppState> {
     use crate::mcp::gateway::body::MCP_MAX_BODY_BYTES;
 
     Router::new()
+        .merge(tacitus_routes())
         // Authentication (Phase 3)
         .route("/auth/login", post(handlers::login))
         .route("/auth/refresh", post(handlers::refresh_token))
@@ -804,6 +807,13 @@ fn api_v1_routes(state: AppState) -> Router<AppState> {
         )
         .route("/models/{provider}", get(handlers::get_provider))
         .route("/models/{provider}/{model}", get(handlers::get_model))
+}
+
+fn tacitus_routes() -> Router<AppState> {
+    #[cfg(feature = "postgres")]
+    return crate::tacitus::routes();
+    #[cfg(not(feature = "postgres"))]
+    Router::new()
 }
 
 #[cfg(test)]

@@ -1870,6 +1870,9 @@ dependencies = [
 name = "edgequake-api"
 version = "0.34.0"
 dependencies = [
+ "tacitus-analysis",
+ "tacitus-capsules",
+ "tacitus-core",
  "async-stream",
  "async-trait",
  "axum",

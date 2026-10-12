@@ -2,6 +2,7 @@
 # CD entrypoint. Copies this overlay into /opt/edgequake, then LD-15 deploy.sh.
 # Invoked as: sudo /tmp/edgequake-overlay/scripts/install-release.sh X.Y.Z
 set -euo pipefail
+[[ "${TACITUS_ALLOW_LEGACY_GCP:-}" == "1" ]] || { echo 'Legacy upstream deployment disabled. Use the Tacitus source-build launcher.' >&2; exit 2; }
 
 if [[ "${EUID}" -ne 0 ]]; then
   echo "install-release.sh must run as root (sudo)" >&2

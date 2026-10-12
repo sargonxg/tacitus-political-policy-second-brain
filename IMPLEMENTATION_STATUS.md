@@ -1,5 +1,22 @@
 # Implementation status
 
+## Persistent MVP candidate — verification pending
+
+The `codex/policy-mvp-cloud-02` continuation adds native policy records and explicit
+capsule v2 migration, PostgreSQL migration 170, authenticated API routes, bounded
+context compilation, three policy harnesses, real Ollama generation, local-provider
+guards, source-bound review/memory/dependency handling, an Ask workbench and CLI.
+The tracked marketing app is removed; the EdgeQuake application remains.
+
+**No build, test, inference, database or browser execution has run for these changes.**
+The user requested code first and all verification on a cloud host chosen later.
+Schema v2 was generated as a source artifact; that is not a compatibility test.
+See [MVP instructions](docs/tacitus/policy-mvp.md) for authored verification commands,
+remaining acceptance gaps and audit boundaries. The first unfinished milestone is
+compiling this integration on the chosen host, then its real ingestion/model baseline.
+
+The counts below belong only to the earlier checkpoint and are not current proof.
+
 This repository is **not a functioning Tacitus application yet**. The upstream app is retained;
 Tacitus library work does not imply an integrated or accepted runtime.
 

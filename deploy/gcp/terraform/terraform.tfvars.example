@@ -1,12 +1,14 @@
-# Copy to terraform.tfvars (gitignored).
-project_id         = "saas-app-001"
-region             = "us-central1"
-zone               = "us-central1-a"
-name_prefix        = "edgequake"     # bucket/secrets/WIF/SAs/IP; VPC is edgequake-host-vpc
-instance_name      = "elitizon-db"
-machine_type       = "e2-medium"
-edgequake_version  = "0.27.0"
-hostname           = "demo.edgequake.com"
-caddy_acme_email   = "raphael.mansuy@elitizon.com"
-github_repository  = "raphaelmansuy/edgequake"
-operator_members   = ["user:raphael.mansuy@elitizon.com"]
+# Legacy deployment reference only. This does not source-build Tacitus.
+# Supply reviewed project/backend/operator settings; no upstream identities are reused.
+project_id = "YOUR_PROJECT_ID"
+region = "us-central1"
+zone = "us-central1-a"
+name_prefix = "tacitus-policy"
+instance_name = "tacitus-policy"
+machine_type = "e2-standard-8"
+boot_disk_gb = 100
+data_disk_gb = 100
+edgequake_version = "REVIEWED_LEGACY_VERSION_REQUIRED"
+github_repository = "sargonxg/tacitus-political-policy-second-brain"
+operator_members = []
+enable_public_http_https = false

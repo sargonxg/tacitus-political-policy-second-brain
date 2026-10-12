@@ -1,9 +1,10 @@
 # Self-hosting on a local machine or cloud VM
 
-This is a source-build installation candidate for the retained EdgeQuake application,
-not acceptance of the complete Tacitus policy workflow. Configuration/unit/native-library
-checks have run; Docker startup, database migrations, local inference, persistence and
-application browser E2E have not. The inherited release/security gate remains blocked.
+This is a source-build installation candidate for the integrated Tacitus policy MVP.
+The latest API/UI/native continuation has not been compiled or tested. Earlier
+configuration/native-library checks do not validate it. Docker startup, migrations,
+inference, persistence and browser acceptance remain pending. The audit gate stays open.
+See [MVP instructions](policy-mvp.md) for the authored cloud checks and workflow.
 
 Use a separate machine. The inspected laptop has 15.7 GiB RAM, approximately 2 GiB free
 RAM and 9 GiB free disk. The user declined installations and model downloads on it.
@@ -40,8 +41,8 @@ POSIX files use mode 0600; on Windows also protect the directory with your user 
 Existing credentials survive restart. A replacement config cannot change credentials
 already stored in an existing database; backup/rotation require separate approved steps.
 
-Seven launcher tests pass, including preservation of shell variables through Compose
-interpolation. `check` validates without printing the rendered configuration (which contains secrets).
+Seven launcher tests passed in the earlier checkpoint; the changed launcher must be
+rerun on the cloud host. `check` validates without printing the rendered configuration (which contains secrets).
 `build` builds PostgreSQL extensions, API and Next.js from this checkout. Software
 downloads happen during image builds. `download` explicitly downloads the selected
 models in a separate one-shot networked container using the shared model volume.
@@ -89,10 +90,11 @@ ambient Compose overrides and `.env` files are not passed to the launcher/contai
 Docker commands explicitly select the local default context. Frontend has its own bridge
 network and reaches the API through the browser's loopback address, not a shared API network.
 
-This is intended network defense, not proof that every upstream provider/request/saved
-connection path is constrained server-side. That integration remains unfinished. Saved
-connections and role overrides must be inspected/rejected before importing private data.
-Do not advertise a local-only/verified product badge based on this generated configuration.
+The continuation adds server guards at startup, provider constructors, saved connection
+loading and request resolution, and disables stateless vision/asset parse model paths.
+`TACITUS_LOCAL_ONLY=1` is passed to the API; proxies/provider keys are rejected.
+These guards are unverified until cloud rejection tests run. Do not advertise a verified
+product badge based on configuration or source inspection.
 
 On the chosen host, verify and record:
 

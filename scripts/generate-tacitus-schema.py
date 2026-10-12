@@ -66,7 +66,17 @@ SCHEMA = {"$schema":"https://json-schema.org/draft/2020-12/schema",
     **obj({"manifest":ref("manifest"),"data":ref("data")}),"$defs":defs}
 
 if __name__ == "__main__":
-    destination = ROOT / "schemas/tacitus/capsule-v1.schema.json"
+    version = 2 if "--v2" in sys.argv else 1
+    if version == 2:
+        defs["source"] = obj({"id":S,"version":V,"workspace":S,"document_id":optional(S),"title":S,"author":optional(S),"original_hash":optional(H),"text_hash":H,"text":{"const":""},"language":S,"extractor":S,"published_at":optional(I),"retrieved_at":I,"available_at":I,"valid_from":optional(I),"valid_until":optional(I),"source_family":S,"withdrawn":{"const":False},"restricted":{"const":False},"redistributable":B,"license":optional(S)})
+        defs["assertion"] = obj({"id":S,"version":V,"workspace":S,"speaker":S,"subject":S,"predicate":enum("states","expresses_position","conditionally_undertakes","authorizes","constrains","funds","implements","withdraws","contradicts","depends_on","affiliated_with"),"object":optional(S),"proposition":S,"epistemic_type":defs["assertion"]["properties"]["epistemic_type"],"modality":S,"conditions":STRINGS,"exceptions":STRINGS,"evidence":array(ref("span")),"created_at":I})
+        defs["method"] = obj({"id":S,"version":V,"workspace":S,"kind":defs["method"]["properties"]["kind"],"description":S,"scope":S,"prerequisites":STRINGS,"failure_conditions":STRINGS,"evidence":array(ref("span")),"created_at":I,"available_at":I,"ontology_version":{"const":"tacitus-policy/1"}})
+        defs["review"] = obj({"id":S,"target_id":S,"target_kind":enum("assertion","method"),"target_fingerprint":H,"evidence_hashes":{"type":"object","additionalProperties":H},"reviewer":S,"decision":enum("accept","reject","caveat"),"rationale":S,"reviewed_at":I,"origin":S})
+        defs["manifest"]["properties"]["schema_version"] = {"const":2}
+        defs["data"]["properties"]["reviews"] = array(ref("review"),256)
+        SCHEMA["$id"]="urn:tacitus:capsule:v2"
+        SCHEMA["title"]="Native Tacitus capsule v2"
+    destination = ROOT / f"schemas/tacitus/capsule-v{version}.schema.json"
     expected = (json.dumps(SCHEMA, indent=2, ensure_ascii=False) + "\n").encode()
     if "--check" in sys.argv:
         if not destination.exists() or destination.read_bytes() != expected:

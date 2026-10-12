@@ -458,6 +458,8 @@ impl WorkspaceProviderResolver {
         let Some(raw_id) = cfg.connection_id.filter(|s| !s.is_empty()) else {
             return Ok(None);
         };
+        crate::tacitus_provider_policy::reject_connection()
+            .map_err(ProviderResolutionError::InvalidProviderName)?;
         let Some(id) = crate::providers::connection_store::parse_connection_id(&raw_id) else {
             return Ok(None);
         };
@@ -506,6 +508,8 @@ impl WorkspaceProviderResolver {
         source: ProviderSource,
         extra_headers: Option<std::collections::HashMap<String, String>>,
     ) -> Result<Option<ResolvedLlmProvider>, ProviderResolutionError> {
+        crate::tacitus_provider_policy::validate_identity(provider, model, false)
+            .map_err(ProviderResolutionError::InvalidProviderName)?;
         let credentials_ok = self
             .models_config
             .as_ref()

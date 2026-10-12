@@ -84,6 +84,7 @@ pub async fn load_connection_spec(
 ) -> Result<crate::providers::connection_factory::ConnectionSpec, crate::error::ApiError> {
     use crate::error::ApiError;
     use crate::providers::connection_factory::ConnectionSpec;
+    crate::tacitus_provider_policy::reject_connection().map_err(ApiError::BadRequest)?;
 
     let row = sqlx::query_as::<_, StoredConnectionRow>(
         r#"SELECT api_shape, base_url, api_key_ciphertext, api_key_nonce, key_id
@@ -149,6 +150,9 @@ pub async fn vision_llm_preferring_connection(
     provider: &str,
     model: &str,
 ) -> Option<Arc<dyn LLMProvider>> {
+    if crate::tacitus_provider_policy::validate_identity(provider, model, false).is_err() {
+        return None;
+    }
     #[cfg(feature = "postgres")]
     if let (Some(pool), Some(ws)) = (pool.as_ref(), ws) {
         if let Some(connected) =
