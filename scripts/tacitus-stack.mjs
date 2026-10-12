@@ -52,7 +52,7 @@ export function composeSpec(c) {
       volumes:['model-data:/root/.ollama'],healthcheck:{test:['CMD','ollama','list'],interval:'10s',timeout:'5s',retries:12}},
     'model-download':{image:c.ollamaImage,profiles:['download'],networks:['download'],restart:'no',volumes:['model-data:/root/.ollama'],
       environment:{OLLAMA_NO_CLOUD:'1'},entrypoint:['/bin/sh','-ec'],
-      command:['ollama serve & pid=$!; trap "kill $pid" EXIT; i=0; until ollama list >/dev/null 2>&1; do i=$((i+1)); [ "$i" -lt 60 ] || exit 1; sleep 1; done; ollama pull "$1"; ollama pull "$2"','download',c.chatModel,c.embeddingModel]},
+      command:['ollama serve & pid=$$!; trap "kill $$pid" EXIT; i=0; until ollama list >/dev/null 2>&1; do i=$$((i+1)); [ "$$i" -lt 60 ] || exit 1; sleep 1; done; ollama pull "$$1"; ollama pull "$$2"','download',c.chatModel,c.embeddingModel]},
     migrate:{image:`${c.project}-api:checkout`,build:apiBuild,networks:['private'],restart:'no',environment:{DATABASE_URL:apiEnv.DATABASE_URL,EDGEQUAKE_MIGRATE_CLI:'1'},command:['migrate'],depends_on:{postgres:{condition:'service_healthy'}}},
     api:{...runtime,image:`${c.project}-api:checkout`,build:apiBuild,environment:apiEnv,
       ports:[`127.0.0.1:${c.apiPort}:8080`],depends_on:{postgres:{condition:'service_healthy'},ollama:{condition:'service_healthy'},migrate:{condition:'service_completed_successfully'}},
