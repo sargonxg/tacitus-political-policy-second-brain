@@ -18,6 +18,10 @@ Tacitus library work does not imply an integrated or accepted runtime.
 - `scripts/tacitus-stack.mjs` provides source-build local/cloud-VM installation commands.
   Six contract tests and official Compose schema validation pass; Docker execution is
   NOT RUN. See [self-hosting](docs/tacitus/self-hosting.md).
+- Clean detached local checkout at `f4d9b5eafc096f850417b24f4e7761627f951bf7`
+  reproduced 87 Node tests, 28 Rust tests, native lab round-trip and schema consistency
+  with cached dependencies. Its tracked working tree stayed clean. This is not a
+  clean-volume Docker/application rehearsal or a remote-clone build.
 - All 35 inherited selected-pin scan fingerprints were inspected and recorded in
   [the redacted triage ledger](docs/tacitus/inherited-audit-triage.json). Seven insecure
   example findings remain open. No findings were waived or allowlisted. The inherited
