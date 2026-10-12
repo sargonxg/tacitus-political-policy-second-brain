@@ -10,6 +10,28 @@ const MAX_ARCHIVE: usize = 8 * 1024 * 1024;
 const MAX_ENTRY: usize = 2 * 1024 * 1024;
 const MAX_FILES: usize = 64;
 
+// zip 4.6 indexes names in a map, silently collapsing duplicate central entries.
+// Check the bounded ZIP32 envelope first and require its raw count to survive parsing.
+// v1 deliberately rejects multi-disk, ZIP64 and archive comments/trailers.
+fn zip_entry_count(bytes: &[u8]) -> Result<usize> {
+    let end = bytes
+        .len()
+        .checked_sub(22)
+        .ok_or("truncated ZIP envelope")?;
+    let record = &bytes[end..];
+    if &record[..4] != b"PK\x05\x06" || record[4..8] != [0; 4] || record[20..22] != [0; 2] {
+        return Err("unsupported ZIP envelope: ZIP32, single disk, no comments required".into());
+    }
+    let disk_count = u16::from_le_bytes([record[8], record[9]]) as usize;
+    let count = u16::from_le_bytes([record[10], record[11]]) as usize;
+    let size = u32::from_le_bytes(record[12..16].try_into().map_err(|_| "ZIP size")?) as usize;
+    let offset = u32::from_le_bytes(record[16..20].try_into().map_err(|_| "ZIP offset")?) as usize;
+    if count != disk_count || count > MAX_FILES || offset.checked_add(size) != Some(end) {
+        return Err("ZIP entry/directory resource bounds invalid".into());
+    }
+    Ok(count)
+}
+
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(deny_unknown_fields)]
 pub struct Dependency {
@@ -275,7 +297,11 @@ impl Package {
         if bytes.len() > MAX_ARCHIVE {
             return Err("archive too large".into());
         }
+        let raw_count = zip_entry_count(bytes)?;
         let mut archive = ZipArchive::new(Cursor::new(bytes)).map_err(|e| e.to_string())?;
+        if raw_count != archive.len() || archive.offset() != 0 {
+            return Err("duplicate central-directory names or prefixed archive rejected".into());
+        }
         if archive.len() > MAX_FILES {
             return Err("too many archive entries".into());
         }

@@ -23,6 +23,9 @@ Limits: 8 MiB archive/expanded total; 2 MiB per entry; 64 entries; 32 source ver
 extraction; traversal, absolute/Windows paths, unexpected payloads, symlinks, duplicates,
 oversized entries, mismatched hashes and unsupported schema versions are rejected.
 Imports downgrade every review to an imported attestation. Hashes prove integrity only.
+Version 1 accepts bounded single-disk ZIP32 without archive comments, prefixes or trailers;
+ZIP64 is unsupported. Raw entry counts are checked before parsing so the ZIP library
+cannot silently collapse duplicate filenames.
 
 Supported create/preview/validate/inspect/export/import/rebind/compile are developer
 library/file operations. UI editing, compare, composition/conflict receipts, redaction

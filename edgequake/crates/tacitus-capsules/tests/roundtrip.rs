@@ -269,7 +269,7 @@ fn symlink_and_oversized_entries_rejected() {
     .is_err());
 }
 #[test]
-fn duplicate_and_hash_mismatch_rejected() {
+fn hash_mismatch_rejected() {
     let p = package();
     let mut files = p.preview().unwrap();
     files.insert("capsule.json".into(), b"{}".to_vec());
@@ -281,6 +281,25 @@ fn duplicate_and_hash_mismatch_rejected() {
         writer.write_all(&content).unwrap();
     }
     assert!(Package::import(&writer.finish().unwrap().into_inner()).is_err());
+}
+#[test]
+fn duplicate_central_directory_names_cannot_be_silently_collapsed() {
+    let mut writer = ZipWriter::new(Cursor::new(Vec::new()));
+    for name in ["evidence/a.txt", "evidence/b.txt"] {
+        writer
+            .start_file(name, SimpleFileOptions::default())
+            .unwrap();
+        writer.write_all(b"synthetic").unwrap();
+    }
+    let mut bytes = writer.finish().unwrap().into_inner();
+    let needle = b"evidence/b.txt";
+    for i in 0..=bytes.len() - needle.len() {
+        if &bytes[i..i + needle.len()] == needle {
+            bytes[i + 9] = b'a';
+        }
+    }
+    let error = Package::import(&bytes).unwrap_err();
+    assert!(error.contains("duplicate central-directory"), "{error}");
 }
 #[test]
 fn unsupported_schema_and_executable_method_fields_rejected() {
