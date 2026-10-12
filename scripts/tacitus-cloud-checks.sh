@@ -6,6 +6,7 @@ if [[ "${TACITUS_CLOUD_EXECUTE:-}" != "1" ]]; then
   echo 'Set TACITUS_CLOUD_EXECUTE=1 on the chosen host to permit dependency downloads/builds/tests.' >&2
   exit 2
 fi
+export SQLX_OFFLINE=true
 node --test tools/tacitus-policy-lab/test.mjs scripts/tacitus-stack.test.mjs
 python3 scripts/generate-tacitus-schema.py --check
 python3 scripts/generate-tacitus-schema.py --v2 --check
@@ -13,6 +14,7 @@ cargo fmt --manifest-path edgequake/Cargo.toml --all --check
 cargo test --locked --manifest-path edgequake/Cargo.toml -p tacitus-core -p tacitus-capsules -p tacitus-analysis -p tacitus-evals
 cargo check --locked --manifest-path edgequake/Cargo.toml -p edgequake-api --features postgres
 cargo test --locked --manifest-path edgequake/Cargo.toml -p edgequake-api --features postgres --test tacitus_provider_policy
+cargo test --locked --manifest-path edgequake/Cargo.toml -p edgequake-api --features postgres creator_membership_tests
 cargo clippy --locked --manifest-path edgequake/Cargo.toml -p tacitus-core -p tacitus-capsules -p tacitus-analysis -- -D warnings
 node scripts/tacitus-lab-roundtrip.mjs
 cd edgequake_webui

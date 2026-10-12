@@ -1,0 +1,12 @@
+FROM node:22-bookworm AS node
+FROM rust:1.95-bookworm
+COPY --from=node /usr/local/bin/node /usr/local/bin/node
+COPY --from=node /usr/local/lib/node_modules /usr/local/lib/node_modules
+RUN ln -s /usr/local/lib/node_modules/npm/bin/npm-cli.js /usr/local/bin/npm \
+    && apt-get update && apt-get install -y --no-install-recommends python3 pkg-config libssl-dev git \
+    && rm -rf /var/lib/apt/lists/* \
+    && npm install --global pnpm@10.13.1
+WORKDIR /app
+COPY . .
+ENV SQLX_OFFLINE=true NEXT_TELEMETRY_DISABLED=1
+CMD ["bash", "scripts/tacitus-cloud-checks.sh"]

@@ -40,10 +40,11 @@ After selecting and reviewing an implementation revision:
 ```sh
 git clone https://github.com/sargonxg/tacitus-political-policy-second-brain.git
 cd tacitus-political-policy-second-brain
-git switch codex/policy-mvp-cloud-02
+git switch main
 node scripts/tacitus-stack.mjs doctor
 node scripts/tacitus-stack.mjs init cloud
 node scripts/tacitus-stack.mjs check
+node scripts/tacitus-stack.mjs check-source
 node scripts/tacitus-stack.mjs build
 node scripts/tacitus-stack.mjs download
 node scripts/tacitus-stack.mjs up
@@ -65,7 +66,7 @@ http://localhost:8080/health. Log in with the generated admin credentials, choos
 a workspace, upload text/Markdown or text PDFs and wait for ingestion. Scanned/vision
 PDFs are not accepted with the default text-only model.
 
-Read [self-hosting](docs/tacitus/self-hosting.md) and
+Read [cloud quickstart](docs/tacitus/cloud-quickstart.md), [self-hosting](docs/tacitus/self-hosting.md) and
 [the MVP workflow, CLI and cloud verification](docs/tacitus/policy-mvp.md).
 The same authenticated API powers the browser and CLI; no separate knowledge store exists.
 

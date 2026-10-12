@@ -20,6 +20,17 @@ test("self-hosted local and cloud configurations use source builds and isolated 
     for (const name of ["api", "postgres", "ollama", "migrate"])
       assert.deepEqual(spec.services[name].networks, ["private"]);
     assert.equal(spec.networks.private.internal, true);
+    assert.equal(
+      spec.services.frontend.build.args.NEXT_PUBLIC_AUTH_ENABLED,
+      "true",
+    );
+    assert.equal(
+      spec.services.frontend.build.args.NEXT_PUBLIC_DISABLE_DEMO_LOGIN,
+      "true",
+    );
+    assert.deepEqual(spec.services.checks.profiles, ["checks"]);
+    assert.deepEqual(spec.services.checks.networks, ["download"]);
+    assert.equal(spec.services.checks.environment.TACITUS_CLOUD_EXECUTE, "1");
     assert.equal(spec.services.ollama.environment.OLLAMA_NO_CLOUD, "1");
     assert.equal(spec.services.api.environment.EDGEQUAKE_AUTH_ENABLED, "true");
     assert.equal(spec.services.api.environment.TACITUS_LOCAL_ONLY, "1");

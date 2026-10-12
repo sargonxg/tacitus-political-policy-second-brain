@@ -1,5 +1,14 @@
 # Implementation status
 
+## Cloud startup follow-up
+
+PR #2 is merged into `main`. The follow-up fixes frontend authentication build flags
+and Node version, records creator membership for newly created tenants/workspaces in
+local-only mode, adds containerized source checks, and adds a private-login cloud test
+helper with session renewal. See [cloud quickstart](docs/tacitus/cloud-quickstart.md).
+New regressions are authored; cloud builds/runtime tests remain NOT RUN. Merging the
+source does not clear the inherited audit gate or establish an accepted release.
+
 ## Persistent MVP candidate — verification pending
 
 The `codex/policy-mvp-cloud-02` continuation adds native policy records and explicit

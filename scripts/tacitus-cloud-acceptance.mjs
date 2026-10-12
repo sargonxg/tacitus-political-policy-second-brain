@@ -3,6 +3,8 @@ import assert from "node:assert/strict";
 import { randomUUID } from "node:crypto";
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { request, waitAnalysis } from "./tacitus-policy.mjs";
+import { resolve } from "node:path";
+import { fileURLToPath } from "node:url";
 const receiptPath = ".tacitus/cloud-acceptance.json";
 const ready = async (id) => {
   const deadline = Date.now() + 650000;
@@ -39,12 +41,12 @@ async function ask(question, task, document_ids, extra = {}) {
   }
   return result;
 }
-async function main() {
+export async function runAcceptance(phase = process.argv[2]) {
   if (process.env.TACITUS_CLOUD_EXECUTE !== "1")
     throw new Error(
       "Explicitly set TACITUS_CLOUD_EXECUTE=1 on the chosen host; this writes synthetic test data",
     );
-  if (process.argv[2] === "after-restart") {
+  if (phase === "after-restart") {
     const r = JSON.parse(await readFile(receiptPath, "utf8"));
     process.env.TACITUS_WORKSPACE = r.workspace;
     const prior = await request(`/tacitus/analyses/${r.analysis}`);
@@ -262,6 +264,7 @@ async function main() {
   const graph = await request("/tacitus/graph");
   assert.ok(graph.edges.some((e) => e.review_state === "review_required"));
   const receipt = {
+    tenant,
     workspace: first.id,
     fresh_workspace: second.id,
     analysis: answer.id,
@@ -288,7 +291,11 @@ async function main() {
   });
   console.log(JSON.stringify(receipt, null, 2));
 }
-main().catch((e) => {
-  console.error(e.message);
-  process.exitCode = 1;
-});
+if (
+  process.argv[1] &&
+  resolve(process.argv[1]) === fileURLToPath(import.meta.url)
+)
+  runAcceptance().catch((e) => {
+    console.error(e.message);
+    process.exitCode = 1;
+  });

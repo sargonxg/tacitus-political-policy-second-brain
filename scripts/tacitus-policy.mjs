@@ -2,6 +2,12 @@
 import { readFile, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+let sessionTokenSupplier = null;
+export function setSessionTokenSupplier(supplier) {
+  if (supplier !== null && typeof supplier !== "function")
+    throw new Error("Token supplier must be a function or null");
+  sessionTokenSupplier = supplier;
+}
 export async function request(
   path,
   body,
@@ -10,7 +16,9 @@ export async function request(
   const url = process.env.TACITUS_API_URL ?? "http://127.0.0.1:8080";
   if (!["http://127.0.0.1:8080", "http://localhost:8080"].includes(url))
     throw new Error("Use the documented loopback SSH tunnel on port 8080");
-  const token = process.env.TACITUS_TOKEN;
+  const token = sessionTokenSupplier
+    ? await sessionTokenSupplier()
+    : process.env.TACITUS_TOKEN;
   const tenant = process.env.TACITUS_TENANT;
   const workspace = process.env.TACITUS_WORKSPACE;
   if (
