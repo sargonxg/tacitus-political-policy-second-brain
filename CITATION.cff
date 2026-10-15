@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use the Tacitus Policy Workbench in research, evaluation, or derivative work, please cite this repository and its documented upstream dependencies."
+title: "Tacitus Policy Workbench"
+type: software
+authors:
+  - given-names: Giulio
+    family-names: Catanzariti
+    affiliation: TACITUS
+    email: hello@tacitus.me
+repository-code: "https://github.com/sargonxg/tacitus-political-policy-second-brain"
+url: "https://www.tacitus.me"
+license: Apache-2.0
+abstract: >-
+  Tacitus Policy Workbench is an experimental local-first environment for
+  evidence-grounded policy and political analysis. It adapts EdgeQuake with
+  domain-specific policy objects, attributed claims, review receipts,
+  question-bounded context, analytical output contracts, and portable context
+  capsules.
+keywords:
+  - policy research
+  - political analysis
+  - local-first
+  - knowledge graphs
+  - provenance
+  - human review
