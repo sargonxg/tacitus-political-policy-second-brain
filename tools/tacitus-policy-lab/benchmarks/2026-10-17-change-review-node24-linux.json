@@ -1,0 +1,1357 @@
+{
+  "format": "tacitus-policy-lab-benchmark/1",
+  "status": "synthetic-developer-regression-only",
+  "environment": {
+    "node": "v24.19.0",
+    "platform": "linux",
+    "arch": "x64",
+    "cpu": "AMD EPYC 9V74 80-Core Processor"
+  },
+  "method": {
+    "cases": 4,
+    "dossiers": 2,
+    "warmups": 3,
+    "measured_iterations": 100,
+    "timing": "In-process context compilation only, including hashing/serialization. Eligibility measured separately; fixture construction, scoring, I/O, model and human work excluded. First observed is not cold start.",
+    "reference": "all-eligible-reference has a 250000-byte limit verified to fit these fixtures; not equal-budget and not a full-document/model baseline.",
+    "candidate": "change-first uses an explicit previous knowledge checkpoint, not semantic correction detection. All bounded arms see the same legitimate evidence and budget; new records can displace older critical material.",
+    "quality": "Developer-authored labels, same fixtures used for development; not held-out or independently reviewed.",
+    "effort": "Reviewable-record counts only; dependency creation/maintenance and analyst time not measured."
+  },
+  "fingerprints": {
+    "core.mjs": "a9c6790d2b390375278d1b34e3740cc99f43fbc7ae75e310943f3bdbc74914e1",
+    "ontology.mjs": "231b5958bccf7fb54e20f5898b845e11e4c0643adbc8e15a9997ecb3dced8a1b",
+    "demo.mjs": "ab3ee0ba43c830f91496b27fd4e80740f3590652743fe8d7cf79185cccbb507f",
+    "benchmark-fixtures.mjs": "16a9609431f9aa49ce9a606321b8489e648952eab0b42a7b4011421d88277408",
+    "benchmark-gold.json": "70bbf2bde27aa43277bee3b71444b11fef5bcc0ba424d5875bb3bf2c8bea36a5",
+    "benchmark-selection.mjs": "fc2f0f5884e2c7080d3a8705e70801386204b012cb2c10c3366f83266023c428",
+    "benchmark-metrics.mjs": "0ca0cab2ed612893be089be3eb8d6261d4fb9c9d69937097a51e2415a02cda5a",
+    "benchmark.mjs": "b98244c2e312075f494b284df0ca0b761d124b0d8914b8316bafa8e206a6eddb",
+    "benchmark.test.mjs": "1a7a270d1b4d67564297cdb52a7bc8f476d0a06e26f0d8a80cca4a448a68d6e3",
+    "cli.mjs": "b7f501c6f603308f8c5b34deaf01df5bd255faa7a580273de306eb8995c72760",
+    "package.json": "f82bdf25658f2d6da3c99cdf16b176dd66b8fb460f3369952a7ee97ae9118d35",
+    "change-review.mjs": "2ed3741d35c77b94f7c042bdb4706d6c98d03fc3fb65a7f6f1f958ae4fcfebc4",
+    "change-review.test.mjs": "06af81923ee9164817cacee50f8bdd359f87b4f53701a02fc70b20c611c712aa"
+  },
+  "cases": [
+    {
+      "case_id": "pilot-before",
+      "known_as_of": 1780315200,
+      "valid_at": 1780315200,
+      "review_since": 1780315200,
+      "eligible_ids": [
+        "claim-delegation",
+        "claim-budget",
+        "claim-press",
+        "claim-reprint"
+      ],
+      "eligibility_omissions": [
+        {
+          "id": "claim-correction",
+          "reason": "access-or-time"
+        }
+      ],
+      "eligibility_ms": 3.2487370000000055,
+      "arms": [
+        {
+          "arm": "input-order",
+          "max_bytes": 2400,
+          "packet_bytes": 1995,
+          "receipt_digest": "87d9e61e08c3f326172be9b454cad93b4c1803a5101365cc70a96bec3969c38d",
+          "omissions": [
+            {
+              "id": "claim-press",
+              "reason": "byte-budget"
+            },
+            {
+              "id": "claim-reprint",
+              "reason": "byte-budget"
+            }
+          ],
+          "scores": {
+            "selected_ids": [
+              "claim-delegation",
+              "claim-budget"
+            ],
+            "duplicate_record_count": 0,
+            "new_evidence_retention": {
+              "numerator": 0,
+              "denominator": 0,
+              "rate": null
+            },
+            "missing_new_evidence": [],
+            "critical_claim_coverage": {
+              "numerator": 2,
+              "denominator": 2,
+              "rate": 1
+            },
+            "missing_critical_claims": [],
+            "qualification_coverage": {
+              "numerator": 2,
+              "denominator": 2,
+              "rate": 1
+            },
+            "selected_qualification_integrity": {
+              "numerator": 2,
+              "denominator": 2,
+              "rate": 1
+            },
+            "citation_integrity": {
+              "numerator": 2,
+              "denominator": 2,
+              "rate": 1
+            },
+            "literal_claim_support": {
+              "numerator": 2,
+              "denominator": 2,
+              "rate": 1
+            },
+            "ineligible_ids": [],
+            "declared_source_families": 2,
+            "warning": "Literal quote/ID checks are not truth, entailment, source independence, or human quality scores."
+          },
+          "timing": {
+            "first_observed_ms": 0.9239460000000008,
+            "samples": 100,
+            "min_ms": 0.3110540000000128,
+            "p50_ms": 0.6192629999999895,
+            "p95_ms": 0.8730400000000031,
+            "max_ms": 0.965927999999991
+          }
+        },
+        {
+          "arm": "lexical-overlap",
+          "max_bytes": 2400,
+          "packet_bytes": 1995,
+          "receipt_digest": "87d9e61e08c3f326172be9b454cad93b4c1803a5101365cc70a96bec3969c38d",
+          "omissions": [
+            {
+              "id": "claim-press",
+              "reason": "byte-budget"
+            },
+            {
+              "id": "claim-reprint",
+              "reason": "byte-budget"
+            }
+          ],
+          "scores": {
+            "selected_ids": [
+              "claim-delegation",
+              "claim-budget"
+            ],
+            "duplicate_record_count": 0,
+            "new_evidence_retention": {
+              "numerator": 0,
+              "denominator": 0,
+              "rate": null
+            },
+            "missing_new_evidence": [],
+            "critical_claim_coverage": {
+              "numerator": 2,
+              "denominator": 2,
+              "rate": 1
+            },
+            "missing_critical_claims": [],
+            "qualification_coverage": {
+              "numerator": 2,
+              "denominator": 2,
+              "rate": 1
+            },
+            "selected_qualification_integrity": {
+              "numerator": 2,
+              "denominator": 2,
+              "rate": 1
+            },
+            "citation_integrity": {
+              "numerator": 2,
+              "denominator": 2,
+              "rate": 1
+            },
+            "literal_claim_support": {
+              "numerator": 2,
+              "denominator": 2,
+              "rate": 1
+            },
+            "ineligible_ids": [],
+            "declared_source_families": 2,
+            "warning": "Literal quote/ID checks are not truth, entailment, source independence, or human quality scores."
+          },
+          "timing": {
+            "first_observed_ms": 1.3113230000000016,
+            "samples": 100,
+            "min_ms": 0.316551000000004,
+            "p50_ms": 0.5936839999999961,
+            "p95_ms": 0.971997999999985,
+            "max_ms": 1.6551249999999982
+          }
+        },
+        {
+          "arm": "all-eligible-reference",
+          "max_bytes": 250000,
+          "packet_bytes": 3787,
+          "receipt_digest": "3b6fc449f0a343acd41aeb1398f41ed354b9cfb1a4e7bdc6cff0d13ad6ffe871",
+          "omissions": [],
+          "scores": {
+            "selected_ids": [
+              "claim-delegation",
+              "claim-budget",
+              "claim-press",
+              "claim-reprint"
+            ],
+            "duplicate_record_count": 0,
+            "new_evidence_retention": {
+              "numerator": 0,
+              "denominator": 0,
+              "rate": null
+            },
+            "missing_new_evidence": [],
+            "critical_claim_coverage": {
+              "numerator": 2,
+              "denominator": 2,
+              "rate": 1
+            },
+            "missing_critical_claims": [],
+            "qualification_coverage": {
+              "numerator": 2,
+              "denominator": 2,
+              "rate": 1
+            },
+            "selected_qualification_integrity": {
+              "numerator": 2,
+              "denominator": 2,
+              "rate": 1
+            },
+            "citation_integrity": {
+              "numerator": 4,
+              "denominator": 4,
+              "rate": 1
+            },
+            "literal_claim_support": {
+              "numerator": 4,
+              "denominator": 4,
+              "rate": 1
+            },
+            "ineligible_ids": [],
+            "declared_source_families": 3,
+            "warning": "Literal quote/ID checks are not truth, entailment, source independence, or human quality scores."
+          },
+          "timing": {
+            "first_observed_ms": 1.24013699999999,
+            "samples": 100,
+            "min_ms": 0.31209400000000187,
+            "p50_ms": 0.6012849999999901,
+            "p95_ms": 1.0267690000000016,
+            "max_ms": 2.5450300000000254
+          }
+        },
+        {
+          "arm": "change-first",
+          "max_bytes": 2400,
+          "packet_bytes": 1995,
+          "receipt_digest": "87d9e61e08c3f326172be9b454cad93b4c1803a5101365cc70a96bec3969c38d",
+          "omissions": [
+            {
+              "id": "claim-press",
+              "reason": "byte-budget"
+            },
+            {
+              "id": "claim-reprint",
+              "reason": "byte-budget"
+            }
+          ],
+          "scores": {
+            "selected_ids": [
+              "claim-delegation",
+              "claim-budget"
+            ],
+            "duplicate_record_count": 0,
+            "new_evidence_retention": {
+              "numerator": 0,
+              "denominator": 0,
+              "rate": null
+            },
+            "missing_new_evidence": [],
+            "critical_claim_coverage": {
+              "numerator": 2,
+              "denominator": 2,
+              "rate": 1
+            },
+            "missing_critical_claims": [],
+            "qualification_coverage": {
+              "numerator": 2,
+              "denominator": 2,
+              "rate": 1
+            },
+            "selected_qualification_integrity": {
+              "numerator": 2,
+              "denominator": 2,
+              "rate": 1
+            },
+            "citation_integrity": {
+              "numerator": 2,
+              "denominator": 2,
+              "rate": 1
+            },
+            "literal_claim_support": {
+              "numerator": 2,
+              "denominator": 2,
+              "rate": 1
+            },
+            "ineligible_ids": [],
+            "declared_source_families": 2,
+            "warning": "Literal quote/ID checks are not truth, entailment, source independence, or human quality scores."
+          },
+          "change_review": {
+            "method": "newly-available-first/1",
+            "since_known_as_of": 1780315200,
+            "status": "needs-human-review",
+            "newly_available_ids": [],
+            "selected_new_ids": [],
+            "omitted_new_ids": [],
+            "omitted_existing_ids": [
+              "claim-press",
+              "claim-reprint"
+            ],
+            "unhandled_change_types": [
+              "withdrawal-or-access-revocation",
+              "expiry",
+              "correction-with-unchanged-availability"
+            ],
+            "warning": "Availability-only review can miss revocation, expiry or corrections with unchanged availability. Newly available does not mean corrected, authoritative, independent, relevant or true. Historical evidence can be displaced; inspect every omission. No accepted judgment is changed."
+          },
+          "timing": {
+            "first_observed_ms": 0.9937199999999962,
+            "samples": 100,
+            "min_ms": 0.32807900000000245,
+            "p50_ms": 0.5674950000000081,
+            "p95_ms": 0.9209820000000093,
+            "max_ms": 4.874930000000006
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "pilot-after",
+      "known_as_of": 1780401600,
+      "valid_at": 1780401600,
+      "review_since": 1780315200,
+      "eligible_ids": [
+        "claim-delegation",
+        "claim-budget",
+        "claim-press",
+        "claim-reprint",
+        "claim-correction"
+      ],
+      "eligibility_omissions": [],
+      "eligibility_ms": 0.792129999999986,
+      "arms": [
+        {
+          "arm": "input-order",
+          "max_bytes": 2400,
+          "packet_bytes": 1995,
+          "receipt_digest": "98e90cc49e0f1c694ea5956115b1093ca27925af2fa50417acbcb31d694be14c",
+          "omissions": [
+            {
+              "id": "claim-press",
+              "reason": "byte-budget"
+            },
+            {
+              "id": "claim-reprint",
+              "reason": "byte-budget"
+            },
+            {
+              "id": "claim-correction",
+              "reason": "byte-budget"
+            }
+          ],
+          "scores": {
+            "selected_ids": [
+              "claim-delegation",
+              "claim-budget"
+            ],
+            "duplicate_record_count": 0,
+            "new_evidence_retention": {
+              "numerator": 0,
+              "denominator": 1,
+              "rate": 0
+            },
+            "missing_new_evidence": [
+              "claim-correction"
+            ],
+            "critical_claim_coverage": {
+              "numerator": 2,
+              "denominator": 3,
+              "rate": 0.6666666666666666
+            },
+            "missing_critical_claims": [
+              "claim-correction"
+            ],
+            "qualification_coverage": {
+              "numerator": 2,
+              "denominator": 3,
+              "rate": 0.6666666666666666
+            },
+            "selected_qualification_integrity": {
+              "numerator": 2,
+              "denominator": 2,
+              "rate": 1
+            },
+            "citation_integrity": {
+              "numerator": 2,
+              "denominator": 2,
+              "rate": 1
+            },
+            "literal_claim_support": {
+              "numerator": 2,
+              "denominator": 2,
+              "rate": 1
+            },
+            "ineligible_ids": [],
+            "declared_source_families": 2,
+            "warning": "Literal quote/ID checks are not truth, entailment, source independence, or human quality scores."
+          },
+          "timing": {
+            "first_observed_ms": 0.7711630000000014,
+            "samples": 100,
+            "min_ms": 0.3858940000000075,
+            "p50_ms": 0.6227979999999889,
+            "p95_ms": 1.0850500000000238,
+            "max_ms": 2.4771880000000692
+          }
+        },
+        {
+          "arm": "lexical-overlap",
+          "max_bytes": 2400,
+          "packet_bytes": 1995,
+          "receipt_digest": "98e90cc49e0f1c694ea5956115b1093ca27925af2fa50417acbcb31d694be14c",
+          "omissions": [
+            {
+              "id": "claim-correction",
+              "reason": "byte-budget"
+            },
+            {
+              "id": "claim-press",
+              "reason": "byte-budget"
+            },
+            {
+              "id": "claim-reprint",
+              "reason": "byte-budget"
+            }
+          ],
+          "scores": {
+            "selected_ids": [
+              "claim-delegation",
+              "claim-budget"
+            ],
+            "duplicate_record_count": 0,
+            "new_evidence_retention": {
+              "numerator": 0,
+              "denominator": 1,
+              "rate": 0
+            },
+            "missing_new_evidence": [
+              "claim-correction"
+            ],
+            "critical_claim_coverage": {
+              "numerator": 2,
+              "denominator": 3,
+              "rate": 0.6666666666666666
+            },
+            "missing_critical_claims": [
+              "claim-correction"
+            ],
+            "qualification_coverage": {
+              "numerator": 2,
+              "denominator": 3,
+              "rate": 0.6666666666666666
+            },
+            "selected_qualification_integrity": {
+              "numerator": 2,
+              "denominator": 2,
+              "rate": 1
+            },
+            "citation_integrity": {
+              "numerator": 2,
+              "denominator": 2,
+              "rate": 1
+            },
+            "literal_claim_support": {
+              "numerator": 2,
+              "denominator": 2,
+              "rate": 1
+            },
+            "ineligible_ids": [],
+            "declared_source_families": 2,
+            "warning": "Literal quote/ID checks are not truth, entailment, source independence, or human quality scores."
+          },
+          "timing": {
+            "first_observed_ms": 0.7509680000000003,
+            "samples": 100,
+            "min_ms": 0.4212070000000381,
+            "p50_ms": 0.6447500000000446,
+            "p95_ms": 1.037665000000004,
+            "max_ms": 1.2665160000000242
+          }
+        },
+        {
+          "arm": "all-eligible-reference",
+          "max_bytes": 250000,
+          "packet_bytes": 4334,
+          "receipt_digest": "e99c95415c1338027157c06b2e96b0b5a81f6331bad8c0451947dc59d0e2ab84",
+          "omissions": [],
+          "scores": {
+            "selected_ids": [
+              "claim-delegation",
+              "claim-budget",
+              "claim-press",
+              "claim-reprint",
+              "claim-correction"
+            ],
+            "duplicate_record_count": 0,
+            "new_evidence_retention": {
+              "numerator": 1,
+              "denominator": 1,
+              "rate": 1
+            },
+            "missing_new_evidence": [],
+            "critical_claim_coverage": {
+              "numerator": 3,
+              "denominator": 3,
+              "rate": 1
+            },
+            "missing_critical_claims": [],
+            "qualification_coverage": {
+              "numerator": 3,
+              "denominator": 3,
+              "rate": 1
+            },
+            "selected_qualification_integrity": {
+              "numerator": 3,
+              "denominator": 3,
+              "rate": 1
+            },
+            "citation_integrity": {
+              "numerator": 5,
+              "denominator": 5,
+              "rate": 1
+            },
+            "literal_claim_support": {
+              "numerator": 5,
+              "denominator": 5,
+              "rate": 1
+            },
+            "ineligible_ids": [],
+            "declared_source_families": 3,
+            "warning": "Literal quote/ID checks are not truth, entailment, source independence, or human quality scores."
+          },
+          "timing": {
+            "first_observed_ms": 0.790867999999989,
+            "samples": 100,
+            "min_ms": 0.42304999999998927,
+            "p50_ms": 0.6585509999999886,
+            "p95_ms": 1.0569040000000314,
+            "max_ms": 1.5460420000000568
+          }
+        },
+        {
+          "arm": "change-first",
+          "max_bytes": 2400,
+          "packet_bytes": 1819,
+          "receipt_digest": "80a291aa798ab4a75eea3965d360923feefc39fc1ffb8659220ca2925b2d190d",
+          "omissions": [
+            {
+              "id": "claim-budget",
+              "reason": "byte-budget"
+            },
+            {
+              "id": "claim-press",
+              "reason": "byte-budget"
+            },
+            {
+              "id": "claim-reprint",
+              "reason": "byte-budget"
+            }
+          ],
+          "scores": {
+            "selected_ids": [
+              "claim-correction",
+              "claim-delegation"
+            ],
+            "duplicate_record_count": 0,
+            "new_evidence_retention": {
+              "numerator": 1,
+              "denominator": 1,
+              "rate": 1
+            },
+            "missing_new_evidence": [],
+            "critical_claim_coverage": {
+              "numerator": 2,
+              "denominator": 3,
+              "rate": 0.6666666666666666
+            },
+            "missing_critical_claims": [
+              "claim-budget"
+            ],
+            "qualification_coverage": {
+              "numerator": 2,
+              "denominator": 3,
+              "rate": 0.6666666666666666
+            },
+            "selected_qualification_integrity": {
+              "numerator": 2,
+              "denominator": 2,
+              "rate": 1
+            },
+            "citation_integrity": {
+              "numerator": 2,
+              "denominator": 2,
+              "rate": 1
+            },
+            "literal_claim_support": {
+              "numerator": 2,
+              "denominator": 2,
+              "rate": 1
+            },
+            "ineligible_ids": [],
+            "declared_source_families": 1,
+            "warning": "Literal quote/ID checks are not truth, entailment, source independence, or human quality scores."
+          },
+          "change_review": {
+            "method": "newly-available-first/1",
+            "since_known_as_of": 1780315200,
+            "status": "needs-human-review",
+            "newly_available_ids": [
+              "claim-correction"
+            ],
+            "selected_new_ids": [
+              "claim-correction"
+            ],
+            "omitted_new_ids": [],
+            "omitted_existing_ids": [
+              "claim-budget",
+              "claim-press",
+              "claim-reprint"
+            ],
+            "unhandled_change_types": [
+              "withdrawal-or-access-revocation",
+              "expiry",
+              "correction-with-unchanged-availability"
+            ],
+            "warning": "Availability-only review can miss revocation, expiry or corrections with unchanged availability. Newly available does not mean corrected, authoritative, independent, relevant or true. Historical evidence can be displaced; inspect every omission. No accepted judgment is changed."
+          },
+          "timing": {
+            "first_observed_ms": 0.7116000000000327,
+            "samples": 100,
+            "min_ms": 0.39125300000000607,
+            "p50_ms": 0.6423469999999725,
+            "p95_ms": 0.95228800000001,
+            "max_ms": 1.0782159999999976
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "river-before",
+      "known_as_of": 1780315200,
+      "valid_at": 1780315200,
+      "review_since": 1780315200,
+      "eligible_ids": [
+        "claim-notice",
+        "claim-authority",
+        "claim-safeguard",
+        "claim-translation"
+      ],
+      "eligibility_omissions": [
+        {
+          "id": "claim-withdrawal",
+          "reason": "access-or-time"
+        }
+      ],
+      "eligibility_ms": 0.6333230000000185,
+      "arms": [
+        {
+          "arm": "input-order",
+          "max_bytes": 2400,
+          "packet_bytes": 2367,
+          "receipt_digest": "e343d669ca6cda3616e7165ab27801dd42df781d56721ef2454bbc8d810ce241",
+          "omissions": [
+            {
+              "id": "claim-safeguard",
+              "reason": "byte-budget"
+            }
+          ],
+          "scores": {
+            "selected_ids": [
+              "claim-notice",
+              "claim-authority",
+              "claim-translation"
+            ],
+            "duplicate_record_count": 0,
+            "new_evidence_retention": {
+              "numerator": 0,
+              "denominator": 0,
+              "rate": null
+            },
+            "missing_new_evidence": [],
+            "critical_claim_coverage": {
+              "numerator": 1,
+              "denominator": 2,
+              "rate": 0.5
+            },
+            "missing_critical_claims": [
+              "claim-safeguard"
+            ],
+            "qualification_coverage": {
+              "numerator": 1,
+              "denominator": 2,
+              "rate": 0.5
+            },
+            "selected_qualification_integrity": {
+              "numerator": 1,
+              "denominator": 1,
+              "rate": 1
+            },
+            "citation_integrity": {
+              "numerator": 3,
+              "denominator": 3,
+              "rate": 1
+            },
+            "literal_claim_support": {
+              "numerator": 3,
+              "denominator": 3,
+              "rate": 1
+            },
+            "ineligible_ids": [],
+            "declared_source_families": 3,
+            "warning": "Literal quote/ID checks are not truth, entailment, source independence, or human quality scores."
+          },
+          "timing": {
+            "first_observed_ms": 0.5600440000000617,
+            "samples": 100,
+            "min_ms": 0.33137299999998504,
+            "p50_ms": 0.516189000000054,
+            "p95_ms": 0.9412920000000895,
+            "max_ms": 2.0224620000000186
+          }
+        },
+        {
+          "arm": "lexical-overlap",
+          "max_bytes": 2400,
+          "packet_bytes": 2367,
+          "receipt_digest": "e343d669ca6cda3616e7165ab27801dd42df781d56721ef2454bbc8d810ce241",
+          "omissions": [
+            {
+              "id": "claim-safeguard",
+              "reason": "byte-budget"
+            }
+          ],
+          "scores": {
+            "selected_ids": [
+              "claim-notice",
+              "claim-authority",
+              "claim-translation"
+            ],
+            "duplicate_record_count": 0,
+            "new_evidence_retention": {
+              "numerator": 0,
+              "denominator": 0,
+              "rate": null
+            },
+            "missing_new_evidence": [],
+            "critical_claim_coverage": {
+              "numerator": 1,
+              "denominator": 2,
+              "rate": 0.5
+            },
+            "missing_critical_claims": [
+              "claim-safeguard"
+            ],
+            "qualification_coverage": {
+              "numerator": 1,
+              "denominator": 2,
+              "rate": 0.5
+            },
+            "selected_qualification_integrity": {
+              "numerator": 1,
+              "denominator": 1,
+              "rate": 1
+            },
+            "citation_integrity": {
+              "numerator": 3,
+              "denominator": 3,
+              "rate": 1
+            },
+            "literal_claim_support": {
+              "numerator": 3,
+              "denominator": 3,
+              "rate": 1
+            },
+            "ineligible_ids": [],
+            "declared_source_families": 3,
+            "warning": "Literal quote/ID checks are not truth, entailment, source independence, or human quality scores."
+          },
+          "timing": {
+            "first_observed_ms": 0.42143799999996645,
+            "samples": 100,
+            "min_ms": 0.3471670000000131,
+            "p50_ms": 0.5104599999999664,
+            "p95_ms": 0.8436570000000074,
+            "max_ms": 1.355197999999973
+          }
+        },
+        {
+          "arm": "all-eligible-reference",
+          "max_bytes": 250000,
+          "packet_bytes": 3150,
+          "receipt_digest": "8a6ae656b7520bfd8e951b0d93c2189a676b3ff2bafe7f163e725bbfee78d3c5",
+          "omissions": [],
+          "scores": {
+            "selected_ids": [
+              "claim-notice",
+              "claim-authority",
+              "claim-safeguard",
+              "claim-translation"
+            ],
+            "duplicate_record_count": 0,
+            "new_evidence_retention": {
+              "numerator": 0,
+              "denominator": 0,
+              "rate": null
+            },
+            "missing_new_evidence": [],
+            "critical_claim_coverage": {
+              "numerator": 2,
+              "denominator": 2,
+              "rate": 1
+            },
+            "missing_critical_claims": [],
+            "qualification_coverage": {
+              "numerator": 2,
+              "denominator": 2,
+              "rate": 1
+            },
+            "selected_qualification_integrity": {
+              "numerator": 2,
+              "denominator": 2,
+              "rate": 1
+            },
+            "citation_integrity": {
+              "numerator": 4,
+              "denominator": 4,
+              "rate": 1
+            },
+            "literal_claim_support": {
+              "numerator": 4,
+              "denominator": 4,
+              "rate": 1
+            },
+            "ineligible_ids": [],
+            "declared_source_families": 3,
+            "warning": "Literal quote/ID checks are not truth, entailment, source independence, or human quality scores."
+          },
+          "timing": {
+            "first_observed_ms": 0.39592899999991005,
+            "samples": 100,
+            "min_ms": 0.3335070000000542,
+            "p50_ms": 0.5160879999999679,
+            "p95_ms": 0.8862199999999802,
+            "max_ms": 3.6617929999999888
+          }
+        },
+        {
+          "arm": "change-first",
+          "max_bytes": 2400,
+          "packet_bytes": 2367,
+          "receipt_digest": "e343d669ca6cda3616e7165ab27801dd42df781d56721ef2454bbc8d810ce241",
+          "omissions": [
+            {
+              "id": "claim-safeguard",
+              "reason": "byte-budget"
+            }
+          ],
+          "scores": {
+            "selected_ids": [
+              "claim-notice",
+              "claim-authority",
+              "claim-translation"
+            ],
+            "duplicate_record_count": 0,
+            "new_evidence_retention": {
+              "numerator": 0,
+              "denominator": 0,
+              "rate": null
+            },
+            "missing_new_evidence": [],
+            "critical_claim_coverage": {
+              "numerator": 1,
+              "denominator": 2,
+              "rate": 0.5
+            },
+            "missing_critical_claims": [
+              "claim-safeguard"
+            ],
+            "qualification_coverage": {
+              "numerator": 1,
+              "denominator": 2,
+              "rate": 0.5
+            },
+            "selected_qualification_integrity": {
+              "numerator": 1,
+              "denominator": 1,
+              "rate": 1
+            },
+            "citation_integrity": {
+              "numerator": 3,
+              "denominator": 3,
+              "rate": 1
+            },
+            "literal_claim_support": {
+              "numerator": 3,
+              "denominator": 3,
+              "rate": 1
+            },
+            "ineligible_ids": [],
+            "declared_source_families": 3,
+            "warning": "Literal quote/ID checks are not truth, entailment, source independence, or human quality scores."
+          },
+          "change_review": {
+            "method": "newly-available-first/1",
+            "since_known_as_of": 1780315200,
+            "status": "needs-human-review",
+            "newly_available_ids": [],
+            "selected_new_ids": [],
+            "omitted_new_ids": [],
+            "omitted_existing_ids": [
+              "claim-safeguard"
+            ],
+            "unhandled_change_types": [
+              "withdrawal-or-access-revocation",
+              "expiry",
+              "correction-with-unchanged-availability"
+            ],
+            "warning": "Availability-only review can miss revocation, expiry or corrections with unchanged availability. Newly available does not mean corrected, authoritative, independent, relevant or true. Historical evidence can be displaced; inspect every omission. No accepted judgment is changed."
+          },
+          "timing": {
+            "first_observed_ms": 0.4171209999999519,
+            "samples": 100,
+            "min_ms": 0.3319539999999961,
+            "p50_ms": 0.5131350000000339,
+            "p95_ms": 0.9431439999999611,
+            "max_ms": 2.216160000000059
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "river-after",
+      "known_as_of": 1780401600,
+      "valid_at": 1780401600,
+      "review_since": 1780315200,
+      "eligible_ids": [
+        "claim-notice",
+        "claim-authority",
+        "claim-safeguard",
+        "claim-translation",
+        "claim-withdrawal"
+      ],
+      "eligibility_omissions": [],
+      "eligibility_ms": 0.5937840000000278,
+      "arms": [
+        {
+          "arm": "input-order",
+          "max_bytes": 2400,
+          "packet_bytes": 2367,
+          "receipt_digest": "7a8f98736447d5e8daad1b52cd691f74c19d913556d781f43d3ba370769ef1f6",
+          "omissions": [
+            {
+              "id": "claim-safeguard",
+              "reason": "byte-budget"
+            },
+            {
+              "id": "claim-withdrawal",
+              "reason": "byte-budget"
+            }
+          ],
+          "scores": {
+            "selected_ids": [
+              "claim-notice",
+              "claim-authority",
+              "claim-translation"
+            ],
+            "duplicate_record_count": 0,
+            "new_evidence_retention": {
+              "numerator": 0,
+              "denominator": 1,
+              "rate": 0
+            },
+            "missing_new_evidence": [
+              "claim-withdrawal"
+            ],
+            "critical_claim_coverage": {
+              "numerator": 1,
+              "denominator": 3,
+              "rate": 0.3333333333333333
+            },
+            "missing_critical_claims": [
+              "claim-withdrawal",
+              "claim-safeguard"
+            ],
+            "qualification_coverage": {
+              "numerator": 1,
+              "denominator": 3,
+              "rate": 0.3333333333333333
+            },
+            "selected_qualification_integrity": {
+              "numerator": 1,
+              "denominator": 1,
+              "rate": 1
+            },
+            "citation_integrity": {
+              "numerator": 3,
+              "denominator": 3,
+              "rate": 1
+            },
+            "literal_claim_support": {
+              "numerator": 3,
+              "denominator": 3,
+              "rate": 1
+            },
+            "ineligible_ids": [],
+            "declared_source_families": 3,
+            "warning": "Literal quote/ID checks are not truth, entailment, source independence, or human quality scores."
+          },
+          "timing": {
+            "first_observed_ms": 0.5500290000001087,
+            "samples": 100,
+            "min_ms": 0.4122940000002018,
+            "p50_ms": 0.5270150000001195,
+            "p95_ms": 1.076112999999964,
+            "max_ms": 1.4893979999999374
+          }
+        },
+        {
+          "arm": "lexical-overlap",
+          "max_bytes": 2400,
+          "packet_bytes": 2367,
+          "receipt_digest": "7a8f98736447d5e8daad1b52cd691f74c19d913556d781f43d3ba370769ef1f6",
+          "omissions": [
+            {
+              "id": "claim-withdrawal",
+              "reason": "byte-budget"
+            },
+            {
+              "id": "claim-safeguard",
+              "reason": "byte-budget"
+            }
+          ],
+          "scores": {
+            "selected_ids": [
+              "claim-notice",
+              "claim-authority",
+              "claim-translation"
+            ],
+            "duplicate_record_count": 0,
+            "new_evidence_retention": {
+              "numerator": 0,
+              "denominator": 1,
+              "rate": 0
+            },
+            "missing_new_evidence": [
+              "claim-withdrawal"
+            ],
+            "critical_claim_coverage": {
+              "numerator": 1,
+              "denominator": 3,
+              "rate": 0.3333333333333333
+            },
+            "missing_critical_claims": [
+              "claim-withdrawal",
+              "claim-safeguard"
+            ],
+            "qualification_coverage": {
+              "numerator": 1,
+              "denominator": 3,
+              "rate": 0.3333333333333333
+            },
+            "selected_qualification_integrity": {
+              "numerator": 1,
+              "denominator": 1,
+              "rate": 1
+            },
+            "citation_integrity": {
+              "numerator": 3,
+              "denominator": 3,
+              "rate": 1
+            },
+            "literal_claim_support": {
+              "numerator": 3,
+              "denominator": 3,
+              "rate": 1
+            },
+            "ineligible_ids": [],
+            "declared_source_families": 3,
+            "warning": "Literal quote/ID checks are not truth, entailment, source independence, or human quality scores."
+          },
+          "timing": {
+            "first_observed_ms": 0.5896079999999984,
+            "samples": 100,
+            "min_ms": 0.4185740000000351,
+            "p50_ms": 0.5203239999999596,
+            "p95_ms": 1.1236729999999397,
+            "max_ms": 1.573172999999997
+          }
+        },
+        {
+          "arm": "all-eligible-reference",
+          "max_bytes": 250000,
+          "packet_bytes": 4094,
+          "receipt_digest": "b65bb3fe0922c2d6cafd4305f20f1f7d26ddab5de47833b327891e109be8bb7a",
+          "omissions": [],
+          "scores": {
+            "selected_ids": [
+              "claim-notice",
+              "claim-authority",
+              "claim-safeguard",
+              "claim-translation",
+              "claim-withdrawal"
+            ],
+            "duplicate_record_count": 0,
+            "new_evidence_retention": {
+              "numerator": 1,
+              "denominator": 1,
+              "rate": 1
+            },
+            "missing_new_evidence": [],
+            "critical_claim_coverage": {
+              "numerator": 3,
+              "denominator": 3,
+              "rate": 1
+            },
+            "missing_critical_claims": [],
+            "qualification_coverage": {
+              "numerator": 3,
+              "denominator": 3,
+              "rate": 1
+            },
+            "selected_qualification_integrity": {
+              "numerator": 3,
+              "denominator": 3,
+              "rate": 1
+            },
+            "citation_integrity": {
+              "numerator": 5,
+              "denominator": 5,
+              "rate": 1
+            },
+            "literal_claim_support": {
+              "numerator": 5,
+              "denominator": 5,
+              "rate": 1
+            },
+            "ineligible_ids": [],
+            "declared_source_families": 3,
+            "warning": "Literal quote/ID checks are not truth, entailment, source independence, or human quality scores."
+          },
+          "timing": {
+            "first_observed_ms": 0.5376400000000103,
+            "samples": 100,
+            "min_ms": 0.4260340000000724,
+            "p50_ms": 0.531983000000082,
+            "p95_ms": 1.1644640000000663,
+            "max_ms": 1.5673339999999598
+          }
+        },
+        {
+          "arm": "change-first",
+          "max_bytes": 2400,
+          "packet_bytes": 2010,
+          "receipt_digest": "54c612ad4fd2d6581bbcfa9f87bff9dd983fc1b579879a49c585b92d87b9f80b",
+          "omissions": [
+            {
+              "id": "claim-authority",
+              "reason": "byte-budget"
+            },
+            {
+              "id": "claim-safeguard",
+              "reason": "byte-budget"
+            },
+            {
+              "id": "claim-translation",
+              "reason": "byte-budget"
+            }
+          ],
+          "scores": {
+            "selected_ids": [
+              "claim-withdrawal",
+              "claim-notice"
+            ],
+            "duplicate_record_count": 0,
+            "new_evidence_retention": {
+              "numerator": 1,
+              "denominator": 1,
+              "rate": 1
+            },
+            "missing_new_evidence": [],
+            "critical_claim_coverage": {
+              "numerator": 1,
+              "denominator": 3,
+              "rate": 0.3333333333333333
+            },
+            "missing_critical_claims": [
+              "claim-safeguard",
+              "claim-authority"
+            ],
+            "qualification_coverage": {
+              "numerator": 1,
+              "denominator": 3,
+              "rate": 0.3333333333333333
+            },
+            "selected_qualification_integrity": {
+              "numerator": 1,
+              "denominator": 1,
+              "rate": 1
+            },
+            "citation_integrity": {
+              "numerator": 2,
+              "denominator": 2,
+              "rate": 1
+            },
+            "literal_claim_support": {
+              "numerator": 2,
+              "denominator": 2,
+              "rate": 1
+            },
+            "ineligible_ids": [],
+            "declared_source_families": 2,
+            "warning": "Literal quote/ID checks are not truth, entailment, source independence, or human quality scores."
+          },
+          "change_review": {
+            "method": "newly-available-first/1",
+            "since_known_as_of": 1780315200,
+            "status": "needs-human-review",
+            "newly_available_ids": [
+              "claim-withdrawal"
+            ],
+            "selected_new_ids": [
+              "claim-withdrawal"
+            ],
+            "omitted_new_ids": [],
+            "omitted_existing_ids": [
+              "claim-authority",
+              "claim-safeguard",
+              "claim-translation"
+            ],
+            "unhandled_change_types": [
+              "withdrawal-or-access-revocation",
+              "expiry",
+              "correction-with-unchanged-availability"
+            ],
+            "warning": "Availability-only review can miss revocation, expiry or corrections with unchanged availability. Newly available does not mean corrected, authoritative, independent, relevant or true. Historical evidence can be displaced; inspect every omission. No accepted judgment is changed."
+          },
+          "timing": {
+            "first_observed_ms": 0.5405050000000529,
+            "samples": 100,
+            "min_ms": 0.3977519999998549,
+            "p50_ms": 0.5130439999999226,
+            "p95_ms": 1.0898529999999482,
+            "max_ms": 1.7628240000000233
+          }
+        }
+      ]
+    }
+  ],
+  "change_impact": [
+    {
+      "arm": "review-all",
+      "queue_ids": [
+        "archived-glossary",
+        "claim-delegation",
+        "funding-note",
+        "participation-assumption",
+        "pilot-brief",
+        "pilot-option",
+        "river-brief",
+        "river-note"
+      ],
+      "queue_size": 8,
+      "reviewable_records": 8,
+      "affected_recall": {
+        "numerator": 4,
+        "denominator": 4,
+        "rate": 1
+      },
+      "queue_precision": {
+        "numerator": 4,
+        "denominator": 8,
+        "rate": 0.5
+      },
+      "missed_affected": [],
+      "unnecessary_reviews": [
+        "archived-glossary",
+        "funding-note",
+        "river-brief",
+        "river-note"
+      ],
+      "nonqueued_records": 0
+    },
+    {
+      "arm": "declared-dependency-closure",
+      "queue_ids": [
+        "claim-delegation",
+        "participation-assumption",
+        "pilot-brief",
+        "pilot-option"
+      ],
+      "queue_size": 4,
+      "reviewable_records": 8,
+      "affected_recall": {
+        "numerator": 4,
+        "denominator": 4,
+        "rate": 1
+      },
+      "queue_precision": {
+        "numerator": 4,
+        "denominator": 4,
+        "rate": 1
+      },
+      "missed_affected": [],
+      "unnecessary_reviews": [],
+      "nonqueued_records": 4
+    },
+    {
+      "arm": "missing-link-negative-control",
+      "queue_ids": [
+        "claim-delegation"
+      ],
+      "queue_size": 1,
+      "reviewable_records": 8,
+      "affected_recall": {
+        "numerator": 1,
+        "denominator": 4,
+        "rate": 0.25
+      },
+      "queue_precision": {
+        "numerator": 1,
+        "denominator": 1,
+        "rate": 1
+      },
+      "missed_affected": [
+        "participation-assumption",
+        "pilot-brief",
+        "pilot-option"
+      ],
+      "unnecessary_reviews": [],
+      "nonqueued_records": 7
+    }
+  ],
+  "unmeasured": {
+    "human_quality": null,
+    "analyst_minutes": null,
+    "model_quality": null,
+    "model_latency": null,
+    "production_performance": null
+  },
+  "network_calls": 0,
+  "model_calls": 0,
+  "canonical_writes": 0
+}

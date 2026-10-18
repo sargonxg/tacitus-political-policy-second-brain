@@ -1,0 +1,913 @@
+{
+  "format": "tacitus-policy-lab-benchmark/1",
+  "status": "synthetic-developer-regression-only",
+  "environment": {
+    "node": "v24.19.0",
+    "platform": "linux",
+    "arch": "x64",
+    "cpu": "AMD EPYC 9V74 80-Core Processor"
+  },
+  "method": {
+    "cases": 4,
+    "dossiers": 2,
+    "warmups": 3,
+    "measured_iterations": 100,
+    "timing": "In-process context compilation only, including hashing/serialization. Eligibility measured separately; fixture construction, scoring, I/O, model and human work excluded. First observed is not cold start.",
+    "reference": "all-eligible-reference has a 250000-byte limit verified to fit these fixtures; not equal-budget and not a full-document/model baseline.",
+    "quality": "Developer-authored labels, same fixtures used for development; not held-out or independently reviewed.",
+    "effort": "Reviewable-record counts only; dependency creation/maintenance and analyst time not measured."
+  },
+  "fingerprints": {
+    "core.mjs": "a9c6790d2b390375278d1b34e3740cc99f43fbc7ae75e310943f3bdbc74914e1",
+    "ontology.mjs": "231b5958bccf7fb54e20f5898b845e11e4c0643adbc8e15a9997ecb3dced8a1b",
+    "demo.mjs": "ab3ee0ba43c830f91496b27fd4e80740f3590652743fe8d7cf79185cccbb507f",
+    "benchmark-fixtures.mjs": "f67de28e808e97d585e5e5aa0104b0a84f12777d2f397e907a7500dbdab740f7",
+    "benchmark-gold.json": "70bbf2bde27aa43277bee3b71444b11fef5bcc0ba424d5875bb3bf2c8bea36a5",
+    "benchmark-selection.mjs": "8deeb59822a115f3b1ca1e00272e8ec039d7aa30768ebfd9f1930ad9f7f844cc",
+    "benchmark-metrics.mjs": "36d8e44e54467fe3f8feed2140030898e1efd1480db75e5d15429f7de3fb11f8",
+    "benchmark.mjs": "6416e91c6c147cd1a0cfecbe989b2a6a1a9c64e8dfd4329de944df45756171aa",
+    "benchmark.test.mjs": "e907daf9aedbf1236ae968bf2d65e0499565158deac1d741f4653ef4aa0c3836",
+    "cli.mjs": "3702c55f8d706fe164ce82dc9a9c5293830e4196c01c3820b3aa5b2ff003fc63",
+    "package.json": "c2691797a42446fbc3e495599085db548e70bd0cd782f8ead9b952457d0e13cd"
+  },
+  "cases": [
+    {
+      "case_id": "pilot-before",
+      "known_as_of": 1780315200,
+      "valid_at": 1780315200,
+      "eligible_ids": [
+        "claim-delegation",
+        "claim-budget",
+        "claim-press",
+        "claim-reprint"
+      ],
+      "eligibility_omissions": [
+        {
+          "id": "claim-correction",
+          "reason": "access-or-time"
+        }
+      ],
+      "eligibility_ms": 2.9418699999999944,
+      "arms": [
+        {
+          "arm": "input-order",
+          "max_bytes": 2400,
+          "packet_bytes": 1995,
+          "receipt_digest": "87d9e61e08c3f326172be9b454cad93b4c1803a5101365cc70a96bec3969c38d",
+          "omissions": [
+            {
+              "id": "claim-press",
+              "reason": "byte-budget"
+            },
+            {
+              "id": "claim-reprint",
+              "reason": "byte-budget"
+            }
+          ],
+          "scores": {
+            "selected_ids": [
+              "claim-delegation",
+              "claim-budget"
+            ],
+            "duplicate_record_count": 0,
+            "critical_claim_coverage": {
+              "numerator": 2,
+              "denominator": 2,
+              "rate": 1
+            },
+            "missing_critical_claims": [],
+            "qualification_coverage": {
+              "numerator": 2,
+              "denominator": 2,
+              "rate": 1
+            },
+            "selected_qualification_integrity": {
+              "numerator": 2,
+              "denominator": 2,
+              "rate": 1
+            },
+            "citation_integrity": {
+              "numerator": 2,
+              "denominator": 2,
+              "rate": 1
+            },
+            "literal_claim_support": {
+              "numerator": 2,
+              "denominator": 2,
+              "rate": 1
+            },
+            "ineligible_ids": [],
+            "declared_source_families": 2,
+            "warning": "Literal quote/ID checks are not truth, entailment, source independence, or human quality scores."
+          },
+          "timing": {
+            "first_observed_ms": 0.8994289999999978,
+            "samples": 100,
+            "min_ms": 0.34336099999998737,
+            "p50_ms": 0.5786820000000006,
+            "p95_ms": 0.9082129999999893,
+            "max_ms": 3.517768999999987
+          }
+        },
+        {
+          "arm": "lexical-overlap",
+          "max_bytes": 2400,
+          "packet_bytes": 1995,
+          "receipt_digest": "87d9e61e08c3f326172be9b454cad93b4c1803a5101365cc70a96bec3969c38d",
+          "omissions": [
+            {
+              "id": "claim-press",
+              "reason": "byte-budget"
+            },
+            {
+              "id": "claim-reprint",
+              "reason": "byte-budget"
+            }
+          ],
+          "scores": {
+            "selected_ids": [
+              "claim-delegation",
+              "claim-budget"
+            ],
+            "duplicate_record_count": 0,
+            "critical_claim_coverage": {
+              "numerator": 2,
+              "denominator": 2,
+              "rate": 1
+            },
+            "missing_critical_claims": [],
+            "qualification_coverage": {
+              "numerator": 2,
+              "denominator": 2,
+              "rate": 1
+            },
+            "selected_qualification_integrity": {
+              "numerator": 2,
+              "denominator": 2,
+              "rate": 1
+            },
+            "citation_integrity": {
+              "numerator": 2,
+              "denominator": 2,
+              "rate": 1
+            },
+            "literal_claim_support": {
+              "numerator": 2,
+              "denominator": 2,
+              "rate": 1
+            },
+            "ineligible_ids": [],
+            "declared_source_families": 2,
+            "warning": "Literal quote/ID checks are not truth, entailment, source independence, or human quality scores."
+          },
+          "timing": {
+            "first_observed_ms": 2.193366999999995,
+            "samples": 100,
+            "min_ms": 0.4232600000000275,
+            "p50_ms": 0.6061429999999746,
+            "p95_ms": 1.0146510000000148,
+            "max_ms": 1.3227500000000134
+          }
+        },
+        {
+          "arm": "all-eligible-reference",
+          "max_bytes": 250000,
+          "packet_bytes": 3787,
+          "receipt_digest": "3b6fc449f0a343acd41aeb1398f41ed354b9cfb1a4e7bdc6cff0d13ad6ffe871",
+          "omissions": [],
+          "scores": {
+            "selected_ids": [
+              "claim-delegation",
+              "claim-budget",
+              "claim-press",
+              "claim-reprint"
+            ],
+            "duplicate_record_count": 0,
+            "critical_claim_coverage": {
+              "numerator": 2,
+              "denominator": 2,
+              "rate": 1
+            },
+            "missing_critical_claims": [],
+            "qualification_coverage": {
+              "numerator": 2,
+              "denominator": 2,
+              "rate": 1
+            },
+            "selected_qualification_integrity": {
+              "numerator": 2,
+              "denominator": 2,
+              "rate": 1
+            },
+            "citation_integrity": {
+              "numerator": 4,
+              "denominator": 4,
+              "rate": 1
+            },
+            "literal_claim_support": {
+              "numerator": 4,
+              "denominator": 4,
+              "rate": 1
+            },
+            "ineligible_ids": [],
+            "declared_source_families": 3,
+            "warning": "Literal quote/ID checks are not truth, entailment, source independence, or human quality scores."
+          },
+          "timing": {
+            "first_observed_ms": 1.2479179999999985,
+            "samples": 100,
+            "min_ms": 0.3876769999999965,
+            "p50_ms": 0.6126419999999939,
+            "p95_ms": 1.0265580000000085,
+            "max_ms": 2.2338120000000004
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "pilot-after",
+      "known_as_of": 1780401600,
+      "valid_at": 1780401600,
+      "eligible_ids": [
+        "claim-delegation",
+        "claim-budget",
+        "claim-press",
+        "claim-reprint",
+        "claim-correction"
+      ],
+      "eligibility_omissions": [],
+      "eligibility_ms": 0.8147030000000086,
+      "arms": [
+        {
+          "arm": "input-order",
+          "max_bytes": 2400,
+          "packet_bytes": 1995,
+          "receipt_digest": "98e90cc49e0f1c694ea5956115b1093ca27925af2fa50417acbcb31d694be14c",
+          "omissions": [
+            {
+              "id": "claim-press",
+              "reason": "byte-budget"
+            },
+            {
+              "id": "claim-reprint",
+              "reason": "byte-budget"
+            },
+            {
+              "id": "claim-correction",
+              "reason": "byte-budget"
+            }
+          ],
+          "scores": {
+            "selected_ids": [
+              "claim-delegation",
+              "claim-budget"
+            ],
+            "duplicate_record_count": 0,
+            "critical_claim_coverage": {
+              "numerator": 2,
+              "denominator": 3,
+              "rate": 0.6666666666666666
+            },
+            "missing_critical_claims": [
+              "claim-correction"
+            ],
+            "qualification_coverage": {
+              "numerator": 2,
+              "denominator": 3,
+              "rate": 0.6666666666666666
+            },
+            "selected_qualification_integrity": {
+              "numerator": 2,
+              "denominator": 2,
+              "rate": 1
+            },
+            "citation_integrity": {
+              "numerator": 2,
+              "denominator": 2,
+              "rate": 1
+            },
+            "literal_claim_support": {
+              "numerator": 2,
+              "denominator": 2,
+              "rate": 1
+            },
+            "ineligible_ids": [],
+            "declared_source_families": 2,
+            "warning": "Literal quote/ID checks are not truth, entailment, source independence, or human quality scores."
+          },
+          "timing": {
+            "first_observed_ms": 1.0490420000000427,
+            "samples": 100,
+            "min_ms": 0.43170199999997294,
+            "p50_ms": 0.7078440000000228,
+            "p95_ms": 1.1518950000000245,
+            "max_ms": 1.5428569999999695
+          }
+        },
+        {
+          "arm": "lexical-overlap",
+          "max_bytes": 2400,
+          "packet_bytes": 1995,
+          "receipt_digest": "98e90cc49e0f1c694ea5956115b1093ca27925af2fa50417acbcb31d694be14c",
+          "omissions": [
+            {
+              "id": "claim-correction",
+              "reason": "byte-budget"
+            },
+            {
+              "id": "claim-press",
+              "reason": "byte-budget"
+            },
+            {
+              "id": "claim-reprint",
+              "reason": "byte-budget"
+            }
+          ],
+          "scores": {
+            "selected_ids": [
+              "claim-delegation",
+              "claim-budget"
+            ],
+            "duplicate_record_count": 0,
+            "critical_claim_coverage": {
+              "numerator": 2,
+              "denominator": 3,
+              "rate": 0.6666666666666666
+            },
+            "missing_critical_claims": [
+              "claim-correction"
+            ],
+            "qualification_coverage": {
+              "numerator": 2,
+              "denominator": 3,
+              "rate": 0.6666666666666666
+            },
+            "selected_qualification_integrity": {
+              "numerator": 2,
+              "denominator": 2,
+              "rate": 1
+            },
+            "citation_integrity": {
+              "numerator": 2,
+              "denominator": 2,
+              "rate": 1
+            },
+            "literal_claim_support": {
+              "numerator": 2,
+              "denominator": 2,
+              "rate": 1
+            },
+            "ineligible_ids": [],
+            "declared_source_families": 2,
+            "warning": "Literal quote/ID checks are not truth, entailment, source independence, or human quality scores."
+          },
+          "timing": {
+            "first_observed_ms": 0.84602000000001,
+            "samples": 100,
+            "min_ms": 0.46133700000001454,
+            "p50_ms": 0.7062710000000152,
+            "p95_ms": 1.2427000000000135,
+            "max_ms": 2.9048460000000205
+          }
+        },
+        {
+          "arm": "all-eligible-reference",
+          "max_bytes": 250000,
+          "packet_bytes": 4334,
+          "receipt_digest": "e99c95415c1338027157c06b2e96b0b5a81f6331bad8c0451947dc59d0e2ab84",
+          "omissions": [],
+          "scores": {
+            "selected_ids": [
+              "claim-delegation",
+              "claim-budget",
+              "claim-press",
+              "claim-reprint",
+              "claim-correction"
+            ],
+            "duplicate_record_count": 0,
+            "critical_claim_coverage": {
+              "numerator": 3,
+              "denominator": 3,
+              "rate": 1
+            },
+            "missing_critical_claims": [],
+            "qualification_coverage": {
+              "numerator": 3,
+              "denominator": 3,
+              "rate": 1
+            },
+            "selected_qualification_integrity": {
+              "numerator": 3,
+              "denominator": 3,
+              "rate": 1
+            },
+            "citation_integrity": {
+              "numerator": 5,
+              "denominator": 5,
+              "rate": 1
+            },
+            "literal_claim_support": {
+              "numerator": 5,
+              "denominator": 5,
+              "rate": 1
+            },
+            "ineligible_ids": [],
+            "declared_source_families": 3,
+            "warning": "Literal quote/ID checks are not truth, entailment, source independence, or human quality scores."
+          },
+          "timing": {
+            "first_observed_ms": 1.0537789999999632,
+            "samples": 100,
+            "min_ms": 0.4685670000000073,
+            "p50_ms": 0.7433669999999779,
+            "p95_ms": 1.1825109999999768,
+            "max_ms": 1.6233270000000175
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "river-before",
+      "known_as_of": 1780315200,
+      "valid_at": 1780315200,
+      "eligible_ids": [
+        "claim-notice",
+        "claim-authority",
+        "claim-safeguard",
+        "claim-translation"
+      ],
+      "eligibility_omissions": [
+        {
+          "id": "claim-withdrawal",
+          "reason": "access-or-time"
+        }
+      ],
+      "eligibility_ms": 0.7390500000000202,
+      "arms": [
+        {
+          "arm": "input-order",
+          "max_bytes": 2400,
+          "packet_bytes": 2367,
+          "receipt_digest": "e343d669ca6cda3616e7165ab27801dd42df781d56721ef2454bbc8d810ce241",
+          "omissions": [
+            {
+              "id": "claim-safeguard",
+              "reason": "byte-budget"
+            }
+          ],
+          "scores": {
+            "selected_ids": [
+              "claim-notice",
+              "claim-authority",
+              "claim-translation"
+            ],
+            "duplicate_record_count": 0,
+            "critical_claim_coverage": {
+              "numerator": 1,
+              "denominator": 2,
+              "rate": 0.5
+            },
+            "missing_critical_claims": [
+              "claim-safeguard"
+            ],
+            "qualification_coverage": {
+              "numerator": 1,
+              "denominator": 2,
+              "rate": 0.5
+            },
+            "selected_qualification_integrity": {
+              "numerator": 1,
+              "denominator": 1,
+              "rate": 1
+            },
+            "citation_integrity": {
+              "numerator": 3,
+              "denominator": 3,
+              "rate": 1
+            },
+            "literal_claim_support": {
+              "numerator": 3,
+              "denominator": 3,
+              "rate": 1
+            },
+            "ineligible_ids": [],
+            "declared_source_families": 3,
+            "warning": "Literal quote/ID checks are not truth, entailment, source independence, or human quality scores."
+          },
+          "timing": {
+            "first_observed_ms": 0.4883879999999863,
+            "samples": 100,
+            "min_ms": 0.3470270000000255,
+            "p50_ms": 0.5087679999999182,
+            "p95_ms": 0.7562869999999293,
+            "max_ms": 1.1229220000000169
+          }
+        },
+        {
+          "arm": "lexical-overlap",
+          "max_bytes": 2400,
+          "packet_bytes": 2367,
+          "receipt_digest": "e343d669ca6cda3616e7165ab27801dd42df781d56721ef2454bbc8d810ce241",
+          "omissions": [
+            {
+              "id": "claim-safeguard",
+              "reason": "byte-budget"
+            }
+          ],
+          "scores": {
+            "selected_ids": [
+              "claim-notice",
+              "claim-authority",
+              "claim-translation"
+            ],
+            "duplicate_record_count": 0,
+            "critical_claim_coverage": {
+              "numerator": 1,
+              "denominator": 2,
+              "rate": 0.5
+            },
+            "missing_critical_claims": [
+              "claim-safeguard"
+            ],
+            "qualification_coverage": {
+              "numerator": 1,
+              "denominator": 2,
+              "rate": 0.5
+            },
+            "selected_qualification_integrity": {
+              "numerator": 1,
+              "denominator": 1,
+              "rate": 1
+            },
+            "citation_integrity": {
+              "numerator": 3,
+              "denominator": 3,
+              "rate": 1
+            },
+            "literal_claim_support": {
+              "numerator": 3,
+              "denominator": 3,
+              "rate": 1
+            },
+            "ineligible_ids": [],
+            "declared_source_families": 3,
+            "warning": "Literal quote/ID checks are not truth, entailment, source independence, or human quality scores."
+          },
+          "timing": {
+            "first_observed_ms": 0.649817999999982,
+            "samples": 100,
+            "min_ms": 0.3472869999999375,
+            "p50_ms": 0.5658429999999726,
+            "p95_ms": 0.9390280000000075,
+            "max_ms": 1.8067610000000514
+          }
+        },
+        {
+          "arm": "all-eligible-reference",
+          "max_bytes": 250000,
+          "packet_bytes": 3150,
+          "receipt_digest": "8a6ae656b7520bfd8e951b0d93c2189a676b3ff2bafe7f163e725bbfee78d3c5",
+          "omissions": [],
+          "scores": {
+            "selected_ids": [
+              "claim-notice",
+              "claim-authority",
+              "claim-safeguard",
+              "claim-translation"
+            ],
+            "duplicate_record_count": 0,
+            "critical_claim_coverage": {
+              "numerator": 2,
+              "denominator": 2,
+              "rate": 1
+            },
+            "missing_critical_claims": [],
+            "qualification_coverage": {
+              "numerator": 2,
+              "denominator": 2,
+              "rate": 1
+            },
+            "selected_qualification_integrity": {
+              "numerator": 2,
+              "denominator": 2,
+              "rate": 1
+            },
+            "citation_integrity": {
+              "numerator": 4,
+              "denominator": 4,
+              "rate": 1
+            },
+            "literal_claim_support": {
+              "numerator": 4,
+              "denominator": 4,
+              "rate": 1
+            },
+            "ineligible_ids": [],
+            "declared_source_families": 3,
+            "warning": "Literal quote/ID checks are not truth, entailment, source independence, or human quality scores."
+          },
+          "timing": {
+            "first_observed_ms": 0.5425780000000486,
+            "samples": 100,
+            "min_ms": 0.3423890000000256,
+            "p50_ms": 0.5426179999999476,
+            "p95_ms": 0.8545629999999846,
+            "max_ms": 2.1201879999999846
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "river-after",
+      "known_as_of": 1780401600,
+      "valid_at": 1780401600,
+      "eligible_ids": [
+        "claim-notice",
+        "claim-authority",
+        "claim-safeguard",
+        "claim-translation",
+        "claim-withdrawal"
+      ],
+      "eligibility_omissions": [],
+      "eligibility_ms": 0.7419049999999743,
+      "arms": [
+        {
+          "arm": "input-order",
+          "max_bytes": 2400,
+          "packet_bytes": 2367,
+          "receipt_digest": "7a8f98736447d5e8daad1b52cd691f74c19d913556d781f43d3ba370769ef1f6",
+          "omissions": [
+            {
+              "id": "claim-safeguard",
+              "reason": "byte-budget"
+            },
+            {
+              "id": "claim-withdrawal",
+              "reason": "byte-budget"
+            }
+          ],
+          "scores": {
+            "selected_ids": [
+              "claim-notice",
+              "claim-authority",
+              "claim-translation"
+            ],
+            "duplicate_record_count": 0,
+            "critical_claim_coverage": {
+              "numerator": 1,
+              "denominator": 3,
+              "rate": 0.3333333333333333
+            },
+            "missing_critical_claims": [
+              "claim-withdrawal",
+              "claim-safeguard"
+            ],
+            "qualification_coverage": {
+              "numerator": 1,
+              "denominator": 3,
+              "rate": 0.3333333333333333
+            },
+            "selected_qualification_integrity": {
+              "numerator": 1,
+              "denominator": 1,
+              "rate": 1
+            },
+            "citation_integrity": {
+              "numerator": 3,
+              "denominator": 3,
+              "rate": 1
+            },
+            "literal_claim_support": {
+              "numerator": 3,
+              "denominator": 3,
+              "rate": 1
+            },
+            "ineligible_ids": [],
+            "declared_source_families": 3,
+            "warning": "Literal quote/ID checks are not truth, entailment, source independence, or human quality scores."
+          },
+          "timing": {
+            "first_observed_ms": 0.7717499999999973,
+            "samples": 100,
+            "min_ms": 0.48122699999998986,
+            "p50_ms": 0.6504190000000563,
+            "p95_ms": 1.2729150000000118,
+            "max_ms": 1.9629489999999805
+          }
+        },
+        {
+          "arm": "lexical-overlap",
+          "max_bytes": 2400,
+          "packet_bytes": 2367,
+          "receipt_digest": "7a8f98736447d5e8daad1b52cd691f74c19d913556d781f43d3ba370769ef1f6",
+          "omissions": [
+            {
+              "id": "claim-withdrawal",
+              "reason": "byte-budget"
+            },
+            {
+              "id": "claim-safeguard",
+              "reason": "byte-budget"
+            }
+          ],
+          "scores": {
+            "selected_ids": [
+              "claim-notice",
+              "claim-authority",
+              "claim-translation"
+            ],
+            "duplicate_record_count": 0,
+            "critical_claim_coverage": {
+              "numerator": 1,
+              "denominator": 3,
+              "rate": 0.3333333333333333
+            },
+            "missing_critical_claims": [
+              "claim-withdrawal",
+              "claim-safeguard"
+            ],
+            "qualification_coverage": {
+              "numerator": 1,
+              "denominator": 3,
+              "rate": 0.3333333333333333
+            },
+            "selected_qualification_integrity": {
+              "numerator": 1,
+              "denominator": 1,
+              "rate": 1
+            },
+            "citation_integrity": {
+              "numerator": 3,
+              "denominator": 3,
+              "rate": 1
+            },
+            "literal_claim_support": {
+              "numerator": 3,
+              "denominator": 3,
+              "rate": 1
+            },
+            "ineligible_ids": [],
+            "declared_source_families": 3,
+            "warning": "Literal quote/ID checks are not truth, entailment, source independence, or human quality scores."
+          },
+          "timing": {
+            "first_observed_ms": 1.6704879999999775,
+            "samples": 100,
+            "min_ms": 0.4535050000000638,
+            "p50_ms": 0.6467440000000124,
+            "p95_ms": 1.2299869999999373,
+            "max_ms": 1.6541930000000775
+          }
+        },
+        {
+          "arm": "all-eligible-reference",
+          "max_bytes": 250000,
+          "packet_bytes": 4094,
+          "receipt_digest": "b65bb3fe0922c2d6cafd4305f20f1f7d26ddab5de47833b327891e109be8bb7a",
+          "omissions": [],
+          "scores": {
+            "selected_ids": [
+              "claim-notice",
+              "claim-authority",
+              "claim-safeguard",
+              "claim-translation",
+              "claim-withdrawal"
+            ],
+            "duplicate_record_count": 0,
+            "critical_claim_coverage": {
+              "numerator": 3,
+              "denominator": 3,
+              "rate": 1
+            },
+            "missing_critical_claims": [],
+            "qualification_coverage": {
+              "numerator": 3,
+              "denominator": 3,
+              "rate": 1
+            },
+            "selected_qualification_integrity": {
+              "numerator": 3,
+              "denominator": 3,
+              "rate": 1
+            },
+            "citation_integrity": {
+              "numerator": 5,
+              "denominator": 5,
+              "rate": 1
+            },
+            "literal_claim_support": {
+              "numerator": 5,
+              "denominator": 5,
+              "rate": 1
+            },
+            "ineligible_ids": [],
+            "declared_source_families": 3,
+            "warning": "Literal quote/ID checks are not truth, entailment, source independence, or human quality scores."
+          },
+          "timing": {
+            "first_observed_ms": 0.5667740000000094,
+            "samples": 100,
+            "min_ms": 0.46183799999994335,
+            "p50_ms": 0.6275439999999435,
+            "p95_ms": 1.1196669999999358,
+            "max_ms": 6.817452000000003
+          }
+        }
+      ]
+    }
+  ],
+  "change_impact": [
+    {
+      "arm": "review-all",
+      "queue_ids": [
+        "archived-glossary",
+        "claim-delegation",
+        "funding-note",
+        "participation-assumption",
+        "pilot-brief",
+        "pilot-option",
+        "river-brief",
+        "river-note"
+      ],
+      "queue_size": 8,
+      "reviewable_records": 8,
+      "affected_recall": {
+        "numerator": 4,
+        "denominator": 4,
+        "rate": 1
+      },
+      "queue_precision": {
+        "numerator": 4,
+        "denominator": 8,
+        "rate": 0.5
+      },
+      "missed_affected": [],
+      "unnecessary_reviews": [
+        "archived-glossary",
+        "funding-note",
+        "river-brief",
+        "river-note"
+      ],
+      "nonqueued_records": 0
+    },
+    {
+      "arm": "declared-dependency-closure",
+      "queue_ids": [
+        "claim-delegation",
+        "participation-assumption",
+        "pilot-brief",
+        "pilot-option"
+      ],
+      "queue_size": 4,
+      "reviewable_records": 8,
+      "affected_recall": {
+        "numerator": 4,
+        "denominator": 4,
+        "rate": 1
+      },
+      "queue_precision": {
+        "numerator": 4,
+        "denominator": 4,
+        "rate": 1
+      },
+      "missed_affected": [],
+      "unnecessary_reviews": [],
+      "nonqueued_records": 4
+    },
+    {
+      "arm": "missing-link-negative-control",
+      "queue_ids": [
+        "claim-delegation"
+      ],
+      "queue_size": 1,
+      "reviewable_records": 8,
+      "affected_recall": {
+        "numerator": 1,
+        "denominator": 4,
+        "rate": 0.25
+      },
+      "queue_precision": {
+        "numerator": 1,
+        "denominator": 1,
+        "rate": 1
+      },
+      "missed_affected": [
+        "participation-assumption",
+        "pilot-brief",
+        "pilot-option"
+      ],
+      "unnecessary_reviews": [],
+      "nonqueued_records": 7
+    }
+  ],
+  "unmeasured": {
+    "human_quality": null,
+    "analyst_minutes": null,
+    "model_quality": null,
+    "model_latency": null,
+    "production_performance": null
+  },
+  "network_calls": 0,
+  "model_calls": 0,
+  "canonical_writes": 0
+}

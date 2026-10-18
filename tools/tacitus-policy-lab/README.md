@@ -13,8 +13,10 @@ replacement knowledge graph.
 
 ```sh
 node tools/tacitus-policy-lab/cli.mjs doctor
-node --test tools/tacitus-policy-lab/test.mjs
+node --test tools/tacitus-policy-lab/test.mjs tools/tacitus-policy-lab/benchmark.test.mjs tools/tacitus-policy-lab/change-review.test.mjs
 node tools/tacitus-policy-lab/cli.mjs demo
+node tools/tacitus-policy-lab/cli.mjs benchmark --iterations 100
+node tools/tacitus-policy-lab/cli.mjs review-demo
 node tools/tacitus-policy-lab/cli.mjs serve
 ```
 
@@ -63,6 +65,22 @@ new context; use a cutoff after its actual retrieval time.
 
 All checked-in demo documents are newly authored, fictional CC0-1.0 fixtures. No real
 internal policy material, private Praxis source, personal records or API keys are included.
+
+## Reproducible synthetic benchmark
+
+[Run and interpret the benchmark](BENCHMARK.md): two fictional dossiers, before/after
+cutoffs, equal-budget input-order and lexical comparators, an all-fit reference, exact
+citation/qualification coverage, and dependency-update review queues with a missing-link
+negative control. No model or installation is needed. The recorded run exposes omissions;
+it does not demonstrate real-world analytical quality or analyst time savings.
+
+## Review newly available evidence
+
+[Checkpoint-based change review](CHANGE_REVIEW.md) prioritizes evidence available since
+an explicit previous review time, preserves exact quotations and lists displaced old
+evidence. Brief preparation blocks if new evidence cannot fit. The synthetic comparison
+recovers both later updates but does not improve overall critical coverage; this is not
+a general salience model. No accepted judgment is automatically revised.
 
 ## Native capsule handoff
 

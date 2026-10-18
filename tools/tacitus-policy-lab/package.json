@@ -7,8 +7,10 @@
   "engines": { "node": ">=22.0.0" },
   "scripts": {
     "start": "node cli.mjs serve",
-    "test": "node --test test.mjs",
+    "test": "node --test test.mjs benchmark.test.mjs change-review.test.mjs",
     "demo": "node cli.mjs demo",
-    "doctor": "node cli.mjs doctor"
+    "doctor": "node cli.mjs doctor",
+    "benchmark": "node cli.mjs benchmark",
+    "review-demo": "node cli.mjs review-demo"
   }
 }
