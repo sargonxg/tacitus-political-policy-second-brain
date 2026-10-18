@@ -167,6 +167,26 @@ mod tests {
     }
 
     #[test]
+    fn schema_169_requires_explicit_tacitus_migration_170() {
+        let m = load();
+        let migration = m.by_version(170).expect("TACITUS migration registered");
+        assert!(matches!(migration.phase, MigrationPhase::Expand));
+        assert!(!migration.confirm_drop);
+        assert_eq!(migration.serving_floor, None);
+        let decision = evaluate(
+            m,
+            &GateInput {
+                applied_max: 169,
+                pending: vec![170],
+                min_binary_schema: None,
+                pending_ok_to_serve: false,
+                mode: SchemaGateMode::Fail,
+            },
+        );
+        assert!(matches!(decision, GateDecision::Refuse { .. }));
+    }
+
+    #[test]
     fn pending_expandable_waits_when_configured() {
         let m = load();
         let d = evaluate(

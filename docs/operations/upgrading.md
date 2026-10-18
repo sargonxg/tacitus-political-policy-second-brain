@@ -7,8 +7,10 @@ description: "Plain-English guide to upgrade any published EdgeQuake version saf
 
 This is the canonical guide to database upgrades. It is for operators who run EdgeQuake on their own PostgreSQL. Read it before you start a newer image or binary. Per-release pages (`upgrade-to-0.XX.md`) describe product changes; this page describes the migration process, which works from any published version to HEAD.
 
-> **Schema train today:** migration **169**.
-> The released product is **v0.34.0** (schema 169). From v0.33.0, `edgequake migrate` is a no-op. Roll the images.
+> **Unreleased TACITUS HEAD schema train:** migration **170**.
+> Published **v0.34.0** remains schema 169. Upgrading that release to this
+> source train requires the explicit migration 170 expand step; rolling an API
+> image alone does not apply it. No released tag or migration SQL is rewritten.
 >
 > **One rule:** the API never changes the database schema. Only `edgequake migrate` (or the Compose service or Helm Job that runs it) writes schema.
 
@@ -31,9 +33,9 @@ flowchart TD
   D -->|Yes| E["Backup, check, migrate, drain, confirm-drop when guard is green"]
   D -->|No| F{"Schema 106 to 148?"}
   F -->|Yes| G["Backup, check, migrate. Watch the SPEC-091 guard"]
-  F -->|No| H{"Schema 149 to 168?"}
+  F -->|No| H{"Schema 149 to 169?"}
   H -->|Yes| I["Backup, check, migrate. Normal path"]
-  H -->|No| J["Schema 169: nothing to apply. Roll images only"]
+  H -->|No| J["Schema 170: nothing pending. Verify readiness"]
 %% eq-classes
 classDef eqStore fill:#D1FAE5,stroke:#10B981,color:#064E3B
 class B eqStore
@@ -46,13 +48,14 @@ How to read it: start at the top, answer each question, and stop at the box that
 | Empty database | none | S | `edgequake migrate` once. A fresh install needs no drop consent. |
 | 105 or lower | before v0.23.0 | XL | Backup, check, migrate, drain, then `--confirm-drop` only when the guard is green. |
 | 106 to 148 | v0.23.0 to v0.25.x | M to L | Known checksum variants repair automatically. Watch the SPEC-091 guard. See [#396](https://github.com/raphaelmansuy/edgequake/issues/396). |
-| 149 | v0.26.x | S to M | Normal path (150 to 169). Leftover drops may still be pending. |
+| 149 | v0.26.x | S to M | Normal path (150 to 170). Leftover drops may still be pending. |
 | 159 to 166 | v0.27 to v0.31 | S | Apply the remaining numbered files. |
-| 168 | v0.32.x | S | Apply 169 (`provider_connections`, expand-only). |
-| 169 | v0.33.0 | none | `migrate` is a no-op. Roll images only. |
+| 168 | v0.32.x | S | Apply 169 (`provider_connections`) and 170 (TACITUS policy records), both expand steps. |
+| 169 | v0.33.0 to v0.34.0 | S | Apply 170 explicitly before serving unreleased TACITUS HEAD. |
+| 170 | unreleased TACITUS HEAD | none | No pending numbered step; verify readiness. |
 
 Risk assumes a small database. Large graphs take longer (class XL) because some steps rewrite AGE tables or build indexes.
-Proof: `make spec150-matrix` (all epochs) and `make spec150-matrix-quick` (key epochs) replay each epoch to HEAD on PG16, PG17 and PG18.
+Runtime proof (not established by metadata coverage alone): `make spec150-matrix` (all epochs) and `make spec150-matrix-quick` (key epochs) replay each epoch to HEAD on PG16, PG17 and PG18.
 
 ---
 
@@ -95,7 +98,8 @@ Schema number to release. The migration matrix in `scripts/spec150/epochs.toml` 
 | 165 | v0.30.0 |
 | 166 | v0.31.0 |
 | 168 | v0.32.0 to v0.32.2 |
-| 169 | v0.33.0 (SPEC-163 `provider_connections`) |
+| 169 | v0.33.0 to v0.34.0 (SPEC-163 `provider_connections`) |
+| 170 | unreleased TACITUS source epoch, commit `7fbd854456fd3a0c19ff138308057941cdd56770` |
 
 ---
 
@@ -159,7 +163,7 @@ Other `migrate` verbs: `status` (per-job progress), `console [--watch]` (live da
 
 ### What you will see
 
-This output was captured from an empty-database upgrade of schema 149 to 168 on PG16. On HEAD the last step is `169_spec163_provider_connections.sql`.
+This output was captured from an empty-database upgrade of schema 149 to 168 on PG16. On unreleased TACITUS HEAD the last step is `170_tacitus_policy.sql`; the historical captured output below is unchanged.
 
 ```text
 EdgeQuake migrate v0.32.2

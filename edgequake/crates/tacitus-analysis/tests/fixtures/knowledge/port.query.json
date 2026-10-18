@@ -1,0 +1,8 @@
+{
+  "question": "What is the port access commitment?",
+  "known_as_of": 300,
+  "valid_at": 300,
+  "time_mode": "disclose_unknown",
+  "max_bytes": 32000,
+  "revoked_sources": []
+}

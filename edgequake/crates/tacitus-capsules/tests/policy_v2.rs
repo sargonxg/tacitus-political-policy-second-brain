@@ -151,3 +151,77 @@ fn v1_is_not_silently_v2_and_unknown_fields_fail() {
     value["arbitrary_endpoint"] = serde_json::json!("https://untrusted.invalid");
     assert!(serde_json::from_value::<Data>(value).is_err());
 }
+
+#[test]
+fn strict_archive_preflight_rejects_ambiguous_json_without_changing_legacy_import() {
+    use std::io::{Cursor, Read, Write};
+    use zip::{write::SimpleFileOptions, ZipArchive, ZipWriter};
+    let mut p = package();
+    p.data.artifacts.insert("opaque".into(), "{}".into());
+    let original = p.export().unwrap();
+    let strict = PolicyPackage::import_strict(&original).unwrap();
+    assert_eq!(
+        strict.export().unwrap(),
+        PolicyPackage::import(&original).unwrap().export().unwrap()
+    );
+    for target in ["manifest.json", "capsule.json", "whitespace"] {
+        let mut zip = ZipArchive::new(Cursor::new(&original)).unwrap();
+        let mut files = BTreeMap::new();
+        for i in 0..zip.len() {
+            let mut entry = zip.by_index(i).unwrap();
+            let mut b = vec![];
+            entry.read_to_end(&mut b).unwrap();
+            files.insert(entry.name().to_string(), b);
+        }
+        if target == "manifest.json" {
+            let m: serde_json::Value = serde_json::from_slice(&files[target]).unwrap();
+            let raw = serde_json::to_string(&m).unwrap();
+            let first = m["files"].as_object().unwrap().iter().next().unwrap();
+            let pair = format!(
+                "{}:{}",
+                serde_json::to_string(first.0).unwrap(),
+                serde_json::to_string(first.1).unwrap()
+            );
+            files.insert(
+                target.into(),
+                raw.replacen("\"files\":{", &format!("\"files\":{{{pair},"), 1)
+                    .into_bytes(),
+            );
+        } else {
+            let d: serde_json::Value = serde_json::from_slice(&files["capsule.json"]).unwrap();
+            let raw = serde_json::to_string(&d).unwrap();
+            let changed = if target == "whitespace" {
+                format!(" \n{raw}\n ")
+            } else {
+                raw.replacen("\"artifacts\":{", "\"artifacts\":{\"opaque\":\"{}\",", 1)
+            };
+            files.insert("capsule.json".into(), changed.into_bytes());
+            let mut m: serde_json::Value = serde_json::from_slice(&files["manifest.json"]).unwrap();
+            m["files"]["capsule.json"] = digest(&files["capsule.json"]).into();
+            files.insert("manifest.json".into(), serde_json::to_vec(&m).unwrap());
+        }
+        let raw_hash = digest(&files["capsule.json"]);
+        let mut out = ZipWriter::new(Cursor::new(vec![]));
+        for (name, body) in files {
+            out.start_file(
+                name,
+                SimpleFileOptions::default().compression_method(zip::CompressionMethod::Stored),
+            )
+            .unwrap();
+            out.write_all(&body).unwrap();
+        }
+        let bad = out.finish().unwrap().into_inner();
+        let legacy = PolicyPackage::import(&bad).unwrap();
+        if target == "whitespace" {
+            let checked = PolicyPackage::import_strict(&bad).unwrap();
+            assert_eq!(checked.manifest.files["capsule.json"], raw_hash);
+            assert_eq!(
+                serde_json::to_value(&checked.data).unwrap(),
+                serde_json::to_value(&legacy.data).unwrap()
+            );
+        } else {
+            let err = PolicyPackage::import_strict(&bad).unwrap_err();
+            assert!(err.contains("duplicate JSON object key"), "{err}");
+        }
+    }
+}

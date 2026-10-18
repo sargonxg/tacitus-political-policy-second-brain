@@ -183,10 +183,6 @@ impl Store {
             .execute(&mut **tx).await.map_err(database)?;
         Ok(())
     }
-    pub async fn event(&self, source: &str, reason: &str) -> ApiResult<()> {
-        let id = Uuid::new_v4().to_string();
-        self.insert("event",&id,1,&json!({"id":id,"source":source,"reason":reason,"action":"review_required","at":chrono::Utc::now().timestamp()})).await
-    }
     pub async fn analysis(&self, id: Uuid) -> ApiResult<Value> {
         let mut tx = self.transaction().await?;
         let row=sqlx::query("SELECT id,status,request,context,result,error,created_at,updated_at FROM tacitus_analyses WHERE id=$1 AND tenant_id=$2 AND workspace_id=$3")

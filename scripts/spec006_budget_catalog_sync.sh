@@ -5,5 +5,5 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT/edgequake"
 
-cargo test -p edgequake-core resource_budget_defaults_match_catalog --quiet
+cargo test -p edgequake-core resource_budget_defaults_match_catalog --locked --quiet
 echo "✓ SPEC-006: ResourceBudgetConfig defaults match catalog"

@@ -1,0 +1,28 @@
+{
+  "format": "tacitus-praxis-attachment-proposal/1",
+  "capsule_id": "fictional-pilot-capsule",
+  "package_version": 1,
+  "content_digest": "43fc8cd1a61bf5af39bd8dd4e114354b09e32187cfc9c58069ecd02af6ad5960",
+  "profile": "context",
+  "title": "Fictional pilot dossier",
+  "review_status": "imported-unreviewed",
+  "trust": "untrusted-data",
+  "rights": {
+    "license": "License per source; no new evidence rights granted",
+    "confidentiality": "private",
+    "sharing_policy": "Local only; review every exported field before sharing"
+  },
+  "valid_until": null,
+  "attached_at": 1780315201,
+  "source_refs": [
+    "delegation@1",
+    "budget@1",
+    "press@1",
+    "reprint@1"
+  ],
+  "limitations": [
+    "Evidence included only where explicitly marked redistributable.",
+    "Provisional bridge to inspected Rust wire format. Full Rust round-trip not executed in this environment. No canonical Praxis compatibility claim."
+  ],
+  "native_schema_version": 1
+}

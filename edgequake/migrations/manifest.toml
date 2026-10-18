@@ -4,7 +4,7 @@
 
 schema_version = 1
 compat_serve_min = 149
-compat_serve_max = 169
+compat_serve_max = 170
 irreversible_drop = [125, 126, 131]
 legacy_cutover_assert = 142
 

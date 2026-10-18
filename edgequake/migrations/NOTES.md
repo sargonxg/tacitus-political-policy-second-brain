@@ -58,8 +58,9 @@ NNN_descriptive_name.sql
   descriptive_name: snake_case, describes what changed
 ```
 
-Current max: `169_spec163_provider_connections.sql` (SPEC-163 connections)  
-Next available: `170_*` (converge migrations only if epoch matrix finds schema drift)
+Current unreleased max: `170_tacitus_policy.sql` (TACITUS policy records).
+Published `v0.34.0` remains schema 169. Next available: `171_*`.
+Migration 170 is an expand step; its historical SQL bytes remain immutable.
 
 Operator guide: [`docs/operations/upgrading.md`](../../docs/operations/upgrading.md).
 

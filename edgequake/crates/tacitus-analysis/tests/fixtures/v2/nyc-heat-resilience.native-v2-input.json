@@ -1,0 +1,395 @@
+{
+  "manifest": {
+    "author": "TACITUS research assistant",
+    "confidentiality": "public",
+    "created_at": 1792301700,
+    "dependencies": [],
+    "domain": "Urban resilience and public health policy",
+    "evidence_mode": "evidence_included",
+    "files": {},
+    "id": "nyc-heat-resilience",
+    "license": "Original assistant-authored TACITUS paraphrases and analysis; no publisher text, images or datasets bundled. Display and delivery are user-authorized; general reuse terms for original TACITUS material are not specified. Linked source licenses apply only to their respective materials. Hashes identify summary bytes, not publisher identity, endorsement, truth or ongoing rights.",
+    "limitations": [
+      "Educational research draft; no independent subject-matter review.",
+      "Source-linked paraphrases are not authenticated publisher excerpts.",
+      "No live operational feed or private data. No model output is treated as independent external evidence; recommendations remain analytical proposals.",
+      "Graph edges and options are analytical proposals unless explicitly sourced.",
+      "Summer 2026 announcements do not establish current cooling-center hours or assistance availability.",
+      "Native assertion dependencies are empty; analytical dependency edges below do not establish native invalidation propagation.",
+      "A digest can be recomputed by an editor; it is not a trusted signature or source authentication.",
+      "Native archive structural validation does not establish source truth, expert review or live PRAXIS compatibility. This revision requires explicit native-v2 adaptation; it is not a v1 exchange.",
+      "World-validity interval is unknown; this record does not establish validity on a requested date. Observation periods and forecast horizons are separate metadata.",
+      "Explicit native-v2 authoring. Native-v1 and v1 catalog/compiler compatibility is not claimed.",
+      "Source publication timestamps describe the authored summaries; official publisher dates are separate in hash-bound research metadata.",
+      "Unknown native validity is unfiltered, not affirmative valid-at-date clearance. Do not use these records as verified date-specific evidence."
+    ],
+    "package_version": 2,
+    "profile": "context",
+    "purpose": "A decision capsule for comparing affordable home cooling, accessible cooling spaces and neighborhood outreach before the next warm season.",
+    "schema_version": 2,
+    "scope": "nyc-heat-resilience",
+    "sharing_policy": "User-authorized display and delivery of these original research records; no broad reuse license for TACITUS or underlying sources implied.",
+    "supersedes": "d00ef0f3182934403134a6bdf0da7521a626641f50681a87508c5cbe810aca7d",
+    "title": "NYC heat resilience: reaching risk beyond emergency days",
+    "valid_until": null
+  },
+  "data": {
+    "sources": [
+      {
+        "id": "summary-heat-burden",
+        "version": 2,
+        "workspace": "nyc-heat-resilience",
+        "document_id": null,
+        "title": "Original research summary: heat-burden",
+        "author": "TACITUS research assistant",
+        "original_hash": "1fca331828ac1c94a94ef850fdef266bd9382c0598278e4caeb74c6ee0212163",
+        "text_hash": "1fca331828ac1c94a94ef850fdef266bd9382c0598278e4caeb74c6ee0212163",
+        "text": "",
+        "language": "en",
+        "extractor": "Original assistant-authored paraphrase/analysis; no publisher-text extraction",
+        "published_at": 1792301700,
+        "retrieved_at": 1792301700,
+        "available_at": 1792301700,
+        "valid_from": null,
+        "valid_until": null,
+        "source_family": "tacitus-authored-summary:nyc-heat-resilience",
+        "withdrawn": false,
+        "restricted": false,
+        "redistributable": true,
+        "license": "User-authorized display and delivery of original TACITUS summaries; no general reuse license specified. Underlying publisher materials not included."
+      },
+      {
+        "id": "summary-heat-method",
+        "version": 2,
+        "workspace": "nyc-heat-resilience",
+        "document_id": null,
+        "title": "Original research summary: heat-method",
+        "author": "TACITUS research assistant",
+        "original_hash": "f9b3ee31fb4e94917ad5901696dcfb4f6649bd8861440571900e7d82987aaba5",
+        "text_hash": "f9b3ee31fb4e94917ad5901696dcfb4f6649bd8861440571900e7d82987aaba5",
+        "text": "",
+        "language": "en",
+        "extractor": "Original assistant-authored paraphrase/analysis; no publisher-text extraction",
+        "published_at": 1792301700,
+        "retrieved_at": 1792301700,
+        "available_at": 1792301700,
+        "valid_from": null,
+        "valid_until": null,
+        "source_family": "tacitus-authored-summary:nyc-heat-resilience",
+        "withdrawn": false,
+        "restricted": false,
+        "redistributable": true,
+        "license": "User-authorized display and delivery of original TACITUS summaries; no general reuse license specified. Underlying publisher materials not included."
+      },
+      {
+        "id": "summary-heat-index",
+        "version": 1,
+        "workspace": "nyc-heat-resilience",
+        "document_id": null,
+        "title": "Original research summary: heat-index",
+        "author": "TACITUS research assistant",
+        "original_hash": "55f47242e6be84b1ce4216bdbe731d4958ef885665c8e35400bb1df3a16333ca",
+        "text_hash": "55f47242e6be84b1ce4216bdbe731d4958ef885665c8e35400bb1df3a16333ca",
+        "text": "",
+        "language": "en",
+        "extractor": "Original assistant-authored paraphrase/analysis; no publisher-text extraction",
+        "published_at": 1792301700,
+        "retrieved_at": 1792301700,
+        "available_at": 1792301700,
+        "valid_from": null,
+        "valid_until": null,
+        "source_family": "tacitus-authored-summary:nyc-heat-resilience",
+        "withdrawn": false,
+        "restricted": false,
+        "redistributable": true,
+        "license": "User-authorized display and delivery of original TACITUS summaries; no general reuse license specified. Underlying publisher materials not included."
+      },
+      {
+        "id": "summary-heat-option",
+        "version": 2,
+        "workspace": "nyc-heat-resilience",
+        "document_id": null,
+        "title": "Original research summary: heat-option",
+        "author": "TACITUS research assistant",
+        "original_hash": "a63a056af3cf07f03fadab8a916bab2ea0f39f7683cfb3adf95bf88623244985",
+        "text_hash": "a63a056af3cf07f03fadab8a916bab2ea0f39f7683cfb3adf95bf88623244985",
+        "text": "",
+        "language": "en",
+        "extractor": "Original assistant-authored paraphrase/analysis; no publisher-text extraction",
+        "published_at": 1792301700,
+        "retrieved_at": 1792301700,
+        "available_at": 1792301700,
+        "valid_from": null,
+        "valid_until": null,
+        "source_family": "tacitus-authored-summary:nyc-heat-resilience",
+        "withdrawn": false,
+        "restricted": false,
+        "redistributable": true,
+        "license": "User-authorized display and delivery of original TACITUS summaries; no general reuse license specified. Underlying publisher materials not included."
+      },
+      {
+        "id": "summary-heat-scenario",
+        "version": 1,
+        "workspace": "nyc-heat-resilience",
+        "document_id": null,
+        "title": "Original research summary: heat-scenario",
+        "author": "TACITUS research assistant",
+        "original_hash": "65ba44325000beedb46bdfbaaaa850c125fabb0348a842bb4ca713f0dba8991d",
+        "text_hash": "65ba44325000beedb46bdfbaaaa850c125fabb0348a842bb4ca713f0dba8991d",
+        "text": "",
+        "language": "en",
+        "extractor": "Original assistant-authored paraphrase/analysis; no publisher-text extraction",
+        "published_at": 1792299600,
+        "retrieved_at": 1792299600,
+        "available_at": 1792299600,
+        "valid_from": null,
+        "valid_until": null,
+        "source_family": "tacitus-authored-summary:nyc-heat-resilience",
+        "withdrawn": false,
+        "restricted": false,
+        "redistributable": true,
+        "license": "User-authorized display and delivery of original TACITUS summaries; no general reuse license specified. Underlying publisher materials not included."
+      }
+    ],
+    "assertions": [
+      {
+        "id": "heat-burden",
+        "version": 2,
+        "workspace": "nyc-heat-resilience",
+        "speaker": "TACITUS research assistant",
+        "subject": "NYC heat resilience: reaching risk beyond emergency days",
+        "predicate": "states",
+        "object": null,
+        "proposition": "NYC Health reported an annual warm-season average of approximately 500 heat-related deaths, predominantly heat-exacerbated deaths. About 80% occurred on frequent hot days below the extreme-heat range, described as 82–94°F.",
+        "epistemic_type": "reported_statement",
+        "modality": "qualified-research-draft",
+        "conditions": [
+          "Population estimates, not individually certified heat deaths or a forecast for one summer. The larger aggregate burden on non-extreme hot days reflects their frequency; risk rises with temperature and extreme days are not safer. Outdoor temperature bands are not heat-index alert thresholds.",
+          "World-validity interval is unknown; this record does not establish validity on a requested date. Observation periods and forecast horizons are separate metadata.",
+          "Source-linked assistant-authored record; integrity does not establish publisher authenticity, truth, rights or expert review."
+        ],
+        "exceptions": [],
+        "evidence": [
+          {
+            "source": "summary-heat-burden@2",
+            "text_hash": "1fca331828ac1c94a94ef850fdef266bd9382c0598278e4caeb74c6ee0212163",
+            "start": 0,
+            "end": 663,
+            "locator": "Complete original TACITUS summary; primary-source URLs included in summary; detailed dates and periods in research artifact",
+            "original_language": "en",
+            "translation": null
+          }
+        ],
+        "created_at": 1792301700
+      },
+      {
+        "id": "heat-method",
+        "version": 2,
+        "workspace": "nyc-heat-resilience",
+        "speaker": "TACITUS research assistant",
+        "subject": "NYC heat resilience: reaching risk beyond emergency days",
+        "predicate": "states",
+        "object": null,
+        "proposition": "The 2026 report changes heat-exacerbated mortality estimation from five-year to ten-year rolling windows; the reported heat-exacerbated estimates cover 2014–2023.",
+        "epistemic_type": "reported_statement",
+        "modality": "qualified-research-draft",
+        "conditions": [
+          "Methodological change limits direct comparison with prior editions. The separate direct heat-stress series covers 2016–2025, with recent data provisional; these are not one 2026 cohort.",
+          "World-validity interval is unknown; this record does not establish validity on a requested date. Observation periods and forecast horizons are separate metadata.",
+          "Source-linked assistant-authored record; integrity does not establish publisher authenticity, truth, rights or expert review."
+        ],
+        "exceptions": [],
+        "evidence": [
+          {
+            "source": "summary-heat-method@2",
+            "text_hash": "f9b3ee31fb4e94917ad5901696dcfb4f6649bd8861440571900e7d82987aaba5",
+            "start": 0,
+            "end": 456,
+            "locator": "Complete original TACITUS summary; primary-source URLs included in summary; detailed dates and periods in research artifact",
+            "original_language": "en",
+            "translation": null
+          }
+        ],
+        "created_at": 1792301700
+      },
+      {
+        "id": "heat-index",
+        "version": 1,
+        "workspace": "nyc-heat-resilience",
+        "speaker": "TACITUS research assistant",
+        "subject": "NYC heat resilience: reaching risk beyond emergency days",
+        "predicate": "states",
+        "object": null,
+        "proposition": "The Heat Vulnerability Index combines environmental and social factors to compare neighborhood heat vulnerability.",
+        "epistemic_type": "reported_statement",
+        "modality": "qualified-research-draft",
+        "conditions": [
+          "A relative neighborhood measure, not an assessment of an individual’s health or eligibility.",
+          "World-validity interval is unknown; this record does not establish validity on a requested date. Observation periods and forecast horizons are separate metadata.",
+          "Source-linked assistant-authored record; integrity does not establish publisher authenticity, truth, rights or expert review."
+        ],
+        "exceptions": [],
+        "evidence": [
+          {
+            "source": "summary-heat-index@1",
+            "text_hash": "55f47242e6be84b1ce4216bdbe731d4958ef885665c8e35400bb1df3a16333ca",
+            "start": 0,
+            "end": 313,
+            "locator": "Complete original TACITUS summary; primary-source URLs included in summary; detailed dates and periods in research artifact",
+            "original_language": "en",
+            "translation": null
+          }
+        ],
+        "created_at": 1792301700
+      },
+      {
+        "id": "heat-option",
+        "version": 2,
+        "workspace": "nyc-heat-resilience",
+        "speaker": "TACITUS research assistant",
+        "subject": "NYC heat resilience: reaching risk beyond emergency days",
+        "predicate": "states",
+        "object": null,
+        "proposition": "A portfolio that supports affordable home cooling and routine hot-day outreach deserves comparison with an emergency-center-only strategy.",
+        "epistemic_type": "inference",
+        "modality": "qualified-research-draft",
+        "conditions": [
+          "Candidate strategy inferred from the timing of estimated mortality; these sources do not establish its marginal cost-effectiveness. The emergency-center-only comparator is hypothetical, not a description of NYC policy. Self-reported barriers alone cannot identify causal effects.",
+          "World-validity interval is unknown; this record does not establish validity on a requested date. Observation periods and forecast horizons are separate metadata.",
+          "Source-linked assistant-authored record; integrity does not establish publisher authenticity, truth, rights or expert review."
+        ],
+        "exceptions": [],
+        "evidence": [
+          {
+            "source": "summary-heat-option@2",
+            "text_hash": "a63a056af3cf07f03fadab8a916bab2ea0f39f7683cfb3adf95bf88623244985",
+            "start": 0,
+            "end": 638,
+            "locator": "Complete original TACITUS summary; primary-source URLs included in summary; detailed dates and periods in research artifact",
+            "original_language": "en",
+            "translation": null
+          }
+        ],
+        "created_at": 1792301700
+      },
+      {
+        "id": "heat-scenario",
+        "version": 2,
+        "workspace": "nyc-heat-resilience",
+        "speaker": "TACITUS research assistant",
+        "subject": "NYC heat resilience: reaching risk beyond emergency days",
+        "predicate": "states",
+        "object": null,
+        "proposition": "A planning team must select a small, budget-constrained pilot before the next warm season without using individual health records.",
+        "epistemic_type": "hypothesis",
+        "modality": "synthetic-illustrative",
+        "conditions": [
+          "Invented decision scenario for demonstrating capsule reuse; no actual municipal mandate or budget is asserted.",
+          "World-validity interval is unknown; this record does not establish validity on a requested date. Observation periods and forecast horizons are separate metadata.",
+          "Source-linked assistant-authored record; integrity does not establish publisher authenticity, truth, rights or expert review.",
+          "SYNTHETIC ILLUSTRATIVE SCENARIO: not a documented event, observation or prediction."
+        ],
+        "exceptions": [],
+        "evidence": [
+          {
+            "source": "summary-heat-scenario@1",
+            "text_hash": "65ba44325000beedb46bdfbaaaa850c125fabb0348a842bb4ca713f0dba8991d",
+            "start": 0,
+            "end": 274,
+            "locator": "Complete original TACITUS summary; primary-source URLs included in summary; detailed dates and periods in research artifact",
+            "original_language": "en",
+            "translation": null
+          }
+        ],
+        "created_at": 1792301700
+      }
+    ],
+    "methods": [
+      {
+        "id": "preserve-qualifications",
+        "version": 2,
+        "workspace": "nyc-heat-resilience",
+        "kind": "procedure",
+        "description": "Retain source attribution, unknown world validity, observation periods, forecast horizons, modality and synthetic status when reusing this research. Do not infer a policy conclusion merely from matching hashes.",
+        "scope": "nyc-heat-resilience",
+        "prerequisites": [
+          "Human review of intended use and current evidence; no verified date-specific applicability can be inferred from null validity."
+        ],
+        "failure_conditions": [
+          "Educational research draft; no independent subject-matter review.",
+          "Source-linked paraphrases are not authenticated publisher excerpts.",
+          "No live operational feed or private data. No model output is treated as independent external evidence; recommendations remain analytical proposals.",
+          "Graph edges and options are analytical proposals unless explicitly sourced.",
+          "Summer 2026 announcements do not establish current cooling-center hours or assistance availability.",
+          "Native assertion dependencies are empty; analytical dependency edges below do not establish native invalidation propagation.",
+          "A digest can be recomputed by an editor; it is not a trusted signature or source authentication.",
+          "Native archive structural validation does not establish source truth, expert review or live PRAXIS compatibility. This revision requires explicit native-v2 adaptation; it is not a v1 exchange.",
+          "World-validity interval is unknown; this record does not establish validity on a requested date. Observation periods and forecast horizons are separate metadata."
+        ],
+        "evidence": [
+          {
+            "source": "summary-heat-burden@2",
+            "text_hash": "1fca331828ac1c94a94ef850fdef266bd9382c0598278e4caeb74c6ee0212163",
+            "start": 0,
+            "end": 663,
+            "locator": "Complete original TACITUS summary; primary-source URLs included in summary; detailed dates and periods in research artifact",
+            "original_language": "en",
+            "translation": null
+          },
+          {
+            "source": "summary-heat-method@2",
+            "text_hash": "f9b3ee31fb4e94917ad5901696dcfb4f6649bd8861440571900e7d82987aaba5",
+            "start": 0,
+            "end": 456,
+            "locator": "Complete original TACITUS summary; primary-source URLs included in summary; detailed dates and periods in research artifact",
+            "original_language": "en",
+            "translation": null
+          },
+          {
+            "source": "summary-heat-index@1",
+            "text_hash": "55f47242e6be84b1ce4216bdbe731d4958ef885665c8e35400bb1df3a16333ca",
+            "start": 0,
+            "end": 313,
+            "locator": "Complete original TACITUS summary; primary-source URLs included in summary; detailed dates and periods in research artifact",
+            "original_language": "en",
+            "translation": null
+          },
+          {
+            "source": "summary-heat-option@2",
+            "text_hash": "a63a056af3cf07f03fadab8a916bab2ea0f39f7683cfb3adf95bf88623244985",
+            "start": 0,
+            "end": 638,
+            "locator": "Complete original TACITUS summary; primary-source URLs included in summary; detailed dates and periods in research artifact",
+            "original_language": "en",
+            "translation": null
+          },
+          {
+            "source": "summary-heat-scenario@1",
+            "text_hash": "65ba44325000beedb46bdfbaaaa850c125fabb0348a842bb4ca713f0dba8991d",
+            "start": 0,
+            "end": 274,
+            "locator": "Complete original TACITUS summary; primary-source URLs included in summary; detailed dates and periods in research artifact",
+            "original_language": "en",
+            "translation": null
+          }
+        ],
+        "created_at": 1792301700,
+        "available_at": 1792301700,
+        "ontology_version": "tacitus-policy/1"
+      }
+    ],
+    "reviews": [],
+    "artifacts": {
+      "tacitus.policy-research": "{\"id\":\"nyc-heat-resilience\",\"title\":\"NYC heat resilience: reaching risk beyond emergency days\",\"summary\":\"A decision capsule for comparing affordable home cooling, accessible cooling spaces and neighborhood outreach before the next warm season.\",\"domain\":\"Urban resilience and public health policy\",\"asOf\":\"2026-10-18T04:56:00Z\",\"sources\":[{\"id\":\"nyc-release\",\"title\":\"NYC Health Department heat mortality announcement\",\"url\":\"https://www.nyc.gov/site/doh/about/press/pr2026/nyc-health-department-releases-report-on-heat-related-deaths.page\",\"publishedDate\":\"2026-06-15\",\"accessedDate\":\"2026-10-18T04:56:00Z\",\"locator\":\"Annual mortality and temperature distribution\",\"reviewAccessedDate\":\"2026-10-18T05:31:00Z\",\"sourceLicense\":\"Not established by this review; linked material retains its rights.\"},{\"id\":\"nyc-report\",\"title\":\"2026 NYC Heat-Related Mortality Report\",\"url\":\"https://a816-dohbesp.nyc.gov/IndicatorPublic/data-features/heat-report/\",\"publishedDate\":\"2026\",\"accessedDate\":\"2026-10-18T04:56:00Z\",\"locator\":\"Heat-Exacerbated Deaths; Heat-Stress Deaths; Community-Level Impacts\",\"reviewAccessedDate\":\"2026-10-18T05:31:00Z\",\"sourceLicense\":\"Not established by this review; linked material retains its rights.\"}],\"claims\":[{\"id\":\"heat-burden\",\"text\":\"NYC Health reported an annual warm-season average of approximately 500 heat-related deaths, predominantly heat-exacerbated deaths. About 80% occurred on frequent hot days below the extreme-heat range, described as 82–94°F.\",\"kind\":\"fact\",\"sourceIds\":[\"nyc-release\"],\"qualification\":\"Population estimates, not individually certified heat deaths or a forecast for one summer. The larger aggregate burden on non-extreme hot days reflects their frequency; risk rises with temperature and extreme days are not safer. Outdoor temperature bands are not heat-index alert thresholds.\",\"synthetic\":false,\"epistemicStatus\":\"attributed-source-summary\",\"temporal\":{\"publisherDates\":{\"nyc-release\":\"2026-06-15\"},\"recordedAt\":\"2026-10-18T05:35:00Z\",\"observationPeriod\":{\"heatExacerbated\":\"2014–2023\",\"directHeatStress\":\"2016–2025; recent data provisional\",\"note\":\"Distinct source series, not a merged cohort\"},\"forecastHorizon\":null,\"worldValidity\":{\"status\":\"unknown\",\"from\":null,\"until\":null}},\"analyticalDependencies\":[],\"assumptions\":[]},{\"id\":\"heat-method\",\"text\":\"The 2026 report changes heat-exacerbated mortality estimation from five-year to ten-year rolling windows; the reported heat-exacerbated estimates cover 2014–2023.\",\"kind\":\"fact\",\"sourceIds\":[\"nyc-report\"],\"qualification\":\"Methodological change limits direct comparison with prior editions. The separate direct heat-stress series covers 2016–2025, with recent data provisional; these are not one 2026 cohort.\",\"synthetic\":false,\"epistemicStatus\":\"attributed-source-summary\",\"temporal\":{\"publisherDates\":{\"nyc-report\":\"2026\"},\"recordedAt\":\"2026-10-18T05:35:00Z\",\"observationPeriod\":{\"heatExacerbated\":\"2014–2023\",\"directHeatStress\":\"2016–2025; recent data provisional\",\"note\":\"Distinct source series, not a merged cohort\"},\"forecastHorizon\":null,\"worldValidity\":{\"status\":\"unknown\",\"from\":null,\"until\":null}},\"analyticalDependencies\":[],\"assumptions\":[]},{\"id\":\"heat-index\",\"text\":\"The Heat Vulnerability Index combines environmental and social factors to compare neighborhood heat vulnerability.\",\"kind\":\"fact\",\"sourceIds\":[\"nyc-report\"],\"qualification\":\"A relative neighborhood measure, not an assessment of an individual’s health or eligibility.\",\"synthetic\":false,\"epistemicStatus\":\"attributed-source-summary\",\"temporal\":{\"publisherDates\":{\"nyc-report\":\"2026\"},\"recordedAt\":\"2026-10-18T05:35:00Z\",\"observationPeriod\":null,\"forecastHorizon\":null,\"worldValidity\":{\"status\":\"unknown\",\"from\":null,\"until\":null}},\"analyticalDependencies\":[],\"assumptions\":[]},{\"id\":\"heat-option\",\"text\":\"A portfolio that supports affordable home cooling and routine hot-day outreach deserves comparison with an emergency-center-only strategy.\",\"kind\":\"analysis\",\"sourceIds\":[\"nyc-release\",\"nyc-report\"],\"qualification\":\"Candidate strategy inferred from the timing of estimated mortality; these sources do not establish its marginal cost-effectiveness. The emergency-center-only comparator is hypothetical, not a description of NYC policy. Self-reported barriers alone cannot identify causal effects.\",\"synthetic\":false,\"epistemicStatus\":\"analyst-proposal\",\"temporal\":{\"publisherDates\":{\"nyc-release\":\"2026-06-15\",\"nyc-report\":\"2026\"},\"recordedAt\":\"2026-10-18T05:35:00Z\",\"observationPeriod\":null,\"forecastHorizon\":null,\"worldValidity\":{\"status\":\"unknown\",\"from\":null,\"until\":null}},\"analyticalDependencies\":[\"heat-burden\",\"heat-method\",\"heat-index\"],\"assumptions\":[\"General evidence may not transfer to a specific decision without local inputs\"]},{\"id\":\"heat-scenario\",\"text\":\"A planning team must select a small, budget-constrained pilot before the next warm season without using individual health records.\",\"kind\":\"scenario\",\"sourceIds\":[],\"qualification\":\"Invented decision scenario for demonstrating capsule reuse; no actual municipal mandate or budget is asserted.\",\"synthetic\":true,\"epistemicStatus\":\"illustrative-scenario\",\"temporal\":{\"publisherDates\":{},\"recordedAt\":\"2026-10-18T05:35:00Z\",\"observationPeriod\":null,\"forecastHorizon\":null,\"worldValidity\":{\"status\":\"unknown\",\"from\":null,\"until\":null}},\"analyticalDependencies\":[],\"assumptions\":[\"Illustrative context only; no actual event asserted\"]}],\"questions\":[\"What would justify choosing affordability support, accessible cooling spaces or outreach, and what would stop us scaling?\",\"Which neighborhoods combine high vulnerability with documented gaps in cooling access?\",\"What is the binding barrier: equipment, electricity cost, housing conditions, mobility, information, or hours of service?\",\"What observable result would justify scaling a pilot without claiming deaths prevented from a small sample?\"],\"limitations\":[\"Educational research draft; no independent subject-matter review.\",\"Source-linked paraphrases are not authenticated publisher excerpts.\",\"No live operational feed or private data. No model output is treated as independent external evidence; recommendations remain analytical proposals.\",\"Graph edges and options are analytical proposals unless explicitly sourced.\",\"Summer 2026 announcements do not establish current cooling-center hours or assistance availability.\",\"Native assertion dependencies are empty; analytical dependency edges below do not establish native invalidation propagation.\",\"A digest can be recomputed by an editor; it is not a trusted signature or source authentication.\",\"Native archive structural validation does not establish source truth, expert review or live PRAXIS compatibility. This revision requires explicit native-v2 adaptation; it is not a v1 exchange.\"],\"rightsNote\":\"Original assistant-authored TACITUS paraphrases and analysis; no publisher text, images or datasets bundled. Display and delivery are user-authorized; general reuse terms for original TACITUS material are not specified. Linked source licenses apply only to their respective materials. Hashes identify summary bytes, not publisher identity, endorsement, truth or ongoing rights.\",\"actors\":[{\"id\":\"residents\",\"role\":\"Residents potentially affected by heat\",\"interests\":\"Affordable and dependable cooling, privacy, accessible support\",\"status\":\"analytical stakeholder framing\"},{\"id\":\"health\",\"role\":\"City public-health planners\",\"interests\":\"Population risk reduction and defensible allocation\",\"status\":\"analytical stakeholder framing\"},{\"id\":\"housing\",\"role\":\"Housing and energy-service partners\",\"interests\":\"Feasible installations, building constraints and sustained operating affordability\",\"status\":\"analytical stakeholder framing\"}],\"options\":[{\"id\":\"home\",\"action\":\"Target a small home-cooling access and affordability pilot\",\"benefit\":\"Addresses exposure where people spend time\",\"tradeoff\":\"Equipment access alone may not resolve recurring electricity costs or installation barriers\",\"evidenceNeeded\":\"Program eligibility, cost, uptake and safe installation evidence\"},{\"id\":\"spaces\",\"action\":\"Improve access to existing cooling spaces\",\"benefit\":\"Uses shared infrastructure and can offer immediate refuge\",\"tradeoff\":\"Travel, opening hours and awareness can limit use\",\"evidenceNeeded\":\"Verified hours, accessibility audits, utilization and travel-time data\"},{\"id\":\"outreach\",\"action\":\"Test routine hot-day outreach with community partners\",\"benefit\":\"Reaches risk outside exceptional alerts\",\"tradeoff\":\"Messages alone do not remove material barriers\",\"evidenceNeeded\":\"Reach, comprehension, service referrals and barriers remaining\"}],\"hypotheses\":[{\"statement\":\"A material share of unmet need reflects affordability rather than lack of awareness.\",\"test\":\"Collect consented, nonclinical barrier categories from a pilot and compare service uptake by barrier.\",\"wouldWeaken\":\"High awareness-adjusted uptake after information-only changes with few affordability reports.\"}],\"constraints\":[\"Do not use neighborhood demographic composition as a proxy for individual clinical risk.\",\"Recheck funding and eligibility before recommending any assistance route.\",\"Use a common methodological basis before comparing mortality estimates across editions.\"],\"decisionRule\":\"Prefer a reversible, measurable pilot with explicit accessibility and operating-cost checks. Do not rank options by invented deaths-averted estimates.\",\"updates\":[\"Recheck the health report before each annual planning cycle.\",\"Revalidate service hours and eligibility before any public operational advice.\",\"If methodology or underlying estimates change, supersede affected claims and flag dependent comparisons.\"],\"graph\":{\"nodes\":[{\"id\":\"residents\",\"type\":\"actor\",\"label\":\"Residents potentially affected by heat\"},{\"id\":\"health\",\"type\":\"actor\",\"label\":\"City public-health planners\"},{\"id\":\"housing\",\"type\":\"actor\",\"label\":\"Housing and energy-service partners\"},{\"id\":\"heat-burden\",\"type\":\"fact\",\"synthetic\":false,\"label\":\"NYC Health reported an annual warm-season average of approximately 500 heat-related deaths, predominantly heat-exacerbated deaths. About 80% occurred on frequent hot days below the extreme-heat range, described as 82–94°F.\"},{\"id\":\"heat-method\",\"type\":\"fact\",\"synthetic\":false,\"label\":\"The 2026 report changes heat-exacerbated mortality estimation from five-year to ten-year rolling windows; the reported heat-exacerbated estimates cover 2014–2023.\"},{\"id\":\"heat-index\",\"type\":\"fact\",\"synthetic\":false,\"label\":\"The Heat Vulnerability Index combines environmental and social factors to compare neighborhood heat vulnerability.\"},{\"id\":\"heat-option\",\"type\":\"analysis\",\"synthetic\":false,\"label\":\"A portfolio that supports affordable home cooling and routine hot-day outreach deserves comparison with an emergency-center-only strategy.\"},{\"id\":\"heat-scenario\",\"type\":\"scenario\",\"synthetic\":true,\"label\":\"A planning team must select a small, budget-constrained pilot before the next warm season without using individual health records.\"},{\"id\":\"nyc-release\",\"type\":\"official_source\",\"label\":\"NYC Health Department heat mortality announcement\"},{\"id\":\"nyc-report\",\"type\":\"official_source\",\"label\":\"2026 NYC Heat-Related Mortality Report\"}],\"edges\":[{\"from\":\"heat-burden\",\"to\":\"nyc-release\",\"type\":\"reported_in\",\"qualification\":\"Linked-source attribution; no publisher endorsement of analyst conclusions\"},{\"from\":\"heat-method\",\"to\":\"nyc-report\",\"type\":\"reported_in\",\"qualification\":\"Linked-source attribution; no publisher endorsement of analyst conclusions\"},{\"from\":\"heat-index\",\"to\":\"nyc-report\",\"type\":\"reported_in\",\"qualification\":\"Linked-source attribution; no publisher endorsement of analyst conclusions\"},{\"from\":\"heat-option\",\"to\":\"nyc-release\",\"type\":\"informed_by\",\"qualification\":\"Linked-source attribution; no publisher endorsement of analyst conclusions\"},{\"from\":\"heat-option\",\"to\":\"nyc-report\",\"type\":\"informed_by\",\"qualification\":\"Linked-source attribution; no publisher endorsement of analyst conclusions\"},{\"from\":\"heat-option\",\"to\":\"heat-burden\",\"type\":\"analytically_depends_on\",\"qualification\":\"Research-layer relation only; native dependency propagation unsupported\"},{\"from\":\"heat-option\",\"to\":\"heat-method\",\"type\":\"analytically_depends_on\",\"qualification\":\"Research-layer relation only; native dependency propagation unsupported\"},{\"from\":\"heat-option\",\"to\":\"heat-index\",\"type\":\"analytically_depends_on\",\"qualification\":\"Research-layer relation only; native dependency propagation unsupported\"}]},\"contextPolicy\":{\"mandatory\":[\"scope and as-of\",\"source attribution\",\"qualification for each selected claim\",\"uncertainty and limitations\",\"superseded/retracted status\",\"synthetic scenario marker\",\"observation period versus publisher and record dates\",\"analytical dependency limitations\"],\"compression\":\"Drop optional scenarios before source qualifications; if the budget cannot preserve qualifications, return an insufficient-budget warning rather than a misleading brief.\",\"externalTools\":\"Explicit user action required before transmitting capsule text to a model or other service; this package makes no live calls.\"},\"layers\":{\"orientation\":{\"summary\":\"A decision capsule for comparing affordable home cooling, accessible cooling spaces and neighborhood outreach before the next warm season.\",\"questions\":[\"What would justify choosing affordability support, accessible cooling spaces or outreach, and what would stop us scaling?\",\"Which neighborhoods combine high vulnerability with documented gaps in cooling access?\",\"What is the binding barrier: equipment, electricity cost, housing conditions, mobility, information, or hours of service?\",\"What observable result would justify scaling a pilot without claiming deaths prevented from a small sample?\"]},\"evidence\":{\"claimIds\":[\"heat-burden\",\"heat-method\",\"heat-index\"],\"sourceIds\":[\"nyc-release\",\"nyc-report\"]},\"analysis\":{\"optionIds\":[\"home\",\"spaces\",\"outreach\"],\"hypotheses\":[{\"statement\":\"A material share of unmet need reflects affordability rather than lack of awareness.\",\"test\":\"Collect consented, nonclinical barrier categories from a pilot and compare service uptake by barrier.\",\"wouldWeaken\":\"High awareness-adjusted uptake after information-only changes with few affordability reports.\"}]},\"cognitiveMethod\":{\"decisionRule\":\"Prefer a reversible, measurable pilot with explicit accessibility and operating-cost checks. Do not rank options by invented deaths-averted estimates.\",\"constraints\":[\"Do not use neighborhood demographic composition as a proxy for individual clinical risk.\",\"Recheck funding and eligibility before recommending any assistance route.\",\"Use a common methodological basis before comparing mortality estimates across editions.\"]},\"governance\":{\"reviewStatus\":\"assistant-source-reviewed; not expert-reviewed\",\"updateTriggers\":[\"Recheck the health report before each annual planning cycle.\",\"Revalidate service hours and eligibility before any public operational advice.\",\"If methodology or underlying estimates change, supersede affected claims and flag dependent comparisons.\"],\"retractionProtocol\":\"Mark the affected version retracted, retain its identifier and reason, and stop using its dependent analysis until a replacement is reviewed. Local files do not automatically propagate revocations to downloaded copies.\",\"revision\":\"0.1.1\"}},\"revision\":\"0.1.1\",\"packageVersion\":2,\"originalResearchAsOf\":\"2026-10-18T04:56:00Z\",\"revisionRecordedAt\":\"2026-10-18T05:35:00Z\",\"independentAssistantReviewAt\":\"2026-10-18T05:31:00Z\",\"reviewStatus\":\"assistant-source-reviewed; not expert-reviewed\",\"decisionUseCase\":{\"role\":\"Community-organization policy analyst\",\"task\":\"Draft a hypothetical next-summer pilot options memo\",\"requiredOutput\":[\"Missing inputs\",\"Accessibility and operating costs\",\"Uptake and retention measures\",\"Conditions for not scaling\"],\"exclusions\":[\"Invented deaths-averted estimates\",\"Current service hours\",\"Individual medical inference\"]},\"preparedAt\":\"2026-10-18T04:56:00Z\",\"nativePackaging\":{\"target\":\"explicit native-v2 adaptation\",\"status\":\"pending separate Rust packaging and validation\",\"v1Limitation\":\"Native-v1 required world-validity start cannot represent unknown; no v1 exchange produced for this revision.\"},\"temporalContract\":{\"version\":\"tacitus-research-temporal/1\",\"preparedAtMeaning\":\"Original assistant research preparation timestamp, not world-validity.\",\"recordedAtMeaning\":\"When this revised research record was authored; not a claim about what was available historically.\",\"unknownValidityMeaning\":\"No declared world-validity bounds; this does not mean valid at every time.\",\"syntheticMeaning\":\"Illustrative scenarios have no actual event date.\",\"nativeV2Mapping\":\"Optional SourceRecord valid_from/valid_until may remain null; unknown status is preserved in this artifact. Native eligibility behavior does not prove temporal applicability.\"}}",
+      "tacitus.research-summary-provenance": "{\"capsuleId\":\"nyc-heat-resilience\",\"packageVersion\":2,\"contentRevision\":\"0.1.1\",\"revisionRecordedAt\":\"2026-10-18T05:35:00Z\",\"summaryRecords\":[{\"id\":\"summary-heat-burden\",\"version\":2,\"claimId\":\"heat-burden\",\"text\":\"NYC Health reported an annual warm-season average of approximately 500 heat-related deaths, predominantly heat-exacerbated deaths. About 80% occurred on frequent hot days below the extreme-heat range, described as 82–94°F.\\nQualification: Population estimates, not individually certified heat deaths or a forecast for one summer. The larger aggregate burden on non-extreme hot days reflects their frequency; risk rises with temperature and extreme days are not safer. Outdoor temperature bands are not heat-index alert thresholds.\\nPrimary sources: https://www.nyc.gov/site/doh/about/press/pr2026/nyc-health-department-releases-report-on-heat-related-deaths.page\",\"sha256\":\"1fca331828ac1c94a94ef850fdef266bd9382c0598278e4caeb74c6ee0212163\",\"authoredAt\":\"2026-10-18T05:35:00Z\",\"availableAt\":\"2026-10-18T05:35:00Z\",\"worldValidity\":{\"status\":\"unknown\",\"from\":null,\"until\":null},\"author\":\"TACITUS research assistant\",\"kind\":\"original assistant-authored paraphrase/analysis\",\"unchangedFromPrevious\":false,\"previousHash\":\"44b79df40c8e58acd60fcd18f564d5d0cb320a054c806c4158b4a937da871a46\",\"sourceRightsNote\":\"Original assistant-authored TACITUS paraphrases and analysis; no publisher text, images or datasets bundled. Display and delivery are user-authorized; general reuse terms for original TACITUS material are not specified. Linked source licenses apply only to their respective materials. Hashes identify summary bytes, not publisher identity, endorsement, truth or ongoing rights.\"},{\"id\":\"summary-heat-method\",\"version\":2,\"claimId\":\"heat-method\",\"text\":\"The 2026 report changes heat-exacerbated mortality estimation from five-year to ten-year rolling windows; the reported heat-exacerbated estimates cover 2014–2023.\\nQualification: Methodological change limits direct comparison with prior editions. The separate direct heat-stress series covers 2016–2025, with recent data provisional; these are not one 2026 cohort.\\nPrimary sources: https://a816-dohbesp.nyc.gov/IndicatorPublic/data-features/heat-report/\",\"sha256\":\"f9b3ee31fb4e94917ad5901696dcfb4f6649bd8861440571900e7d82987aaba5\",\"authoredAt\":\"2026-10-18T05:35:00Z\",\"availableAt\":\"2026-10-18T05:35:00Z\",\"worldValidity\":{\"status\":\"unknown\",\"from\":null,\"until\":null},\"author\":\"TACITUS research assistant\",\"kind\":\"original assistant-authored paraphrase/analysis\",\"unchangedFromPrevious\":false,\"previousHash\":\"6d9abf42c3bb8d9ef8ff1b430f355d8ab2f873e4ac285c157f2d4c17faad3096\",\"sourceRightsNote\":\"Original assistant-authored TACITUS paraphrases and analysis; no publisher text, images or datasets bundled. Display and delivery are user-authorized; general reuse terms for original TACITUS material are not specified. Linked source licenses apply only to their respective materials. Hashes identify summary bytes, not publisher identity, endorsement, truth or ongoing rights.\"},{\"id\":\"summary-heat-index\",\"version\":1,\"claimId\":\"heat-index\",\"text\":\"The Heat Vulnerability Index combines environmental and social factors to compare neighborhood heat vulnerability.\\nQualification: A relative neighborhood measure, not an assessment of an individual’s health or eligibility.\\nPrimary sources: https://a816-dohbesp.nyc.gov/IndicatorPublic/data-features/heat-report/\",\"sha256\":\"55f47242e6be84b1ce4216bdbe731d4958ef885665c8e35400bb1df3a16333ca\",\"authoredAt\":\"2026-10-18T05:35:00Z\",\"availableAt\":\"2026-10-18T05:35:00Z\",\"worldValidity\":{\"status\":\"unknown\",\"from\":null,\"until\":null},\"author\":\"TACITUS research assistant\",\"kind\":\"original assistant-authored paraphrase/analysis\",\"unchangedFromPrevious\":false,\"previousHash\":null,\"sourceRightsNote\":\"Original assistant-authored TACITUS paraphrases and analysis; no publisher text, images or datasets bundled. Display and delivery are user-authorized; general reuse terms for original TACITUS material are not specified. Linked source licenses apply only to their respective materials. Hashes identify summary bytes, not publisher identity, endorsement, truth or ongoing rights.\"},{\"id\":\"summary-heat-option\",\"version\":2,\"claimId\":\"heat-option\",\"text\":\"A portfolio that supports affordable home cooling and routine hot-day outreach deserves comparison with an emergency-center-only strategy.\\nQualification: Candidate strategy inferred from the timing of estimated mortality; these sources do not establish its marginal cost-effectiveness. The emergency-center-only comparator is hypothetical, not a description of NYC policy. Self-reported barriers alone cannot identify causal effects.\\nPrimary sources: https://www.nyc.gov/site/doh/about/press/pr2026/nyc-health-department-releases-report-on-heat-related-deaths.page | https://a816-dohbesp.nyc.gov/IndicatorPublic/data-features/heat-report/\",\"sha256\":\"a63a056af3cf07f03fadab8a916bab2ea0f39f7683cfb3adf95bf88623244985\",\"authoredAt\":\"2026-10-18T05:35:00Z\",\"availableAt\":\"2026-10-18T05:35:00Z\",\"worldValidity\":{\"status\":\"unknown\",\"from\":null,\"until\":null},\"author\":\"TACITUS research assistant\",\"kind\":\"original assistant-authored paraphrase/analysis\",\"unchangedFromPrevious\":false,\"previousHash\":\"c569e14357842058429d866e5e0aeddd27dd99327cdcb56e1ce5418d55d9aac5\",\"sourceRightsNote\":\"Original assistant-authored TACITUS paraphrases and analysis; no publisher text, images or datasets bundled. Display and delivery are user-authorized; general reuse terms for original TACITUS material are not specified. Linked source licenses apply only to their respective materials. Hashes identify summary bytes, not publisher identity, endorsement, truth or ongoing rights.\"},{\"id\":\"summary-heat-scenario\",\"version\":1,\"claimId\":\"heat-scenario\",\"text\":\"A planning team must select a small, budget-constrained pilot before the next warm season without using individual health records.\\nQualification: Invented decision scenario for demonstrating capsule reuse; no actual municipal mandate or budget is asserted.\\nPrimary sources: \",\"sha256\":\"65ba44325000beedb46bdfbaaaa850c125fabb0348a842bb4ca713f0dba8991d\",\"authoredAt\":\"2026-10-18T05:00:00Z\",\"availableAt\":\"2026-10-18T05:00:00Z\",\"worldValidity\":{\"status\":\"unknown\",\"from\":null,\"until\":null},\"author\":\"TACITUS research assistant\",\"kind\":\"original assistant-authored paraphrase/analysis\",\"unchangedFromPrevious\":true,\"previousHash\":\"65ba44325000beedb46bdfbaaaa850c125fabb0348a842bb4ca713f0dba8991d\",\"sourceRightsNote\":\"Original assistant-authored TACITUS paraphrases and analysis; no publisher text, images or datasets bundled. Display and delivery are user-authorized; general reuse terms for original TACITUS material are not specified. Linked source licenses apply only to their respective materials. Hashes identify summary bytes, not publisher identity, endorsement, truth or ongoing rights.\"}]}",
+      "tacitus.native-adaptation": "{\"version\":\"tacitus-editorial-to-native-v2/1\",\"sourceContentRevision\":\"0.1.1\",\"unknownValidityWarning\":\"World-validity interval is unknown; this record does not establish validity on a requested date. Observation periods and forecast horizons are separate metadata.\",\"factMapping\":\"attributed-source-summary -> reported_statement; not asserted truth\",\"analysisMapping\":\"inference\",\"scenarioMapping\":\"hypothesis with explicit synthetic conditions\",\"historicalArtifactNotice\":\"research nativePackaging status describes authoring checkpoint; later native receipt is separate\",\"noV1Compatibility\":true}"
+    }
+  },
+  "evidence": {
+    "evidence/f27992dfffa678fff2ad78955d9c5ce99291ef3b9fa6441620dec0e937606174.txt": "NYC Health reported an annual warm-season average of approximately 500 heat-related deaths, predominantly heat-exacerbated deaths. About 80% occurred on frequent hot days below the extreme-heat range, described as 82–94°F.\nQualification: Population estimates, not individually certified heat deaths or a forecast for one summer. The larger aggregate burden on non-extreme hot days reflects their frequency; risk rises with temperature and extreme days are not safer. Outdoor temperature bands are not heat-index alert thresholds.\nPrimary sources: https://www.nyc.gov/site/doh/about/press/pr2026/nyc-health-department-releases-report-on-heat-related-deaths.page",
+    "evidence/5f2a91d915f0bce70e37917b8637598cda258834e57ed089fa5d08d442729791.txt": "The 2026 report changes heat-exacerbated mortality estimation from five-year to ten-year rolling windows; the reported heat-exacerbated estimates cover 2014–2023.\nQualification: Methodological change limits direct comparison with prior editions. The separate direct heat-stress series covers 2016–2025, with recent data provisional; these are not one 2026 cohort.\nPrimary sources: https://a816-dohbesp.nyc.gov/IndicatorPublic/data-features/heat-report/",
+    "evidence/0f0aba97ecaa77bbdec1957dbdb1f79a748ed5a607e01d004aad0de0e6764df7.txt": "The Heat Vulnerability Index combines environmental and social factors to compare neighborhood heat vulnerability.\nQualification: A relative neighborhood measure, not an assessment of an individual’s health or eligibility.\nPrimary sources: https://a816-dohbesp.nyc.gov/IndicatorPublic/data-features/heat-report/",
+    "evidence/018cbfa8edac803a9a9ba57bf03c883988888deeacbf6e53a57eb43feef802e9.txt": "A portfolio that supports affordable home cooling and routine hot-day outreach deserves comparison with an emergency-center-only strategy.\nQualification: Candidate strategy inferred from the timing of estimated mortality; these sources do not establish its marginal cost-effectiveness. The emergency-center-only comparator is hypothetical, not a description of NYC policy. Self-reported barriers alone cannot identify causal effects.\nPrimary sources: https://www.nyc.gov/site/doh/about/press/pr2026/nyc-health-department-releases-report-on-heat-related-deaths.page | https://a816-dohbesp.nyc.gov/IndicatorPublic/data-features/heat-report/",
+    "evidence/56137798773b5a0eb045761e844619a11e62a5fb89205fcfd0ae6621c2bbaa5d.txt": "A planning team must select a small, budget-constrained pilot before the next warm season without using individual health records.\nQualification: Invented decision scenario for demonstrating capsule reuse; no actual municipal mandate or budget is asserted.\nPrimary sources: "
+  }
+}
