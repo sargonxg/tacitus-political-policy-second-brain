@@ -355,3 +355,46 @@ fn future_profile_revision_or_unknown_nested_guard_rejects() {
     let a = p.export().unwrap();
     assert!(compile(&a, &support::mapping(&p, &a), &r).is_err());
 }
+
+#[test]
+fn embedded_artifact_duplicate_keys_reject_before_profile_projection() {
+    let mut p = support::package(HEAT);
+    let key = "tacitus.native-adaptation";
+    let raw = p.data.artifacts[key].clone();
+    let value: serde_json::Value = serde_json::from_str(&raw).unwrap();
+    let revision = serde_json::to_string(&value["sourceContentRevision"]).unwrap();
+    p.data.artifacts.insert(
+        key.into(),
+        format!(
+            "{{\"sourceContentRevision\":{revision},{}",
+            &raw.trim_start()[1..]
+        ),
+    );
+    let a = p.export().unwrap();
+    let m = support::mapping(&p, &a);
+    let (_, _, r) = setup();
+    assert!(compile(&a, &m, &r)
+        .unwrap_err()
+        .contains("non-JSON opaque artifact"));
+}
+#[test]
+fn strict_mapping_and_request_boundary_reject_duplicates() {
+    let (a, m, r) = setup();
+    let mr = serde_json::to_vec(&m).unwrap();
+    let rr = serde_json::to_vec(&r).unwrap();
+    assert_eq!(
+        compile_json(&a, &mr, &rr).unwrap().digest,
+        compile(&a, &m, &r).unwrap().digest
+    );
+    for (mapping, request) in [
+        (b"{\"format\":1,\"format\":2}".as_slice(), rr.as_slice()),
+        (
+            mr.as_slice(),
+            b"{\"priority\":[],\"\\u0070riority\":[]}".as_slice(),
+        ),
+    ] {
+        assert!(compile_json(&a, mapping, request)
+            .unwrap_err()
+            .contains("duplicate JSON object key"));
+    }
+}

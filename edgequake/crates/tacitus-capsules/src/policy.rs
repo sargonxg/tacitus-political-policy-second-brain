@@ -242,6 +242,13 @@ impl PolicyPackage {
         Ok(bytes)
     }
     pub fn import(bytes: &[u8]) -> Result<Self> {
+        Self::import_inner(bytes, false)
+    }
+    /// Opt-in preflight before any JSON normalization; legacy import stays compatible.
+    pub fn import_strict(bytes: &[u8]) -> Result<Self> {
+        Self::import_inner(bytes, true)
+    }
+    fn import_inner(bytes: &[u8], strict: bool) -> Result<Self> {
         if bytes.len() > MAX_ARCHIVE {
             return Err("Archive too large".into());
         }
@@ -276,9 +283,16 @@ impl PolicyPackage {
             }
             files.insert(name, body);
         }
+        if strict {
+            super::strict_json::validate(files.get("manifest.json").ok_or("Manifest missing")?)?;
+            super::strict_json::validate(files.get("capsule.json").ok_or("Data missing")?)?;
+        }
         let manifest: Manifest =
             serde_json::from_slice(files.get("manifest.json").ok_or("Manifest missing")?)
                 .map_err(|e| e.to_string())?;
+        if strict && manifest.schema_version != 2 {
+            return Err("strict import requires native-v2; no implicit migration".into());
+        }
         if manifest.schema_version == 1 {
             return Self::migrate_v1(Package::import(bytes)?);
         }

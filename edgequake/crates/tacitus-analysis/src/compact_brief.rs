@@ -140,6 +140,15 @@ fn validate_profile_fields(
     }
     Ok(())
 }
+/// Raw untrusted JSON boundary. Typed callers must not pre-normalize ambiguous input.
+pub fn compile_json(archive: &[u8], mapping: &[u8], request: &[u8]) -> Result<Export> {
+    if mapping.len() > 1_000_000 || request.len() > 65536 {
+        return Err("mapping/request input byte limit exceeded".into());
+    }
+    let m = tacitus_capsules::strict_json::from_slice(mapping)?;
+    let r = tacitus_capsules::strict_json::from_slice(request)?;
+    compile(archive, &m, &r)
+}
 /// Local current-state inputs must be supplied by the host, not obtained from an archive.
 pub fn compile(archive: &[u8], mapping: &Mapping, request: &Request) -> Result<Export> {
     if request.package_revoked
@@ -196,7 +205,7 @@ pub fn compile(archive: &[u8], mapping: &Mapping, request: &Request) -> Result<E
         .map(|(k, v)| {
             Ok((
                 k.clone(),
-                serde_json::from_str::<Value>(v)
+                tacitus_capsules::strict_json::from_slice::<Value>(v.as_bytes())
                     .map_err(|_| "non-JSON opaque artifact requires atomic workflow")?,
             ))
         })

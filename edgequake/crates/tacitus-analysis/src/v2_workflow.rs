@@ -2,7 +2,7 @@
 use crate::layers;
 use serde::{Deserialize, Serialize};
 use std::collections::{BTreeMap, BTreeSet};
-use tacitus_capsules::{policy::PolicyPackage, Manifest, Package};
+use tacitus_capsules::{policy::PolicyPackage, Manifest};
 use tacitus_core::{
     digest,
     policy::{CognitiveMethod, SourceRecord},
@@ -77,11 +77,8 @@ impl LocalCatalog {
         if bytes.len() > 8 * 1024 * 1024 {
             return Err("archive limit exceeded".into());
         }
-        // PolicyPackage::import can migrate v1. This workflow deliberately refuses that path.
-        if Package::import(bytes).is_ok() {
-            return Err("native-v1 requires its separate workflow; no implicit migration".into());
-        }
-        let package = PolicyPackage::import(bytes)?;
+        // Strict v2 import rejects ambiguous JSON and does not migrate v1.
+        let package = PolicyPackage::import_strict(bytes)?;
         if package.manifest.schema_version != 2 {
             return Err("native-v2 required".into());
         }
