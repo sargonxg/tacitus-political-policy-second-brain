@@ -1,4 +1,5 @@
 //! Portable data packages and a constrained evidence compiler. No imported code executes.
+pub mod authoring;
 pub mod compiler;
 pub mod policy;
 pub mod strict_json;
