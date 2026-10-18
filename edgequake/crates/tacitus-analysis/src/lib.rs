@@ -266,3 +266,5 @@ pub mod layers;
 pub mod v2_workflow;
 
 pub mod knowledge_capture;
+
+pub mod extraction_review;

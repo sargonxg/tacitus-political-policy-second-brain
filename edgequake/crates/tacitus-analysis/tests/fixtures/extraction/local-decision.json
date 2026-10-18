@@ -1,0 +1,11 @@
+{
+  "proposal_digest": "c108eec12d25696ad36bc277fd5bef8a1bfe2c2bf5f7f5fa1617846c123ec4ea",
+  "actor": "synthetic-local-operator",
+  "workspace": "demo",
+  "reviewed_at": 300,
+  "rationale": "Synthetic test: explicitly inspect all source anchors, entity interpretations, conditional commitment and proposed withdrawal, temporal unknowns and manifest guards. No expert or institutional authority claimed.",
+  "reviewed_all_claims_entities_relations_and_times": true,
+  "reviewed_manifest_and_source_metadata": true,
+  "acknowledges_corrections": true,
+  "confirms_rights": true
+}
