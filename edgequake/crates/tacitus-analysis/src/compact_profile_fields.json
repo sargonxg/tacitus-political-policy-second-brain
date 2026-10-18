@@ -1,0 +1,215 @@
+{
+  "tacitus.native-adaptation": [
+    "analysisMapping",
+    "factMapping",
+    "historicalArtifactNotice",
+    "noV1Compatibility",
+    "scenarioMapping",
+    "sourceContentRevision",
+    "unknownValidityWarning",
+    "version"
+  ],
+  "tacitus.policy-research": [
+    "actors",
+    "asOf",
+    "claims",
+    "constraints",
+    "contextPolicy",
+    "decisionRule",
+    "decisionUseCase",
+    "domain",
+    "graph",
+    "hypotheses",
+    "id",
+    "independentAssistantReviewAt",
+    "layers",
+    "limitations",
+    "nativePackaging",
+    "options",
+    "originalResearchAsOf",
+    "packageVersion",
+    "preparedAt",
+    "questions",
+    "reviewStatus",
+    "revision",
+    "revisionRecordedAt",
+    "rightsNote",
+    "sources",
+    "summary",
+    "temporalContract",
+    "title",
+    "updates"
+  ],
+  "tacitus.policy-research/actors/*": [
+    "id",
+    "interests",
+    "role",
+    "status"
+  ],
+  "tacitus.policy-research/claims/*": [
+    "analyticalDependencies",
+    "assumptions",
+    "epistemicStatus",
+    "id",
+    "kind",
+    "qualification",
+    "sourceIds",
+    "synthetic",
+    "temporal",
+    "text"
+  ],
+  "tacitus.policy-research/claims/*/temporal": [
+    "forecastHorizon",
+    "observationPeriod",
+    "publisherDates",
+    "recordedAt",
+    "worldValidity"
+  ],
+  "tacitus.policy-research/claims/*/temporal/forecastHorizon": [
+    "year"
+  ],
+  "tacitus.policy-research/claims/*/temporal/observationPeriod": [
+    "baselineYear",
+    "directHeatStress",
+    "heatExacerbated",
+    "note",
+    "status",
+    "year"
+  ],
+  "tacitus.policy-research/claims/*/temporal/publisherDates": [
+    "icrc",
+    "iea",
+    "lbnl",
+    "nyc-release",
+    "nyc-report",
+    "ocha"
+  ],
+  "tacitus.policy-research/claims/*/temporal/worldValidity": [
+    "from",
+    "status",
+    "until"
+  ],
+  "tacitus.policy-research/contextPolicy": [
+    "compression",
+    "externalTools",
+    "mandatory"
+  ],
+  "tacitus.policy-research/decisionUseCase": [
+    "exclusions",
+    "requiredOutput",
+    "role",
+    "task"
+  ],
+  "tacitus.policy-research/graph": [
+    "edges",
+    "nodes"
+  ],
+  "tacitus.policy-research/graph/edges/*": [
+    "from",
+    "qualification",
+    "to",
+    "type"
+  ],
+  "tacitus.policy-research/graph/nodes/*": [
+    "id",
+    "label",
+    "synthetic",
+    "type"
+  ],
+  "tacitus.policy-research/hypotheses/*": [
+    "statement",
+    "test",
+    "wouldWeaken"
+  ],
+  "tacitus.policy-research/layers": [
+    "analysis",
+    "cognitiveMethod",
+    "evidence",
+    "governance",
+    "orientation"
+  ],
+  "tacitus.policy-research/layers/analysis": [
+    "hypotheses",
+    "optionIds"
+  ],
+  "tacitus.policy-research/layers/analysis/hypotheses/*": [
+    "statement",
+    "test",
+    "wouldWeaken"
+  ],
+  "tacitus.policy-research/layers/cognitiveMethod": [
+    "constraints",
+    "decisionRule"
+  ],
+  "tacitus.policy-research/layers/evidence": [
+    "claimIds",
+    "sourceIds"
+  ],
+  "tacitus.policy-research/layers/governance": [
+    "retractionProtocol",
+    "reviewStatus",
+    "revision",
+    "updateTriggers"
+  ],
+  "tacitus.policy-research/layers/orientation": [
+    "questions",
+    "summary"
+  ],
+  "tacitus.policy-research/nativePackaging": [
+    "status",
+    "target",
+    "v1Limitation"
+  ],
+  "tacitus.policy-research/options/*": [
+    "action",
+    "benefit",
+    "evidenceNeeded",
+    "id",
+    "tradeoff"
+  ],
+  "tacitus.policy-research/sources/*": [
+    "accessedDate",
+    "id",
+    "locator",
+    "publishedDate",
+    "reviewAccessedDate",
+    "sourceLicense",
+    "title",
+    "url"
+  ],
+  "tacitus.policy-research/temporalContract": [
+    "nativeV2Mapping",
+    "preparedAtMeaning",
+    "recordedAtMeaning",
+    "syntheticMeaning",
+    "unknownValidityMeaning",
+    "version"
+  ],
+  "tacitus.research-summary-provenance": [
+    "capsuleId",
+    "contentRevision",
+    "packageVersion",
+    "revisionRecordedAt",
+    "summaryRecords"
+  ],
+  "tacitus.research-summary-provenance/summaryRecords/*": [
+    "author",
+    "authoredAt",
+    "availableAt",
+    "claimId",
+    "id",
+    "kind",
+    "previousHash",
+    "sha256",
+    "sourceRightsNote",
+    "text",
+    "unchangedFromPrevious",
+    "version",
+    "worldValidity"
+  ],
+  "tacitus.research-summary-provenance/summaryRecords/*/worldValidity": [
+    "from",
+    "status",
+    "until"
+  ]
+}
