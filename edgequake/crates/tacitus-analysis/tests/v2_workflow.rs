@@ -155,8 +155,21 @@ fn no_automatic_native_v1_migration() {
             .map(|(k, v)| (k.clone(), v.as_str().unwrap().as_bytes().to_vec()))
             .collect(),
     };
+    let bytes = p.export().unwrap();
+    assert_eq!(
+        tacitus_capsules::policy::PolicyPackage::import(&bytes)
+            .unwrap()
+            .manifest
+            .schema_version,
+        2
+    );
+    assert!(
+        tacitus_capsules::policy::PolicyPackage::import_strict(&bytes)
+            .unwrap_err()
+            .contains("no implicit migration")
+    );
     assert!(LocalCatalog::default()
-        .import_native_v2(&p.export().unwrap())
+        .import_native_v2(&bytes)
         .unwrap_err()
         .contains("no implicit migration"));
 }
