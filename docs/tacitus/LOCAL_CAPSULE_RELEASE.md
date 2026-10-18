@@ -43,7 +43,7 @@ The Node catalog/UI remains a separate v1 developer tool. It rejects native-v2 c
 - Unknown source validity cannot satisfy verified-date requests. Observation periods and forecasts are separate from publication/recording dates.
 - Opaque artifacts remain atomic in the full review. Compact export uses explicit reviewed profiles/mappings and preserves the specified guards/closure; it is not arbitrary marketplace ingestion.
 - Hosted multi-user permissions, payments, public uploads, production database persistence, live PRAXIS attachment and deployment are not provided by this run path.
-- Full-application builds still require separately authorized PDFium/runtime/WebUI prerequisites and resolution of the aggregate crate-version parity mismatch. Do not bypass those gates by calling this a full application release.
+- Full-application builds additionally require PDFium/runtime/WebUI prerequisites. The four internal TACITUS crate package versions follow the application release train. Native formats and integer package versions are separate contracts. Do not bypass those gates by calling this a full application release.
 - Repository CI and required review/merge approvals remain required. The library workflow now includes stacked PR base branches without expanding its `contents: read` permission. Absence of checks is not success.
 
 ## Source history

@@ -210,7 +210,7 @@ dependencies = [
 
 [[package]]
 name = "tacitus-analysis"
-version = "0.1.0"
+version = "0.34.0"
 dependencies = [
  "serde",
  "serde_json",
@@ -220,7 +220,7 @@ dependencies = [
 
 [[package]]
 name = "tacitus-capsules"
-version = "0.1.0"
+version = "0.34.0"
 dependencies = [
  "serde",
  "serde_json",
@@ -230,7 +230,7 @@ dependencies = [
 
 [[package]]
 name = "tacitus-core"
-version = "0.1.0"
+version = "0.34.0"
 dependencies = [
  "serde",
  "serde_json",
@@ -239,7 +239,7 @@ dependencies = [
 
 [[package]]
 name = "tacitus-evals"
-version = "0.1.0"
+version = "0.34.0"
 dependencies = [
  "serde",
  "serde_json",

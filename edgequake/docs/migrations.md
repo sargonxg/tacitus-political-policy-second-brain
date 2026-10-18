@@ -20,8 +20,8 @@ The API process never auto-applies numbered migrations on start.
 | Epoch coverage | `./scripts/check_epoch_coverage.sh` |
 | Manifest SSOT | `edgequake/migrations/manifest.toml` |
 
-**Train:** HEAD ships through migration **169**
-(`169_spec163_provider_connections.sql`). Apply with `edgequake migrate`
+**Train:** unreleased TACITUS HEAD ships through migration **170**
+(`170_tacitus_policy.sql`); published `v0.34.0` remains schema 169. Apply with `edgequake migrate`
 before expecting `/ready` 200 when upgrading from an older schema.
 
 ## How Migrations Work

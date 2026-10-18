@@ -297,3 +297,14 @@ key = true
 replay = true
 # max mig 169 (SPEC-163 provider connections)
 # Schema-identical aliases: v0.34.0
+
+# Unreleased TACITUS source epoch: the legacy `tag` field intentionally pins
+# an immutable commit, not a published product tag. Replay only; no image claim.
+[[epoch]]
+tag = "7fbd854456fd3a0c19ff138308057941cdd56770"
+mode = "replay"
+pg_majors = [16,17,18]
+key = true
+replay = true
+# max migration 170; SQL-set hash d8a6390a223d914e, 168 numbered files.
+# Actual PostgreSQL epoch replay remains a separate runtime proof.

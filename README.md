@@ -3,8 +3,13 @@
 **A local-first research environment for evidence-grounded policy and political analysis.**
 
 [![Status](https://img.shields.io/badge/status-active%20prototype-yellow)](IMPLEMENTATION_STATUS.md)
+[![Application packages](https://img.shields.io/badge/version-0.34.0-blue)](docs/tacitus/CORE_RELEASE_GATE_REPAIR_20261018.md)
 [![Upstream](https://img.shields.io/badge/built%20on-EdgeQuake-0F766E)](UPSTREAM.md)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
+
+The application packages follow version `0.34.0`; native format versions are
+independent. Current TACITUS source is unreleased schema 170. Published
+`v0.34.0` remains schema 169.
 
 Tacitus Policy Workbench adapts [EdgeQuake](https://github.com/raphaelmansuy/edgequake)—its Rust API, PostgreSQL graph/vector stack, ingestion pipeline, authentication, and Next.js workbench—for policy research. The TACITUS layer adds domain-specific extraction, attributed claims, review receipts, question-bounded context, analytical output contracts, and portable context capsules.
 
