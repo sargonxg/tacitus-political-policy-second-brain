@@ -21,8 +21,8 @@ fn run() -> Result<(), String> {
         return Err("usage: compact_review json|text ARCHIVE MAPPING < request.json".into());
     }
     let archive = read(&args[2], 8 * 1024 * 1024)?;
-    let mapping: Mapping =
-        serde_json::from_slice(&read(&args[3], 1000000)?).map_err(|e| e.to_string())?;
+    let mapping: Mapping = tacitus_capsules::strict_json::from_slice(&read(&args[3], 1000000)?)
+        .map_err(|e| e.to_string())?;
     let mut raw = vec![];
     io::stdin()
         .take(65537)
@@ -31,7 +31,7 @@ fn run() -> Result<(), String> {
     if raw.len() > 65536 {
         return Err("request bound exceeded".into());
     }
-    let r: Request = serde_json::from_slice(&raw).map_err(|e| e.to_string())?;
+    let r: Request = tacitus_capsules::strict_json::from_slice(&raw).map_err(|e| e.to_string())?;
     let x = compile(&archive, &mapping, &r)?;
     if args[1] == "json" {
         let payload = serde_json::to_vec(&x.document).map_err(|e| e.to_string())?;
