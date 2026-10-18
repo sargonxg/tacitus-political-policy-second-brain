@@ -2,7 +2,9 @@ use std::{
     fs,
     io::{self, Read},
 };
-use tacitus_analysis::compact_brief::{compile, render_text, Mapping, Request};
+use tacitus_analysis::compact_brief::{
+    compile, evidence_status, render_text, EvidenceStatus, Mapping, Request,
+};
 fn read(path: &str, max: u64) -> Result<Vec<u8>, String> {
     let mut b = vec![];
     fs::File::open(path)
@@ -33,17 +35,30 @@ fn run() -> Result<(), String> {
     }
     let r: Request = tacitus_capsules::strict_json::from_slice(&raw).map_err(|e| e.to_string())?;
     let x = compile(&archive, &mapping, &r)?;
+    let status = match evidence_status(&x.document)? {
+        EvidenceStatus::OmissionOnly => "omission_only",
+        EvidenceStatus::SelectedEvidence => "selected_evidence",
+    };
     if args[1] == "json" {
         let payload = serde_json::to_vec(&x.document).map_err(|e| e.to_string())?;
         if payload.len() > r.review.max_bytes {
             return Err("emitted payload exceeds budget".into());
         }
+        eprintln!(
+            "TACITUS_EVIDENCE_STATUS={status} FINDINGS={}",
+            x.document.claims.len()
+        );
         use std::io::Write;
         io::stdout()
             .write_all(&payload)
             .map_err(|e| e.to_string())?;
     } else {
-        print!("{}", render_text(&x, r.review.max_bytes)?)
+        let text = render_text(&x, r.review.max_bytes)?;
+        eprintln!(
+            "TACITUS_EVIDENCE_STATUS={status} FINDINGS={}",
+            x.document.claims.len()
+        );
+        print!("{text}")
     }
     Ok(())
 }
