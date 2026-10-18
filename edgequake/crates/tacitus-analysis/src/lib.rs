@@ -260,8 +260,7 @@ pub fn change_impact(
     })
 }
 
-pub mod layers;
-
-pub mod v2_workflow;
-
+pub mod cited_brief;
 pub mod compact_brief;
+pub mod layers;
+pub mod v2_workflow;

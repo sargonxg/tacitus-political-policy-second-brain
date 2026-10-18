@@ -10,6 +10,16 @@ Tacitus Policy Workbench adapts [EdgeQuake](https://github.com/raphaelmansuy/edg
 
 > **Verification status:** active implementation candidate; end-to-end runtime verification is still pending. The new integration has not yet been accepted as a working release. Do not upload confidential material or expose the stack publicly until the documented build, security, and acceptance gates pass.
 
+## Run the capsule-only developer workflow
+
+A reproducible local/cloud-machine path is available for native-v2 creation, strict validation, inspection, layered context and cited documents, with corrected research samples and a separate synthetic authoring example. Start with [the capsule run guide](docs/tacitus/LOCAL_CAPSULE_RELEASE.md).
+
+```bash
+python3 scripts/check-capsule-release.py ../tacitus-capsule-output
+```
+
+Requires Python3.11+, Node22+ and official Rust1.95.0 with Clippy/rustfmt. No database, model credentials, Docker or Bun are needed for this bounded workflow. The full application status above remains separate.
+
 ## 30-second read
 
 - **Problem:** policy work combines documents, claims, authority, funding, commitments, chronology, uncertainty, and reviewed judgments; a generic “second brain” rarely preserves all of them.

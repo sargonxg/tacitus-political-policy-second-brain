@@ -1,0 +1,27 @@
+name: Tacitus Node tool contracts
+on:
+  push:
+    branches: [main]
+    paths: ['tools/tacitus-policy-lab/**', 'tools/tacitus-capsule-catalog/**', 'tools/tacitus-capsule-catalog-ui/**', 'schemas/tacitus/**', '.github/workflows/tacitus-node-tools.yml']
+  pull_request:
+    paths: ['tools/tacitus-policy-lab/**', 'tools/tacitus-capsule-catalog/**', 'tools/tacitus-capsule-catalog-ui/**', 'schemas/tacitus/**', '.github/workflows/tacitus-node-tools.yml']
+permissions:
+  contents: read
+jobs:
+  node-contracts:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    strategy:
+      matrix:
+        node: ['22', '24']
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6, official repository verified
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4, official repository verified
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Run dependency-free contract and HTTP security tests
+        run: node --test tools/tacitus-policy-lab/test.mjs tools/tacitus-policy-lab/benchmark.test.mjs tools/tacitus-policy-lab/change-review.test.mjs tools/tacitus-capsule-catalog/test.mjs tools/tacitus-capsule-catalog-ui/test.mjs tools/tacitus-capsule-catalog-ui/security.test.mjs
+      - name: Check browser script syntax
+        run: node --check tools/tacitus-capsule-catalog-ui/app.js
