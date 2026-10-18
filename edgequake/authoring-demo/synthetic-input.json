@@ -1,0 +1,93 @@
+{
+  "manifest": {
+    "author": "TACITUS research assistant",
+    "confidentiality": "public",
+    "created_at": 1792310400,
+    "dependencies": [],
+    "domain": "Synthetic policy workflow demonstration",
+    "evidence_mode": "evidence_included",
+    "files": {},
+    "id": "synthetic-cooling-pilot",
+    "license": "Original synthetic demonstration text; no third-party material embedded.",
+    "limitations": [
+      "SYNTHETIC ILLUSTRATIVE record; no real pilot, participants or measured results.",
+      "World-validity interval is unknown; no date-specific validity established.",
+      "No publisher source, expert review or model-generated answer."
+    ],
+    "package_version": 1,
+    "profile": "context",
+    "purpose": "Demonstrate authoring and review of an explicitly synthetic policy hypothesis.",
+    "schema_version": 2,
+    "scope": "synthetic-cooling-pilot",
+    "sharing_policy": "Local demonstration only; no publication or general reuse rights inferred.",
+    "supersedes": null,
+    "title": "Synthetic cooling pilot decision record",
+    "valid_until": null
+  },
+  "data": {
+    "sources": [
+      {
+        "id": "synthetic-pilot-note",
+        "version": 1,
+        "workspace": "synthetic-cooling-pilot",
+        "document_id": null,
+        "title": "Original synthetic demonstration note",
+        "author": "TACITUS research assistant",
+        "original_hash": "1f5c93f23fb4c8d0f1434513d72056aefaf271e6e21774b9e94e2a1878b416e6",
+        "text_hash": "1f5c93f23fb4c8d0f1434513d72056aefaf271e6e21774b9e94e2a1878b416e6",
+        "text": "",
+        "language": "en",
+        "extractor": "Original assistant-authored paraphrase/analysis; no publisher-text extraction",
+        "published_at": null,
+        "retrieved_at": 1792310400,
+        "available_at": 1792310400,
+        "valid_from": null,
+        "valid_until": null,
+        "source_family": "tacitus-authored-summary:synthetic-cooling-pilot",
+        "withdrawn": false,
+        "restricted": false,
+        "redistributable": true,
+        "license": "Original synthetic demonstration text; no third-party material embedded."
+      }
+    ],
+    "assertions": [
+      {
+        "id": "pilot-hypothesis",
+        "version": 1,
+        "workspace": "synthetic-cooling-pilot",
+        "speaker": "TACITUS research assistant",
+        "subject": "Fictional evening cooling pilot",
+        "predicate": "states",
+        "object": null,
+        "proposition": "An evening schedule might improve access for workers in this fictional scenario.",
+        "epistemic_type": "hypothesis",
+        "modality": "qualified-research-draft",
+        "conditions": [
+          "SYNTHETIC ILLUSTRATIVE hypothesis, not a measured result.",
+          "World-validity interval is unknown; no date-specific validity established."
+        ],
+        "exceptions": [
+          "Evening operation could be infeasible if fictional staffing or safety requirements cannot be met."
+        ],
+        "evidence": [
+          {
+            "source": "synthetic-pilot-note@1",
+            "text_hash": "1f5c93f23fb4c8d0f1434513d72056aefaf271e6e21774b9e94e2a1878b416e6",
+            "start": 0,
+            "end": 260,
+            "locator": "Entire original synthetic note",
+            "original_language": "en",
+            "translation": null
+          }
+        ],
+        "created_at": 1792310400
+      }
+    ],
+    "methods": [],
+    "reviews": [],
+    "artifacts": {}
+  },
+  "evidence": {
+    "evidence/8d8cab81c48383b5e7a6ab584e2b835c684a715e7b12c6e8271f456a15d4d316.txt": "SYNTHETIC ILLUSTRATIVE POLICY HYPOTHESIS: extending a fictional cooling space into evening hours might improve access for workers. No pilot has been conducted and no outcome has been observed. This proposition is a demonstration, not evidence of effectiveness."
+  }
+}
