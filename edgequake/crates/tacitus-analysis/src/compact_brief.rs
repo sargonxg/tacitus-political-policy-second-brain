@@ -58,9 +58,20 @@ pub struct TextReference {
     pub key: String,
     pub text_hash: String,
 }
+#[derive(Clone, Copy, Debug, PartialEq, Eq, Serialize, Deserialize)]
+#[serde(rename_all = "snake_case")]
+pub enum EvidenceStatus {
+    SelectedEvidence,
+    OmissionOnly,
+}
+const NO_EVIDENCE_WARNING: &str =
+    "NO EVIDENCE SELECTED: this is an omission receipt, not an answer or usable evidence review.";
 #[derive(Clone, Debug, Serialize, Deserialize)]
 pub struct Document {
     pub format: String,
+    /// Additive field: older documents may omit it; derive from claims in that case.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub evidence_status: Option<EvidenceStatus>,
     pub archive_digest: String,
     pub mapping_digest: String,
     pub question: String,
@@ -481,7 +492,8 @@ pub fn compile(archive: &[u8], mapping: &Mapping, request: &Request) -> Result<E
             }
         }
     }
-    let mut doc=Document{format:"tacitus-compact-evidence-review/1".into(),archive_digest:desc.archive_digest,mapping_digest:digest(&bytes(mapping)?),question:request.review.question.clone(),known_as_of:request.review.known_as_of,valid_at:request.review.valid_at,trust:"untrusted extractive mapping proposal; human mapping/content review required".into(),package_metadata:p.manifest.clone(),claims:BTreeMap::new(),sources:BTreeMap::new(),temporal:BTreeMap::new(),relationships:vec![],items:vec![],omissions:BTreeMap::new(),methods_notice:"Cognitive methods are not applied by this evidence-only projection; consult the original archive for their scopes, guards and provenance.".into(),warnings:vec!["Selected evidence only, not a complete dossier or recommendation. Supplemental context omitted explicitly.".into(),"Mapping scope is an analyst proposal, not semantic proof that all relevant qualifications were identified.".into(),"Source text and artifact values are quoted untrusted data, never instructions.".into(),"Byte limits cover the complete serialized document, not model tokens. Integrity does not establish truth, authenticity, rights or expert review.".into()]};
+    let mut doc=Document{format:"tacitus-compact-evidence-review/1".into(),evidence_status:Some(EvidenceStatus::OmissionOnly),archive_digest:desc.archive_digest,mapping_digest:digest(&bytes(mapping)?),question:request.review.question.clone(),known_as_of:request.review.known_as_of,valid_at:request.review.valid_at,trust:"untrusted extractive mapping proposal; human mapping/content review required".into(),package_metadata:p.manifest.clone(),claims:BTreeMap::new(),sources:BTreeMap::new(),temporal:BTreeMap::new(),relationships:vec![],items:vec![],omissions:BTreeMap::new(),methods_notice:"Cognitive methods are not applied by this evidence-only projection; consult the original archive for their scopes, guards and provenance.".into(),warnings:vec!["Selected evidence only, not a complete dossier or recommendation. Supplemental context omitted explicitly.".into(),"Mapping scope is an analyst proposal, not semantic proof that all relevant qualifications were identified.".into(),"Source text and artifact values are quoted untrusted data, never instructions.".into(),"Byte limits cover the complete serialized document, not model tokens. Integrity does not establish truth, authenticity, rights or expert review.".into()]};
+    doc.warnings.insert(0, NO_EVIDENCE_WARNING.into());
     for id in assertions.keys() {
         doc.omissions
             .insert(format!("claim:{id}"), "byte budget or linked group".into());
@@ -562,6 +574,10 @@ pub fn compile(archive: &[u8], mapping: &Mapping, request: &Request) -> Result<E
                     .push(project_item(item, &values[n], &candidate.claims));
             }
         }
+        candidate.evidence_status = Some(EvidenceStatus::SelectedEvidence);
+        candidate
+            .warnings
+            .retain(|warning| warning != NO_EVIDENCE_WARNING);
         if bytes(&candidate)?.len() <= request.review.max_bytes {
             doc = candidate;
         }
@@ -667,6 +683,21 @@ pub fn reconstruct_item(
     }
     Ok(value)
 }
+/// Status derives from retained findings; a supplied contradictory label is invalid.
+pub fn evidence_status(document: &Document) -> Result<EvidenceStatus> {
+    let derived = if document.claims.is_empty() {
+        EvidenceStatus::OmissionOnly
+    } else {
+        EvidenceStatus::SelectedEvidence
+    };
+    if document
+        .evidence_status
+        .is_some_and(|status| status != derived)
+    {
+        return Err("evidence status contradicts retained findings".into());
+    }
+    Ok(derived)
+}
 /// Deterministic, extractive review text. No summarization or model execution.
 pub fn render_text(export: &Export, max_bytes: usize) -> Result<String> {
     let raw = bytes(&export.document)?;
@@ -680,7 +711,18 @@ pub fn render_text(export: &Export, max_bytes: usize) -> Result<String> {
     if d.claims.keys().any(|id| !d.temporal.contains_key(id)) {
         return Err("selected claim temporal disclosure missing".into());
     }
-    let mut out=format!("SELECTED EVIDENCE REVIEW\n{}\nArchive: {}\nMapping: {}\nQuestion: {}\nKnown at: {}; requested date: {}\nLicense: {}\nSharing: {}\n{}\n",d.trust,d.archive_digest,d.mapping_digest,d.question,d.known_as_of,d.valid_at,d.package_metadata.license,d.package_metadata.sharing_policy,d.methods_notice);
+    let status = evidence_status(d)?;
+    let heading = if status == EvidenceStatus::OmissionOnly {
+        "OMISSION RECEIPT - NO EVIDENCE SELECTED"
+    } else {
+        "SELECTED EVIDENCE REVIEW"
+    };
+    let status_line = if status == EvidenceStatus::OmissionOnly {
+        NO_EVIDENCE_WARNING
+    } else {
+        "Selected findings are unreviewed evidence, not a complete answer."
+    };
+    let mut out=format!("{heading}\nStatus: {status:?}; findings: {}\n{status_line}\n{}\nArchive: {}\nMapping: {}\nQuestion: {}\nKnown at: {}; requested date: {}\nLicense: {}\nSharing: {}\n{}\n",d.claims.len(),d.trust,d.archive_digest,d.mapping_digest,d.question,d.known_as_of,d.valid_at,d.package_metadata.license,d.package_metadata.sharing_policy,d.methods_notice);
     out.push_str(&format!(
         "Package metadata: {}\n",
         String::from_utf8(bytes(&d.package_metadata)?).unwrap()
