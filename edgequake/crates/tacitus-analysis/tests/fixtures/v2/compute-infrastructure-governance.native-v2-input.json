@@ -1,0 +1,397 @@
+{
+  "manifest": {
+    "author": "TACITUS research assistant",
+    "confidentiality": "public",
+    "created_at": 1792301700,
+    "dependencies": [],
+    "domain": "AI governance and energy infrastructure",
+    "evidence_mode": "evidence_included",
+    "files": {},
+    "id": "compute-infrastructure-governance",
+    "license": "Original assistant-authored TACITUS paraphrases and analysis; no publisher text, images or datasets bundled. Display and delivery are user-authorized; general reuse terms for original TACITUS material are not specified. Linked source licenses apply only to their respective materials. Hashes identify summary bytes, not publisher identity, endorsement, truth or ongoing rights.",
+    "limitations": [
+      "Educational research draft; no independent subject-matter review.",
+      "Source-linked paraphrases are not authenticated publisher excerpts.",
+      "No live operational feed or private data. No model output is treated as independent external evidence; recommendations remain analytical proposals.",
+      "Graph edges and options are analytical proposals unless explicitly sourced.",
+      "No local engineering, water-use, tariff or project-finance data is included.",
+      "National and global projections have different scope; do not add them together.",
+      "Native assertion dependencies are empty; analytical dependency edges below do not establish native invalidation propagation.",
+      "A digest can be recomputed by an editor; it is not a trusted signature or source authentication.",
+      "Native archive structural validation does not establish source truth, expert review or live PRAXIS compatibility. This revision requires explicit native-v2 adaptation; it is not a v1 exchange.",
+      "World-validity interval is unknown; this record does not establish validity on a requested date. Observation periods and forecast horizons are separate metadata.",
+      "Explicit native-v2 authoring. Native-v1 and v1 catalog/compiler compatibility is not claimed.",
+      "Source publication timestamps describe the authored summaries; official publisher dates are separate in hash-bound research metadata.",
+      "Unknown native validity is unfiltered, not affirmative valid-at-date clearance. Do not use these records as verified date-specific evidence."
+    ],
+    "package_version": 2,
+    "profile": "context",
+    "purpose": "A decision capsule for evaluating data-center proposals without confusing annual energy forecasts, peak capacity and local infrastructure obligations.",
+    "schema_version": 2,
+    "scope": "compute-infrastructure-governance",
+    "sharing_policy": "User-authorized display and delivery of these original research records; no broad reuse license for TACITUS or underlying sources implied.",
+    "supersedes": "a001edb76ffaadb68506c3ad7a02d92854400c6cdb0bccb84485ad59f0d29259",
+    "title": "AI compute infrastructure: planning under demand uncertainty",
+    "valid_until": null
+  },
+  "data": {
+    "sources": [
+      {
+        "id": "summary-us-historical-demand",
+        "version": 1,
+        "workspace": "compute-infrastructure-governance",
+        "document_id": null,
+        "title": "Original research summary: us-historical-demand",
+        "author": "TACITUS research assistant",
+        "original_hash": "53c93596bc81dcf1c451b9fafee38ff53f108318360ff580a9cfad751e40ed4b",
+        "text_hash": "53c93596bc81dcf1c451b9fafee38ff53f108318360ff580a9cfad751e40ed4b",
+        "text": "",
+        "language": "en",
+        "extractor": "Original assistant-authored paraphrase/analysis; no publisher-text extraction",
+        "published_at": 1792301700,
+        "retrieved_at": 1792301700,
+        "available_at": 1792301700,
+        "valid_from": null,
+        "valid_until": null,
+        "source_family": "tacitus-authored-summary:compute-infrastructure-governance",
+        "withdrawn": false,
+        "restricted": false,
+        "redistributable": true,
+        "license": "User-authorized display and delivery of original TACITUS summaries; no general reuse license specified. Underlying publisher materials not included."
+      },
+      {
+        "id": "summary-us-forecast-demand",
+        "version": 1,
+        "workspace": "compute-infrastructure-governance",
+        "document_id": null,
+        "title": "Original research summary: us-forecast-demand",
+        "author": "TACITUS research assistant",
+        "original_hash": "a1f33c21483a615c460500052df38f1b0d6496648ef4459d95811ab00287b1e8",
+        "text_hash": "a1f33c21483a615c460500052df38f1b0d6496648ef4459d95811ab00287b1e8",
+        "text": "",
+        "language": "en",
+        "extractor": "Original assistant-authored paraphrase/analysis; no publisher-text extraction",
+        "published_at": 1792301700,
+        "retrieved_at": 1792301700,
+        "available_at": 1792301700,
+        "valid_from": null,
+        "valid_until": null,
+        "source_family": "tacitus-authored-summary:compute-infrastructure-governance",
+        "withdrawn": false,
+        "restricted": false,
+        "redistributable": true,
+        "license": "User-authorized display and delivery of original TACITUS summaries; no general reuse license specified. Underlying publisher materials not included."
+      },
+      {
+        "id": "summary-global-demand",
+        "version": 2,
+        "workspace": "compute-infrastructure-governance",
+        "document_id": null,
+        "title": "Original research summary: global-demand",
+        "author": "TACITUS research assistant",
+        "original_hash": "57aff089567f1693cf1ef2be5d52e5ae636e07f80731e2c1266858e1561a1ca2",
+        "text_hash": "57aff089567f1693cf1ef2be5d52e5ae636e07f80731e2c1266858e1561a1ca2",
+        "text": "",
+        "language": "en",
+        "extractor": "Original assistant-authored paraphrase/analysis; no publisher-text extraction",
+        "published_at": 1792301700,
+        "retrieved_at": 1792301700,
+        "available_at": 1792301700,
+        "valid_from": null,
+        "valid_until": null,
+        "source_family": "tacitus-authored-summary:compute-infrastructure-governance",
+        "withdrawn": false,
+        "restricted": false,
+        "redistributable": true,
+        "license": "User-authorized display and delivery of original TACITUS summaries; no general reuse license specified. Underlying publisher materials not included."
+      },
+      {
+        "id": "summary-capacity-distinction",
+        "version": 1,
+        "workspace": "compute-infrastructure-governance",
+        "document_id": null,
+        "title": "Original research summary: capacity-distinction",
+        "author": "TACITUS research assistant",
+        "original_hash": "3563a1e1eca51f92ce143bf287638a3883c69f2b33bd40e2f98a7249e0f6c0bf",
+        "text_hash": "3563a1e1eca51f92ce143bf287638a3883c69f2b33bd40e2f98a7249e0f6c0bf",
+        "text": "",
+        "language": "en",
+        "extractor": "Original assistant-authored paraphrase/analysis; no publisher-text extraction",
+        "published_at": 1792299600,
+        "retrieved_at": 1792299600,
+        "available_at": 1792299600,
+        "valid_from": null,
+        "valid_until": null,
+        "source_family": "tacitus-authored-summary:compute-infrastructure-governance",
+        "withdrawn": false,
+        "restricted": false,
+        "redistributable": true,
+        "license": "User-authorized display and delivery of original TACITUS summaries; no general reuse license specified. Underlying publisher materials not included."
+      },
+      {
+        "id": "summary-compute-scenario",
+        "version": 1,
+        "workspace": "compute-infrastructure-governance",
+        "document_id": null,
+        "title": "Original research summary: compute-scenario",
+        "author": "TACITUS research assistant",
+        "original_hash": "898293a2d53bb65f7961e3e379d027a857397d5118d2e8a30d2c4f0a26916a66",
+        "text_hash": "898293a2d53bb65f7961e3e379d027a857397d5118d2e8a30d2c4f0a26916a66",
+        "text": "",
+        "language": "en",
+        "extractor": "Original assistant-authored paraphrase/analysis; no publisher-text extraction",
+        "published_at": 1792299600,
+        "retrieved_at": 1792299600,
+        "available_at": 1792299600,
+        "valid_from": null,
+        "valid_until": null,
+        "source_family": "tacitus-authored-summary:compute-infrastructure-governance",
+        "withdrawn": false,
+        "restricted": false,
+        "redistributable": true,
+        "license": "User-authorized display and delivery of original TACITUS summaries; no general reuse license specified. Underlying publisher materials not included."
+      }
+    ],
+    "assertions": [
+      {
+        "id": "us-historical-demand",
+        "version": 1,
+        "workspace": "compute-infrastructure-governance",
+        "speaker": "TACITUS research assistant",
+        "subject": "AI compute infrastructure: planning under demand uncertainty",
+        "predicate": "states",
+        "object": null,
+        "proposition": "The LBNL report estimates U.S. data centers used 192 TWh in 2024, or 4.7% of U.S. electricity.",
+        "epistemic_type": "reported_statement",
+        "modality": "qualified-research-draft",
+        "conditions": [
+          "A modeled historical estimate for all data centers within the report’s scope, not AI workloads alone. Cryptocurrency mining is excluded.",
+          "World-validity interval is unknown; this record does not establish validity on a requested date. Observation periods and forecast horizons are separate metadata.",
+          "Source-linked assistant-authored record; integrity does not establish publisher authenticity, truth, rights or expert review."
+        ],
+        "exceptions": [],
+        "evidence": [
+          {
+            "source": "summary-us-historical-demand@1",
+            "text_hash": "53c93596bc81dcf1c451b9fafee38ff53f108318360ff580a9cfad751e40ed4b",
+            "start": 0,
+            "end": 356,
+            "locator": "Complete original TACITUS summary; primary-source URLs included in summary; detailed dates and periods in research artifact",
+            "original_language": "en",
+            "translation": null
+          }
+        ],
+        "created_at": 1792301700
+      },
+      {
+        "id": "us-forecast-demand",
+        "version": 1,
+        "workspace": "compute-infrastructure-governance",
+        "speaker": "TACITUS research assistant",
+        "subject": "AI compute infrastructure: planning under demand uncertainty",
+        "predicate": "states",
+        "object": null,
+        "proposition": "The LBNL 2030 reference projection is 649 TWh; a compounded sensitivity stress-test range spans 521–843 TWh.",
+        "epistemic_type": "reported_statement",
+        "modality": "qualified-research-draft",
+        "conditions": [
+          "Projection assumptions use late-2025 information. The stress-test range is not a probabilistic confidence interval and does not capture every structural discontinuity; it is neither observed demand nor committed project load.",
+          "World-validity interval is unknown; this record does not establish validity on a requested date. Observation periods and forecast horizons are separate metadata.",
+          "Source-linked assistant-authored record; integrity does not establish publisher authenticity, truth, rights or expert review."
+        ],
+        "exceptions": [],
+        "evidence": [
+          {
+            "source": "summary-us-forecast-demand@1",
+            "text_hash": "a1f33c21483a615c460500052df38f1b0d6496648ef4459d95811ab00287b1e8",
+            "start": 0,
+            "end": 459,
+            "locator": "Complete original TACITUS summary; primary-source URLs included in summary; detailed dates and periods in research artifact",
+            "original_language": "en",
+            "translation": null
+          }
+        ],
+        "created_at": 1792301700
+      },
+      {
+        "id": "global-demand",
+        "version": 2,
+        "workspace": "compute-infrastructure-governance",
+        "speaker": "TACITUS research assistant",
+        "subject": "AI compute infrastructure: planning under demand uncertainty",
+        "predicate": "states",
+        "object": null,
+        "proposition": "The IEA’s 2026 executive summary projects global data-center electricity use rising from 485 TWh in 2025 to about 950 TWh in 2030.",
+        "epistemic_type": "reported_statement",
+        "modality": "qualified-research-draft",
+        "conditions": [
+          "A global projection; it cannot be substituted for a U.S. forecast or a local grid impact study. It concerns all data centers, not exclusively AI workloads. IEA and LBNL models are not one harmonized dataset.",
+          "World-validity interval is unknown; this record does not establish validity on a requested date. Observation periods and forecast horizons are separate metadata.",
+          "Source-linked assistant-authored record; integrity does not establish publisher authenticity, truth, rights or expert review."
+        ],
+        "exceptions": [],
+        "evidence": [
+          {
+            "source": "summary-global-demand@2",
+            "text_hash": "57aff089567f1693cf1ef2be5d52e5ae636e07f80731e2c1266858e1561a1ca2",
+            "start": 0,
+            "end": 449,
+            "locator": "Complete original TACITUS summary; primary-source URLs included in summary; detailed dates and periods in research artifact",
+            "original_language": "en",
+            "translation": null
+          }
+        ],
+        "created_at": 1792301700
+      },
+      {
+        "id": "capacity-distinction",
+        "version": 2,
+        "workspace": "compute-infrastructure-governance",
+        "speaker": "TACITUS research assistant",
+        "subject": "AI compute infrastructure: planning under demand uncertainty",
+        "predicate": "states",
+        "object": null,
+        "proposition": "Annual TWh cannot by itself determine a proposed facility’s peak MW demand, interconnection cost or reliability impact. Local load shape and engineering evidence are necessary.",
+        "epistemic_type": "inference",
+        "modality": "qualified-research-draft",
+        "conditions": [
+          "Analytical distinction; no site-specific engineering determination is made.",
+          "World-validity interval is unknown; this record does not establish validity on a requested date. Observation periods and forecast horizons are separate metadata.",
+          "Source-linked assistant-authored record; integrity does not establish publisher authenticity, truth, rights or expert review."
+        ],
+        "exceptions": [],
+        "evidence": [
+          {
+            "source": "summary-capacity-distinction@1",
+            "text_hash": "3563a1e1eca51f92ce143bf287638a3883c69f2b33bd40e2f98a7249e0f6c0bf",
+            "start": 0,
+            "end": 456,
+            "locator": "Complete original TACITUS summary; primary-source URLs included in summary; detailed dates and periods in research artifact",
+            "original_language": "en",
+            "translation": null
+          }
+        ],
+        "created_at": 1792301700
+      },
+      {
+        "id": "compute-scenario",
+        "version": 2,
+        "workspace": "compute-infrastructure-governance",
+        "speaker": "TACITUS research assistant",
+        "subject": "AI compute infrastructure: planning under demand uncertainty",
+        "predicate": "states",
+        "object": null,
+        "proposition": "A public planning body is considering a phased data-center project and must decide what evidence to require before infrastructure commitments.",
+        "epistemic_type": "hypothesis",
+        "modality": "synthetic-illustrative",
+        "conditions": [
+          "Illustrative governance scenario, not an identified project or an existing permitting decision.",
+          "World-validity interval is unknown; this record does not establish validity on a requested date. Observation periods and forecast horizons are separate metadata.",
+          "Source-linked assistant-authored record; integrity does not establish publisher authenticity, truth, rights or expert review.",
+          "SYNTHETIC ILLUSTRATIVE SCENARIO: not a documented event, observation or prediction."
+        ],
+        "exceptions": [],
+        "evidence": [
+          {
+            "source": "summary-compute-scenario@1",
+            "text_hash": "898293a2d53bb65f7961e3e379d027a857397d5118d2e8a30d2c4f0a26916a66",
+            "start": 0,
+            "end": 271,
+            "locator": "Complete original TACITUS summary; primary-source URLs included in summary; detailed dates and periods in research artifact",
+            "original_language": "en",
+            "translation": null
+          }
+        ],
+        "created_at": 1792301700
+      }
+    ],
+    "methods": [
+      {
+        "id": "preserve-qualifications",
+        "version": 2,
+        "workspace": "compute-infrastructure-governance",
+        "kind": "procedure",
+        "description": "Retain source attribution, unknown world validity, observation periods, forecast horizons, modality and synthetic status when reusing this research. Do not infer a policy conclusion merely from matching hashes.",
+        "scope": "compute-infrastructure-governance",
+        "prerequisites": [
+          "Human review of intended use and current evidence; no verified date-specific applicability can be inferred from null validity."
+        ],
+        "failure_conditions": [
+          "Educational research draft; no independent subject-matter review.",
+          "Source-linked paraphrases are not authenticated publisher excerpts.",
+          "No live operational feed or private data. No model output is treated as independent external evidence; recommendations remain analytical proposals.",
+          "Graph edges and options are analytical proposals unless explicitly sourced.",
+          "No local engineering, water-use, tariff or project-finance data is included.",
+          "National and global projections have different scope; do not add them together.",
+          "Native assertion dependencies are empty; analytical dependency edges below do not establish native invalidation propagation.",
+          "A digest can be recomputed by an editor; it is not a trusted signature or source authentication.",
+          "Native archive structural validation does not establish source truth, expert review or live PRAXIS compatibility. This revision requires explicit native-v2 adaptation; it is not a v1 exchange.",
+          "World-validity interval is unknown; this record does not establish validity on a requested date. Observation periods and forecast horizons are separate metadata."
+        ],
+        "evidence": [
+          {
+            "source": "summary-us-historical-demand@1",
+            "text_hash": "53c93596bc81dcf1c451b9fafee38ff53f108318360ff580a9cfad751e40ed4b",
+            "start": 0,
+            "end": 356,
+            "locator": "Complete original TACITUS summary; primary-source URLs included in summary; detailed dates and periods in research artifact",
+            "original_language": "en",
+            "translation": null
+          },
+          {
+            "source": "summary-us-forecast-demand@1",
+            "text_hash": "a1f33c21483a615c460500052df38f1b0d6496648ef4459d95811ab00287b1e8",
+            "start": 0,
+            "end": 459,
+            "locator": "Complete original TACITUS summary; primary-source URLs included in summary; detailed dates and periods in research artifact",
+            "original_language": "en",
+            "translation": null
+          },
+          {
+            "source": "summary-global-demand@2",
+            "text_hash": "57aff089567f1693cf1ef2be5d52e5ae636e07f80731e2c1266858e1561a1ca2",
+            "start": 0,
+            "end": 449,
+            "locator": "Complete original TACITUS summary; primary-source URLs included in summary; detailed dates and periods in research artifact",
+            "original_language": "en",
+            "translation": null
+          },
+          {
+            "source": "summary-capacity-distinction@1",
+            "text_hash": "3563a1e1eca51f92ce143bf287638a3883c69f2b33bd40e2f98a7249e0f6c0bf",
+            "start": 0,
+            "end": 456,
+            "locator": "Complete original TACITUS summary; primary-source URLs included in summary; detailed dates and periods in research artifact",
+            "original_language": "en",
+            "translation": null
+          },
+          {
+            "source": "summary-compute-scenario@1",
+            "text_hash": "898293a2d53bb65f7961e3e379d027a857397d5118d2e8a30d2c4f0a26916a66",
+            "start": 0,
+            "end": 271,
+            "locator": "Complete original TACITUS summary; primary-source URLs included in summary; detailed dates and periods in research artifact",
+            "original_language": "en",
+            "translation": null
+          }
+        ],
+        "created_at": 1792301700,
+        "available_at": 1792301700,
+        "ontology_version": "tacitus-policy/1"
+      }
+    ],
+    "reviews": [],
+    "artifacts": {
+      "tacitus.policy-research": "{\"id\":\"compute-infrastructure-governance\",\"title\":\"AI compute infrastructure: planning under demand uncertainty\",\"summary\":\"A decision capsule for evaluating data-center proposals without confusing annual energy forecasts, peak capacity and local infrastructure obligations.\",\"domain\":\"AI governance and energy infrastructure\",\"asOf\":\"2026-10-18T04:56:00Z\",\"sources\":[{\"id\":\"lbnl\",\"title\":\"United States Data Center Energy Usage Report, 2025 Update\",\"url\":\"https://www.energy.gov/documents/united-states-data-center-energy-usage-report-2025-update\",\"publishedDate\":\"2026-06-18\",\"accessedDate\":\"2026-10-18T04:56:00Z\",\"locator\":\"Printed pages 5, 8–10: historical use, projections and compounded sensitivity analysis\",\"reviewAccessedDate\":\"2026-10-18T05:31:00Z\",\"sourceLicense\":\"CC BY 4.0 observed on the official report; applies to covered source material, not automatically to third-party inputs.\"},{\"id\":\"iea\",\"title\":\"Key Questions on Energy and AI: executive summary\",\"url\":\"https://www.iea.org/reports/key-questions-on-energy-and-ai/executive-summary\",\"publishedDate\":\"2026\",\"accessedDate\":\"2026-10-18T04:56:00Z\",\"locator\":\"Executive summary, electricity-demand outlook\",\"reviewAccessedDate\":\"2026-10-18T05:31:00Z\",\"sourceLicense\":\"CC BY 4.0 observed on the official publication; applies to covered source material, not automatically to third-party inputs.\"}],\"claims\":[{\"id\":\"us-historical-demand\",\"text\":\"The LBNL report estimates U.S. data centers used 192 TWh in 2024, or 4.7% of U.S. electricity.\",\"kind\":\"fact\",\"sourceIds\":[\"lbnl\"],\"qualification\":\"A modeled historical estimate for all data centers within the report’s scope, not AI workloads alone. Cryptocurrency mining is excluded.\",\"synthetic\":false,\"epistemicStatus\":\"attributed-source-summary\",\"temporal\":{\"publisherDates\":{\"lbnl\":\"2026-06-18\"},\"recordedAt\":\"2026-10-18T05:35:00Z\",\"observationPeriod\":{\"year\":2024},\"forecastHorizon\":null,\"worldValidity\":{\"status\":\"unknown\",\"from\":null,\"until\":null}},\"analyticalDependencies\":[],\"assumptions\":[]},{\"id\":\"us-forecast-demand\",\"text\":\"The LBNL 2030 reference projection is 649 TWh; a compounded sensitivity stress-test range spans 521–843 TWh.\",\"kind\":\"fact\",\"sourceIds\":[\"lbnl\"],\"qualification\":\"Projection assumptions use late-2025 information. The stress-test range is not a probabilistic confidence interval and does not capture every structural discontinuity; it is neither observed demand nor committed project load.\",\"synthetic\":false,\"epistemicStatus\":\"attributed-source-summary\",\"temporal\":{\"publisherDates\":{\"lbnl\":\"2026-06-18\"},\"recordedAt\":\"2026-10-18T05:35:00Z\",\"observationPeriod\":null,\"forecastHorizon\":{\"year\":2030},\"worldValidity\":{\"status\":\"unknown\",\"from\":null,\"until\":null}},\"analyticalDependencies\":[],\"assumptions\":[]},{\"id\":\"global-demand\",\"text\":\"The IEA’s 2026 executive summary projects global data-center electricity use rising from 485 TWh in 2025 to about 950 TWh in 2030.\",\"kind\":\"fact\",\"sourceIds\":[\"iea\"],\"qualification\":\"A global projection; it cannot be substituted for a U.S. forecast or a local grid impact study. It concerns all data centers, not exclusively AI workloads. IEA and LBNL models are not one harmonized dataset.\",\"synthetic\":false,\"epistemicStatus\":\"attributed-source-summary\",\"temporal\":{\"publisherDates\":{\"iea\":\"2026\"},\"recordedAt\":\"2026-10-18T05:35:00Z\",\"observationPeriod\":{\"baselineYear\":2025,\"status\":\"publisher estimate\"},\"forecastHorizon\":{\"year\":2030},\"worldValidity\":{\"status\":\"unknown\",\"from\":null,\"until\":null}},\"analyticalDependencies\":[],\"assumptions\":[]},{\"id\":\"capacity-distinction\",\"text\":\"Annual TWh cannot by itself determine a proposed facility’s peak MW demand, interconnection cost or reliability impact. Local load shape and engineering evidence are necessary.\",\"kind\":\"analysis\",\"sourceIds\":[\"lbnl\",\"iea\"],\"qualification\":\"Analytical distinction; no site-specific engineering determination is made.\",\"synthetic\":false,\"epistemicStatus\":\"analyst-proposal\",\"temporal\":{\"publisherDates\":{\"lbnl\":\"2026-06-18\",\"iea\":\"2026\"},\"recordedAt\":\"2026-10-18T05:35:00Z\",\"observationPeriod\":null,\"forecastHorizon\":null,\"worldValidity\":{\"status\":\"unknown\",\"from\":null,\"until\":null}},\"analyticalDependencies\":[\"us-historical-demand\",\"us-forecast-demand\",\"global-demand\"],\"assumptions\":[\"General evidence may not transfer to a specific decision without local inputs\"]},{\"id\":\"compute-scenario\",\"text\":\"A public planning body is considering a phased data-center project and must decide what evidence to require before infrastructure commitments.\",\"kind\":\"scenario\",\"sourceIds\":[],\"qualification\":\"Illustrative governance scenario, not an identified project or an existing permitting decision.\",\"synthetic\":true,\"epistemicStatus\":\"illustrative-scenario\",\"temporal\":{\"publisherDates\":{},\"recordedAt\":\"2026-10-18T05:35:00Z\",\"observationPeriod\":null,\"forecastHorizon\":null,\"worldValidity\":{\"status\":\"unknown\",\"from\":null,\"until\":null}},\"analyticalDependencies\":[],\"assumptions\":[\"Illustrative context only; no actual event asserted\"]}],\"questions\":[\"What must a developer demonstrate before each capacity tranche is approved, and which assumptions would make staging ineffective?\",\"What is committed load versus speculative expansion, and who bears costs if demand does not arrive?\",\"Which flexibility claims are contractually enforceable and technically demonstrated?\",\"What local grid, water, land-use and community constraints remain unmeasured?\"],\"limitations\":[\"Educational research draft; no independent subject-matter review.\",\"Source-linked paraphrases are not authenticated publisher excerpts.\",\"No live operational feed or private data. No model output is treated as independent external evidence; recommendations remain analytical proposals.\",\"Graph edges and options are analytical proposals unless explicitly sourced.\",\"No local engineering, water-use, tariff or project-finance data is included.\",\"National and global projections have different scope; do not add them together.\",\"Native assertion dependencies are empty; analytical dependency edges below do not establish native invalidation propagation.\",\"A digest can be recomputed by an editor; it is not a trusted signature or source authentication.\",\"Native archive structural validation does not establish source truth, expert review or live PRAXIS compatibility. This revision requires explicit native-v2 adaptation; it is not a v1 exchange.\"],\"rightsNote\":\"Original assistant-authored TACITUS paraphrases and analysis; no publisher text, images or datasets bundled. Display and delivery are user-authorized; general reuse terms for original TACITUS material are not specified. Linked source licenses apply only to their respective materials. Hashes identify summary bytes, not publisher identity, endorsement, truth or ongoing rights.\",\"actors\":[{\"id\":\"developer\",\"role\":\"Compute-project developer\",\"interests\":\"Timely connection and predictable expansion options\",\"status\":\"analytical stakeholder framing\"},{\"id\":\"utility\",\"role\":\"Utility and system planner\",\"interests\":\"Reliability and recoverable infrastructure investment\",\"status\":\"analytical stakeholder framing\"},{\"id\":\"community\",\"role\":\"Affected communities and public authorities\",\"interests\":\"Accountable costs, local benefits and manageable externalities\",\"status\":\"analytical stakeholder framing\"},{\"id\":\"regulator\",\"role\":\"Public utility commission analyst\",\"interests\":\"Evidenced conditions for capacity tranches and accountable cost allocation\",\"status\":\"analytical stakeholder framing\"},{\"id\":\"ratepayers\",\"role\":\"Existing ratepayers\",\"interests\":\"Avoiding unsupported cost shifts and reliability degradation\",\"status\":\"analytical stakeholder framing\"},{\"id\":\"operator\",\"role\":\"System operator\",\"interests\":\"Operational reliability and credible load behavior\",\"status\":\"analytical stakeholder framing\"}],\"options\":[{\"id\":\"phase\",\"action\":\"Phase connection against evidenced demand milestones\",\"benefit\":\"Limits irreversible infrastructure exposure while allowing growth\",\"tradeoff\":\"Can slow deployment and create coordination costs\",\"evidenceNeeded\":\"Load commitments, milestone definitions and engineering feasibility\"},{\"id\":\"flex\",\"action\":\"Evaluate demonstrable demand flexibility\",\"benefit\":\"May reduce stress during constrained periods\",\"tradeoff\":\"Workload flexibility is not guaranteed; contractual promises need tests\",\"evidenceNeeded\":\"Measured response, duration, rebound and consequences of nonperformance\"},{\"id\":\"disclose\",\"action\":\"Require comparable project-specific disclosure before selection\",\"benefit\":\"Improves scrutiny across proposals\",\"tradeoff\":\"Disclosure burden and commercial confidentiality must be managed\",\"evidenceNeeded\":\"Peak and annual load, timing, water assumptions and responsibility for upgrades\"}],\"hypotheses\":[{\"statement\":\"Phased commitments can reduce stranded-infrastructure exposure without preventing useful capacity additions.\",\"test\":\"Compare milestone-linked and unconditional scenarios using the same project data and demand ranges.\",\"wouldWeaken\":\"Engineering indivisibilities or verified minimum-scale requirements eliminate most staging benefits.\"}],\"constraints\":[\"Distinguish modeled estimates, forecasts, contracted commitments and installed capacity.\",\"Do not infer community consent or social benefit from projected investment.\",\"Use ranges and stress cases rather than selecting a single forecast as certainty.\"],\"decisionRule\":\"Advance only options whose local evidence, cost allocation and reversal conditions are explicit. Treat national forecasts as scenario context, not project approval evidence.\",\"updates\":[\"Recheck report editions when using a forecast in a consequential memo.\",\"Supersede forecast claims when assumptions or scenarios change; preserve prior versions for comparison.\",\"Withdraw local conclusions if the underlying project or engineering assumptions cannot be reproduced.\"],\"graph\":{\"nodes\":[{\"id\":\"developer\",\"type\":\"actor\",\"label\":\"Compute-project developer\"},{\"id\":\"utility\",\"type\":\"actor\",\"label\":\"Utility and system planner\"},{\"id\":\"community\",\"type\":\"actor\",\"label\":\"Affected communities and public authorities\"},{\"id\":\"regulator\",\"type\":\"actor\",\"label\":\"Public utility commission analyst\"},{\"id\":\"ratepayers\",\"type\":\"actor\",\"label\":\"Existing ratepayers\"},{\"id\":\"operator\",\"type\":\"actor\",\"label\":\"System operator\"},{\"id\":\"us-historical-demand\",\"type\":\"fact\",\"synthetic\":false,\"label\":\"The LBNL report estimates U.S. data centers used 192 TWh in 2024, or 4.7% of U.S. electricity.\"},{\"id\":\"us-forecast-demand\",\"type\":\"fact\",\"synthetic\":false,\"label\":\"The LBNL 2030 reference projection is 649 TWh; a compounded sensitivity stress-test range spans 521–843 TWh.\"},{\"id\":\"global-demand\",\"type\":\"fact\",\"synthetic\":false,\"label\":\"The IEA’s 2026 executive summary projects global data-center electricity use rising from 485 TWh in 2025 to about 950 TWh in 2030.\"},{\"id\":\"capacity-distinction\",\"type\":\"analysis\",\"synthetic\":false,\"label\":\"Annual TWh cannot by itself determine a proposed facility’s peak MW demand, interconnection cost or reliability impact. Local load shape and engineering evidence are necessary.\"},{\"id\":\"compute-scenario\",\"type\":\"scenario\",\"synthetic\":true,\"label\":\"A public planning body is considering a phased data-center project and must decide what evidence to require before infrastructure commitments.\"},{\"id\":\"lbnl\",\"type\":\"official_source\",\"label\":\"United States Data Center Energy Usage Report, 2025 Update\"},{\"id\":\"iea\",\"type\":\"official_source\",\"label\":\"Key Questions on Energy and AI: executive summary\"}],\"edges\":[{\"from\":\"us-historical-demand\",\"to\":\"lbnl\",\"type\":\"reported_in\",\"qualification\":\"Linked-source attribution; no publisher endorsement of analyst conclusions\"},{\"from\":\"us-forecast-demand\",\"to\":\"lbnl\",\"type\":\"reported_in\",\"qualification\":\"Linked-source attribution; no publisher endorsement of analyst conclusions\"},{\"from\":\"global-demand\",\"to\":\"iea\",\"type\":\"reported_in\",\"qualification\":\"Linked-source attribution; no publisher endorsement of analyst conclusions\"},{\"from\":\"capacity-distinction\",\"to\":\"lbnl\",\"type\":\"informed_by\",\"qualification\":\"Linked-source attribution; no publisher endorsement of analyst conclusions\"},{\"from\":\"capacity-distinction\",\"to\":\"iea\",\"type\":\"informed_by\",\"qualification\":\"Linked-source attribution; no publisher endorsement of analyst conclusions\"},{\"from\":\"capacity-distinction\",\"to\":\"us-historical-demand\",\"type\":\"analytically_depends_on\",\"qualification\":\"Research-layer relation only; native dependency propagation unsupported\"},{\"from\":\"capacity-distinction\",\"to\":\"us-forecast-demand\",\"type\":\"analytically_depends_on\",\"qualification\":\"Research-layer relation only; native dependency propagation unsupported\"},{\"from\":\"capacity-distinction\",\"to\":\"global-demand\",\"type\":\"analytically_depends_on\",\"qualification\":\"Research-layer relation only; native dependency propagation unsupported\"}]},\"contextPolicy\":{\"mandatory\":[\"scope and as-of\",\"source attribution\",\"qualification for each selected claim\",\"uncertainty and limitations\",\"superseded/retracted status\",\"synthetic scenario marker\",\"observation period versus publisher and record dates\",\"analytical dependency limitations\"],\"compression\":\"Drop optional scenarios before source qualifications; if the budget cannot preserve qualifications, return an insufficient-budget warning rather than a misleading brief.\",\"externalTools\":\"Explicit user action required before transmitting capsule text to a model or other service; this package makes no live calls.\"},\"layers\":{\"orientation\":{\"summary\":\"A decision capsule for evaluating data-center proposals without confusing annual energy forecasts, peak capacity and local infrastructure obligations.\",\"questions\":[\"What must a developer demonstrate before each capacity tranche is approved, and which assumptions would make staging ineffective?\",\"What is committed load versus speculative expansion, and who bears costs if demand does not arrive?\",\"Which flexibility claims are contractually enforceable and technically demonstrated?\",\"What local grid, water, land-use and community constraints remain unmeasured?\"]},\"evidence\":{\"claimIds\":[\"us-historical-demand\",\"us-forecast-demand\",\"global-demand\"],\"sourceIds\":[\"lbnl\",\"iea\"]},\"analysis\":{\"optionIds\":[\"phase\",\"flex\",\"disclose\"],\"hypotheses\":[{\"statement\":\"Phased commitments can reduce stranded-infrastructure exposure without preventing useful capacity additions.\",\"test\":\"Compare milestone-linked and unconditional scenarios using the same project data and demand ranges.\",\"wouldWeaken\":\"Engineering indivisibilities or verified minimum-scale requirements eliminate most staging benefits.\"}]},\"cognitiveMethod\":{\"decisionRule\":\"Advance only options whose local evidence, cost allocation and reversal conditions are explicit. Treat national forecasts as scenario context, not project approval evidence.\",\"constraints\":[\"Distinguish modeled estimates, forecasts, contracted commitments and installed capacity.\",\"Do not infer community consent or social benefit from projected investment.\",\"Use ranges and stress cases rather than selecting a single forecast as certainty.\"]},\"governance\":{\"reviewStatus\":\"assistant-source-reviewed; not expert-reviewed\",\"updateTriggers\":[\"Recheck report editions when using a forecast in a consequential memo.\",\"Supersede forecast claims when assumptions or scenarios change; preserve prior versions for comparison.\",\"Withdraw local conclusions if the underlying project or engineering assumptions cannot be reproduced.\"],\"retractionProtocol\":\"Mark the affected version retracted, retain its identifier and reason, and stop using its dependent analysis until a replacement is reviewed. Local files do not automatically propagate revocations to downloaded copies.\",\"revision\":\"0.1.1\"}},\"revision\":\"0.1.1\",\"packageVersion\":2,\"originalResearchAsOf\":\"2026-10-18T04:56:00Z\",\"revisionRecordedAt\":\"2026-10-18T05:35:00Z\",\"independentAssistantReviewAt\":\"2026-10-18T05:31:00Z\",\"reviewStatus\":\"assistant-source-reviewed; not expert-reviewed\",\"decisionUseCase\":{\"role\":\"Public utility commission analyst\",\"task\":\"Draft an evidence-request memo for a hypothetical phased connection\",\"requiredOutput\":[\"Evidence requests\",\"Alternatives\",\"Downside bearers\",\"Unresolved engineering questions\"],\"exclusions\":[\"Real tariffs or sites without evidence\",\"Invented MW capacity\",\"Project approval from national forecasts\"]},\"preparedAt\":\"2026-10-18T04:56:00Z\",\"nativePackaging\":{\"target\":\"explicit native-v2 adaptation\",\"status\":\"pending separate Rust packaging and validation\",\"v1Limitation\":\"Native-v1 required world-validity start cannot represent unknown; no v1 exchange produced for this revision.\"},\"temporalContract\":{\"version\":\"tacitus-research-temporal/1\",\"preparedAtMeaning\":\"Original assistant research preparation timestamp, not world-validity.\",\"recordedAtMeaning\":\"When this revised research record was authored; not a claim about what was available historically.\",\"unknownValidityMeaning\":\"No declared world-validity bounds; this does not mean valid at every time.\",\"syntheticMeaning\":\"Illustrative scenarios have no actual event date.\",\"nativeV2Mapping\":\"Optional SourceRecord valid_from/valid_until may remain null; unknown status is preserved in this artifact. Native eligibility behavior does not prove temporal applicability.\"}}",
+      "tacitus.research-summary-provenance": "{\"capsuleId\":\"compute-infrastructure-governance\",\"packageVersion\":2,\"contentRevision\":\"0.1.1\",\"revisionRecordedAt\":\"2026-10-18T05:35:00Z\",\"summaryRecords\":[{\"id\":\"summary-us-historical-demand\",\"version\":1,\"claimId\":\"us-historical-demand\",\"text\":\"The LBNL report estimates U.S. data centers used 192 TWh in 2024, or 4.7% of U.S. electricity.\\nQualification: A modeled historical estimate for all data centers within the report’s scope, not AI workloads alone. Cryptocurrency mining is excluded.\\nPrimary sources: https://www.energy.gov/documents/united-states-data-center-energy-usage-report-2025-update\",\"sha256\":\"53c93596bc81dcf1c451b9fafee38ff53f108318360ff580a9cfad751e40ed4b\",\"authoredAt\":\"2026-10-18T05:35:00Z\",\"availableAt\":\"2026-10-18T05:35:00Z\",\"worldValidity\":{\"status\":\"unknown\",\"from\":null,\"until\":null},\"author\":\"TACITUS research assistant\",\"kind\":\"original assistant-authored paraphrase/analysis\",\"unchangedFromPrevious\":false,\"previousHash\":null,\"sourceRightsNote\":\"Original assistant-authored TACITUS paraphrases and analysis; no publisher text, images or datasets bundled. Display and delivery are user-authorized; general reuse terms for original TACITUS material are not specified. Linked source licenses apply only to their respective materials. Hashes identify summary bytes, not publisher identity, endorsement, truth or ongoing rights.\"},{\"id\":\"summary-us-forecast-demand\",\"version\":1,\"claimId\":\"us-forecast-demand\",\"text\":\"The LBNL 2030 reference projection is 649 TWh; a compounded sensitivity stress-test range spans 521–843 TWh.\\nQualification: Projection assumptions use late-2025 information. The stress-test range is not a probabilistic confidence interval and does not capture every structural discontinuity; it is neither observed demand nor committed project load.\\nPrimary sources: https://www.energy.gov/documents/united-states-data-center-energy-usage-report-2025-update\",\"sha256\":\"a1f33c21483a615c460500052df38f1b0d6496648ef4459d95811ab00287b1e8\",\"authoredAt\":\"2026-10-18T05:35:00Z\",\"availableAt\":\"2026-10-18T05:35:00Z\",\"worldValidity\":{\"status\":\"unknown\",\"from\":null,\"until\":null},\"author\":\"TACITUS research assistant\",\"kind\":\"original assistant-authored paraphrase/analysis\",\"unchangedFromPrevious\":false,\"previousHash\":null,\"sourceRightsNote\":\"Original assistant-authored TACITUS paraphrases and analysis; no publisher text, images or datasets bundled. Display and delivery are user-authorized; general reuse terms for original TACITUS material are not specified. Linked source licenses apply only to their respective materials. Hashes identify summary bytes, not publisher identity, endorsement, truth or ongoing rights.\"},{\"id\":\"summary-global-demand\",\"version\":2,\"claimId\":\"global-demand\",\"text\":\"The IEA’s 2026 executive summary projects global data-center electricity use rising from 485 TWh in 2025 to about 950 TWh in 2030.\\nQualification: A global projection; it cannot be substituted for a U.S. forecast or a local grid impact study. It concerns all data centers, not exclusively AI workloads. IEA and LBNL models are not one harmonized dataset.\\nPrimary sources: https://www.iea.org/reports/key-questions-on-energy-and-ai/executive-summary\",\"sha256\":\"57aff089567f1693cf1ef2be5d52e5ae636e07f80731e2c1266858e1561a1ca2\",\"authoredAt\":\"2026-10-18T05:35:00Z\",\"availableAt\":\"2026-10-18T05:35:00Z\",\"worldValidity\":{\"status\":\"unknown\",\"from\":null,\"until\":null},\"author\":\"TACITUS research assistant\",\"kind\":\"original assistant-authored paraphrase/analysis\",\"unchangedFromPrevious\":false,\"previousHash\":\"b99417a07e142b2a75bd43ba3e81d6ff102ee786e23dd4d7ead2787ed02445e1\",\"sourceRightsNote\":\"Original assistant-authored TACITUS paraphrases and analysis; no publisher text, images or datasets bundled. Display and delivery are user-authorized; general reuse terms for original TACITUS material are not specified. Linked source licenses apply only to their respective materials. Hashes identify summary bytes, not publisher identity, endorsement, truth or ongoing rights.\"},{\"id\":\"summary-capacity-distinction\",\"version\":1,\"claimId\":\"capacity-distinction\",\"text\":\"Annual TWh cannot by itself determine a proposed facility’s peak MW demand, interconnection cost or reliability impact. Local load shape and engineering evidence are necessary.\\nQualification: Analytical distinction; no site-specific engineering determination is made.\\nPrimary sources: https://www.energy.gov/documents/united-states-data-center-energy-usage-report-2025-update | https://www.iea.org/reports/key-questions-on-energy-and-ai/executive-summary\",\"sha256\":\"3563a1e1eca51f92ce143bf287638a3883c69f2b33bd40e2f98a7249e0f6c0bf\",\"authoredAt\":\"2026-10-18T05:00:00Z\",\"availableAt\":\"2026-10-18T05:00:00Z\",\"worldValidity\":{\"status\":\"unknown\",\"from\":null,\"until\":null},\"author\":\"TACITUS research assistant\",\"kind\":\"original assistant-authored paraphrase/analysis\",\"unchangedFromPrevious\":true,\"previousHash\":\"3563a1e1eca51f92ce143bf287638a3883c69f2b33bd40e2f98a7249e0f6c0bf\",\"sourceRightsNote\":\"Original assistant-authored TACITUS paraphrases and analysis; no publisher text, images or datasets bundled. Display and delivery are user-authorized; general reuse terms for original TACITUS material are not specified. Linked source licenses apply only to their respective materials. Hashes identify summary bytes, not publisher identity, endorsement, truth or ongoing rights.\"},{\"id\":\"summary-compute-scenario\",\"version\":1,\"claimId\":\"compute-scenario\",\"text\":\"A public planning body is considering a phased data-center project and must decide what evidence to require before infrastructure commitments.\\nQualification: Illustrative governance scenario, not an identified project or an existing permitting decision.\\nPrimary sources: \",\"sha256\":\"898293a2d53bb65f7961e3e379d027a857397d5118d2e8a30d2c4f0a26916a66\",\"authoredAt\":\"2026-10-18T05:00:00Z\",\"availableAt\":\"2026-10-18T05:00:00Z\",\"worldValidity\":{\"status\":\"unknown\",\"from\":null,\"until\":null},\"author\":\"TACITUS research assistant\",\"kind\":\"original assistant-authored paraphrase/analysis\",\"unchangedFromPrevious\":true,\"previousHash\":\"898293a2d53bb65f7961e3e379d027a857397d5118d2e8a30d2c4f0a26916a66\",\"sourceRightsNote\":\"Original assistant-authored TACITUS paraphrases and analysis; no publisher text, images or datasets bundled. Display and delivery are user-authorized; general reuse terms for original TACITUS material are not specified. Linked source licenses apply only to their respective materials. Hashes identify summary bytes, not publisher identity, endorsement, truth or ongoing rights.\"}]}",
+      "tacitus.native-adaptation": "{\"version\":\"tacitus-editorial-to-native-v2/1\",\"sourceContentRevision\":\"0.1.1\",\"unknownValidityWarning\":\"World-validity interval is unknown; this record does not establish validity on a requested date. Observation periods and forecast horizons are separate metadata.\",\"factMapping\":\"attributed-source-summary -> reported_statement; not asserted truth\",\"analysisMapping\":\"inference\",\"scenarioMapping\":\"hypothesis with explicit synthetic conditions\",\"historicalArtifactNotice\":\"research nativePackaging status describes authoring checkpoint; later native receipt is separate\",\"noV1Compatibility\":true}"
+    }
+  },
+  "evidence": {
+    "evidence/016ecdfa2a55a4cee37870a2c77fbab8c23403808b8d341029c9c1ef396a6d67.txt": "The LBNL report estimates U.S. data centers used 192 TWh in 2024, or 4.7% of U.S. electricity.\nQualification: A modeled historical estimate for all data centers within the report’s scope, not AI workloads alone. Cryptocurrency mining is excluded.\nPrimary sources: https://www.energy.gov/documents/united-states-data-center-energy-usage-report-2025-update",
+    "evidence/8f5981b37d3405a8ca1e45cf1eaf3b149f5d8f57da321c6e2caacaf34577666b.txt": "The LBNL 2030 reference projection is 649 TWh; a compounded sensitivity stress-test range spans 521–843 TWh.\nQualification: Projection assumptions use late-2025 information. The stress-test range is not a probabilistic confidence interval and does not capture every structural discontinuity; it is neither observed demand nor committed project load.\nPrimary sources: https://www.energy.gov/documents/united-states-data-center-energy-usage-report-2025-update",
+    "evidence/106cb6094e9a0174e50166be56942f7ad613109eec404550c3524a541a5614be.txt": "The IEA’s 2026 executive summary projects global data-center electricity use rising from 485 TWh in 2025 to about 950 TWh in 2030.\nQualification: A global projection; it cannot be substituted for a U.S. forecast or a local grid impact study. It concerns all data centers, not exclusively AI workloads. IEA and LBNL models are not one harmonized dataset.\nPrimary sources: https://www.iea.org/reports/key-questions-on-energy-and-ai/executive-summary",
+    "evidence/156060d20ccdd842507363179ca90e0f10a5f7e57ce509b121cb695b0d194427.txt": "Annual TWh cannot by itself determine a proposed facility’s peak MW demand, interconnection cost or reliability impact. Local load shape and engineering evidence are necessary.\nQualification: Analytical distinction; no site-specific engineering determination is made.\nPrimary sources: https://www.energy.gov/documents/united-states-data-center-energy-usage-report-2025-update | https://www.iea.org/reports/key-questions-on-energy-and-ai/executive-summary",
+    "evidence/fe2c67a4933b7bc48a3c55865d3f91e6eb056636f1536ce1cc48ee32e8dd20ce.txt": "A public planning body is considering a phased data-center project and must decide what evidence to require before infrastructure commitments.\nQualification: Illustrative governance scenario, not an identified project or an existing permitting decision.\nPrimary sources: "
+  }
+}

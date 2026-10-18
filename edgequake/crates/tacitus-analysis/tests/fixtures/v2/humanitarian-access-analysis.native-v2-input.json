@@ -1,0 +1,397 @@
+{
+  "manifest": {
+    "author": "TACITUS research assistant",
+    "confidentiality": "public",
+    "created_at": 1792301700,
+    "dependencies": [],
+    "domain": "Humanitarian diplomacy and policy analysis",
+    "evidence_mode": "evidence_included",
+    "files": {},
+    "id": "humanitarian-access-analysis",
+    "license": "Original assistant-authored TACITUS paraphrases and analysis; no publisher text, images or datasets bundled. Display and delivery are user-authorized; general reuse terms for original TACITUS material are not specified. Linked source licenses apply only to their respective materials. Hashes identify summary bytes, not publisher identity, endorsement, truth or ongoing rights.",
+    "limitations": [
+      "Educational research draft; no independent subject-matter review.",
+      "Source-linked paraphrases are not authenticated publisher excerpts.",
+      "No live operational feed or private data. No model output is treated as independent external evidence; recommendations remain analytical proposals.",
+      "Graph edges and options are analytical proposals unless explicitly sourced.",
+      "No real routes, negotiations, sensitive protection information or access permissions are included.",
+      "Legal assessment requires qualified review and relevant jurisdictional/conflict facts.",
+      "Native assertion dependencies are empty; analytical dependency edges below do not establish native invalidation propagation.",
+      "A digest can be recomputed by an editor; it is not a trusted signature or source authentication.",
+      "Native archive structural validation does not establish source truth, expert review or live PRAXIS compatibility. This revision requires explicit native-v2 adaptation; it is not a v1 exchange.",
+      "World-validity interval is unknown; this record does not establish validity on a requested date. Observation periods and forecast horizons are separate metadata.",
+      "Explicit native-v2 authoring. Native-v1 and v1 catalog/compiler compatibility is not claimed.",
+      "Source publication timestamps describe the authored summaries; official publisher dates are separate in hash-bound research metadata.",
+      "Unknown native validity is unfiltered, not affirmative valid-at-date clearance. Do not use these records as verified date-specific evidence."
+    ],
+    "package_version": 2,
+    "profile": "context",
+    "purpose": "A decision capsule for structuring an access discussion while preserving uncertainty, civilian protection and the distinction between public law explanations and actual permissions.",
+    "schema_version": 2,
+    "scope": "humanitarian-access-analysis",
+    "sharing_policy": "User-authorized display and delivery of these original research records; no broad reuse license for TACITUS or underlying sources implied.",
+    "supersedes": "5fb5b705bf6275e69c77b0c127a5f2901bf2ccaf575308fc344133ec9c6aa79d",
+    "title": "Humanitarian access: separate legal framework from operational feasibility",
+    "valid_until": null
+  },
+  "data": {
+    "sources": [
+      {
+        "id": "summary-access-law",
+        "version": 2,
+        "workspace": "humanitarian-access-analysis",
+        "document_id": null,
+        "title": "Original research summary: access-law",
+        "author": "TACITUS research assistant",
+        "original_hash": "30d469149a58ccee89c0aa9ebd2ed2921c2bdf14eaadb7afc92bdc53276f457b",
+        "text_hash": "30d469149a58ccee89c0aa9ebd2ed2921c2bdf14eaadb7afc92bdc53276f457b",
+        "text": "",
+        "language": "en",
+        "extractor": "Original assistant-authored paraphrase/analysis; no publisher-text extraction",
+        "published_at": 1792301700,
+        "retrieved_at": 1792301700,
+        "available_at": 1792301700,
+        "valid_from": null,
+        "valid_until": null,
+        "source_family": "tacitus-authored-summary:humanitarian-access-analysis",
+        "withdrawn": false,
+        "restricted": false,
+        "redistributable": true,
+        "license": "User-authorized display and delivery of original TACITUS summaries; no general reuse license specified. Underlying publisher materials not included."
+      },
+      {
+        "id": "summary-access-control",
+        "version": 2,
+        "workspace": "humanitarian-access-analysis",
+        "document_id": null,
+        "title": "Original research summary: access-control",
+        "author": "TACITUS research assistant",
+        "original_hash": "c5ae88613c533642a34c3db09319e3f15e9d73dedc34bd57a55da4e4036a0443",
+        "text_hash": "c5ae88613c533642a34c3db09319e3f15e9d73dedc34bd57a55da4e4036a0443",
+        "text": "",
+        "language": "en",
+        "extractor": "Original assistant-authored paraphrase/analysis; no publisher-text extraction",
+        "published_at": 1792301700,
+        "retrieved_at": 1792301700,
+        "available_at": 1792301700,
+        "valid_from": null,
+        "valid_until": null,
+        "source_family": "tacitus-authored-summary:humanitarian-access-analysis",
+        "withdrawn": false,
+        "restricted": false,
+        "redistributable": true,
+        "license": "User-authorized display and delivery of original TACITUS summaries; no general reuse license specified. Underlying publisher materials not included."
+      },
+      {
+        "id": "summary-access-monitoring",
+        "version": 1,
+        "workspace": "humanitarian-access-analysis",
+        "document_id": null,
+        "title": "Original research summary: access-monitoring",
+        "author": "TACITUS research assistant",
+        "original_hash": "8a8d36b34421a0e573faa3440cb5daea18440f6812af2f33f7b3a233870430c7",
+        "text_hash": "8a8d36b34421a0e573faa3440cb5daea18440f6812af2f33f7b3a233870430c7",
+        "text": "",
+        "language": "en",
+        "extractor": "Original assistant-authored paraphrase/analysis; no publisher-text extraction",
+        "published_at": 1792299600,
+        "retrieved_at": 1792299600,
+        "available_at": 1792299600,
+        "valid_from": null,
+        "valid_until": null,
+        "source_family": "tacitus-authored-summary:humanitarian-access-analysis",
+        "withdrawn": false,
+        "restricted": false,
+        "redistributable": true,
+        "license": "User-authorized display and delivery of original TACITUS summaries; no general reuse license specified. Underlying publisher materials not included."
+      },
+      {
+        "id": "summary-access-separation",
+        "version": 1,
+        "workspace": "humanitarian-access-analysis",
+        "document_id": null,
+        "title": "Original research summary: access-separation",
+        "author": "TACITUS research assistant",
+        "original_hash": "feef87c8f0af05362cab5c5a9bee083d3f4e06a784e38400a2e4a0c904b5a641",
+        "text_hash": "feef87c8f0af05362cab5c5a9bee083d3f4e06a784e38400a2e4a0c904b5a641",
+        "text": "",
+        "language": "en",
+        "extractor": "Original assistant-authored paraphrase/analysis; no publisher-text extraction",
+        "published_at": 1792299600,
+        "retrieved_at": 1792299600,
+        "available_at": 1792299600,
+        "valid_from": null,
+        "valid_until": null,
+        "source_family": "tacitus-authored-summary:humanitarian-access-analysis",
+        "withdrawn": false,
+        "restricted": false,
+        "redistributable": true,
+        "license": "User-authorized display and delivery of original TACITUS summaries; no general reuse license specified. Underlying publisher materials not included."
+      },
+      {
+        "id": "summary-access-scenario",
+        "version": 1,
+        "workspace": "humanitarian-access-analysis",
+        "document_id": null,
+        "title": "Original research summary: access-scenario",
+        "author": "TACITUS research assistant",
+        "original_hash": "06bbb1528a59b22f463ea833e06e893b900e7739a0e51d8735986879984c26ed",
+        "text_hash": "06bbb1528a59b22f463ea833e06e893b900e7739a0e51d8735986879984c26ed",
+        "text": "",
+        "language": "en",
+        "extractor": "Original assistant-authored paraphrase/analysis; no publisher-text extraction",
+        "published_at": 1792299600,
+        "retrieved_at": 1792299600,
+        "available_at": 1792299600,
+        "valid_from": null,
+        "valid_until": null,
+        "source_family": "tacitus-authored-summary:humanitarian-access-analysis",
+        "withdrawn": false,
+        "restricted": false,
+        "redistributable": true,
+        "license": "User-authorized display and delivery of original TACITUS summaries; no general reuse license specified. Underlying publisher materials not included."
+      }
+    ],
+    "assertions": [
+      {
+        "id": "access-law",
+        "version": 2,
+        "workspace": "humanitarian-access-analysis",
+        "speaker": "TACITUS research assistant",
+        "subject": "Humanitarian access: separate legal framework from operational feasibility",
+        "predicate": "states",
+        "object": null,
+        "proposition": "The ICRC explains that parties have primary responsibility for civilian basic needs under their control. Relief requires concerned parties’ consent, but consent is not wholly discretionary; after consent, parties must allow and facilitate relief, subject to a right of control.",
+        "epistemic_type": "reported_statement",
+        "modality": "qualified-research-draft",
+        "conditions": [
+          "Attributed summary of an ICRC legal explanation; application depends on conflict classification and facts. This is not legal advice or permission to operate. Lack of consent does not itself establish that withholding it is lawful; applicable duties depend on conflict and circumstances, including occupation. The source is an institutional explanation, not treaty text or a case-specific opinion.",
+          "World-validity interval is unknown; this record does not establish validity on a requested date. Observation periods and forecast horizons are separate metadata.",
+          "Source-linked assistant-authored record; integrity does not establish publisher authenticity, truth, rights or expert review."
+        ],
+        "exceptions": [],
+        "evidence": [
+          {
+            "source": "summary-access-law@2",
+            "text_hash": "30d469149a58ccee89c0aa9ebd2ed2921c2bdf14eaadb7afc92bdc53276f457b",
+            "start": 0,
+            "end": 775,
+            "locator": "Complete original TACITUS summary; primary-source URLs included in summary; detailed dates and periods in research artifact",
+            "original_language": "en",
+            "translation": null
+          }
+        ],
+        "created_at": 1792301700
+      },
+      {
+        "id": "access-control",
+        "version": 2,
+        "workspace": "humanitarian-access-analysis",
+        "speaker": "TACITUS research assistant",
+        "subject": "Humanitarian access: separate legal framework from operational feasibility",
+        "predicate": "states",
+        "object": null,
+        "proposition": "The ICRC describes controls such as searches, routes and timing, while warning against controls that unduly delay relief or make it impossible.",
+        "epistemic_type": "reported_statement",
+        "modality": "qualified-research-draft",
+        "conditions": [
+          "Do not turn this summary into a finding that a named actor violated law. Permissible control in general does not establish that a particular restriction is lawful.",
+          "World-validity interval is unknown; this record does not establish validity on a requested date. Observation periods and forecast horizons are separate metadata.",
+          "Source-linked assistant-authored record; integrity does not establish publisher authenticity, truth, rights or expert review."
+        ],
+        "exceptions": [],
+        "evidence": [
+          {
+            "source": "summary-access-control@2",
+            "text_hash": "c5ae88613c533642a34c3db09319e3f15e9d73dedc34bd57a55da4e4036a0443",
+            "start": 0,
+            "end": 406,
+            "locator": "Complete original TACITUS summary; primary-source URLs included in summary; detailed dates and periods in research artifact",
+            "original_language": "en",
+            "translation": null
+          }
+        ],
+        "created_at": 1792301700
+      },
+      {
+        "id": "access-monitoring",
+        "version": 2,
+        "workspace": "humanitarian-access-analysis",
+        "speaker": "TACITUS research assistant",
+        "subject": "Humanitarian access: separate legal framework from operational feasibility",
+        "predicate": "states",
+        "object": null,
+        "proposition": "OCHA’s toolbox describes monitoring access constraints, their effects, restrictive policies and mitigation actions through an access-monitoring framework.",
+        "epistemic_type": "reported_statement",
+        "modality": "qualified-research-draft",
+        "conditions": [
+          "A framework description, not current incident data or evidence that a particular route is accessible.",
+          "World-validity interval is unknown; this record does not establish validity on a requested date. Observation periods and forecast horizons are separate metadata.",
+          "Source-linked assistant-authored record; integrity does not establish publisher authenticity, truth, rights or expert review."
+        ],
+        "exceptions": [],
+        "evidence": [
+          {
+            "source": "summary-access-monitoring@1",
+            "text_hash": "8a8d36b34421a0e573faa3440cb5daea18440f6812af2f33f7b3a233870430c7",
+            "start": 0,
+            "end": 385,
+            "locator": "Complete original TACITUS summary; primary-source URLs included in summary; detailed dates and periods in research artifact",
+            "original_language": "en",
+            "translation": null
+          }
+        ],
+        "created_at": 1792301700
+      },
+      {
+        "id": "access-separation",
+        "version": 2,
+        "workspace": "humanitarian-access-analysis",
+        "speaker": "TACITUS research assistant",
+        "subject": "Humanitarian access: separate legal framework from operational feasibility",
+        "predicate": "states",
+        "object": null,
+        "proposition": "An access memo should distinguish legal position, administrative permission, security feasibility and actual delivery outcomes rather than treating any one as proof of the others.",
+        "epistemic_type": "inference",
+        "modality": "qualified-research-draft",
+        "conditions": [
+          "Analyst-proposed decision structure; it does not settle legal disputes or replace operational assessment.",
+          "World-validity interval is unknown; this record does not establish validity on a requested date. Observation periods and forecast horizons are separate metadata.",
+          "Source-linked assistant-authored record; integrity does not establish publisher authenticity, truth, rights or expert review."
+        ],
+        "exceptions": [],
+        "evidence": [
+          {
+            "source": "summary-access-separation@1",
+            "text_hash": "feef87c8f0af05362cab5c5a9bee083d3f4e06a784e38400a2e4a0c904b5a641",
+            "start": 0,
+            "end": 481,
+            "locator": "Complete original TACITUS summary; primary-source URLs included in summary; detailed dates and periods in research artifact",
+            "original_language": "en",
+            "translation": null
+          }
+        ],
+        "created_at": 1792301700
+      },
+      {
+        "id": "access-scenario",
+        "version": 2,
+        "workspace": "humanitarian-access-analysis",
+        "speaker": "TACITUS research assistant",
+        "subject": "Humanitarian access: separate legal framework from operational feasibility",
+        "predicate": "states",
+        "object": null,
+        "proposition": "A policy team must compare responses to a hypothetical delay affecting civilian assistance while avoiding public disclosure of routes or identifiable beneficiaries.",
+        "epistemic_type": "hypothesis",
+        "modality": "synthetic-illustrative",
+        "conditions": [
+          "Synthetic decision problem; no actual incident, party, convoy or affected person is represented.",
+          "World-validity interval is unknown; this record does not establish validity on a requested date. Observation periods and forecast horizons are separate metadata.",
+          "Source-linked assistant-authored record; integrity does not establish publisher authenticity, truth, rights or expert review.",
+          "SYNTHETIC ILLUSTRATIVE SCENARIO: not a documented event, observation or prediction."
+        ],
+        "exceptions": [],
+        "evidence": [
+          {
+            "source": "summary-access-scenario@1",
+            "text_hash": "06bbb1528a59b22f463ea833e06e893b900e7739a0e51d8735986879984c26ed",
+            "start": 0,
+            "end": 294,
+            "locator": "Complete original TACITUS summary; primary-source URLs included in summary; detailed dates and periods in research artifact",
+            "original_language": "en",
+            "translation": null
+          }
+        ],
+        "created_at": 1792301700
+      }
+    ],
+    "methods": [
+      {
+        "id": "preserve-qualifications",
+        "version": 2,
+        "workspace": "humanitarian-access-analysis",
+        "kind": "procedure",
+        "description": "Retain source attribution, unknown world validity, observation periods, forecast horizons, modality and synthetic status when reusing this research. Do not infer a policy conclusion merely from matching hashes.",
+        "scope": "humanitarian-access-analysis",
+        "prerequisites": [
+          "Human review of intended use and current evidence; no verified date-specific applicability can be inferred from null validity."
+        ],
+        "failure_conditions": [
+          "Educational research draft; no independent subject-matter review.",
+          "Source-linked paraphrases are not authenticated publisher excerpts.",
+          "No live operational feed or private data. No model output is treated as independent external evidence; recommendations remain analytical proposals.",
+          "Graph edges and options are analytical proposals unless explicitly sourced.",
+          "No real routes, negotiations, sensitive protection information or access permissions are included.",
+          "Legal assessment requires qualified review and relevant jurisdictional/conflict facts.",
+          "Native assertion dependencies are empty; analytical dependency edges below do not establish native invalidation propagation.",
+          "A digest can be recomputed by an editor; it is not a trusted signature or source authentication.",
+          "Native archive structural validation does not establish source truth, expert review or live PRAXIS compatibility. This revision requires explicit native-v2 adaptation; it is not a v1 exchange.",
+          "World-validity interval is unknown; this record does not establish validity on a requested date. Observation periods and forecast horizons are separate metadata."
+        ],
+        "evidence": [
+          {
+            "source": "summary-access-law@2",
+            "text_hash": "30d469149a58ccee89c0aa9ebd2ed2921c2bdf14eaadb7afc92bdc53276f457b",
+            "start": 0,
+            "end": 775,
+            "locator": "Complete original TACITUS summary; primary-source URLs included in summary; detailed dates and periods in research artifact",
+            "original_language": "en",
+            "translation": null
+          },
+          {
+            "source": "summary-access-control@2",
+            "text_hash": "c5ae88613c533642a34c3db09319e3f15e9d73dedc34bd57a55da4e4036a0443",
+            "start": 0,
+            "end": 406,
+            "locator": "Complete original TACITUS summary; primary-source URLs included in summary; detailed dates and periods in research artifact",
+            "original_language": "en",
+            "translation": null
+          },
+          {
+            "source": "summary-access-monitoring@1",
+            "text_hash": "8a8d36b34421a0e573faa3440cb5daea18440f6812af2f33f7b3a233870430c7",
+            "start": 0,
+            "end": 385,
+            "locator": "Complete original TACITUS summary; primary-source URLs included in summary; detailed dates and periods in research artifact",
+            "original_language": "en",
+            "translation": null
+          },
+          {
+            "source": "summary-access-separation@1",
+            "text_hash": "feef87c8f0af05362cab5c5a9bee083d3f4e06a784e38400a2e4a0c904b5a641",
+            "start": 0,
+            "end": 481,
+            "locator": "Complete original TACITUS summary; primary-source URLs included in summary; detailed dates and periods in research artifact",
+            "original_language": "en",
+            "translation": null
+          },
+          {
+            "source": "summary-access-scenario@1",
+            "text_hash": "06bbb1528a59b22f463ea833e06e893b900e7739a0e51d8735986879984c26ed",
+            "start": 0,
+            "end": 294,
+            "locator": "Complete original TACITUS summary; primary-source URLs included in summary; detailed dates and periods in research artifact",
+            "original_language": "en",
+            "translation": null
+          }
+        ],
+        "created_at": 1792301700,
+        "available_at": 1792301700,
+        "ontology_version": "tacitus-policy/1"
+      }
+    ],
+    "reviews": [],
+    "artifacts": {
+      "tacitus.policy-research": "{\"id\":\"humanitarian-access-analysis\",\"title\":\"Humanitarian access: separate legal framework from operational feasibility\",\"summary\":\"A decision capsule for structuring an access discussion while preserving uncertainty, civilian protection and the distinction between public law explanations and actual permissions.\",\"domain\":\"Humanitarian diplomacy and policy analysis\",\"asOf\":\"2026-10-18T04:56:00Z\",\"sources\":[{\"id\":\"icrc\",\"title\":\"Humanitarian access: what the law says\",\"url\":\"https://www.icrc.org/en/document/humanitarian-access-what-law-says\",\"publishedDate\":\"2023-11-27\",\"accessedDate\":\"2026-10-18T04:56:00Z\",\"locator\":\"Main IHL rules: consent, facilitation and right of control\",\"reviewAccessedDate\":\"2026-10-18T05:31:00Z\",\"sourceLicense\":\"Not established by this review; linked material retains its rights.\"},{\"id\":\"ocha\",\"title\":\"OCHA Information Management Toolbox: Humanitarian Access\",\"url\":\"https://knowledge.base.unocha.org/wiki/spaces/imtoolbox/pages/1410072577/Humanitarian%2BAccess\",\"publishedDate\":\"2024-04-04\",\"accessedDate\":\"2026-10-18T04:56:00Z\",\"locator\":\"Overview and database-purpose paragraphs; updated 4 April 2024\",\"reviewAccessedDate\":\"2026-10-18T05:31:00Z\",\"sourceLicense\":\"Not established by this review; linked material retains its rights.\"}],\"claims\":[{\"id\":\"access-law\",\"text\":\"The ICRC explains that parties have primary responsibility for civilian basic needs under their control. Relief requires concerned parties’ consent, but consent is not wholly discretionary; after consent, parties must allow and facilitate relief, subject to a right of control.\",\"kind\":\"fact\",\"sourceIds\":[\"icrc\"],\"qualification\":\"Attributed summary of an ICRC legal explanation; application depends on conflict classification and facts. This is not legal advice or permission to operate. Lack of consent does not itself establish that withholding it is lawful; applicable duties depend on conflict and circumstances, including occupation. The source is an institutional explanation, not treaty text or a case-specific opinion.\",\"synthetic\":false,\"epistemicStatus\":\"attributed-source-summary\",\"temporal\":{\"publisherDates\":{\"icrc\":\"2023-11-27\"},\"recordedAt\":\"2026-10-18T05:35:00Z\",\"observationPeriod\":null,\"forecastHorizon\":null,\"worldValidity\":{\"status\":\"unknown\",\"from\":null,\"until\":null}},\"analyticalDependencies\":[],\"assumptions\":[]},{\"id\":\"access-control\",\"text\":\"The ICRC describes controls such as searches, routes and timing, while warning against controls that unduly delay relief or make it impossible.\",\"kind\":\"fact\",\"sourceIds\":[\"icrc\"],\"qualification\":\"Do not turn this summary into a finding that a named actor violated law. Permissible control in general does not establish that a particular restriction is lawful.\",\"synthetic\":false,\"epistemicStatus\":\"attributed-source-summary\",\"temporal\":{\"publisherDates\":{\"icrc\":\"2023-11-27\"},\"recordedAt\":\"2026-10-18T05:35:00Z\",\"observationPeriod\":null,\"forecastHorizon\":null,\"worldValidity\":{\"status\":\"unknown\",\"from\":null,\"until\":null}},\"analyticalDependencies\":[],\"assumptions\":[]},{\"id\":\"access-monitoring\",\"text\":\"OCHA’s toolbox describes monitoring access constraints, their effects, restrictive policies and mitigation actions through an access-monitoring framework.\",\"kind\":\"fact\",\"sourceIds\":[\"ocha\"],\"qualification\":\"A framework description, not current incident data or evidence that a particular route is accessible.\",\"synthetic\":false,\"epistemicStatus\":\"attributed-source-summary\",\"temporal\":{\"publisherDates\":{\"ocha\":\"2024-04-04\"},\"recordedAt\":\"2026-10-18T05:35:00Z\",\"observationPeriod\":null,\"forecastHorizon\":null,\"worldValidity\":{\"status\":\"unknown\",\"from\":null,\"until\":null}},\"analyticalDependencies\":[],\"assumptions\":[]},{\"id\":\"access-separation\",\"text\":\"An access memo should distinguish legal position, administrative permission, security feasibility and actual delivery outcomes rather than treating any one as proof of the others.\",\"kind\":\"analysis\",\"sourceIds\":[\"icrc\",\"ocha\"],\"qualification\":\"Analyst-proposed decision structure; it does not settle legal disputes or replace operational assessment.\",\"synthetic\":false,\"epistemicStatus\":\"analyst-proposal\",\"temporal\":{\"publisherDates\":{\"icrc\":\"2023-11-27\",\"ocha\":\"2024-04-04\"},\"recordedAt\":\"2026-10-18T05:35:00Z\",\"observationPeriod\":null,\"forecastHorizon\":null,\"worldValidity\":{\"status\":\"unknown\",\"from\":null,\"until\":null}},\"analyticalDependencies\":[\"access-law\",\"access-control\",\"access-monitoring\"],\"assumptions\":[\"General evidence may not transfer to a specific decision without local inputs\"]},{\"id\":\"access-scenario\",\"text\":\"A policy team must compare responses to a hypothetical delay affecting civilian assistance while avoiding public disclosure of routes or identifiable beneficiaries.\",\"kind\":\"scenario\",\"sourceIds\":[],\"qualification\":\"Synthetic decision problem; no actual incident, party, convoy or affected person is represented.\",\"synthetic\":true,\"epistemicStatus\":\"illustrative-scenario\",\"temporal\":{\"publisherDates\":{},\"recordedAt\":\"2026-10-18T05:35:00Z\",\"observationPeriod\":null,\"forecastHorizon\":null,\"worldValidity\":{\"status\":\"unknown\",\"from\":null,\"until\":null}},\"analyticalDependencies\":[],\"assumptions\":[\"Illustrative context only; no actual event asserted\"]}],\"questions\":[\"Which obstacle is documented, who can resolve it, and what must be verified before recommending facilitation or escalation?\",\"Which constraint is documented, by whom, and with what date and corroboration?\",\"What consent or authorization exists, and what remains disputed or unverified?\",\"What can be disclosed safely without exposing beneficiaries or operational arrangements?\"],\"limitations\":[\"Educational research draft; no independent subject-matter review.\",\"Source-linked paraphrases are not authenticated publisher excerpts.\",\"No live operational feed or private data. No model output is treated as independent external evidence; recommendations remain analytical proposals.\",\"Graph edges and options are analytical proposals unless explicitly sourced.\",\"No real routes, negotiations, sensitive protection information or access permissions are included.\",\"Legal assessment requires qualified review and relevant jurisdictional/conflict facts.\",\"Native assertion dependencies are empty; analytical dependency edges below do not establish native invalidation propagation.\",\"A digest can be recomputed by an editor; it is not a trusted signature or source authentication.\",\"Native archive structural validation does not establish source truth, expert review or live PRAXIS compatibility. This revision requires explicit native-v2 adaptation; it is not a v1 exchange.\"],\"rightsNote\":\"Original assistant-authored TACITUS paraphrases and analysis; no publisher text, images or datasets bundled. Display and delivery are user-authorized; general reuse terms for original TACITUS material are not specified. Linked source licenses apply only to their respective materials. Hashes identify summary bytes, not publisher identity, endorsement, truth or ongoing rights.\",\"actors\":[{\"id\":\"civilians\",\"role\":\"Affected civilians\",\"interests\":\"Timely impartial assistance, safety and dignity\",\"status\":\"analytical stakeholder framing\"},{\"id\":\"humanitarian\",\"role\":\"Humanitarian organizations\",\"interests\":\"Needs-based delivery, staff safety and operational independence\",\"status\":\"analytical stakeholder framing\"},{\"id\":\"parties\",\"role\":\"Relevant parties and authorities\",\"interests\":\"Authority and control claims requiring factual and legal examination\",\"status\":\"analytical framing; no motive inferred for a real actor\"}],\"options\":[{\"id\":\"clarify\",\"action\":\"Seek precise documentation of the obstacle and applicable process\",\"benefit\":\"Reduces ambiguity before escalation\",\"tradeoff\":\"May consume scarce time; documentation does not itself unlock access\",\"evidenceNeeded\":\"Dated incident record, process requirements and confirmation of interlocutor role\"},{\"id\":\"negotiate\",\"action\":\"Prepare a confidential, issue-specific facilitation proposal\",\"benefit\":\"Can focus discussion on a bounded impediment\",\"tradeoff\":\"Requires authorized channels and may fail if the obstacle is misdiagnosed\",\"evidenceNeeded\":\"Verified mandate, risk review and acceptable conditions\"},{\"id\":\"escalate\",\"action\":\"Consider proportionate institutional escalation after protection review\",\"benefit\":\"May address constraints beyond working-level authority\",\"tradeoff\":\"Publicity can increase exposure or close channels; effects are context-dependent\",\"evidenceNeeded\":\"Authorized escalation pathway, civilian-protection assessment and alternatives\"}],\"hypotheses\":[{\"statement\":\"Clarifying a procedural impediment may resolve some delays without broader escalation.\",\"test\":\"Compare documented constraint category and subsequent outcome across safely anonymized cases.\",\"wouldWeaken\":\"Records show delay persists after documented compliance or that the impediment was not procedural.\"}],\"constraints\":[\"No legal conclusion or personal culpability may be inferred from an access-constraint label.\",\"Do not expose routes, staff identities or beneficiary information in a public capsule.\",\"A stated authorization does not establish present security feasibility.\"],\"decisionRule\":\"Prioritize civilian need and protection, validate the constraint, identify the authorized decision-maker, and choose the least harmful feasible next step under qualified operational review.\",\"updates\":[\"Revalidate every operational fact before use; this capsule supplies no current operational facts.\",\"Correct disputed records without erasing the original claim and dispute history.\",\"Retract an affected conclusion when its incident evidence is withdrawn or its legal assumptions change.\"],\"graph\":{\"nodes\":[{\"id\":\"civilians\",\"type\":\"actor\",\"label\":\"Affected civilians\"},{\"id\":\"humanitarian\",\"type\":\"actor\",\"label\":\"Humanitarian organizations\"},{\"id\":\"parties\",\"type\":\"actor\",\"label\":\"Relevant parties and authorities\"},{\"id\":\"access-law\",\"type\":\"fact\",\"synthetic\":false,\"label\":\"The ICRC explains that parties have primary responsibility for civilian basic needs under their control. Relief requires concerned parties’ consent, but consent is not wholly discretionary; after consent, parties must allow and facilitate relief, subject to a right of control.\"},{\"id\":\"access-control\",\"type\":\"fact\",\"synthetic\":false,\"label\":\"The ICRC describes controls such as searches, routes and timing, while warning against controls that unduly delay relief or make it impossible.\"},{\"id\":\"access-monitoring\",\"type\":\"fact\",\"synthetic\":false,\"label\":\"OCHA’s toolbox describes monitoring access constraints, their effects, restrictive policies and mitigation actions through an access-monitoring framework.\"},{\"id\":\"access-separation\",\"type\":\"analysis\",\"synthetic\":false,\"label\":\"An access memo should distinguish legal position, administrative permission, security feasibility and actual delivery outcomes rather than treating any one as proof of the others.\"},{\"id\":\"access-scenario\",\"type\":\"scenario\",\"synthetic\":true,\"label\":\"A policy team must compare responses to a hypothetical delay affecting civilian assistance while avoiding public disclosure of routes or identifiable beneficiaries.\"},{\"id\":\"icrc\",\"type\":\"official_source\",\"label\":\"Humanitarian access: what the law says\"},{\"id\":\"ocha\",\"type\":\"official_source\",\"label\":\"OCHA Information Management Toolbox: Humanitarian Access\"}],\"edges\":[{\"from\":\"access-law\",\"to\":\"icrc\",\"type\":\"reported_in\",\"qualification\":\"Linked-source attribution; no publisher endorsement of analyst conclusions\"},{\"from\":\"access-control\",\"to\":\"icrc\",\"type\":\"reported_in\",\"qualification\":\"Linked-source attribution; no publisher endorsement of analyst conclusions\"},{\"from\":\"access-monitoring\",\"to\":\"ocha\",\"type\":\"reported_in\",\"qualification\":\"Linked-source attribution; no publisher endorsement of analyst conclusions\"},{\"from\":\"access-separation\",\"to\":\"icrc\",\"type\":\"informed_by\",\"qualification\":\"Linked-source attribution; no publisher endorsement of analyst conclusions\"},{\"from\":\"access-separation\",\"to\":\"ocha\",\"type\":\"informed_by\",\"qualification\":\"Linked-source attribution; no publisher endorsement of analyst conclusions\"},{\"from\":\"access-separation\",\"to\":\"access-law\",\"type\":\"analytically_depends_on\",\"qualification\":\"Research-layer relation only; native dependency propagation unsupported\"},{\"from\":\"access-separation\",\"to\":\"access-control\",\"type\":\"analytically_depends_on\",\"qualification\":\"Research-layer relation only; native dependency propagation unsupported\"},{\"from\":\"access-separation\",\"to\":\"access-monitoring\",\"type\":\"analytically_depends_on\",\"qualification\":\"Research-layer relation only; native dependency propagation unsupported\"}]},\"contextPolicy\":{\"mandatory\":[\"scope and as-of\",\"source attribution\",\"qualification for each selected claim\",\"uncertainty and limitations\",\"superseded/retracted status\",\"synthetic scenario marker\",\"observation period versus publisher and record dates\",\"analytical dependency limitations\"],\"compression\":\"Drop optional scenarios before source qualifications; if the budget cannot preserve qualifications, return an insufficient-budget warning rather than a misleading brief.\",\"externalTools\":\"Explicit user action required before transmitting capsule text to a model or other service; this package makes no live calls.\"},\"layers\":{\"orientation\":{\"summary\":\"A decision capsule for structuring an access discussion while preserving uncertainty, civilian protection and the distinction between public law explanations and actual permissions.\",\"questions\":[\"Which obstacle is documented, who can resolve it, and what must be verified before recommending facilitation or escalation?\",\"Which constraint is documented, by whom, and with what date and corroboration?\",\"What consent or authorization exists, and what remains disputed or unverified?\",\"What can be disclosed safely without exposing beneficiaries or operational arrangements?\"]},\"evidence\":{\"claimIds\":[\"access-law\",\"access-control\",\"access-monitoring\"],\"sourceIds\":[\"icrc\",\"ocha\"]},\"analysis\":{\"optionIds\":[\"clarify\",\"negotiate\",\"escalate\"],\"hypotheses\":[{\"statement\":\"Clarifying a procedural impediment may resolve some delays without broader escalation.\",\"test\":\"Compare documented constraint category and subsequent outcome across safely anonymized cases.\",\"wouldWeaken\":\"Records show delay persists after documented compliance or that the impediment was not procedural.\"}]},\"cognitiveMethod\":{\"decisionRule\":\"Prioritize civilian need and protection, validate the constraint, identify the authorized decision-maker, and choose the least harmful feasible next step under qualified operational review.\",\"constraints\":[\"No legal conclusion or personal culpability may be inferred from an access-constraint label.\",\"Do not expose routes, staff identities or beneficiary information in a public capsule.\",\"A stated authorization does not establish present security feasibility.\"]},\"governance\":{\"reviewStatus\":\"assistant-source-reviewed; not expert-reviewed\",\"updateTriggers\":[\"Revalidate every operational fact before use; this capsule supplies no current operational facts.\",\"Correct disputed records without erasing the original claim and dispute history.\",\"Retract an affected conclusion when its incident evidence is withdrawn or its legal assumptions change.\"],\"retractionProtocol\":\"Mark the affected version retracted, retain its identifier and reason, and stop using its dependent analysis until a replacement is reviewed. Local files do not automatically propagate revocations to downloaded copies.\",\"revision\":\"0.1.1\"}},\"revision\":\"0.1.1\",\"packageVersion\":2,\"originalResearchAsOf\":\"2026-10-18T04:56:00Z\",\"revisionRecordedAt\":\"2026-10-18T05:35:00Z\",\"independentAssistantReviewAt\":\"2026-10-18T05:31:00Z\",\"reviewStatus\":\"assistant-source-reviewed; not expert-reviewed\",\"decisionUseCase\":{\"role\":\"Humanitarian headquarters analyst\",\"task\":\"Compare three conflicting synthetic accounts of a delayed relief clearance\",\"requiredOutput\":[\"Legal/administrative/security/delivery ledger\",\"Unknown fields preserved\",\"Protected-information checklist\",\"Downside and escalation triggers\"],\"exclusions\":[\"Operational routes\",\"Named-party legal conclusions\",\"Assuming the least public option is least harmful\"]},\"preparedAt\":\"2026-10-18T04:56:00Z\",\"nativePackaging\":{\"target\":\"explicit native-v2 adaptation\",\"status\":\"pending separate Rust packaging and validation\",\"v1Limitation\":\"Native-v1 required world-validity start cannot represent unknown; no v1 exchange produced for this revision.\"},\"temporalContract\":{\"version\":\"tacitus-research-temporal/1\",\"preparedAtMeaning\":\"Original assistant research preparation timestamp, not world-validity.\",\"recordedAtMeaning\":\"When this revised research record was authored; not a claim about what was available historically.\",\"unknownValidityMeaning\":\"No declared world-validity bounds; this does not mean valid at every time.\",\"syntheticMeaning\":\"Illustrative scenarios have no actual event date.\",\"nativeV2Mapping\":\"Optional SourceRecord valid_from/valid_until may remain null; unknown status is preserved in this artifact. Native eligibility behavior does not prove temporal applicability.\"}}",
+      "tacitus.research-summary-provenance": "{\"capsuleId\":\"humanitarian-access-analysis\",\"packageVersion\":2,\"contentRevision\":\"0.1.1\",\"revisionRecordedAt\":\"2026-10-18T05:35:00Z\",\"summaryRecords\":[{\"id\":\"summary-access-law\",\"version\":2,\"claimId\":\"access-law\",\"text\":\"The ICRC explains that parties have primary responsibility for civilian basic needs under their control. Relief requires concerned parties’ consent, but consent is not wholly discretionary; after consent, parties must allow and facilitate relief, subject to a right of control.\\nQualification: Attributed summary of an ICRC legal explanation; application depends on conflict classification and facts. This is not legal advice or permission to operate. Lack of consent does not itself establish that withholding it is lawful; applicable duties depend on conflict and circumstances, including occupation. The source is an institutional explanation, not treaty text or a case-specific opinion.\\nPrimary sources: https://www.icrc.org/en/document/humanitarian-access-what-law-says\",\"sha256\":\"30d469149a58ccee89c0aa9ebd2ed2921c2bdf14eaadb7afc92bdc53276f457b\",\"authoredAt\":\"2026-10-18T05:35:00Z\",\"availableAt\":\"2026-10-18T05:35:00Z\",\"worldValidity\":{\"status\":\"unknown\",\"from\":null,\"until\":null},\"author\":\"TACITUS research assistant\",\"kind\":\"original assistant-authored paraphrase/analysis\",\"unchangedFromPrevious\":false,\"previousHash\":\"04229881d5ecdf0ec8e69eb01ccedff9da4e4825408454ca59495bb1854336bc\",\"sourceRightsNote\":\"Original assistant-authored TACITUS paraphrases and analysis; no publisher text, images or datasets bundled. Display and delivery are user-authorized; general reuse terms for original TACITUS material are not specified. Linked source licenses apply only to their respective materials. Hashes identify summary bytes, not publisher identity, endorsement, truth or ongoing rights.\"},{\"id\":\"summary-access-control\",\"version\":2,\"claimId\":\"access-control\",\"text\":\"The ICRC describes controls such as searches, routes and timing, while warning against controls that unduly delay relief or make it impossible.\\nQualification: Do not turn this summary into a finding that a named actor violated law. Permissible control in general does not establish that a particular restriction is lawful.\\nPrimary sources: https://www.icrc.org/en/document/humanitarian-access-what-law-says\",\"sha256\":\"c5ae88613c533642a34c3db09319e3f15e9d73dedc34bd57a55da4e4036a0443\",\"authoredAt\":\"2026-10-18T05:35:00Z\",\"availableAt\":\"2026-10-18T05:35:00Z\",\"worldValidity\":{\"status\":\"unknown\",\"from\":null,\"until\":null},\"author\":\"TACITUS research assistant\",\"kind\":\"original assistant-authored paraphrase/analysis\",\"unchangedFromPrevious\":false,\"previousHash\":\"888071ea31275da90e61b3d77fbe005a02bb47a5a4ba98d05f0eee91668c9383\",\"sourceRightsNote\":\"Original assistant-authored TACITUS paraphrases and analysis; no publisher text, images or datasets bundled. Display and delivery are user-authorized; general reuse terms for original TACITUS material are not specified. Linked source licenses apply only to their respective materials. Hashes identify summary bytes, not publisher identity, endorsement, truth or ongoing rights.\"},{\"id\":\"summary-access-monitoring\",\"version\":1,\"claimId\":\"access-monitoring\",\"text\":\"OCHA’s toolbox describes monitoring access constraints, their effects, restrictive policies and mitigation actions through an access-monitoring framework.\\nQualification: A framework description, not current incident data or evidence that a particular route is accessible.\\nPrimary sources: https://knowledge.base.unocha.org/wiki/spaces/imtoolbox/pages/1410072577/Humanitarian%2BAccess\",\"sha256\":\"8a8d36b34421a0e573faa3440cb5daea18440f6812af2f33f7b3a233870430c7\",\"authoredAt\":\"2026-10-18T05:00:00Z\",\"availableAt\":\"2026-10-18T05:00:00Z\",\"worldValidity\":{\"status\":\"unknown\",\"from\":null,\"until\":null},\"author\":\"TACITUS research assistant\",\"kind\":\"original assistant-authored paraphrase/analysis\",\"unchangedFromPrevious\":true,\"previousHash\":\"8a8d36b34421a0e573faa3440cb5daea18440f6812af2f33f7b3a233870430c7\",\"sourceRightsNote\":\"Original assistant-authored TACITUS paraphrases and analysis; no publisher text, images or datasets bundled. Display and delivery are user-authorized; general reuse terms for original TACITUS material are not specified. Linked source licenses apply only to their respective materials. Hashes identify summary bytes, not publisher identity, endorsement, truth or ongoing rights.\"},{\"id\":\"summary-access-separation\",\"version\":1,\"claimId\":\"access-separation\",\"text\":\"An access memo should distinguish legal position, administrative permission, security feasibility and actual delivery outcomes rather than treating any one as proof of the others.\\nQualification: Analyst-proposed decision structure; it does not settle legal disputes or replace operational assessment.\\nPrimary sources: https://www.icrc.org/en/document/humanitarian-access-what-law-says | https://knowledge.base.unocha.org/wiki/spaces/imtoolbox/pages/1410072577/Humanitarian%2BAccess\",\"sha256\":\"feef87c8f0af05362cab5c5a9bee083d3f4e06a784e38400a2e4a0c904b5a641\",\"authoredAt\":\"2026-10-18T05:00:00Z\",\"availableAt\":\"2026-10-18T05:00:00Z\",\"worldValidity\":{\"status\":\"unknown\",\"from\":null,\"until\":null},\"author\":\"TACITUS research assistant\",\"kind\":\"original assistant-authored paraphrase/analysis\",\"unchangedFromPrevious\":true,\"previousHash\":\"feef87c8f0af05362cab5c5a9bee083d3f4e06a784e38400a2e4a0c904b5a641\",\"sourceRightsNote\":\"Original assistant-authored TACITUS paraphrases and analysis; no publisher text, images or datasets bundled. Display and delivery are user-authorized; general reuse terms for original TACITUS material are not specified. Linked source licenses apply only to their respective materials. Hashes identify summary bytes, not publisher identity, endorsement, truth or ongoing rights.\"},{\"id\":\"summary-access-scenario\",\"version\":1,\"claimId\":\"access-scenario\",\"text\":\"A policy team must compare responses to a hypothetical delay affecting civilian assistance while avoiding public disclosure of routes or identifiable beneficiaries.\\nQualification: Synthetic decision problem; no actual incident, party, convoy or affected person is represented.\\nPrimary sources: \",\"sha256\":\"06bbb1528a59b22f463ea833e06e893b900e7739a0e51d8735986879984c26ed\",\"authoredAt\":\"2026-10-18T05:00:00Z\",\"availableAt\":\"2026-10-18T05:00:00Z\",\"worldValidity\":{\"status\":\"unknown\",\"from\":null,\"until\":null},\"author\":\"TACITUS research assistant\",\"kind\":\"original assistant-authored paraphrase/analysis\",\"unchangedFromPrevious\":true,\"previousHash\":\"06bbb1528a59b22f463ea833e06e893b900e7739a0e51d8735986879984c26ed\",\"sourceRightsNote\":\"Original assistant-authored TACITUS paraphrases and analysis; no publisher text, images or datasets bundled. Display and delivery are user-authorized; general reuse terms for original TACITUS material are not specified. Linked source licenses apply only to their respective materials. Hashes identify summary bytes, not publisher identity, endorsement, truth or ongoing rights.\"}]}",
+      "tacitus.native-adaptation": "{\"version\":\"tacitus-editorial-to-native-v2/1\",\"sourceContentRevision\":\"0.1.1\",\"unknownValidityWarning\":\"World-validity interval is unknown; this record does not establish validity on a requested date. Observation periods and forecast horizons are separate metadata.\",\"factMapping\":\"attributed-source-summary -> reported_statement; not asserted truth\",\"analysisMapping\":\"inference\",\"scenarioMapping\":\"hypothesis with explicit synthetic conditions\",\"historicalArtifactNotice\":\"research nativePackaging status describes authoring checkpoint; later native receipt is separate\",\"noV1Compatibility\":true}"
+    }
+  },
+  "evidence": {
+    "evidence/34b04bfe141b60f0b39f251a12ef298f3bf78b5882ecf5527da20d016b205e25.txt": "The ICRC explains that parties have primary responsibility for civilian basic needs under their control. Relief requires concerned parties’ consent, but consent is not wholly discretionary; after consent, parties must allow and facilitate relief, subject to a right of control.\nQualification: Attributed summary of an ICRC legal explanation; application depends on conflict classification and facts. This is not legal advice or permission to operate. Lack of consent does not itself establish that withholding it is lawful; applicable duties depend on conflict and circumstances, including occupation. The source is an institutional explanation, not treaty text or a case-specific opinion.\nPrimary sources: https://www.icrc.org/en/document/humanitarian-access-what-law-says",
+    "evidence/86aeea27a18772c39b120f48a01d216c04d851badfafee74700a82825d354097.txt": "The ICRC describes controls such as searches, routes and timing, while warning against controls that unduly delay relief or make it impossible.\nQualification: Do not turn this summary into a finding that a named actor violated law. Permissible control in general does not establish that a particular restriction is lawful.\nPrimary sources: https://www.icrc.org/en/document/humanitarian-access-what-law-says",
+    "evidence/477999d041bcc36dece254fa4507fee506c2f3826d86c3c9679e8b53c32219c5.txt": "OCHA’s toolbox describes monitoring access constraints, their effects, restrictive policies and mitigation actions through an access-monitoring framework.\nQualification: A framework description, not current incident data or evidence that a particular route is accessible.\nPrimary sources: https://knowledge.base.unocha.org/wiki/spaces/imtoolbox/pages/1410072577/Humanitarian%2BAccess",
+    "evidence/405a2f91e7d6ec7ad39cfdf4a76fe929889b6a64b00addb534aac46f9ddcc82d.txt": "An access memo should distinguish legal position, administrative permission, security feasibility and actual delivery outcomes rather than treating any one as proof of the others.\nQualification: Analyst-proposed decision structure; it does not settle legal disputes or replace operational assessment.\nPrimary sources: https://www.icrc.org/en/document/humanitarian-access-what-law-says | https://knowledge.base.unocha.org/wiki/spaces/imtoolbox/pages/1410072577/Humanitarian%2BAccess",
+    "evidence/27321bf230c9e6eacb6127b755b936fee38b33df8dc575952499845dfdf23676.txt": "A policy team must compare responses to a hypothetical delay affecting civilian assistance while avoiding public disclosure of routes or identifiable beneficiaries.\nQualification: Synthetic decision problem; no actual incident, party, convoy or affected person is represented.\nPrimary sources: "
+  }
+}
