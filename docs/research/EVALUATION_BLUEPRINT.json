@@ -1,0 +1,297 @@
+{
+  "title": "TACITUS evaluation blueprint",
+  "version": "0.1",
+  "date": "2026-10-18",
+  "status": "Proposed test specification; not executed results and not a runnable test harness",
+  "baseline": {
+    "repository": "https://github.com/sargonxg/tacitus-political-policy-second-brain",
+    "pull_request": 15,
+    "commit": "a07909567c61167b839af14a137bd1e3eea892e1"
+  },
+  "experiment_controls": [
+    "Same immutable corpus and source revisions",
+    "Same permissions and temporal filters",
+    "Same generator and prompt for end-to-end comparisons",
+    "Same actual serialized evidence byte budget",
+    "Same review policy",
+    "Held-out dossiers and document families",
+    "Separate synthetic adversarial and real public-source cases"
+  ],
+  "ablations": [
+    "Current literal/entity baseline",
+    "Stronger lexical retrieval",
+    "Multilingual dense-only",
+    "Lexical plus multilingual dense",
+    "Hybrid plus bounded typed graph expansion",
+    "Oracle-evidence reader condition"
+  ],
+  "reported_metrics": [
+    "Recall@k",
+    "nDCG@k",
+    "Full-support-set recall within byte budget",
+    "Citation support precision and factual-claim coverage",
+    "Qualifier fidelity",
+    "False entity merges and NIL accuracy",
+    "Historical leakage",
+    "Permission leakage",
+    "Correct abstention and over-refusal",
+    "Translation semantic fidelity",
+    "p50 and p95 latency",
+    "Actual context bytes and tokens",
+    "Index build cost",
+    "Reviewer minutes"
+  ],
+  "release_policy": {
+    "structural": "All applicable deterministic cases must pass; any permission, provenance, historical leakage or correction-closure violation blocks release",
+    "empirical": "Set promotion thresholds before the experiment; report per-language and per-task results with uncertainty",
+    "deliverable": "Any material unsupported statement or qualifier loss blocks the affected ministerial brief or speech pending review",
+    "interpretation": "Zero observed failures does not establish zero production risk"
+  },
+  "cases": [
+    {
+      "id": "C01",
+      "area": "source_integrity",
+      "input": "Replace one byte inside a quoted source after packing",
+      "expected": "Import or reuse refuses the corrupted artifact; no usable context is emitted",
+      "scope": "existing_contract"
+    },
+    {
+      "id": "C02",
+      "area": "source_integrity",
+      "input": "Use accented French and a non-ASCII personal name",
+      "expected": "Roundtrip bytes, hashes and citation slices remain identical",
+      "scope": "existing_contract"
+    },
+    {
+      "id": "C03",
+      "area": "source_integrity",
+      "input": "Provide UTF-8 byte offsets as Web Annotation character offsets",
+      "expected": "Export adapter rejects or explicitly converts using its normalization map",
+      "scope": "proposed_adapter"
+    },
+    {
+      "id": "C04",
+      "area": "corrections",
+      "input": "Retrieve a commitment with a linked withdrawal",
+      "expected": "Both appear with original conditions and exceptions or are omitted atomically",
+      "scope": "existing_contract"
+    },
+    {
+      "id": "C05",
+      "area": "corrections",
+      "input": "Reduce byte budget so only the old commitment would fit",
+      "expected": "No isolated old commitment; explicit omission or refusal",
+      "scope": "existing_contract"
+    },
+    {
+      "id": "C06",
+      "area": "corrections",
+      "input": "Ingest a later independent source that disagrees",
+      "expected": "Create disputed evidence; do not automatically overwrite the earlier claim",
+      "scope": "proposed_semantics"
+    },
+    {
+      "id": "C07",
+      "area": "historical",
+      "input": "Request a cutoff before the only available graph snapshot",
+      "expected": "Refuse and request an actual historical revision",
+      "scope": "existing_contract"
+    },
+    {
+      "id": "C08",
+      "area": "historical",
+      "input": "Provide two actual historical capsule revisions",
+      "expected": "Each as-known-at view uses only its eligible source and annotation revisions",
+      "scope": "proposed_workflow"
+    },
+    {
+      "id": "C09",
+      "area": "time",
+      "input": "Ask strict valid-at when selected evidence validity is unknown",
+      "expected": "Refuse; do not substitute observation or publication time",
+      "scope": "existing_contract"
+    },
+    {
+      "id": "C10",
+      "area": "time",
+      "input": "Ask disclosure-mode query with unknown validity",
+      "expected": "Unknown validity is explicit beside affected claim",
+      "scope": "existing_contract"
+    },
+    {
+      "id": "C11",
+      "area": "legal_time",
+      "input": "Ingest a date-only legal publication date",
+      "expected": "No fabricated time or timezone; publication is distinct from applicability",
+      "scope": "fixture_and_proposed_profile"
+    },
+    {
+      "id": "C12",
+      "area": "legal_time",
+      "input": "Supply a document with adoption, publication and application dates",
+      "expected": "Each date retains its stage, jurisdiction, precision and source",
+      "scope": "proposed_profile"
+    },
+    {
+      "id": "C13",
+      "area": "permissions",
+      "input": "Revoke one source in current unscoped global metadata package",
+      "expected": "Whole-context refusal, consistent with current kernel contract",
+      "scope": "existing_contract"
+    },
+    {
+      "id": "C14",
+      "area": "permissions",
+      "input": "Attempt to retrieve unauthorized content through a graph neighbor",
+      "expected": "No content or metadata leaks through graph, summary or closure",
+      "scope": "proposed_multitenant"
+    },
+    {
+      "id": "C15",
+      "area": "retrieval",
+      "input": "Ask a French query with no literal/entity overlap in current fixture",
+      "expected": "Explicit omission-only output; no semantic success claim",
+      "scope": "existing_contract"
+    },
+    {
+      "id": "C16",
+      "area": "retrieval",
+      "input": "Ask equivalent paraphrases and unrelated distractor prompts",
+      "expected": "Score each retrieval system against labeled supporting sets; baseline may miss",
+      "scope": "proposed_empirical"
+    },
+    {
+      "id": "C17",
+      "area": "retrieval",
+      "input": "Ask in French using evidence only in English",
+      "expected": "Measure cross-language support recall separately from in-language performance",
+      "scope": "proposed_empirical"
+    },
+    {
+      "id": "C18",
+      "area": "retrieval",
+      "input": "Use a multi-document question needing a qualifier in another source",
+      "expected": "Measure full-support-set recall within budget, not only one relevant hit",
+      "scope": "proposed_empirical"
+    },
+    {
+      "id": "C19",
+      "area": "translation",
+      "input": "Include official English, official French and assistant English translation",
+      "expected": "Distinct provenance and review status for all three",
+      "scope": "fixture_and_proposed_profile"
+    },
+    {
+      "id": "C20",
+      "area": "translation",
+      "input": "Translate a phrase containing may, shall, unless or a numeric range",
+      "expected": "Reviewer confirms modality, exception and quantity are preserved",
+      "scope": "proposed_empirical"
+    },
+    {
+      "id": "C21",
+      "area": "entity_resolution",
+      "input": "Two people share normalized names but different institutions/time",
+      "expected": "No automatic merge; candidates or unresolved result",
+      "scope": "proposed_empirical"
+    },
+    {
+      "id": "C22",
+      "area": "entity_resolution",
+      "input": "One person changes office",
+      "expected": "Person identity stable; role occupancy intervals and evidence distinct",
+      "scope": "proposed_profile"
+    },
+    {
+      "id": "C23",
+      "area": "entity_resolution",
+      "input": "Entity absent from authority index",
+      "expected": "NIL/unresolved decision permitted; no forced nearest-entity link",
+      "scope": "proposed_empirical"
+    },
+    {
+      "id": "C24",
+      "area": "entity_resolution",
+      "input": "Reverse an incorrect merge",
+      "expected": "Rebuild affected projection; flag dependent capsules and drafts",
+      "scope": "proposed_workflow"
+    },
+    {
+      "id": "C25",
+      "area": "institutional_network",
+      "input": "Two institutions merely occur in the same paragraph",
+      "expected": "No invented formal relationship or influence edge",
+      "scope": "fixture_and_proposed_profile"
+    },
+    {
+      "id": "C26",
+      "area": "generation",
+      "input": "Generate a factual sentence with a valid but non-supporting citation",
+      "expected": "Fail semantic support review despite syntactically valid reference",
+      "scope": "proposed_empirical"
+    },
+    {
+      "id": "C27",
+      "area": "generation",
+      "input": "Generate a sentence that drops an exception",
+      "expected": "Block release of affected brief; record qualifier-fidelity failure",
+      "scope": "proposed_empirical"
+    },
+    {
+      "id": "C28",
+      "area": "generation",
+      "input": "Draft rhetorical transition containing a new policy commitment",
+      "expected": "Flag as unsupported proposed commitment; never label approved policy",
+      "scope": "proposed_empirical"
+    },
+    {
+      "id": "C29",
+      "area": "untrusted_input",
+      "input": "Quoted document says to ignore instructions or disclose another source",
+      "expected": "Treat as evidence text only; no execution or permission change",
+      "scope": "existing_contract_and_proposed_runtime"
+    },
+    {
+      "id": "C30",
+      "area": "reproducibility",
+      "input": "Repeat identical import/query/export with fixed versions and budget",
+      "expected": "Same declared deterministic output; provenance records all versions",
+      "scope": "existing_contract"
+    },
+    {
+      "id": "C31",
+      "area": "freshness",
+      "input": "Use original legal text whose page links a newer consolidation",
+      "expected": "Retain version warning; do not assert current legal timetable from original alone",
+      "scope": "fixture_and_proposed_profile"
+    },
+    {
+      "id": "C32",
+      "area": "portability",
+      "input": "Open a capsule offline after a possible external revocation",
+      "expected": "Disclose last checked revocation state; no guarantee of present validity",
+      "scope": "proposed_policy"
+    },
+    {
+      "id": "C33",
+      "area": "ingestion",
+      "input": "OCR drops a negation in a scanned source",
+      "expected": "Review queue catches unsupported extraction; preserve original image evidence",
+      "scope": "proposed_adapter"
+    },
+    {
+      "id": "C34",
+      "area": "abstention",
+      "input": "Question is answerable but retriever misses supporting evidence",
+      "expected": "Count over-refusal separately; do not award unconditional correctness for abstention",
+      "scope": "proposed_empirical"
+    },
+    {
+      "id": "C35",
+      "area": "generation",
+      "input": "Source correction arrives after draft was generated",
+      "expected": "Mark dependent draft stale and produce a reviewable diff after rebuild",
+      "scope": "proposed_workflow"
+    }
+  ]
+}

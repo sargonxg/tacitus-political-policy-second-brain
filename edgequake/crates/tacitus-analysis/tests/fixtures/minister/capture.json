@@ -1,0 +1,391 @@
+{
+  "manifest": {
+    "author": "TACITUS research assistant",
+    "confidentiality": "public",
+    "created_at": 1792325400,
+    "dependencies": [],
+    "domain": "synthetic-policy",
+    "evidence_mode": "evidence_included",
+    "files": {},
+    "id": "minister-multilingual-historical-demo",
+    "license": "Mixed attributed EU legal excerpts and original TACITUS notes; see source licenses",
+    "limitations": [
+      "Not a current legal deadline service. Original act has a later consolidated version.",
+      "Translation is assistant-authored and unreviewed; official language excerpts stay distinct.",
+      "Calendar dates have no invented instant or time zone.",
+      "Literal/lexical retrieval only; no semantic multilingual retrieval, belief inference or endorsed speech."
+    ],
+    "package_version": 1,
+    "profile": "context",
+    "purpose": "Review source and translation distinctions before drafting a speech or briefing",
+    "schema_version": 2,
+    "scope": "minister-demo",
+    "sharing_policy": "Public educational fixture; no private contacts or actual ministerial position",
+    "supersedes": null,
+    "title": "Historical multilingual legislative briefing example",
+    "valid_until": null
+  },
+  "documents": [
+    {
+      "id": "article-en",
+      "version": 1,
+      "workspace": "minister-demo",
+      "document_id": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng",
+      "title": "Original 2024 Article 113 excerpt",
+      "author": "European Union",
+      "original_hash": "4670c9abd5ca41af6f91cecc1e1fbc2c57b57d9e57bc3e0d634917ea52e95761",
+      "text_hash": "4670c9abd5ca41af6f91cecc1e1fbc2c57b57d9e57bc3e0d634917ea52e95761",
+      "text": "It shall apply from 2 August 2026.",
+      "language": "en",
+      "extractor": "Exact uploaded excerpt text; hash does not cover publisher HTML",
+      "published_at": null,
+      "retrieved_at": 1792325400,
+      "available_at": 1792325400,
+      "valid_from": null,
+      "valid_until": null,
+      "source_family": "eurlex-original-2024:2024-1689",
+      "withdrawn": false,
+      "restricted": false,
+      "redistributable": true,
+      "license": "EU legal-document reuse with attribution; https://eur-lex.europa.eu/content/legal-notice/legal-notice.html"
+    },
+    {
+      "id": "article-fr",
+      "version": 1,
+      "workspace": "minister-demo",
+      "document_id": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj/fra",
+      "title": "Original 2024 Article 113 excerpt",
+      "author": "European Union",
+      "original_hash": "8c35be65860445e8712b54db42f3a30338db286f8ba7626fe4a1625c87dda017",
+      "text_hash": "8c35be65860445e8712b54db42f3a30338db286f8ba7626fe4a1625c87dda017",
+      "text": "Il est applicable à partir du 2 août 2026.",
+      "language": "fr",
+      "extractor": "Exact uploaded excerpt text; hash does not cover publisher HTML",
+      "published_at": null,
+      "retrieved_at": 1792325400,
+      "available_at": 1792325400,
+      "valid_from": null,
+      "valid_until": null,
+      "source_family": "eurlex-original-2024:2024-1689",
+      "withdrawn": false,
+      "restricted": false,
+      "redistributable": true,
+      "license": "EU legal-document reuse with attribution; https://eur-lex.europa.eu/content/legal-notice/legal-notice.html"
+    },
+    {
+      "id": "research-note",
+      "version": 1,
+      "workspace": "minister-demo",
+      "document_id": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng",
+      "title": "TACITUS historical research note; not publisher text",
+      "author": "TACITUS research assistant",
+      "original_hash": "ba4269a8c83b555ca64acf557e331d507444a1eb5f30673c383f9f5c8c28d394",
+      "text_hash": "ba4269a8c83b555ca64acf557e331d507444a1eb5f30673c383f9f5c8c28d394",
+      "text": "Original publication record: the Official Journal lists 12 July 2024. The act names the European Parliament and Council as its institutions.\nOriginal phased exceptions: Chapters I and II start 2 February 2025; specified governance and general-purpose provisions start 2 August 2025 except Article 101; Article 6(1) and corresponding duties start 2 August 2027.\nVersion warning: the original record is marked changed and links a consolidated version dated 27 July 2026; current obligations were not assessed.",
+      "language": "en",
+      "extractor": "Original assistant-authored paraphrase from cited EUR-Lex record; hash covers note only",
+      "published_at": null,
+      "retrieved_at": 1792325400,
+      "available_at": 1792325400,
+      "valid_from": null,
+      "valid_until": null,
+      "source_family": "tacitus-derived-note:eurlex-2024-1689",
+      "withdrawn": false,
+      "restricted": false,
+      "redistributable": true,
+      "license": "Original TACITUS note; CC-BY-4.0, citing https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng"
+    }
+  ],
+  "assertions": [
+    {
+      "id": "publication-record",
+      "version": 1,
+      "workspace": "minister-demo",
+      "speaker": "TACITUS research assistant",
+      "subject": "Publication institutions",
+      "predicate": "states",
+      "object": null,
+      "proposition": "Original publication metadata identifies 12 July 2024 and the European Parliament and Council institutions.",
+      "epistemic_type": "reported_statement",
+      "modality": "historical source claim",
+      "conditions": [
+        "Historical original 2024 text only; current legal obligations and deadlines are not verified.",
+        "Calendar-date precision, EU jurisdiction; no hour or time zone asserted.",
+        "World validity unknown; this is source reporting, not a legal opinion.",
+        "Publication calendar date: 2024-07-12; published_at remains null because no timestamp is supplied.",
+        "Public institutional link only; no personal contact, ideological belief or affiliation inference."
+      ],
+      "exceptions": [
+        "Original Article 113 has phased exceptions; general date is not universal."
+      ],
+      "evidence": [
+        {
+          "source": "research-note@1",
+          "text_hash": "ba4269a8c83b555ca64acf557e331d507444a1eb5f30673c383f9f5c8c28d394",
+          "start": 0,
+          "end": 140,
+          "locator": "Research-note line 1; derived from https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng",
+          "original_language": "en",
+          "translation": null
+        }
+      ],
+      "created_at": 1792325400
+    },
+    {
+      "id": "application-en",
+      "version": 1,
+      "workspace": "minister-demo",
+      "speaker": "European Union",
+      "subject": "Original Article 113",
+      "predicate": "states",
+      "object": null,
+      "proposition": "The original English text announces 2 August 2026 as the general application date.",
+      "epistemic_type": "reported_statement",
+      "modality": "historical source claim",
+      "conditions": [
+        "Historical original 2024 text only; current legal obligations and deadlines are not verified.",
+        "Calendar-date precision, EU jurisdiction; no hour or time zone asserted.",
+        "World validity unknown; this is source reporting, not a legal opinion.",
+        "Official English excerpt; not an assistant translation.",
+        "Application calendar date: 2026-08-02; event_time remains null."
+      ],
+      "exceptions": [
+        "Original Article 113 has phased exceptions; general date is not universal."
+      ],
+      "evidence": [
+        {
+          "source": "article-en@1",
+          "text_hash": "4670c9abd5ca41af6f91cecc1e1fbc2c57b57d9e57bc3e0d634917ea52e95761",
+          "start": 0,
+          "end": 35,
+          "locator": "Article 113, second paragraph; https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng",
+          "original_language": "en",
+          "translation": null
+        }
+      ],
+      "created_at": 1792325400
+    },
+    {
+      "id": "application-fr",
+      "version": 1,
+      "workspace": "minister-demo",
+      "speaker": "European Union",
+      "subject": "Article 113 original",
+      "predicate": "states",
+      "object": null,
+      "proposition": "Le texte français original annonce le 2 août 2026 comme date générale.",
+      "epistemic_type": "reported_statement",
+      "modality": "historical source claim",
+      "conditions": [
+        "Historical original 2024 text only; current legal obligations and deadlines are not verified.",
+        "Calendar-date precision, EU jurisdiction; no hour or time zone asserted.",
+        "World validity unknown; this is source reporting, not a legal opinion.",
+        "Original language: fr. Translation target: en. Translator: TACITUS assistant. Translation status: unreviewed; not official English wording.",
+        "Application calendar date: 2026-08-02; event_time remains null."
+      ],
+      "exceptions": [
+        "Original Article 113 has phased exceptions; general date is not universal."
+      ],
+      "evidence": [
+        {
+          "source": "article-fr@1",
+          "text_hash": "8c35be65860445e8712b54db42f3a30338db286f8ba7626fe4a1625c87dda017",
+          "start": 0,
+          "end": 46,
+          "locator": "Article 113, second paragraph; https://eur-lex.europa.eu/eli/reg/2024/1689/oj/fra",
+          "original_language": "fr",
+          "translation": "It applies from 2 August 2026."
+        }
+      ],
+      "created_at": 1792325400
+    },
+    {
+      "id": "phased-exceptions",
+      "version": 1,
+      "workspace": "minister-demo",
+      "speaker": "TACITUS research assistant",
+      "subject": "Original phased exceptions",
+      "predicate": "states",
+      "object": null,
+      "proposition": "The original schedule contains earlier and later exceptions; verify the full cited article for its exact scope.",
+      "epistemic_type": "reported_statement",
+      "modality": "historical source claim",
+      "conditions": [
+        "Historical original 2024 text only; current legal obligations and deadlines are not verified.",
+        "Calendar-date precision, EU jurisdiction; no hour or time zone asserted.",
+        "World validity unknown; this is source reporting, not a legal opinion.",
+        "Research-note paraphrase, not a verbatim official quotation."
+      ],
+      "exceptions": [
+        "Original Article 113 has phased exceptions; general date is not universal."
+      ],
+      "evidence": [
+        {
+          "source": "research-note@1",
+          "text_hash": "ba4269a8c83b555ca64acf557e331d507444a1eb5f30673c383f9f5c8c28d394",
+          "start": 141,
+          "end": 360,
+          "locator": "Research-note line 2; derived from https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng",
+          "original_language": "en",
+          "translation": null
+        }
+      ],
+      "created_at": 1792325400
+    },
+    {
+      "id": "version-warning",
+      "version": 1,
+      "workspace": "minister-demo",
+      "speaker": "TACITUS research assistant",
+      "subject": "Version status",
+      "predicate": "states",
+      "object": null,
+      "proposition": "A later consolidated version is linked; this historical dossier does not establish current law.",
+      "epistemic_type": "reported_statement",
+      "modality": "historical source claim",
+      "conditions": [
+        "Historical original 2024 text only; current legal obligations and deadlines are not verified.",
+        "Calendar-date precision, EU jurisdiction; no hour or time zone asserted.",
+        "World validity unknown; this is source reporting, not a legal opinion.",
+        "Version date: 2026-07-27; a link is evidence of version change, not automatic knowledge of its legal effect."
+      ],
+      "exceptions": [
+        "Original Article 113 has phased exceptions; general date is not universal."
+      ],
+      "evidence": [
+        {
+          "source": "research-note@1",
+          "text_hash": "ba4269a8c83b555ca64acf557e331d507444a1eb5f30673c383f9f5c8c28d394",
+          "start": 361,
+          "end": 507,
+          "locator": "Research-note line 3; derived from https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng",
+          "original_language": "en",
+          "translation": null
+        }
+      ],
+      "created_at": 1792325400
+    },
+    {
+      "id": "speech-guidance",
+      "version": 1,
+      "workspace": "minister-demo",
+      "speaker": "TACITUS research assistant",
+      "subject": "Discours préparatoire",
+      "predicate": "states",
+      "object": null,
+      "proposition": "Discours: attribute the historical announcement to its dated source and retain the exceptions and later-version warning.",
+      "epistemic_type": "recommendation",
+      "modality": "unreviewed drafting recommendation",
+      "conditions": [
+        "Historical original 2024 text only; current legal obligations and deadlines are not verified.",
+        "Calendar-date precision, EU jurisdiction; no hour or time zone asserted.",
+        "World validity unknown; this is source reporting, not a legal opinion.",
+        "Drafting guidance only, not an approved speech, ministerial position or instruction from the user.",
+        "Do not state an unconditional current deadline."
+      ],
+      "exceptions": [
+        "Original Article 113 has phased exceptions; general date is not universal."
+      ],
+      "evidence": [
+        {
+          "source": "article-fr@1",
+          "text_hash": "8c35be65860445e8712b54db42f3a30338db286f8ba7626fe4a1625c87dda017",
+          "start": 0,
+          "end": 46,
+          "locator": "Article 113, second paragraph; https://eur-lex.europa.eu/eli/reg/2024/1689/oj/fra",
+          "original_language": "fr",
+          "translation": null
+        }
+      ],
+      "created_at": 1792325400
+    }
+  ],
+  "graph": {
+    "version": "tacitus-policy-graph-sidecar/1",
+    "available_at": 1792325400,
+    "claim_fingerprints": {
+      "publication-record": "cdf1991608013c40ee3efbed1517372dd959f79ba1fabb2b4b2dd6d8d97a981f",
+      "application-en": "edfc8f2864f26bdad1abb8150fb25b27a913cb35f697e8e765821ff8c71a7330",
+      "application-fr": "42471c3b67dfdba8e21bd8f258bf0786c98dabe959a4a0d14ad78a12718a3754",
+      "phased-exceptions": "5ed1b76f570e3282fa45c128a57d5fcbf55804322c2d06dfebbcfbf198391dc7",
+      "version-warning": "5fbd23bb97f24f48b3c84a5e762c808fb2c43517beba9bc481ac5888cd646573",
+      "speech-guidance": "62b4baf265ae8c516eef93be2dac7c34f258e01b09d86ededf203a828fd8fb8d"
+    },
+    "nodes": {
+      "parliament": {
+        "id": "parliament",
+        "kind": "institution",
+        "label": "European Parliament / Parlement européen",
+        "claims": [
+          "publication-record"
+        ],
+        "event_time": null
+      },
+      "council": {
+        "id": "council",
+        "kind": "institution",
+        "label": "Council of the European Union / Conseil",
+        "claims": [
+          "publication-record"
+        ],
+        "event_time": null
+      },
+      "publication": {
+        "id": "publication",
+        "kind": "event",
+        "label": "Official Journal publication date",
+        "claims": [
+          "publication-record"
+        ],
+        "event_time": null
+      },
+      "application": {
+        "id": "application",
+        "kind": "event",
+        "label": "Original general application calendar date",
+        "claims": [
+          "application-en",
+          "application-fr"
+        ],
+        "event_time": null
+      }
+    },
+    "links": [
+      {
+        "from": "speech-guidance",
+        "to": "application-en",
+        "kind": "depends_on",
+        "rationale": "This drafting recommendation requires the original language record and its qualifications; an evidentiary dependency, not legal causation."
+      },
+      {
+        "from": "speech-guidance",
+        "to": "application-fr",
+        "kind": "depends_on",
+        "rationale": "This drafting recommendation requires the original language record and its qualifications; an evidentiary dependency, not legal causation."
+      },
+      {
+        "from": "speech-guidance",
+        "to": "phased-exceptions",
+        "kind": "depends_on",
+        "rationale": "This drafting recommendation requires the original language record and its qualifications; an evidentiary dependency, not legal causation."
+      },
+      {
+        "from": "speech-guidance",
+        "to": "version-warning",
+        "kind": "depends_on",
+        "rationale": "This drafting recommendation requires the original language record and its qualifications; an evidentiary dependency, not legal causation."
+      }
+    ],
+    "knowledge": {}
+  },
+  "observed_at": {
+    "publication-record": null,
+    "application-en": null,
+    "application-fr": null,
+    "phased-exceptions": null,
+    "version-warning": null,
+    "speech-guidance": null
+  },
+  "extractor": "Human-readable research annotations over verified short official excerpts; no model extraction",
+  "confirms_rights": true
+}
