@@ -398,3 +398,63 @@ fn strict_mapping_and_request_boundary_reject_duplicates() {
             .contains("duplicate JSON object key"));
     }
 }
+
+#[test]
+fn omission_receipt_has_explicit_machine_and_human_status() {
+    let (a, m, mut r) = setup();
+    r.review.max_bytes = 16384;
+    let x = compile(&a, &m, &r).unwrap();
+    assert!(x.document.claims.is_empty());
+    assert_eq!(
+        evidence_status(&x.document).unwrap(),
+        EvidenceStatus::OmissionOnly
+    );
+    assert_eq!(
+        serde_json::to_value(&x.document).unwrap()["evidence_status"],
+        "omission_only"
+    );
+    assert!(x.document.warnings[0].starts_with("NO EVIDENCE SELECTED"));
+    let text = render_text(&x, r.review.max_bytes).unwrap();
+    assert!(text.starts_with("OMISSION RECEIPT - NO EVIDENCE SELECTED\n"));
+    assert!(text.find("not an answer").unwrap() < text.find("Archive:").unwrap());
+    assert!(x.bytes <= r.review.max_bytes && text.len() <= r.review.max_bytes);
+}
+#[test]
+fn selected_evidence_status_and_legacy_derivation_are_consistent() {
+    let (a, m, mut r) = setup();
+    for budget in [16384, 32768] {
+        r.review.max_bytes = budget;
+        let x = compile(&a, &m, &r).unwrap();
+        let expected = if budget == 16384 {
+            EvidenceStatus::OmissionOnly
+        } else {
+            EvidenceStatus::SelectedEvidence
+        };
+        assert_eq!(evidence_status(&x.document).unwrap(), expected);
+        let mut legacy = serde_json::to_value(&x.document).unwrap();
+        legacy.as_object_mut().unwrap().remove("evidence_status");
+        let d: Document = serde_json::from_value(legacy.clone()).unwrap();
+        assert_eq!(serde_json::to_value(&d).unwrap(), legacy);
+        let raw = serde_json::to_vec(&d).unwrap();
+        let old = Export {
+            document: d,
+            digest: digest(&raw),
+            bytes: raw.len(),
+        };
+        assert_eq!(evidence_status(&old.document).unwrap(), expected);
+        let text = render_text(&old, budget).unwrap();
+        assert_eq!(text.starts_with("OMISSION RECEIPT"), budget == 16384);
+        let mut bad = x;
+        bad.document.evidence_status = Some(if expected == EvidenceStatus::OmissionOnly {
+            EvidenceStatus::SelectedEvidence
+        } else {
+            EvidenceStatus::OmissionOnly
+        });
+        let raw = serde_json::to_vec(&bad.document).unwrap();
+        bad.bytes = raw.len();
+        bad.digest = digest(&raw);
+        assert!(render_text(&bad, budget)
+            .unwrap_err()
+            .contains("contradicts"));
+    }
+}
