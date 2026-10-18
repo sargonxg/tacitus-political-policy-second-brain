@@ -1,5 +1,31 @@
 # Verification — Policy Lab 0.1
 
+## Checkpoint review candidate, 2026-10-17
+
+The combined original, benchmark and change-review suites pass 122 tests on Linux x64 /
+Node v24.19.0. Two 100-iteration runs reproduce all non-timing fields. See
+[CHANGE_REVIEW.md](CHANGE_REVIEW.md) and its recorded report for current fingerprints.
+The new candidate retains both later updates at the same budget; total critical coverage
+is unchanged because older funding/authority evidence is displaced. A recent irrelevant
+notice regression demonstrates the recency bias. Brief output blocks when new evidence
+cannot fit. No general quality/speed gain or completed product/native acceptance is claimed.
+
+## Synthetic benchmark, 2026-10-17
+
+On Linux x64 / Node v24.19.0, the combined original and new benchmark suites pass:
+`node --test tools/tacitus-policy-lab/test.mjs tools/tacitus-policy-lab/benchmark.test.mjs`
+reports 111 passed, zero failed. No dependencies were installed. The benchmark ran with
+100 measured iterations per arm/case after three warmups. See [BENCHMARK.md](BENCHMARK.md)
+and its checked-in JSON report for every result, source fingerprint and limitation.
+The two bounded selectors tie and miss critical evidence in three of four cases; this
+is a developer regression finding, not a real-world quality improvement. Complete declared
+dependencies reduce the example review queue from eight to four records; the missing-link
+control misses three of four affected records. Analyst time is unmeasured.
+
+No Rust/model/database/full-app/browser acceptance gate was run in this environment.
+Earlier verified Windows/native results below remain historical; this benchmark neither
+repeats nor replaces them. No production or native validator changes were made.
+
 ## Windows continuation, 2026-10-12
 
 Reproduced all 81 lab tests on Node 24.12.0. All 28 native Rust tests pass with Rust

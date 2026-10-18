@@ -1,0 +1,113 @@
+{
+  "status": "developer-authored synthetic regression labels; not held out or independently reviewed",
+  "cases": {
+    "pilot-before": {
+      "eligible": [
+        "claim-delegation",
+        "claim-budget",
+        "claim-press",
+        "claim-reprint"
+      ],
+      "critical": [
+        "claim-delegation",
+        "claim-budget"
+      ],
+      "qualifications": [
+        {
+          "id": "claim-delegation",
+          "text": "subject to domestic approval"
+        },
+        {
+          "id": "claim-budget",
+          "text": "No expenditure has been recorded."
+        }
+      ]
+    },
+    "pilot-after": {
+      "eligible": [
+        "claim-delegation",
+        "claim-budget",
+        "claim-press",
+        "claim-reprint",
+        "claim-correction"
+      ],
+      "critical": [
+        "claim-correction",
+        "claim-budget",
+        "claim-delegation"
+      ],
+      "qualifications": [
+        {
+          "id": "claim-correction",
+          "text": "declined approval"
+        },
+        {
+          "id": "claim-budget",
+          "text": "No expenditure has been recorded."
+        },
+        {
+          "id": "claim-delegation",
+          "text": "subject to domestic approval"
+        }
+      ]
+    },
+    "river-before": {
+      "eligible": [
+        "claim-notice",
+        "claim-authority",
+        "claim-safeguard",
+        "claim-translation"
+      ],
+      "critical": [
+        "claim-authority",
+        "claim-safeguard"
+      ],
+      "qualifications": [
+        {
+          "id": "claim-authority",
+          "text": "cannot grant permission"
+        },
+        {
+          "id": "claim-safeguard",
+          "text": "No inspection certificate has been issued."
+        }
+      ]
+    },
+    "river-after": {
+      "eligible": [
+        "claim-notice",
+        "claim-authority",
+        "claim-safeguard",
+        "claim-translation",
+        "claim-withdrawal"
+      ],
+      "critical": [
+        "claim-withdrawal",
+        "claim-safeguard",
+        "claim-authority"
+      ],
+      "qualifications": [
+        {
+          "id": "claim-withdrawal",
+          "text": "must not start pending a new decision"
+        },
+        {
+          "id": "claim-safeguard",
+          "text": "No inspection certificate has been issued."
+        },
+        {
+          "id": "claim-authority",
+          "text": "cannot grant permission"
+        }
+      ]
+    }
+  },
+  "change": {
+    "affected": [
+      "claim-delegation",
+      "participation-assumption",
+      "pilot-option",
+      "pilot-brief"
+    ]
+  }
+}
