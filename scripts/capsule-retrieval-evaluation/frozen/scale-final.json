@@ -1,0 +1,206 @@
+{
+  "scope": "synthetic collection-wide lexical routing to independently validated <=25-source native shards",
+  "runs": [
+    {
+      "baselines": {
+        "whole_document": {
+          "bytes": 2969,
+          "covered_claim_evidence": [
+            "claim0099-0",
+            "claim0099-1"
+          ],
+          "elapsed_ns": 6554513,
+          "payload_sha256": "0165f16f30763eca6ce94bbe346283b77cb39d7e497761a2fa6757333bafaa57"
+        },
+        "line_chunk": {
+          "bytes": 3234,
+          "covered_claim_evidence": [
+            "claim0099-0",
+            "claim0099-1"
+          ],
+          "elapsed_ns": 16133375,
+          "payload_sha256": "3a7cffdda77681444a277195060fe7dcdcedbf844c82dac2ad9e5cbd6ac7232d"
+        }
+      },
+      "incremental_update": {
+        "changed_shards": [
+          3
+        ],
+        "new_manifest_sha256": "2c6c038bed44c3f34a0f4b8939ce8683dab800372d7ddc79d3ff793a0377f6a4",
+        "repack_ns": 82569122,
+        "source_revision": "doc0099@2",
+        "old_archive_preserved": true,
+        "new_snapshot_checkpoint": 301,
+        "earlier_checkpoint_rejected": true,
+        "refreshed_index_routes_revision": true,
+        "updated_context_sha256": "26eb62a50424452d3342eb1318e36d097d1dd88e8aa3b3bc832145b8d07e6538"
+      },
+      "documents": 100,
+      "chunks": 200,
+      "updated_chunks": 201,
+      "shards": 4,
+      "shard_manifest": [
+        {
+          "shard": 0,
+          "archive_sha256": "ca4d63e7e37442ba0e010231507ca249a2bc6d98192aa05e876e98fc98353346",
+          "source_count": 25
+        },
+        {
+          "shard": 1,
+          "archive_sha256": "4f15d54a6b0f6a7b0046453530700c643a2eca5747a77ff56527584f750c08b2",
+          "source_count": 25
+        },
+        {
+          "shard": 2,
+          "archive_sha256": "696c61a732baaab03870c5590faa15ac9e1236f3489aeb658687bacbfb9559e6",
+          "source_count": 25
+        },
+        {
+          "shard": 3,
+          "archive_sha256": "14b34209d33027993957c0db0ae1e891e9503d42e8a52707a2b6d226dc46f05c",
+          "source_count": 25
+        }
+      ],
+      "manifest_sha256": "90d96da8a7e7ab93fed9c2ddc0cf8c536763aca389e0ad87925dbde30ad6b025",
+      "query": "programme0099",
+      "selected_shards": [
+        3
+      ],
+      "claims": [
+        "claim0099-0",
+        "claim0099-1"
+      ],
+      "output_bytes": 12642,
+      "payload_sha256": "ebce05269a90e11d4932b08b59f250e2ab3244657e1530f878f3427201db5b0e",
+      "build_pack_ns": 321966842,
+      "collection_lookup_ns": 375537,
+      "reuse_subprocess_ns": 63769728,
+      "index_serialized_bytes": 46393
+    },
+    {
+      "baselines": {
+        "whole_document": {
+          "bytes": 5370,
+          "covered_claim_evidence": [
+            "claim0299-0",
+            "claim0299-1"
+          ],
+          "elapsed_ns": 41253309,
+          "payload_sha256": "e55bbc2e4b65e3d90aa01a89e53808c0494b8ed5616d96426dca9a052f0ba1d6"
+        },
+        "line_chunk": {
+          "bytes": 5635,
+          "covered_claim_evidence": [
+            "claim0299-0",
+            "claim0299-1"
+          ],
+          "elapsed_ns": 78549512,
+          "payload_sha256": "8a272549418638dee338760698b05c068c23f6a9d5e745b08227c25d77be632f"
+        }
+      },
+      "incremental_update": {
+        "changed_shards": [
+          11
+        ],
+        "new_manifest_sha256": "e9da44d23041ed7533b78a1af909e8a267a296b0bee15f6dc7c346b168d1f848",
+        "repack_ns": 82092384,
+        "source_revision": "doc0299@2",
+        "old_archive_preserved": true,
+        "new_snapshot_checkpoint": 301,
+        "earlier_checkpoint_rejected": true,
+        "refreshed_index_routes_revision": true,
+        "updated_context_sha256": "07a80fa8514cfbacdaad296dbfdde01bc6ef98a0d416b5ef60e50b653a4d874c"
+      },
+      "documents": 300,
+      "chunks": 600,
+      "updated_chunks": 601,
+      "shards": 12,
+      "shard_manifest": [
+        {
+          "shard": 0,
+          "archive_sha256": "ca4d63e7e37442ba0e010231507ca249a2bc6d98192aa05e876e98fc98353346",
+          "source_count": 25
+        },
+        {
+          "shard": 1,
+          "archive_sha256": "4f15d54a6b0f6a7b0046453530700c643a2eca5747a77ff56527584f750c08b2",
+          "source_count": 25
+        },
+        {
+          "shard": 2,
+          "archive_sha256": "696c61a732baaab03870c5590faa15ac9e1236f3489aeb658687bacbfb9559e6",
+          "source_count": 25
+        },
+        {
+          "shard": 3,
+          "archive_sha256": "14b34209d33027993957c0db0ae1e891e9503d42e8a52707a2b6d226dc46f05c",
+          "source_count": 25
+        },
+        {
+          "shard": 4,
+          "archive_sha256": "eeb1ae239ccfe0f06a36f63067ab1374719dc2023fd5b95627df71a51133bc38",
+          "source_count": 25
+        },
+        {
+          "shard": 5,
+          "archive_sha256": "a348aab0978cf62c378a86727a3676111bc60994d255db81360ed20641bf75bb",
+          "source_count": 25
+        },
+        {
+          "shard": 6,
+          "archive_sha256": "fcee511155b9a65755406dce0b4f272771c0f7e3b7483efd492fab11f0c9ac35",
+          "source_count": 25
+        },
+        {
+          "shard": 7,
+          "archive_sha256": "c73a50b469eed645b4566d56a23569350452bde1c654e5c3f308888f9015874f",
+          "source_count": 25
+        },
+        {
+          "shard": 8,
+          "archive_sha256": "0f24906721dc8913659f0a5481bb2e4ebdc3fa9b483641940ff6195205473767",
+          "source_count": 25
+        },
+        {
+          "shard": 9,
+          "archive_sha256": "8526b6babbf66ce959b7ca300b2bc90e4a4ac0e6e7bddc8585ec16e94df38af9",
+          "source_count": 25
+        },
+        {
+          "shard": 10,
+          "archive_sha256": "57eb94a8fe7a446497ce9565e702daaee92fc83c72c00e86cce456104563c782",
+          "source_count": 25
+        },
+        {
+          "shard": 11,
+          "archive_sha256": "dafcbb3c6724cb0d2c53e674e2114f79a8391e693006eea2afb9eb7c7490b1e5",
+          "source_count": 25
+        }
+      ],
+      "manifest_sha256": "0eb53b00bbf9b04f3ba338114b9a053e3ad247032cd0b263057b220dfd0fd877",
+      "query": "programme0299",
+      "selected_shards": [
+        11
+      ],
+      "claims": [
+        "claim0299-0",
+        "claim0299-1"
+      ],
+      "output_bytes": 12646,
+      "payload_sha256": "dbb3c84bda28bf84accdd8ab6b3ffe9a7a0aaa62c75e8a7cbc76df4fcaa8c06a",
+      "build_pack_ns": 1031851079,
+      "collection_lookup_ns": 1420352,
+      "reuse_subprocess_ns": 64823937,
+      "index_serialized_bytes": 138894
+    }
+  ],
+  "python_peak_rss_kib": 16000,
+  "limitations": [
+    "Synthetic throughput and mechanics only; no real collection extraction quality.",
+    "RSS is whole Python process peak; child Rust process memory not measured.",
+    "Timing includes process startup and is environment-specific; no model cost.",
+    "One synthetic revision repacks one shard; no persisted production registry, atomic update service or authentication.",
+    "This exact-key query selects one shard; broad multi-shard queries are not established.",
+    "The final wrapper is measured against32KiB; per-shard budget allocation for arbitrary queries is not implemented."
+  ]
+}

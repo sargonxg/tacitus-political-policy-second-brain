@@ -1,0 +1,19 @@
+{
+  "core_public_commit": "9779f7367872789227601e28d5f39658284f8b34",
+  "core_reviewed_tree": "2908eb25b451c24e1b4200e88ec4b77989c46905",
+  "binary_sha256": "82badd3f9e2aabd928fa8ac021098eca627c6596251c5dde01510f6495e054d2",
+  "binary_build_profile": "debug",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.41",
+  "machine": "x86_64",
+  "deterministic_sha256": "ce36e53988f17ed511e8af5a0a15b9937fada67c5a8fec87a6a9935cf8517989",
+  "fixture_sha256": {
+    "knowledge": "2c41667bc37aed0cef4626435652cda061a89f3b933be283723c7f28a3725024",
+    "minister": "f6743586304253b577ec2ada9794500eacb329c1be52bd3fa4010c1b9eea25c6"
+  },
+  "harness_sha256": {
+    "compare.py": "239d15dbe4efc8308f4541541b31f3b0c59b3286c8c0de4d39a2f453987b1f25",
+    "scale.py": "525eed2b534b8fc023c7ae1d673e1a6c5571dd16f8cf5a9ba7b633e4a019443b",
+    "test_compare.py": "ad3aea41eb880cf1bb61a49630be052949a8a5690fd1c86609bc4922c3518281"
+  }
+}

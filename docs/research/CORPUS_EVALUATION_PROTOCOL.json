@@ -1,0 +1,286 @@
+{
+  "title": "TACITUS incremental corpus evaluation protocol",
+  "version": 1,
+  "authored_at_utc": "2026-10-18T12:45:00Z",
+  "status": "PROPOSED; no corpus-scale component benchmark executed for this addendum",
+  "relation_to_original_blueprint": "Additive protocol and 24 adversarial scenarios; original 35 proposed cases remain proposed.",
+  "corpus": {
+    "document_counts": [
+      100,
+      300,
+      1000
+    ],
+    "nesting": "Frozen core plus realistic additional distractors; report byte/page/chunk/language distributions",
+    "privacy": "Use public or separately authorized source snapshots; no private corpus was used for research."
+  },
+  "tasks": {
+    "total": 120,
+    "cohorts": [
+      "exact_identifiers",
+      "same_language_paraphrases",
+      "cross_language",
+      "temporal_versions",
+      "multi_document_dossiers",
+      "unanswerable_or_conflicting"
+    ],
+    "per_cohort": 20,
+    "development_per_cohort": 5,
+    "held_out_per_cohort": 15,
+    "split_unit": "Dossier/source family where possible",
+    "judgments": [
+      "supporting_spans",
+      "alternative_sufficient_evidence_sets",
+      "mandatory_qualifications",
+      "temporal_scope",
+      "acceptable_abstention",
+      "relevance_0_to_3",
+      "purpose_specific_saliency_weights"
+    ],
+    "independence": "Second-review high-consequence/disputed judgments; do not use tested extractor alone as gold."
+  },
+  "conditions": [
+    {
+      "id": "A",
+      "name": "existing_literal_entity_capsule_selection",
+      "scope_caution": "bounded prebuilt capsules; report matched-scope comparison"
+    },
+    {
+      "id": "B",
+      "name": "independent_corpus_wide_lexical"
+    },
+    {
+      "id": "C",
+      "name": "dense_only",
+      "requires": "separately authorized fixed model"
+    },
+    {
+      "id": "D",
+      "name": "independent_lexical_dense_fixed_rank_fusion"
+    },
+    {
+      "id": "E",
+      "name": "D_plus_bounded_typed_graph_expansion"
+    },
+    {
+      "id": "F",
+      "name": "E_plus_explicit_user_priority_saliency"
+    }
+  ],
+  "fixed_controls": [
+    "source revisions",
+    "eligibility filters",
+    "extraction outputs when comparing retrievers",
+    "candidate cutoff",
+    "final serialized context budget",
+    "generation model/prompt if generation separately authorized"
+  ],
+  "candidate_cutoffs": [
+    20,
+    50
+  ],
+  "proposed_serialized_context_budgets_bytes": [
+    16384,
+    32768
+  ],
+  "metrics": [
+    "evidence_recall_at_20_and_50",
+    "ndcg_at_10",
+    "compiled_evidence_recall_at_budget",
+    "saliency_weighted_coverage_at_budget",
+    "mandatory_qualification_retention",
+    "false_entity_merges",
+    "false_entity_splits",
+    "unresolved_identity_rate",
+    "stale_evidence_rate",
+    "historical_version_correctness",
+    "cold_warm_latency_p50_p95",
+    "incremental_update_latency",
+    "peak_memory",
+    "index_disk_growth",
+    "chunks_reprocessed",
+    "inference_calls_tokens_if_run"
+  ],
+  "contract_release_gates": {
+    "target_violations": 0,
+    "areas": [
+      "wrong_byte_citation",
+      "accepted_payload_substitution",
+      "unauthorized_source_leakage",
+      "required_correction_omission",
+      "silent_budget_overflow"
+    ],
+    "caution": "Passing observed cases is not a guarantee against unseen failures."
+  },
+  "analysis": "Paired per-task comparisons; uncertainty intervals clustered by dossier; do not treat nested corpus sizes as independent samples; publish fallbacks/failures/abstentions.",
+  "acceptance_thresholds": "Predeclare minimum useful relevance/saliency improvement and tolerable operational regression after baseline measurement; no fabricated thresholds or superiority claim.",
+  "cases": [
+    {
+      "id": "C01",
+      "area": "lexical_recall",
+      "setup": "Rare exact identifier with an empty dense candidate set",
+      "expected": "Independent lexical retrieval returns the eligible evidence; record current baseline failure separately.",
+      "status": "proposed_not_executed"
+    },
+    {
+      "id": "C02",
+      "area": "withdrawal",
+      "setup": "Repeat C01 after withdrawal while retaining stale index entries",
+      "expected": "Compiler rejects withdrawn evidence and records why.",
+      "status": "proposed_not_executed"
+    },
+    {
+      "id": "C03",
+      "area": "idempotency",
+      "setup": "Reimport the same source occurrence and identical bytes",
+      "expected": "No duplicate source revision or accepted assertion; replay is safe.",
+      "status": "proposed_not_executed"
+    },
+    {
+      "id": "C04",
+      "area": "attribution",
+      "setup": "Two separately attributed sources contain identical bytes",
+      "expected": "Computation may be shared; source attribution, rights and policy remain distinct.",
+      "status": "proposed_not_executed"
+    },
+    {
+      "id": "C05",
+      "area": "exactness",
+      "setup": "Whitespace-only source change matches normalized extraction cache",
+      "expected": "New exact source revision and span mapping are checked; old acceptance is not inherited.",
+      "status": "proposed_not_executed"
+    },
+    {
+      "id": "C06",
+      "area": "cache",
+      "setup": "Changed content retains the same positional chunk ID",
+      "expected": "Stale extraction is not accepted by positional identity.",
+      "status": "proposed_not_executed"
+    },
+    {
+      "id": "C07",
+      "area": "cache",
+      "setup": "Parser, prompt, model, chunker or schema configuration changes",
+      "expected": "Cache compatibility is explicit; acceptance cannot transfer silently.",
+      "status": "proposed_not_executed"
+    },
+    {
+      "id": "C08",
+      "area": "spans",
+      "setup": "A quotation occurs twice or crosses overlapping chunks",
+      "expected": "Adapter identifies the intended occurrence or marks mapping unresolved.",
+      "status": "proposed_not_executed"
+    },
+    {
+      "id": "C09",
+      "area": "spans",
+      "setup": "OCR or normalization changes a character or negation",
+      "expected": "Exact extraction-artifact citation and derived-source warning remain visible; no raw-original-byte claim.",
+      "status": "proposed_not_executed"
+    },
+    {
+      "id": "C10",
+      "area": "identity",
+      "setup": "Two people share the same normalized name",
+      "expected": "No automatic canonical merge without additional evidence.",
+      "status": "proposed_not_executed"
+    },
+    {
+      "id": "C11",
+      "area": "identity",
+      "setup": "One person has reviewed multilingual aliases",
+      "expected": "Aliases can retrieve the same reviewed identity without changing source-language text.",
+      "status": "proposed_not_executed"
+    },
+    {
+      "id": "C12",
+      "area": "identity",
+      "setup": "A mistaken merge is later split",
+      "expected": "Dependent claims/capsules are traceable and invalidated or rebuilt; prior history is retained.",
+      "status": "proposed_not_executed"
+    },
+    {
+      "id": "C13",
+      "area": "temporal",
+      "setup": "A post changes occupant on a sourced date",
+      "expected": "Post identity persists and role occupancy is interval-scoped.",
+      "status": "proposed_not_executed"
+    },
+    {
+      "id": "C14",
+      "area": "temporal",
+      "setup": "A historical source is ingested after a newer source",
+      "expected": "Known-at time and world-valid time are distinct; ingestion does not establish legal effect.",
+      "status": "proposed_not_executed"
+    },
+    {
+      "id": "C15",
+      "area": "conflict",
+      "setup": "Two attributed sources disagree without explicit correction",
+      "expected": "Disagreement is retained rather than resolved by recency.",
+      "status": "proposed_not_executed"
+    },
+    {
+      "id": "C16",
+      "area": "correction",
+      "setup": "A valid explicit correction arrives",
+      "expected": "Dependency closure includes correction; stale derivative status is visible.",
+      "status": "proposed_not_executed"
+    },
+    {
+      "id": "C17",
+      "area": "publication",
+      "setup": "Index update fails after catalog write or vice versa",
+      "expected": "No silently mixed generation is served; recovery is idempotent.",
+      "status": "proposed_not_executed"
+    },
+    {
+      "id": "C18",
+      "area": "freshness",
+      "setup": "Read immediately after committed lexical update",
+      "expected": "Reader refresh/generation contract determines visibility reproducibly.",
+      "status": "proposed_not_executed"
+    },
+    {
+      "id": "C19",
+      "area": "saliency",
+      "setup": "Many duplicated press releases compete with one mandatory exception",
+      "expected": "Duplication does not suppress the necessary qualification.",
+      "status": "proposed_not_executed"
+    },
+    {
+      "id": "C20",
+      "area": "saliency",
+      "setup": "User-priority metadata is enabled versus disabled",
+      "expected": "Fixed-budget weighted coverage is compared separately from relevance and truth.",
+      "status": "proposed_not_executed"
+    },
+    {
+      "id": "C21",
+      "area": "multilingual",
+      "setup": "Held-out cross-language question shares no tokens with supporting evidence",
+      "expected": "Semantic retrieval success or failure is measured honestly; literal fallback is not called cross-language understanding.",
+      "status": "proposed_not_executed"
+    },
+    {
+      "id": "C22",
+      "area": "budget",
+      "setup": "Required evidence closure exceeds capsule or context bounds",
+      "expected": "Refusal/omission is explicit; essential caveats are not silently dropped.",
+      "status": "proposed_not_executed"
+    },
+    {
+      "id": "C23",
+      "area": "authorization",
+      "setup": "Ineligible source has very high retrieval score",
+      "expected": "Access and eligibility filters prevent disclosure, including stale candidate paths.",
+      "status": "proposed_not_executed"
+    },
+    {
+      "id": "C24",
+      "area": "review",
+      "setup": "Proposal body changes while its external ID/review label remains unchanged",
+      "expected": "Payload-bound acceptance fails; imported review authority is not trusted.",
+      "status": "proposed_not_executed"
+    }
+  ]
+}

@@ -1,0 +1,954 @@
+{
+  "scope": "deterministic structural retention, not factual/answer quality or model evaluation",
+  "cases": [
+    {
+      "corpus": "knowledge",
+      "question": "withdraws",
+      "expected_support": [
+        "access",
+        "withdrawal"
+      ],
+      "max_bytes": 8192,
+      "methods": {
+        "whole_document": {
+          "error": false,
+          "bytes": 1710,
+          "covered_claim_evidence": [
+            "withdrawal"
+          ],
+          "required_support_complete": false,
+          "payload_sha256": "27ba14a88556ddb5af6cfae4d61a701e65c778cd6d958f277f418e50212c0ffe",
+          "elapsed_ns_samples": [
+            542979,
+            811634,
+            118589
+          ]
+        },
+        "line_chunk": {
+          "error": false,
+          "bytes": 1840,
+          "covered_claim_evidence": [
+            "withdrawal"
+          ],
+          "required_support_complete": false,
+          "payload_sha256": "cadd35bf549de599fb462a53595067bca040a6f58fc04448659969fd35612c94",
+          "elapsed_ns_samples": [
+            200062,
+            138489,
+            1405509
+          ]
+        },
+        "capsule": {
+          "error": false,
+          "bytes": 6242,
+          "covered_claim_evidence": [
+            "access",
+            "withdrawal"
+          ],
+          "required_support_complete": true,
+          "payload_sha256": "1a1501cecb260de89d8c479ebb803f64fe1fd2c8af76d9c8a6a9a4be0c8b8226",
+          "elapsed_ns_samples": [
+            5764703,
+            5449268,
+            6870507
+          ]
+        }
+      }
+    },
+    {
+      "corpus": "knowledge",
+      "question": "withdraws",
+      "expected_support": [
+        "access",
+        "withdrawal"
+      ],
+      "max_bytes": 16384,
+      "methods": {
+        "whole_document": {
+          "error": false,
+          "bytes": 1710,
+          "covered_claim_evidence": [
+            "withdrawal"
+          ],
+          "required_support_complete": false,
+          "payload_sha256": "27ba14a88556ddb5af6cfae4d61a701e65c778cd6d958f277f418e50212c0ffe",
+          "elapsed_ns_samples": [
+            168554,
+            92650,
+            86290
+          ]
+        },
+        "line_chunk": {
+          "error": false,
+          "bytes": 1840,
+          "covered_claim_evidence": [
+            "withdrawal"
+          ],
+          "required_support_complete": false,
+          "payload_sha256": "cadd35bf549de599fb462a53595067bca040a6f58fc04448659969fd35612c94",
+          "elapsed_ns_samples": [
+            372852,
+            136997,
+            126751
+          ]
+        },
+        "capsule": {
+          "error": false,
+          "bytes": 6242,
+          "covered_claim_evidence": [
+            "access",
+            "withdrawal"
+          ],
+          "required_support_complete": true,
+          "payload_sha256": "1a1501cecb260de89d8c479ebb803f64fe1fd2c8af76d9c8a6a9a4be0c8b8226",
+          "elapsed_ns_samples": [
+            5598227,
+            6449357,
+            5329658
+          ]
+        }
+      }
+    },
+    {
+      "corpus": "knowledge",
+      "question": "withdraws",
+      "expected_support": [
+        "access",
+        "withdrawal"
+      ],
+      "max_bytes": 32768,
+      "methods": {
+        "whole_document": {
+          "error": false,
+          "bytes": 1710,
+          "covered_claim_evidence": [
+            "withdrawal"
+          ],
+          "required_support_complete": false,
+          "payload_sha256": "27ba14a88556ddb5af6cfae4d61a701e65c778cd6d958f277f418e50212c0ffe",
+          "elapsed_ns_samples": [
+            138398,
+            95103,
+            87683
+          ]
+        },
+        "line_chunk": {
+          "error": false,
+          "bytes": 1840,
+          "covered_claim_evidence": [
+            "withdrawal"
+          ],
+          "required_support_complete": false,
+          "payload_sha256": "cadd35bf549de599fb462a53595067bca040a6f58fc04448659969fd35612c94",
+          "elapsed_ns_samples": [
+            164949,
+            168784,
+            125780
+          ]
+        },
+        "capsule": {
+          "error": false,
+          "bytes": 6242,
+          "covered_claim_evidence": [
+            "access",
+            "withdrawal"
+          ],
+          "required_support_complete": true,
+          "payload_sha256": "1a1501cecb260de89d8c479ebb803f64fe1fd2c8af76d9c8a6a9a4be0c8b8226",
+          "elapsed_ns_samples": [
+            5441476,
+            5469390,
+            12356494
+          ]
+        }
+      }
+    },
+    {
+      "corpus": "knowledge",
+      "question": "heat exercise",
+      "expected_support": [
+        "heat"
+      ],
+      "max_bytes": 8192,
+      "methods": {
+        "whole_document": {
+          "error": false,
+          "bytes": 1799,
+          "covered_claim_evidence": [
+            "access",
+            "heat",
+            "injection"
+          ],
+          "required_support_complete": true,
+          "payload_sha256": "c4395211e0eea924fe8e6fa1ec2db7f96c392aedcc8b44b4e00a72b18853d1c6",
+          "elapsed_ns_samples": [
+            1597108,
+            115594,
+            96175
+          ]
+        },
+        "line_chunk": {
+          "error": false,
+          "bytes": 1798,
+          "covered_claim_evidence": [
+            "heat"
+          ],
+          "required_support_complete": true,
+          "payload_sha256": "398cd233ebb14d221804d7f6014063a32fb888ebbcd882bbb72f77ea5dca0511",
+          "elapsed_ns_samples": [
+            186681,
+            159901,
+            133281
+          ]
+        },
+        "capsule": {
+          "error": false,
+          "bytes": 4263,
+          "covered_claim_evidence": [
+            "heat"
+          ],
+          "required_support_complete": true,
+          "payload_sha256": "9e2977c1c89bba44e4b8298624700573ee5f65ba08a71dada76589f61c10576c",
+          "elapsed_ns_samples": [
+            4792398,
+            8658357,
+            5381836
+          ]
+        }
+      }
+    },
+    {
+      "corpus": "knowledge",
+      "question": "heat exercise",
+      "expected_support": [
+        "heat"
+      ],
+      "max_bytes": 16384,
+      "methods": {
+        "whole_document": {
+          "error": false,
+          "bytes": 1799,
+          "covered_claim_evidence": [
+            "access",
+            "heat",
+            "injection"
+          ],
+          "required_support_complete": true,
+          "payload_sha256": "c4395211e0eea924fe8e6fa1ec2db7f96c392aedcc8b44b4e00a72b18853d1c6",
+          "elapsed_ns_samples": [
+            782961,
+            675459,
+            106932
+          ]
+        },
+        "line_chunk": {
+          "error": false,
+          "bytes": 1798,
+          "covered_claim_evidence": [
+            "heat"
+          ],
+          "required_support_complete": true,
+          "payload_sha256": "398cd233ebb14d221804d7f6014063a32fb888ebbcd882bbb72f77ea5dca0511",
+          "elapsed_ns_samples": [
+            292611,
+            1098486,
+            183667
+          ]
+        },
+        "capsule": {
+          "error": false,
+          "bytes": 4263,
+          "covered_claim_evidence": [
+            "heat"
+          ],
+          "required_support_complete": true,
+          "payload_sha256": "9e2977c1c89bba44e4b8298624700573ee5f65ba08a71dada76589f61c10576c",
+          "elapsed_ns_samples": [
+            4771265,
+            4894382,
+            7639691
+          ]
+        }
+      }
+    },
+    {
+      "corpus": "knowledge",
+      "question": "heat exercise",
+      "expected_support": [
+        "heat"
+      ],
+      "max_bytes": 32768,
+      "methods": {
+        "whole_document": {
+          "error": false,
+          "bytes": 1799,
+          "covered_claim_evidence": [
+            "access",
+            "heat",
+            "injection"
+          ],
+          "required_support_complete": true,
+          "payload_sha256": "c4395211e0eea924fe8e6fa1ec2db7f96c392aedcc8b44b4e00a72b18853d1c6",
+          "elapsed_ns_samples": [
+            709600,
+            434726,
+            99720
+          ]
+        },
+        "line_chunk": {
+          "error": false,
+          "bytes": 1798,
+          "covered_claim_evidence": [
+            "heat"
+          ],
+          "required_support_complete": true,
+          "payload_sha256": "398cd233ebb14d221804d7f6014063a32fb888ebbcd882bbb72f77ea5dca0511",
+          "elapsed_ns_samples": [
+            157909,
+            253753,
+            204208
+          ]
+        },
+        "capsule": {
+          "error": false,
+          "bytes": 4263,
+          "covered_claim_evidence": [
+            "heat"
+          ],
+          "required_support_complete": true,
+          "payload_sha256": "9e2977c1c89bba44e4b8298624700573ee5f65ba08a71dada76589f61c10576c",
+          "elapsed_ns_samples": [
+            4860059,
+            15496611,
+            5230539
+          ]
+        }
+      }
+    },
+    {
+      "corpus": "knowledge",
+      "question": "astronomy galaxies",
+      "expected_support": [],
+      "max_bytes": 8192,
+      "methods": {
+        "whole_document": {
+          "error": false,
+          "bytes": 1011,
+          "covered_claim_evidence": [],
+          "required_support_complete": false,
+          "payload_sha256": "e0589f68f351ff53879bfc8a8487aa4258900e3acf8c6acbd155924328414f2b",
+          "elapsed_ns_samples": [
+            118599,
+            74783,
+            67783
+          ]
+        },
+        "line_chunk": {
+          "error": false,
+          "bytes": 1011,
+          "covered_claim_evidence": [],
+          "required_support_complete": false,
+          "payload_sha256": "e0589f68f351ff53879bfc8a8487aa4258900e3acf8c6acbd155924328414f2b",
+          "elapsed_ns_samples": [
+            104528,
+            92920,
+            88053
+          ]
+        },
+        "capsule": {
+          "error": false,
+          "bytes": 2465,
+          "covered_claim_evidence": [],
+          "required_support_complete": false,
+          "payload_sha256": "08599559544bc7646f83f67ec5bc3c046e9d2ce8f4906a0017d55deb950b9438",
+          "elapsed_ns_samples": [
+            4285282,
+            5108605,
+            4233295
+          ]
+        }
+      }
+    },
+    {
+      "corpus": "knowledge",
+      "question": "astronomy galaxies",
+      "expected_support": [],
+      "max_bytes": 16384,
+      "methods": {
+        "whole_document": {
+          "error": false,
+          "bytes": 1011,
+          "covered_claim_evidence": [],
+          "required_support_complete": false,
+          "payload_sha256": "e0589f68f351ff53879bfc8a8487aa4258900e3acf8c6acbd155924328414f2b",
+          "elapsed_ns_samples": [
+            114904,
+            69685,
+            65449
+          ]
+        },
+        "line_chunk": {
+          "error": false,
+          "bytes": 1011,
+          "covered_claim_evidence": [],
+          "required_support_complete": false,
+          "payload_sha256": "e0589f68f351ff53879bfc8a8487aa4258900e3acf8c6acbd155924328414f2b",
+          "elapsed_ns_samples": [
+            98528,
+            199581,
+            93010
+          ]
+        },
+        "capsule": {
+          "error": false,
+          "bytes": 2465,
+          "covered_claim_evidence": [],
+          "required_support_complete": false,
+          "payload_sha256": "08599559544bc7646f83f67ec5bc3c046e9d2ce8f4906a0017d55deb950b9438",
+          "elapsed_ns_samples": [
+            6774596,
+            4550422,
+            4258602
+          ]
+        }
+      }
+    },
+    {
+      "corpus": "knowledge",
+      "question": "astronomy galaxies",
+      "expected_support": [],
+      "max_bytes": 32768,
+      "methods": {
+        "whole_document": {
+          "error": false,
+          "bytes": 1011,
+          "covered_claim_evidence": [],
+          "required_support_complete": false,
+          "payload_sha256": "e0589f68f351ff53879bfc8a8487aa4258900e3acf8c6acbd155924328414f2b",
+          "elapsed_ns_samples": [
+            147742,
+            85239,
+            64828
+          ]
+        },
+        "line_chunk": {
+          "error": false,
+          "bytes": 1011,
+          "covered_claim_evidence": [],
+          "required_support_complete": false,
+          "payload_sha256": "e0589f68f351ff53879bfc8a8487aa4258900e3acf8c6acbd155924328414f2b",
+          "elapsed_ns_samples": [
+            109585,
+            91288,
+            87322
+          ]
+        },
+        "capsule": {
+          "error": false,
+          "bytes": 2465,
+          "covered_claim_evidence": [],
+          "required_support_complete": false,
+          "payload_sha256": "08599559544bc7646f83f67ec5bc3c046e9d2ce8f4906a0017d55deb950b9438",
+          "elapsed_ns_samples": [
+            4482130,
+            4990025,
+            4759067
+          ]
+        }
+      }
+    },
+    {
+      "corpus": "minister",
+      "question": "discours",
+      "expected_support": [
+        "application-en",
+        "application-fr",
+        "phased-exceptions",
+        "speech-guidance",
+        "version-warning"
+      ],
+      "max_bytes": 8192,
+      "methods": {
+        "whole_document": {
+          "error": false,
+          "bytes": 1364,
+          "covered_claim_evidence": [],
+          "required_support_complete": false,
+          "payload_sha256": "0ac86fab7c15802795da365be0b56210401de449df0767dc263e5a8b851698a4",
+          "elapsed_ns_samples": [
+            223688,
+            303298,
+            118839
+          ]
+        },
+        "line_chunk": {
+          "error": false,
+          "bytes": 1364,
+          "covered_claim_evidence": [],
+          "required_support_complete": false,
+          "payload_sha256": "0ac86fab7c15802795da365be0b56210401de449df0767dc263e5a8b851698a4",
+          "elapsed_ns_samples": [
+            225541,
+            141804,
+            167002
+          ]
+        },
+        "capsule": {
+          "error": false,
+          "bytes": 2896,
+          "covered_claim_evidence": [],
+          "required_support_complete": false,
+          "payload_sha256": "268c046195a4ee0fcb690c28c2970e0c455a8cdc3c33b763cb304b4d15ddfdd3",
+          "elapsed_ns_samples": [
+            10741760,
+            8372807,
+            8627271
+          ]
+        }
+      }
+    },
+    {
+      "corpus": "minister",
+      "question": "discours",
+      "expected_support": [
+        "application-en",
+        "application-fr",
+        "phased-exceptions",
+        "speech-guidance",
+        "version-warning"
+      ],
+      "max_bytes": 16384,
+      "methods": {
+        "whole_document": {
+          "error": false,
+          "bytes": 1364,
+          "covered_claim_evidence": [],
+          "required_support_complete": false,
+          "payload_sha256": "0ac86fab7c15802795da365be0b56210401de449df0767dc263e5a8b851698a4",
+          "elapsed_ns_samples": [
+            178639,
+            132810,
+            113952
+          ]
+        },
+        "line_chunk": {
+          "error": false,
+          "bytes": 1364,
+          "covered_claim_evidence": [],
+          "required_support_complete": false,
+          "payload_sha256": "0ac86fab7c15802795da365be0b56210401de449df0767dc263e5a8b851698a4",
+          "elapsed_ns_samples": [
+            147944,
+            277929,
+            139631
+          ]
+        },
+        "capsule": {
+          "error": false,
+          "bytes": 15877,
+          "covered_claim_evidence": [
+            "application-en",
+            "application-fr",
+            "phased-exceptions",
+            "version-warning",
+            "speech-guidance"
+          ],
+          "required_support_complete": true,
+          "payload_sha256": "325d197911de49289a2c8fcf6c88c9b7fdffd8677fa7932ad91af9baaf76df47",
+          "elapsed_ns_samples": [
+            9894963,
+            9815402,
+            9610073
+          ]
+        }
+      }
+    },
+    {
+      "corpus": "minister",
+      "question": "discours",
+      "expected_support": [
+        "application-en",
+        "application-fr",
+        "phased-exceptions",
+        "speech-guidance",
+        "version-warning"
+      ],
+      "max_bytes": 32768,
+      "methods": {
+        "whole_document": {
+          "error": false,
+          "bytes": 1364,
+          "covered_claim_evidence": [],
+          "required_support_complete": false,
+          "payload_sha256": "0ac86fab7c15802795da365be0b56210401de449df0767dc263e5a8b851698a4",
+          "elapsed_ns_samples": [
+            203527,
+            131158,
+            101122
+          ]
+        },
+        "line_chunk": {
+          "error": false,
+          "bytes": 1364,
+          "covered_claim_evidence": [],
+          "required_support_complete": false,
+          "payload_sha256": "0ac86fab7c15802795da365be0b56210401de449df0767dc263e5a8b851698a4",
+          "elapsed_ns_samples": [
+            140873,
+            132249,
+            127202
+          ]
+        },
+        "capsule": {
+          "error": false,
+          "bytes": 15877,
+          "covered_claim_evidence": [
+            "application-en",
+            "application-fr",
+            "phased-exceptions",
+            "version-warning",
+            "speech-guidance"
+          ],
+          "required_support_complete": true,
+          "payload_sha256": "325d197911de49289a2c8fcf6c88c9b7fdffd8677fa7932ad91af9baaf76df47",
+          "elapsed_ns_samples": [
+            10359934,
+            10031889,
+            12745381
+          ]
+        }
+      }
+    },
+    {
+      "corpus": "minister",
+      "question": "applicable",
+      "expected_support": [
+        "application-fr"
+      ],
+      "max_bytes": 8192,
+      "methods": {
+        "whole_document": {
+          "error": false,
+          "bytes": 2196,
+          "covered_claim_evidence": [
+            "application-fr",
+            "speech-guidance"
+          ],
+          "required_support_complete": true,
+          "payload_sha256": "dbf51ddb7927fe63944304d404f9a9716553af98bd7c76b51c6a80c6b957cc05",
+          "elapsed_ns_samples": [
+            220482,
+            150747,
+            136746
+          ]
+        },
+        "line_chunk": {
+          "error": false,
+          "bytes": 2330,
+          "covered_claim_evidence": [
+            "application-fr",
+            "speech-guidance"
+          ],
+          "required_support_complete": true,
+          "payload_sha256": "1e6ece26d9d60f4559a237d53508028279555569f45fc9da6102e581c6054aff",
+          "elapsed_ns_samples": [
+            266752,
+            191739,
+            183928
+          ]
+        },
+        "capsule": {
+          "error": false,
+          "bytes": 3148,
+          "covered_claim_evidence": [],
+          "required_support_complete": false,
+          "payload_sha256": "2e71110bb2a830ed89fbed910673ec1522a72b93cad7ac84159e44b394de62ed",
+          "elapsed_ns_samples": [
+            7812912,
+            6731953,
+            7955839
+          ]
+        }
+      }
+    },
+    {
+      "corpus": "minister",
+      "question": "applicable",
+      "expected_support": [
+        "application-fr"
+      ],
+      "max_bytes": 16384,
+      "methods": {
+        "whole_document": {
+          "error": false,
+          "bytes": 2196,
+          "covered_claim_evidence": [
+            "application-fr",
+            "speech-guidance"
+          ],
+          "required_support_complete": true,
+          "payload_sha256": "dbf51ddb7927fe63944304d404f9a9716553af98bd7c76b51c6a80c6b957cc05",
+          "elapsed_ns_samples": [
+            215565,
+            149605,
+            140752
+          ]
+        },
+        "line_chunk": {
+          "error": false,
+          "bytes": 2330,
+          "covered_claim_evidence": [
+            "application-fr",
+            "speech-guidance"
+          ],
+          "required_support_complete": true,
+          "payload_sha256": "1e6ece26d9d60f4559a237d53508028279555569f45fc9da6102e581c6054aff",
+          "elapsed_ns_samples": [
+            300253,
+            204969,
+            187142
+          ]
+        },
+        "capsule": {
+          "error": false,
+          "bytes": 3148,
+          "covered_claim_evidence": [],
+          "required_support_complete": false,
+          "payload_sha256": "2e71110bb2a830ed89fbed910673ec1522a72b93cad7ac84159e44b394de62ed",
+          "elapsed_ns_samples": [
+            6894467,
+            7000448,
+            7635900
+          ]
+        }
+      }
+    },
+    {
+      "corpus": "minister",
+      "question": "applicable",
+      "expected_support": [
+        "application-fr"
+      ],
+      "max_bytes": 32768,
+      "methods": {
+        "whole_document": {
+          "error": false,
+          "bytes": 2196,
+          "covered_claim_evidence": [
+            "application-fr",
+            "speech-guidance"
+          ],
+          "required_support_complete": true,
+          "payload_sha256": "dbf51ddb7927fe63944304d404f9a9716553af98bd7c76b51c6a80c6b957cc05",
+          "elapsed_ns_samples": [
+            216146,
+            173121,
+            141443
+          ]
+        },
+        "line_chunk": {
+          "error": false,
+          "bytes": 2330,
+          "covered_claim_evidence": [
+            "application-fr",
+            "speech-guidance"
+          ],
+          "required_support_complete": true,
+          "payload_sha256": "1e6ece26d9d60f4559a237d53508028279555569f45fc9da6102e581c6054aff",
+          "elapsed_ns_samples": [
+            227564,
+            196577,
+            188384
+          ]
+        },
+        "capsule": {
+          "error": false,
+          "bytes": 3148,
+          "covered_claim_evidence": [],
+          "required_support_complete": false,
+          "payload_sha256": "2e71110bb2a830ed89fbed910673ec1522a72b93cad7ac84159e44b394de62ed",
+          "elapsed_ns_samples": [
+            6661066,
+            6887437,
+            7048740
+          ]
+        }
+      }
+    },
+    {
+      "corpus": "minister",
+      "question": "publication institutions",
+      "expected_support": [
+        "publication-record"
+      ],
+      "max_bytes": 8192,
+      "methods": {
+        "whole_document": {
+          "error": false,
+          "bytes": 2720,
+          "covered_claim_evidence": [
+            "publication-record",
+            "phased-exceptions",
+            "version-warning"
+          ],
+          "required_support_complete": true,
+          "payload_sha256": "d063dc0d21463773f484bc31eff0984363532fc173a6b61df320c211f2fbdd94",
+          "elapsed_ns_samples": [
+            289817,
+            162335,
+            150277
+          ]
+        },
+        "line_chunk": {
+          "error": false,
+          "bytes": 2491,
+          "covered_claim_evidence": [
+            "publication-record"
+          ],
+          "required_support_complete": true,
+          "payload_sha256": "99ddb880d81bb329929d849fcef4a6520e6fd5428d9a74964376b5437aff87d7",
+          "elapsed_ns_samples": [
+            251719,
+            199130,
+            194093
+          ]
+        },
+        "capsule": {
+          "error": false,
+          "bytes": 6436,
+          "covered_claim_evidence": [
+            "publication-record"
+          ],
+          "required_support_complete": true,
+          "payload_sha256": "368ef2d79a7f0280b4f2d16625d1cf55ee4e8e8cbd3931312d324ad9d1bbfc74",
+          "elapsed_ns_samples": [
+            7387510,
+            7556181,
+            9052653
+          ]
+        }
+      }
+    },
+    {
+      "corpus": "minister",
+      "question": "publication institutions",
+      "expected_support": [
+        "publication-record"
+      ],
+      "max_bytes": 16384,
+      "methods": {
+        "whole_document": {
+          "error": false,
+          "bytes": 2720,
+          "covered_claim_evidence": [
+            "publication-record",
+            "phased-exceptions",
+            "version-warning"
+          ],
+          "required_support_complete": true,
+          "payload_sha256": "d063dc0d21463773f484bc31eff0984363532fc173a6b61df320c211f2fbdd94",
+          "elapsed_ns_samples": [
+            266682,
+            162135,
+            152079
+          ]
+        },
+        "line_chunk": {
+          "error": false,
+          "bytes": 2491,
+          "covered_claim_evidence": [
+            "publication-record"
+          ],
+          "required_support_complete": true,
+          "payload_sha256": "99ddb880d81bb329929d849fcef4a6520e6fd5428d9a74964376b5437aff87d7",
+          "elapsed_ns_samples": [
+            212260,
+            213602,
+            193562
+          ]
+        },
+        "capsule": {
+          "error": false,
+          "bytes": 6436,
+          "covered_claim_evidence": [
+            "publication-record"
+          ],
+          "required_support_complete": true,
+          "payload_sha256": "368ef2d79a7f0280b4f2d16625d1cf55ee4e8e8cbd3931312d324ad9d1bbfc74",
+          "elapsed_ns_samples": [
+            7907205,
+            9133745,
+            7506520
+          ]
+        }
+      }
+    },
+    {
+      "corpus": "minister",
+      "question": "publication institutions",
+      "expected_support": [
+        "publication-record"
+      ],
+      "max_bytes": 32768,
+      "methods": {
+        "whole_document": {
+          "error": false,
+          "bytes": 2720,
+          "covered_claim_evidence": [
+            "publication-record",
+            "phased-exceptions",
+            "version-warning"
+          ],
+          "required_support_complete": true,
+          "payload_sha256": "d063dc0d21463773f484bc31eff0984363532fc173a6b61df320c211f2fbdd94",
+          "elapsed_ns_samples": [
+            254954,
+            164247,
+            147283
+          ]
+        },
+        "line_chunk": {
+          "error": false,
+          "bytes": 2491,
+          "covered_claim_evidence": [
+            "publication-record"
+          ],
+          "required_support_complete": true,
+          "payload_sha256": "99ddb880d81bb329929d849fcef4a6520e6fd5428d9a74964376b5437aff87d7",
+          "elapsed_ns_samples": [
+            236076,
+            229506,
+            193723
+          ]
+        },
+        "capsule": {
+          "error": false,
+          "bytes": 6436,
+          "covered_claim_evidence": [
+            "publication-record"
+          ],
+          "required_support_complete": true,
+          "payload_sha256": "368ef2d79a7f0280b4f2d16625d1cf55ee4e8e8cbd3931312d324ad9d1bbfc74",
+          "elapsed_ns_samples": [
+            8189040,
+            7760554,
+            7639892
+          ]
+        }
+      }
+    }
+  ],
+  "controls": [
+    "same exact source revisions and questions",
+    "equal actual serialized byte limits",
+    "same atomic source eligibility and snapshot cutoff policy",
+    "no generator or model calls"
+  ],
+  "limitations": [
+    "Hand-authored graph annotations and research notes add information and labor; not a free semantic improvement.",
+    "Source span coverage is not semantic support or correct answer generation.",
+    "Whole-document baseline retains original text but not separately authored assertion conditions; capsule preserves structured interpretation.",
+    "Timing is descriptive and not comparable: Rust subprocess startup versus in-process Python baseline.",
+    "Six illustrative queries are not held-out or representative; 35-case blueprint is not fully executed."
+  ]
+}

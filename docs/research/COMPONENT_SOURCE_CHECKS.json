@@ -1,0 +1,78 @@
+{
+  "method": "Read-only GitHub API metadata, actual LICENSE files, pinned source inspection. No component installed, built or benchmarked.",
+  "tacitus_inspected_revision": "df82de5d33f2debf4ce618b660f76c6d53a39d71",
+  "repositories": [
+    {
+      "repo": "raphaelmansuy/edgequake",
+      "license": "Apache-2.0",
+      "archived": false,
+      "default_branch": "edgequake-main",
+      "pushed_at": "2026-10-18T10:15:54Z",
+      "head": "17e836a1bd58d556cac684de0341c01d27e08b23",
+      "latest_release": "v0.35.6",
+      "published_at": "2026-10-17T08:24:37Z",
+      "release_url": "https://github.com/raphaelmansuy/edgequake/releases/tag/v0.35.6",
+      "repository_url": "https://github.com/raphaelmansuy/edgequake",
+      "metadata_url": "https://api.github.com/repos/raphaelmansuy/edgequake",
+      "license_url": "https://github.com/raphaelmansuy/edgequake/blob/17e836a1bd58d556cac684de0341c01d27e08b23/LICENSE"
+    },
+    {
+      "repo": "docling-project/docling",
+      "license": "MIT",
+      "archived": false,
+      "default_branch": "main",
+      "pushed_at": "2026-10-18T07:20:32Z",
+      "head": "0e54294231b69bc2cf7a39873235495788f76b57",
+      "latest_release": "v2.140.0",
+      "published_at": "2026-10-16T09:00:49Z",
+      "release_url": "https://github.com/docling-project/docling/releases/tag/v2.140.0",
+      "repository_url": "https://github.com/docling-project/docling",
+      "metadata_url": "https://api.github.com/repos/docling-project/docling",
+      "license_url": "https://github.com/docling-project/docling/blob/0e54294231b69bc2cf7a39873235495788f76b57/LICENSE"
+    },
+    {
+      "repo": "quickwit-oss/tantivy",
+      "license": "MIT",
+      "archived": false,
+      "default_branch": "main",
+      "pushed_at": "2026-10-17T06:35:02Z",
+      "head": "67889269cae67063c372bc236b102d632a021568",
+      "latest_release": "0.26.1",
+      "published_at": "2026-05-10T18:38:25Z",
+      "release_url": "https://github.com/quickwit-oss/tantivy/releases/tag/0.26.1",
+      "repository_url": "https://github.com/quickwit-oss/tantivy",
+      "metadata_url": "https://api.github.com/repos/quickwit-oss/tantivy",
+      "license_url": "https://github.com/quickwit-oss/tantivy/blob/67889269cae67063c372bc236b102d632a021568/LICENSE"
+    },
+    {
+      "repo": "lancedb/lancedb",
+      "license": "Apache-2.0",
+      "archived": false,
+      "default_branch": "main",
+      "pushed_at": "2026-10-18T11:19:50Z",
+      "head": "ca275b6d0ecc0b72cb13978ff227200727f6334c",
+      "latest_release": "v0.40.0",
+      "published_at": "2026-10-07T09:17:29Z",
+      "release_url": "https://github.com/lancedb/lancedb/releases/tag/v0.40.0",
+      "repository_url": "https://github.com/lancedb/lancedb",
+      "metadata_url": "https://api.github.com/repos/lancedb/lancedb",
+      "license_url": "https://github.com/lancedb/lancedb/blob/ca275b6d0ecc0b72cb13978ff227200727f6334c/LICENSE"
+    },
+    {
+      "repo": "getzep/graphiti",
+      "license": "Apache-2.0",
+      "archived": false,
+      "default_branch": "main",
+      "pushed_at": "2026-10-17T22:49:22Z",
+      "head": "417c3a125ae3ac53c19b8e53fffaccf3e665a88e",
+      "latest_release": "v0.31.1",
+      "published_at": "2026-10-15T15:02:17Z",
+      "release_url": "https://github.com/getzep/graphiti/releases/tag/v0.31.1",
+      "repository_url": "https://github.com/getzep/graphiti",
+      "metadata_url": "https://api.github.com/repos/getzep/graphiti",
+      "license_url": "https://github.com/getzep/graphiti/blob/417c3a125ae3ac53c19b8e53fffaccf3e665a88e/LICENSE"
+    }
+  ],
+  "metadata_checked_at_utc": "2026-10-18T12:34:00Z",
+  "source_inspection_completed_at_utc": "2026-10-18T12:43:24Z"
+}
