@@ -15,6 +15,8 @@ Tacitus Policy Workbench adapts [EdgeQuake](https://github.com/raphaelmansuy/edg
 
 > **Verification status:** active implementation candidate; end-to-end runtime verification is still pending. The new integration has not yet been accepted as a working release. Do not upload confidential material or expose the stack publicly until the documented build, security, and acceptance gates pass.
 
+For a smaller standalone local evidence inspector, see the [TACITUS Workbench run guide](https://github.com/sargonxg/tacitus-workbench/blob/main/README.md). Its recorded examples and opt-in pinned-core execution are separate from this full EdgeQuake application. Neither local path establishes a working hosted PRAXIS attachment bridge.
+
 ## Run the capsule-only developer workflow
 
 A reproducible local/cloud-machine path is available for native-v2 creation, strict validation, inspection, layered context and cited documents, with corrected research samples and a separate synthetic authoring example. Start with [the capsule run guide](docs/tacitus/LOCAL_CAPSULE_RELEASE.md).
