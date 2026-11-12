@@ -57,3 +57,7 @@ Audited default-branch baseline: `501211b04f469aa244075eccf041ae4f76f9df55`. Cha
 No application runtime acceptance was executed for this repository in this pass. The shared adventure was browser-tested separately.
 
 A failure is a remaining release blocker for the affected workflow. A passing local test is not a new hosted release. Provider/model quality, current external-service setup and production deployment were not certified.
+
+## Fresh capsule-only verification · 12 November 2026
+
+The documented `scripts/check-capsule-release.py` path was executed with Rust 1.95.0 and Node 24 in a fresh output workspace. Rust tests, Clippy with warnings denied, formatting, examples, Node policy/catalog checks and all three source-linked review examples pass. Their unknown-date requests refuse as required; the fictional example remains clearly synthetic. This verifies the four-crate native-v2 developer path only. Full inherited EdgeQuake/PDFium/WebUI, hosted authorization, provider performance and private App integration remain separate. No data format, native core pin, production service or model configuration was changed.
