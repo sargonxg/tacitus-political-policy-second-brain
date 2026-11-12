@@ -1,5 +1,20 @@
 # Tacitus Policy Workbench
 
+<!-- tacitus-practical-entry -->
+## Purpose, code and a playable introduction
+
+Explore a policy layer on the upstream EdgeQuake stack, plus a bounded capsule-only local developer workflow.
+
+**Integration lab / inherited upstream stack.** Capsule checks and the full PostgreSQL/Rust/web application have separate acceptance gates. Full application runtime verification remains unfinished.
+
+[Setup, code walkthrough, research & verification](TACITUS_GUIDE.md) · [Play the original 8-bit teaching adventure](tacitus-demo/index.html) · [Demo credits](tacitus-demo/CREDITS.md)
+
+![The original House of Evidence teaching adventure; synthetic case, separate from this project’s runtime](tacitus-demo/mansion.png)
+
+Research: [RAG](https://arxiv.org/abs/2005.11401), [long-context evidence use](https://arxiv.org/abs/2307.03172), [GraphRAG](https://arxiv.org/abs/2404.16130). [What TACITUS borrows, adds and still needs to measure](https://github.com/sargonxg/sargonxg/blob/main/docs/RESEARCH_AND_DESIGN.md).
+<!-- /tacitus-practical-entry -->
+
+
 **A local-first research environment for evidence-grounded policy and political analysis.**
 
 [![Status](https://img.shields.io/badge/status-active%20prototype-yellow)](IMPLEMENTATION_STATUS.md)
